@@ -4,8 +4,13 @@ class SearchController < InheritedResources::Base
   actions :show
 
   def show
-    unless ((@legislators = Legislator.search(params[:search][:address])) && !@legislators.empty?)
-      redirect_to root_path, :flash =>  { :notice => 'Please try your search again.' }
-    end
+    geoloc = GeoKit::Geocoders::GoogleGeocoder.geocode(params[:address])
+    @letter = Letter.new(
+      :street     => geoloc.street_address,
+      :city       => geoloc.city,
+      :state      => geoloc.state,
+      :zip        => geoloc.zip,
+      :recipients => Legislator.search(geoloc)
+    )
   end
 end

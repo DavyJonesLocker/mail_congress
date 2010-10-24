@@ -1,6 +1,7 @@
 MailCongress::Application.routes.draw do
   get 'search' => 'search#show', :as => 'search'
   root :to => 'home#index'
+  post 'letters' => 'letters#create', :as => 'letters'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

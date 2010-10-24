@@ -1,0 +1,14 @@
+%h1 Please choose whom you wish to write.
+= simple_form_for @letter do |letter|
+  = letter.input :street, :as => :hidden
+  = letter.input :city, :as => :hidden
+  = letter.input :state, :as => :hidden
+  = letter.input :zip, :as => :hidden
+
+  %ul
+    = letter.simple_fields_for :recipients do |recipient|
+      %li
+        = image_tag recipient.object.bioguide_image
+        = recipient.label :_destroy, recipient.object.name
+        = recipient.check_box :_destroy, {}, false, true
+

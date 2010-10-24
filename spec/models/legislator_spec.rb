@@ -3,7 +3,6 @@ require 'spec_helper'
 describe Legislator do
   context 'Searching by location' do
     before do
-      @address = '123 Main St Some City, AA'
       @geoloc  = Geokit::GeoLoc.new(
         :lat => 123,
         :lng => 456,
@@ -18,11 +17,7 @@ describe Legislator do
         @geoloc.stubs(:success).returns(true)
         Geokit::Geocoders::GoogleGeocoder.stubs(:geocode).returns(@geoloc)
         Legislator.stubs(:find_by_sql)
-        Legislator.search(@address)
-      end
-
-      it 'should normalize address through Google' do
-        Geokit::Geocoders::GoogleGeocoder.should have_received(:geocode).with(@address)
+        Legislator.search(@geoloc)
       end
 
       it 'should find legislators by complex SQL query' do
@@ -47,7 +42,7 @@ order by legislators.district DESC
       end
 
       it 'should return false' do
-        Legislator.search(@address).should be_false
+        Legislator.search(@geoloc).should be_false
       end
       
     end
@@ -73,4 +68,6 @@ order by legislators.district DESC
       @legislator.bioguide_image.should == 'bioguide/1234.jpg'
     end
   end
+
 end
+

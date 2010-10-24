@@ -1,1 +1,1 @@
-rvm --create use ruby-1.9.2-p0@mail_congress > /dev/null
+rvm --create use default@mail_congress > /dev/null

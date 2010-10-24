@@ -1,4 +1,4 @@
-Feature: Home
+Feature: Finding Congress People
 
   Scenario: Viewing the home page
     When  I go to the home page
@@ -8,13 +8,6 @@ Feature: Home
     Given I am on the home page
     When  I submit the address form with my information
     Then  I should see my congress people
-
-  Scenario: Mailing my congress people
-    Given I am on the home page
-    When  I submit the address form with my information
-    Then  I should see my congress people
-    When  I write my letter to all of my congress people
-    Then  I should 
 
   #Scenario: Searching with an address that returns zero results
     #Given I am on the home page

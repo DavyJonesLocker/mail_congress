@@ -8,9 +8,16 @@ gem 'inherited_resources'
 gem 'simple_form'
 gem 'geokit'
 gem 'daemons'
+gem 'escape_utils'
+gem 'haml', '3.1.0.alpha.22'
 
 group :development do
-  gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'ruby-debug'
+end
+
+group :test, :development do
+  gem 'rspec'
+  gem 'rspec-rails'
 end
 
 group :test do
@@ -19,12 +26,12 @@ group :test do
   gem 'autotest-growl'
   gem 'autotest-fsevent'
   gem 'capybara'
+  gem 'capybara-envjs'
   gem 'database_cleaner'
   gem 'cucumber', :git => 'http://github.com/aslakhellesoy/cucumber.git'
   gem 'cucumber-rails'
-  gem 'rspec-rails'
   gem 'bourne'
-  gem 'shoulda'
   gem 'spork', '0.9.0.rc2'
   gem 'launchy'
+  gem 'remarkable_activerecord', '4.0.0.alpha4'
 end
