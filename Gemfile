@@ -10,14 +10,12 @@ gem 'geokit'
 gem 'daemons'
 gem 'escape_utils'
 gem 'haml', '3.1.0.alpha.22'
-
-group :development do
-  gem 'ruby-debug'
-end
+gem 'compass'
 
 group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'ruby-debug'
 end
 
 group :test do
@@ -26,7 +24,7 @@ group :test do
   gem 'autotest-growl'
   gem 'autotest-fsevent'
   gem 'capybara'
-  gem 'capybara-envjs'
+  gem 'capybara-envjs', :git => 'http://github.com/smparkes/capybara-envjs.git'
   gem 'database_cleaner'
   gem 'cucumber', :git => 'http://github.com/aslakhellesoy/cucumber.git'
   gem 'cucumber-rails'

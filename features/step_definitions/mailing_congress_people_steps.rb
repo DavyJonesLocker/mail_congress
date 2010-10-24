@@ -6,7 +6,10 @@ end
 
 When /^I select my congress people$/ do
   When %{I check "Sen. John Kerry"}
-  And  %{I check "Sen. Scott Brown"}
-  And  %{I check "Rep. Stephen Lynch"}
+  # Then %{I should see "$1 to send this letter."}
+  When %{I check "Sen. Scott Brown"}
+  # Then %{I should see "$2 to send these letters."}
+  When %{I check "Rep. Stephen Lynch"}
+  # Then %{I should see "$3 to send these letters."}
 end
 
