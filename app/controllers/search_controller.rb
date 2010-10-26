@@ -4,7 +4,13 @@ class SearchController < InheritedResources::Base
   actions :show
 
   def show
-    geoloc = GeoKit::Geocoders::GoogleGeocoder.geocode(params[:address])
+    if params[:geoloc]
+      geoloc = GeoKit::GeoLoc.new(params[:geoloc])
+      geoloc.success = true
+    else
+      geoloc = GeoKit::Geocoders::GoogleGeocoder.geocode(params[:address])
+    end
+
     @letter = Letter.new(
       :street     => geoloc.street_address,
       :city       => geoloc.city,
@@ -13,4 +19,5 @@ class SearchController < InheritedResources::Base
       :recipients => Legislator.search(geoloc).map { |legislator| Recipient.new(:legislator => legislator) }
     )
   end
+
 end

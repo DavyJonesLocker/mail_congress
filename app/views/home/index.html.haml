@@ -1,4 +1,8 @@
-= form_tag search_path, :method => :get do
+= content_for :javascript do
+  %script{ :src => 'http://maps.google.com/maps/api/js?sensor=false', :type => 'text/javascript' }
+  = javascript_include_tag 'search'
+
+= form_tag search_path, :id => 'address_search' do
   = label_tag :address, 'Please enter your home address.'
   = text_field_tag :address
   %input{:type => 'submit', :value => 'Find'}
