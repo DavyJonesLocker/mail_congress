@@ -23,7 +23,7 @@
           = image_tag recipient.object.legislator.bioguide_image, :class => 'monochrome'
         = recipient.label :id, recipient.object.legislator.name
         = recipient.input :legislator_id, :as => :hidden, :input_html => { :class => 'legislator_id', :disabled => true }
-  %h2.cost
+  %h2.cost $0 no legislators chosen.
 
   = letter.input :body, :as => :text
   Sincerely,

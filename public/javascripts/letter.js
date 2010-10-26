@@ -31,7 +31,7 @@ function updateCost() {
   });
   switch(total) {
     case 0:
-      var cost_html = "";
+      var cost_html = "$0 no legislators chosen.";
       break;
     
     case 1:

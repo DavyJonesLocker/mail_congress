@@ -5,12 +5,23 @@ When /^I write my letter to all of my congress people$/ do
 end
 
 When /^I select my congress people$/ do
+  Then %{I should see "$0 no legislators chosen."}
   When %{I click the label "Sen. John Kerry"}
   Then %{I should see "$1 to send this letter."}
   When %{I click the label "Sen. Scott Brown"}
   Then %{I should see "$2 to send these letters."}
   When %{I click the label "Rep. Stephen Lynch"}
   Then %{I should see "$3 to send these letters."}
+end
+
+When /^I unselect my congress people$/ do
+  Then %{I should see "$3 to send these letters."}
+  When %{I click the label "Sen. John Kerry"}
+  Then %{I should see "$2 to send these letters."}
+  When %{I click the label "Sen. Scott Brown"}
+  Then %{I should see "$1 to send this letter."}
+  When %{I click the label "Rep. Stephen Lynch"}
+  Then %{I should see "$0 no legislators chosen."}
 end
 
 When /^I write them a thank\-you letter$/ do
