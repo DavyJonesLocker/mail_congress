@@ -1,6 +1,7 @@
 - content_for :javascript do
-  = javascript_include_tag 'letter', 'jquery.wysiwyg'
+  = javascript_include_tag 'letter'
   - unless Rails.env == 'test'
+    = javascript_include_tag 'jquery.wysiwyg'
     :javascript
       $(function() {
         $('#letter_body').wysiwyg();
