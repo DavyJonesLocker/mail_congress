@@ -1,5 +1,10 @@
 - content_for :javascript do
-  = javascript_include_tag 'letter', 'jquery.wysiwyg', 'grayscale'
+  = javascript_include_tag 'letter', 'jquery.wysiwyg'
+  - unless Rails.env == 'test'
+    :javascript
+      $(function() {
+        $('#letter_body').wysiwyg();
+      });
 - content_for :css do
   = stylesheet_link_tag 'jquery.wysiwyg'
 
@@ -15,9 +20,8 @@
       %li
         .bioguide
           = image_tag recipient.object.legislator.bioguide_image, :class => 'monochrome'
-        = label_tag "include_legislator_#{@letter.recipients.index(recipient.object)}", recipient.object.legislator.name
-        = check_box_tag "include_legislator_#{@letter.recipients.index(recipient.object)}"
-        = recipient.input :legislator_id, :as => :hidden, :input_html => { :class => 'legislator_id' }
+        = recipient.label :id, recipient.object.legislator.name
+        = recipient.input :legislator_id, :as => :hidden, :input_html => { :class => 'legislator_id', :disabled => true }
   %h2.cost
 
   = letter.input :body, :as => :text

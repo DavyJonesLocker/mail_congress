@@ -41,7 +41,7 @@ ul.legislators {
     height: 125px;
     overflow: hidden;
   }
-  .bioguide img:hover {
+  .bioguide img:hover, label {
     cursor: pointer;
   }
   img.monochrome {

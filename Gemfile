@@ -26,6 +26,7 @@ group :test do
   gem 'autotest-fsevent'
   gem 'capybara'
   gem 'capybara-envjs', :git => 'http://github.com/smparkes/capybara-envjs.git'
+  gem 'capybara-envjs-fixes'
   gem 'database_cleaner'
   gem 'cucumber'
   gem 'cucumber-rails'

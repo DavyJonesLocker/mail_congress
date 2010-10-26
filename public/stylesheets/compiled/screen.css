@@ -689,7 +689,7 @@ ul.legislators .bioguide {
   overflow: hidden;
 }
 /* line 44, ../../../app/stylesheets/screen.scss */
-ul.legislators .bioguide img:hover {
+ul.legislators .bioguide img:hover, ul.legislators label {
   cursor: pointer;
 }
 /* line 47, ../../../app/stylesheets/screen.scss */

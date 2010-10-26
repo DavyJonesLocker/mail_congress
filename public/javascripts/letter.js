@@ -1,29 +1,31 @@
 $(function() {
-  $('ul.legislators :checkbox').change(function() { toggleLegislator(this); });
-  $('#letter_body').wysiwyg();
-  $('img').click(function() { toggleRep(this); });
+  $('ul.legislators img').click(function() { toggleLegislator($(this).parent().parent()) });
+  $('ul.legislators label').click(function() { toggleLegislator($(this).parent()); });
 });
 
-function toggleLegislator(checkbox) {
+function toggleLegislator(list_item) {
+  toggleImage(list_item);
   updateCost();
-  toggleImage(checkbox);
 }
 
-function toggleImage(checkbox) {
-  var image = $(checkbox).parent().find('img');
-  if (checkbox.checked) {
+function toggleImage(list_item) {
+  var image = list_item.find('img');
+  var id    = list_item.find('.legislator_id')
+  if (id.attr('disabled')) {
     image.removeClass('monochrome');
     image.addClass('color');
+    id.attr('disabled', null)
   } else {
     image.removeClass('color');
     image.addClass('monochrome');
+    id.attr('disabled', 'disabled')
   }
 }
 
 function updateCost() {
   var total = 0;
-  $('ul.legislators :checkbox').each(function() {
-    if (this.checked) {
+  $('ul.legislators .legislator_id').each(function() {
+    if (!this.disabled) {
      total += 1;
     }
   });
@@ -35,16 +37,10 @@ function updateCost() {
     case 1:
       var cost_html = "$1 to send this letter.";
       break;
-
+    
     default:
       var cost_html = "$" + total + " to send these letters.";
       break;
   }
   $('h2.cost').text(cost_html);
-}
-
-function toggleRep(image) {
-  var checkbox = $(image).parent().parent().find(':checkbox');
-  checkbox.attr('checked', !checkbox.is(':checked'));
-  checkbox.trigger('change');
 }
