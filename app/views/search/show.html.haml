@@ -1,5 +1,5 @@
 - content_for :javascript do
-  = javascript_include_tag 'letter', 'jquery.wysiwyg'
+  = javascript_include_tag 'letter', 'jquery.wysiwyg', 'grayscale'
 - content_for :css do
   = stylesheet_link_tag 'jquery.wysiwyg'
 
@@ -10,12 +10,18 @@
   = letter.input :state, :as => :hidden
   = letter.input :zip, :as => :hidden
 
-  %ul
+  %ul.legislators
     = letter.simple_fields_for :recipients do |recipient|
       %li
-        = image_tag recipient.object.bioguide_image
-        = recipient.label :_destroy, recipient.object.name
-        = recipient.check_box :_destroy, { :class => 'rep-choice' }, false, true
+        .bioguide
+          = image_tag recipient.object.legislator.bioguide_image, :class => 'monochrome'
+        = label_tag "include_legislator_#{@letter.recipients.index(recipient.object)}", recipient.object.legislator.name
+        = check_box_tag "include_legislator_#{@letter.recipients.index(recipient.object)}"
+        = recipient.input :legislator_id, :as => :hidden, :input_html => { :class => 'legislator_id' }
   %h2.cost
 
   = letter.input :body, :as => :text
+  Sincerely,
+  = letter.input :name_first, :label => 'First name'
+  = letter.input :name_last, :label => 'Last name'
+  = letter.submit 'Send'

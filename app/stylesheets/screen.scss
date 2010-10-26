@@ -1,0 +1,56 @@
+// This import applies a global reset to any page that imports this stylesheet.
+@import "blueprint/reset";
+
+// To configure blueprint, edit the partials/base.sass file.
+@import "partials/base";
+
+// Import all the default blueprint modules so that we can access their mixins.
+@import "blueprint";
+
+// Combine the partials into a single screen stylesheet.
+@import "partials/page";
+@import "partials/form";
+@import "partials/two_col";
+
+$blueprint_grid_columns: 8;
+$blueprint_grid_width: 40px;
+
+@import "compass/reset";
+@import "compass/utilities";
+
+.container {
+  @include container;
+  
+  #header, #footer {
+    @include column(8);
+  }
+
+  #content {
+    @include column(8);
+  }
+}
+
+ul.legislators {
+  width: 500px;
+  @include horizontal-list;
+  li {
+    @include horizontal-list-item;
+  }
+  .bioguide {
+    width: 100px;
+    height: 125px;
+    overflow: hidden;
+  }
+  .bioguide img:hover {
+    cursor: pointer;
+  }
+  img.monochrome {
+    margin-left: -100px;
+  }
+
+}
+
+#letter_body {
+  width: 600px;
+  height: 300px;
+}

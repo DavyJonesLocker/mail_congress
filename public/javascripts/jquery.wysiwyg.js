@@ -1001,11 +1001,6 @@
                                 }, 0);
                         }
 
-                        if (this.initialContent.length === 0)
-                        {
-                                this.setContent('<p>initial content</p>');
-                        }
-
                         $.each(this.options.events, function(key, handler)
                         {
                                 $(self.editorDoc).bind(key, handler);

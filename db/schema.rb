@@ -72,9 +72,9 @@ ActiveRecord::Schema.define(:version => 20101023062248) do
     t.datetime "updated_at"
   end
 
-  create_table "recipient_legislators", :force => true do |t|
+  create_table "recipients", :force => true do |t|
     t.integer  "letter_id"
-    t.integer  "legislator_id"
+    t.string   "legislator_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

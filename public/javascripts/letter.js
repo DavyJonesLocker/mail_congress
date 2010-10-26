@@ -1,13 +1,30 @@
 $(function() {
-  $('.rep-choice').change(updateCost);
+  $('ul.legislators :checkbox').change(function() { toggleLegislator(this); });
   $('#letter_body').wysiwyg();
+  $('img').click(function() { toggleRep(this); });
 });
+
+function toggleLegislator(checkbox) {
+  updateCost();
+  toggleImage(checkbox);
+}
+
+function toggleImage(checkbox) {
+  var image = $(checkbox).parent().find('img');
+  if (checkbox.checked) {
+    image.removeClass('monochrome');
+    image.addClass('color');
+  } else {
+    image.removeClass('color');
+    image.addClass('monochrome');
+  }
+}
 
 function updateCost() {
   var total = 0;
-  $('.rep-choice').each(function() {
+  $('ul.legislators :checkbox').each(function() {
     if (this.checked) {
-      total += 1;
+     total += 1;
     }
   });
   switch(total) {
@@ -24,4 +41,10 @@ function updateCost() {
       break;
   }
   $('h2.cost').text(cost_html);
+}
+
+function toggleRep(image) {
+  var checkbox = $(image).parent().parent().find(':checkbox');
+  checkbox.attr('checked', !checkbox.is(':checked'));
+  checkbox.trigger('change');
 }

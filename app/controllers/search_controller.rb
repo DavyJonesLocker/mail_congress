@@ -10,7 +10,7 @@ class SearchController < InheritedResources::Base
       :city       => geoloc.city,
       :state      => geoloc.state,
       :zip        => geoloc.zip,
-      :recipients => Legislator.search(geoloc)
+      :recipients => Legislator.search(geoloc).map { |legislator| Recipient.new(:legislator => legislator) }
     )
   end
 end

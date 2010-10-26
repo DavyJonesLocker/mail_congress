@@ -1,5 +1,5 @@
 class Letter < ActiveRecord::Base
-  has_many :recipient_legislators
-  has_many :recipients, :through => :recipient_legislators, :source => :legislator
+  has_many :recipients
+  has_many :legislators, :through => :recipients
   accepts_nested_attributes_for :recipients, :allow_destroy => true
 end
