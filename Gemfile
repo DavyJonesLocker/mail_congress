@@ -13,6 +13,9 @@ gem 'sass', '3.1.0.alpha.19'
 gem 'haml', '3.1.0.alpha.22'
 gem 'compass'
 
+gem 'resque'
+gem 'SystemTimer'
+
 group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'
