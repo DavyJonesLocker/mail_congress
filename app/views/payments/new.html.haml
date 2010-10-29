@@ -1,0 +1,24 @@
+= simple_form_for @payment, :url => payments_path do |payment|
+  = payment.input :firstname, :label => 'First name'
+  = payment.input :lastname, :label => 'Last name'
+  = payment.input :street, :label => 'Street address'
+  = payment.input :city, :label => 'City'
+  = payment.input :state, :label => 'State'
+  = payment.input :zip, :label => 'Zipcode'
+  = payment.input :acct, :label => 'Card number'
+  = payment.input :expdate, :label => 'Expires', :as => :date,
+    :discard_day => true, :order => [:month, :year], :add_month_numbers => true,
+    :start_year => Time.now.year, :end_year => Time.now.year + 10
+  = payment.input :cvv2, :label => 'CVV2'
+
+  = simple_fields_for @letter do |letter|
+    = letter.input :name_first, :as => :hidden
+    = letter.input :name_last, :as => :hidden
+    = letter.input :street, :as => :hidden
+    = letter.input :city, :as => :hidden
+    = letter.input :state, :as => :hidden
+    = letter.input :zip, :as => :hidden
+    = letter.input :body, :as => :hidden
+
+    = letter.simple_fields_for :recipients do |recipient|
+      = recipient.input :legislator_id, :as => :hidden

@@ -1,7 +1,6 @@
 When /^I write my letter to all of my congress people$/ do
   When %{I select my congress people}
   And  %{I write them a thank-you letter}
-  # And  %{I press "Send Letters"}
 end
 
 When /^I select my congress people$/ do
@@ -34,7 +33,7 @@ When /^I write them a thank\-you letter$/ do
   I just wanted to thank you for your service.
 LETTER
   fill_in('Body', :with => letter)
-  # When %{I press "Send"}
+  When %{I press "Send"}
 end
 
 When /^I click the label "([^"]*)"$/ do |text|
@@ -48,8 +47,8 @@ When /^I should see the mail icon for (\w+)$/ do |bioguide|
 end
 
 Then /^My letters should be on their way$/ do
-  pending
-  # Then %{I should see "Your letters are now being processed."}
-  # Then %{I should see "We will notify you when they arrive."}
+  Then %{the letter has print queued}
+  Then %{I should see "Your letters are now being processed."}
+  Then %{I should see "We will notify you when they arrive."}
 end
 

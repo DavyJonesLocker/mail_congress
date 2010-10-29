@@ -10,7 +10,7 @@
   = stylesheet_link_tag 'jquery.wysiwyg'
 
 %h1 Please choose whom you wish to write.
-= simple_form_for @letter do |letter|
+= simple_form_for @letter, :url => new_payment_path do |letter|
   = letter.input :street, :as => :hidden
   = letter.input :city, :as => :hidden
   = letter.input :state, :as => :hidden

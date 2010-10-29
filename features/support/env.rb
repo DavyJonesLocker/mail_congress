@@ -6,6 +6,7 @@
 
 require 'rubygems'
 require 'spork'
+require 'spork/ext/ruby-debug'
  
 Spork.prefork do
   ENV["RAILS_ENV"] ||= "test"

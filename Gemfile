@@ -33,8 +33,11 @@ group :test do
   gem 'database_cleaner'
   gem 'cucumber'
   gem 'cucumber-rails'
+  gem 'factory_girl'
+  gem 'factory_girl_rails'
   gem 'bourne'
   gem 'spork', '0.9.0.rc2'
   gem 'launchy'
   gem 'remarkable_activerecord', '4.0.0.alpha4'
+  gem 'resque_spec'
 end
