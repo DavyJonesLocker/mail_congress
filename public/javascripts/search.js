@@ -1,5 +1,5 @@
 $(function() {
-  $('form#address_search').submit(clientSideGeocoder);
+  //$('form#address_search').submit(clientSideGeocoder);
 });
 
 function clientSideGeocoder() {
@@ -35,20 +35,19 @@ function clientSideGeocoder() {
           return;
       }
       var csrf_token     = $('meta[name=csrf-token]').attr('content'),
-          csrf_param     = $('meta[name=csrf-param]').attr('content');
-      var search_form    = $('form#address_search');
-      var new_form       = $('<form method="post" action="'+search_form.attr('action')+'"</form>>');
-      var metadata_input = "";
+          csrf_param     = $('meta[name=csrf-param]').attr('content'),
+          form           = $('<form method="post" action="/search"></form>'),
+          metadata_input = "";
       $.each(geoloc, function(name, value) {
         metadata_input += '<input name="geoloc['+name+']" value="'+value+'" type="hidden" />';
       });
       if (csrf_param != null && csrf_token != null) {
         metadata_input += '<input name="'+csrf_param+'" value="'+csrf_token+'" type="hidden" />';
       }
-      new_form.hide()
+      form.hide()
           .append(metadata_input)
           .appendTo('body');
-      new_form.submit();
+      form.submit();
 
     } else {
       alert('Not a valid address.');

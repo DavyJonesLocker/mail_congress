@@ -1,24 +1,28 @@
 $(function() {
-  $('ul.legislators img').click(function() { toggleLegislator($(this).parent().parent()) });
+  $('ul.legislators .bioguide').click(function() { toggleLegislator($(this).parent()) });
   $('ul.legislators label').click(function() { toggleLegislator($(this).parent()); });
 });
 
 function toggleLegislator(list_item) {
-  toggleImage(list_item);
+  toggleBioguide(list_item);
   updateCost();
 }
 
-function toggleImage(list_item) {
-  var image = list_item.find('img');
-  var id    = list_item.find('.legislator_id')
+function toggleBioguide(list_item) {
+  var bioguide = list_item.find('.bioguide'),
+      id       = list_item.find('.legislator_id'),
+      mail   = list_item.find('img.mail');
+
   if (id.attr('disabled')) {
-    image.removeClass('monochrome');
-    image.addClass('color');
-    id.attr('disabled', null)
+    bioguide.removeClass('monochrome');
+    bioguide.addClass('color');
+    id.attr('disabled', null);
+    mail.fadeIn();
   } else {
-    image.removeClass('color');
-    image.addClass('monochrome');
-    id.attr('disabled', 'disabled')
+    bioguide.removeClass('color');
+    bioguide.addClass('monochrome');
+    id.attr('disabled', 'disabled');
+    mail.fadeOut();
   }
 }
 

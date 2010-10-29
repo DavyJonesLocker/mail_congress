@@ -65,7 +65,7 @@ order by legislators.district DESC
     end
 
     it 'should give a relative path to public/images for the proper bioguide image' do
-      @legislator.bioguide_image.should == 'bioguide/1234.jpg'
+      @legislator.bioguide_image.should == 'bioguides/1234.jpg'
     end
   end
 

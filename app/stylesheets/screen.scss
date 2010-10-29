@@ -37,17 +37,39 @@ ul.legislators {
     @include horizontal-list-item;
   }
   .bioguide {
+    position: relative;
     width: 100px;
     height: 125px;
     overflow: hidden;
+    border: 1px solid #FFF;
+    background-repeat: no-repeat;
+    img.mail {
+      position: absolute;
+      height: 16px;
+      width: 16px;
+      right: 5px;
+      bottom: 2px;
+      display: none;
+    }
   }
-  .bioguide img:hover, label {
+  .monochrome {
+    background-position: 100px 0px !important;
+  }
+  .color {
+    background-position: 0px 0px !important;
+  }
+  .bioguide:hover {
+    border: 1px solid blue;
     cursor: pointer;
   }
   img.monochrome {
     margin-left: -100px;
   }
-
+  label:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: blue;
+  }
 }
 
 #letter_body {

@@ -14,7 +14,7 @@ Then /^I should see my congress people$/ do
 end
 
 Then /^I should see bioguide image "([^"]*)"$/ do |image_id|
-  page.find("img[alt='#{image_id}']").should_not be_nil
+  page.find("div[style=\"background:url(\'/images/bioguides/#{image_id}.jpg\')\"]").should_not be_nil
 end
 
 When /^I submit the address form with bad information$/ do

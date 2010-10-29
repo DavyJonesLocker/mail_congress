@@ -684,20 +684,47 @@ ul.legislators li:last-child, ul.legislators li.last {
 }
 /* line 39, ../../../app/stylesheets/screen.scss */
 ul.legislators .bioguide {
+  position: relative;
   width: 100px;
   height: 125px;
   overflow: hidden;
+  border: 1px solid #FFF;
+  background-repeat: no-repeat;
 }
-/* line 44, ../../../app/stylesheets/screen.scss */
-ul.legislators .bioguide img:hover, ul.legislators label {
+/* line 46, ../../../app/stylesheets/screen.scss */
+ul.legislators .bioguide img.mail {
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  right: 5px;
+  bottom: 2px;
+  display: none;
+}
+/* line 55, ../../../app/stylesheets/screen.scss */
+ul.legislators .monochrome {
+  background-position: 100px 0px !important;
+}
+/* line 58, ../../../app/stylesheets/screen.scss */
+ul.legislators .color {
+  background-position: 0px 0px !important;
+}
+/* line 61, ../../../app/stylesheets/screen.scss */
+ul.legislators .bioguide:hover {
+  border: 1px solid blue;
   cursor: pointer;
 }
-/* line 47, ../../../app/stylesheets/screen.scss */
+/* line 65, ../../../app/stylesheets/screen.scss */
 ul.legislators img.monochrome {
   margin-left: -100px;
 }
+/* line 68, ../../../app/stylesheets/screen.scss */
+ul.legislators label:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: blue;
+}
 
-/* line 53, ../../../app/stylesheets/screen.scss */
+/* line 75, ../../../app/stylesheets/screen.scss */
 #letter_body {
   width: 600px;
   height: 300px;

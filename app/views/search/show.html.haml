@@ -18,9 +18,9 @@
 
   %ul.legislators
     = letter.simple_fields_for :recipients do |recipient|
-      %li
-        .bioguide
-          = image_tag recipient.object.legislator.bioguide_image, :class => 'monochrome'
+      %li{:id => recipient.object.legislator.bioguide_id}
+        .bioguide.monochrome{:style => "background:url('/images/#{recipient.object.legislator.bioguide_image}')"}
+          = image_tag 'icons/mail.png', :class => 'mail'
         = recipient.label :id, recipient.object.legislator.name
         = recipient.input :legislator_id, :as => :hidden, :input_html => { :class => 'legislator_id', :disabled => true }
   %h2.cost $0 no legislators chosen.

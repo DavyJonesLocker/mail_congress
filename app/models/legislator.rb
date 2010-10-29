@@ -22,7 +22,7 @@ order by legislators.district DESC
   end
 
   def bioguide_image
-    "bioguide/#{bioguide_id}.jpg"
+    "bioguides/#{bioguide_id}.jpg"
   end
 
 end
