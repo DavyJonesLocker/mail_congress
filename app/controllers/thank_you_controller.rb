@@ -1,5 +1,3 @@
 class ThankYouController < ApplicationController
-  def show
-    render :text => 'Thanks!'
-  end
+  def show; end
 end

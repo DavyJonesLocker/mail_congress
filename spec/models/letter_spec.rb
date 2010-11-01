@@ -21,4 +21,16 @@ describe Letter do
       @payment.zip.should       == @letter.zip
     end
   end
+
+  describe '#enqueue_print_job' do
+    before do
+      @letter = Letter.new
+      @letter.stubs(:id).returns(1)
+      @letter.enqueue_print_job
+    end
+
+    it 'will push a new print job to Resque' do
+      Letter.should have_queued(@letter.id, :print)
+    end
+  end
 end
