@@ -12,6 +12,7 @@ gem 'escape_utils'
 gem 'sass', '3.1.0.alpha.19'
 gem 'haml', '3.1.0.alpha.22'
 gem 'compass'
+gem 'activemerchant'
 
 gem 'resque'
 gem 'SystemTimer'

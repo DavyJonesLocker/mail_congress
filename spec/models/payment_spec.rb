@@ -4,11 +4,11 @@ describe Payment do
 
   describe '.new' do
     before do
-      @payment = Payment.new(:firstname => "John")
+      @payment = Payment.new(:first_name => "John")
     end
 
     it 'assigns the hash values to the accessors' do
-      @payment.firstname.should == "John"
+      @payment.first_name.should == "John"
     end
   end
 
@@ -29,6 +29,94 @@ describe Payment do
   describe '#to_key' do
     it 'always returns nil' do
       Payment.new.to_key.should be_nil
+    end
+  end
+
+  describe 'Making a payment' do
+    context 'when succesfull' do
+      before do
+        response  = mock('Response')
+        response.stubs(:success?).returns(true)
+        @gateway  = mock('PaypalGateway')
+        @gateway.stubs(:purchase).returns(response)
+        ActiveMerchant::Billing::PaypalGateway.stubs(:new).returns(@gateway)
+        @payment  = Factory.build(:payment)
+      end
+
+      context 'one letter purchased' do
+        before do
+          @result = @payment.make(1, {})
+        end
+
+        it 'creates a credit card' do
+          @payment.credit_card.should be_instance_of ActiveMerchant::Billing::CreditCard
+          @payment.credit_card.should be_valid
+        end
+
+        it 'creates a gateway' do
+          @payment.gateway.should == @gateway
+        end
+
+        it 'makes a purchase' do
+          @gateway.should have_received(:purchase).with(100, @payment.credit_card, @payment.options({}))
+        end
+
+        it 'should respond with success' do
+          @result.should be_true
+        end
+      end
+
+      context '3 letters purchased' do
+        before do
+          @result = @payment.make(3, {})
+        end
+
+        it 'makes a purchase' do
+          @gateway.should have_received(:purchase).with(300, @payment.credit_card, @payment.options({}))
+        end
+
+      end
+    end
+
+  end
+
+  describe '#paypal_credentials' do
+    before do
+      @file = mock('File')
+      File.stubs(:open).returns(@file)
+      YAML.stubs(:load)
+      payment = Payment.new
+      @credentials = payment.paypal_credentials
+    end
+
+    it 'reads from a file name chosen by the environment' do
+      File.should have_received(:open).with("#{Rails.root}/config/paypal/test.yml")
+    end
+
+    it 'loads the YAML' do
+      YAML.should have_received(:load).with(@file)
+    end
+  end
+
+  describe '#options' do
+    before do
+      @payment = Factory.build(:payment)
+      @options = @payment.options(:email => 'johndoe@test.com', :ip => '127.0.0.1')
+    end
+    
+    it 'builds an options hash' do
+      @options.should == {
+        :email => 'johndoe@test.com',
+        :billing_address => {
+          :name => 'John Doe',
+          :address_1 => '123 Fake St.',
+          :city => 'Boston',
+          :state => 'MA',
+          :zip => '02127',
+          :country => 'US',
+        },
+        :ip => '127.0.0.1'
+      }
     end
   end
 

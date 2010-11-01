@@ -1,11 +1,13 @@
 require 'rubygems'
 require 'spork'
+require 'spork/ext/ruby-debug'
 
 Spork.prefork do
   require 'bundler'
   Bundler.setup
   require 'rails/all'
   require 'ruby-debug'
+  require 'bourne'
   require 'rspec/rails'
   require 'remarkable/active_record'
   # Loading more in this block will cause your tests to run faster. However, 

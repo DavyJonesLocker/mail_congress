@@ -6,12 +6,12 @@ class Letter < ActiveRecord::Base
 
   def build_payment
     Payment.new(
-      :firstname => name_first,
-      :lastname  => name_last,
-      :street    => street,
-      :city      => city,
-      :state     => state,
-      :zip       => zip
+      :first_name => name_first,
+      :last_name  => name_last,
+      :street     => street,
+      :city       => city,
+      :state      => state,
+      :zip        => zip
     )
   end
 end
