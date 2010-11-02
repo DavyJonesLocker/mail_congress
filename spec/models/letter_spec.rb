@@ -22,15 +22,15 @@ describe Letter do
     end
   end
 
-  describe '#enqueue_print_job' do
+  describe '#to_pdf' do
     before do
-      @letter = Letter.new
-      @letter.stubs(:id).returns(1)
-      @letter.enqueue_print_job
+      @letter = Factory(:letter)
+      @pdf    = @letter.to_pdf
     end
 
-    it 'will push a new print job to Resque' do
-      Letter.should have_queued(@letter.id, :print)
+    it 'responds to #read' do
+      @pdf.should be_instance_of(String)
     end
   end
+
 end

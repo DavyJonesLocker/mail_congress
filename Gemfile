@@ -1,10 +1,8 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.1'
-gem 'mongrel', '1.2.0.pre2'
 gem 'pg'
 
-gem 'inherited_resources'
 gem 'simple_form'
 gem 'geokit'
 gem 'daemons'
@@ -13,9 +11,14 @@ gem 'sass', '3.1.0.alpha.19'
 gem 'haml', '3.1.0.alpha.22'
 gem 'compass'
 gem 'activemerchant'
-
 gem 'resque'
 gem 'SystemTimer'
+gem 'cups', :git => 'git@github.com:bcardarella/cups.git', :branch => 'options', :require => 'cups/print_job/transient'
+gem 'prawn'
+
+group :development do
+  gem 'mongrel', '1.2.0.pre2'
+end
 
 group :test, :development do
   gem 'rspec'

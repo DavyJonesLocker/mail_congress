@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(:version => 20101023062248) do
     t.string   "state"
     t.string   "zip"
     t.text     "body"
+    t.boolean  "printed",    :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

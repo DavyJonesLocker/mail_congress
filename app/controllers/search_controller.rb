@@ -1,7 +1,4 @@
-class SearchController < InheritedResources::Base
-  respond_to :html
-  defaults :resource_class => Legislator, :collection_name => 'legislators', :instance_name => 'legislators'
-  actions :show
+class SearchController < ApplicationController
 
   def show
     if params[:geoloc]

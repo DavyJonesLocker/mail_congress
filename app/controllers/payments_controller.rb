@@ -9,7 +9,7 @@ class PaymentsController < ApplicationController
     @payment = Payment.new(params[:payment])
     if @payment.make(@letter.recipients.size, { :email => @letter.email, :ip => request.headers["REMOTE_ADDR"] })
       @letter.save
-      @letter.enqueue_print_job
+      PrintJob.enqueue(@letter)
       redirect_to thank_you_path
     end
   end

@@ -9,6 +9,7 @@ class CreateLetters < ActiveRecord::Migration
       t.string :state
       t.string :zip
       t.text :body
+      t.boolean :printed, :default => false
       t.timestamps
     end
   end
