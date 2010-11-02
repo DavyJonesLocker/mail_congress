@@ -5,7 +5,6 @@ gem 'pg'
 
 gem 'simple_form'
 gem 'geokit'
-gem 'daemons'
 gem 'escape_utils'
 gem 'sass', '3.1.0.alpha.19'
 gem 'haml', '3.1.0.alpha.22'

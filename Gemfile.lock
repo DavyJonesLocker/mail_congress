@@ -238,7 +238,6 @@ DEPENDENCIES
   cucumber
   cucumber-rails
   cups!
-  daemons
   database_cleaner
   escape_utils
   factory_girl
