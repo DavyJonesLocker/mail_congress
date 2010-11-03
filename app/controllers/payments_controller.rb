@@ -1,7 +1,14 @@
 class PaymentsController < ApplicationController
   def new
-    @letter  = Letter.new(params[:letter])
-    @payment = @letter.build_payment
+    @letter = Letter.new(params[:letter])
+    @geoloc = GeoKit::GeoLoc.new(params[:geoloc])
+    @geoloc.success = true
+    if @letter.valid?
+      @payment = @letter.build_payment
+    else
+      @letter.recipients = Legislator.search(@geoloc).map { |legislator| Recipient.new(:legislator => legislator) }
+      render :template => 'search/show'
+    end
   end
 
   def create

@@ -1,13 +1,5 @@
 - content_for :javascript do
   = javascript_include_tag 'letter'
-  - unless true
-    = javascript_include_tag 'jquery.wysiwyg'
-    :javascript
-      $(function() {
-        $('#letter_body').wysiwyg();
-      });
-    - content_for :css do
-      = stylesheet_link_tag 'jquery.wysiwyg'
 
 %h1 Please choose whom you wish to write.
 = simple_form_for @letter, :url => new_payment_path do |letter|
@@ -15,6 +7,8 @@
   = letter.input :city, :as => :hidden
   = letter.input :state, :as => :hidden
   = letter.input :zip, :as => :hidden
+  = hidden_field_tag 'geoloc[lat]', @geoloc.lat
+  = hidden_field_tag 'geoloc[lng]', @geoloc.lng
 
   %ul.legislators
     = letter.simple_fields_for :recipients do |recipient|
@@ -24,6 +18,8 @@
         = recipient.label :id, recipient.object.legislator.name
         = recipient.input :legislator_id, :as => :hidden, :input_html => { :class => 'legislator_id', :disabled => true }
   %h2.cost $0 no legislators chosen.
+  - if !@letter.errors[:recipients].empty?
+    %h3= @letter.errors[:recipients].join(' ')
 
   = letter.input :body, :as => :text
   Sincerely,

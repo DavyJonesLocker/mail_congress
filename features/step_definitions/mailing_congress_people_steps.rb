@@ -26,7 +26,7 @@ When /^I unselect my congress people$/ do
   Then %{I should see "$0 no legislators chosen."}
 end
 
-When /^I write them a thank\-you letter$/ do
+When /^I write (?:|them )a thank\-you letter$/ do
   When %{I fill in "First name" with "John"}
   When %{I fill in "Last name" with "Doe"}
   letter = <<-LETTER

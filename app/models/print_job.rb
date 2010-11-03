@@ -11,10 +11,14 @@ class PrintJob
     print_job = Cups::PrintJob::Transient.new(letter.to_pdf)
     print_job.print
 
-    loop do
+    while print_job.state == :processing
       sleep(0.5)
-      break if print_job.state == :completed
     end
+
+    if print_job.state == :completed
+      letter.update_attribute(:printed, true)
+    end
+
   end
   
 end

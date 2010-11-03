@@ -3,6 +3,12 @@ class Letter < ActiveRecord::Base
   has_many :legislators, :through => :recipients
   accepts_nested_attributes_for :recipients, :allow_destroy => true
 
+  validates_presence_of :name_first, :name_last
+  validates_presence_of :street, :city, :state, :zip
+  validates_presence_of :body
+  
+  validate :presence_of_recipients
+
   def build_payment
     Payment.new(
       :first_name => name_first,
@@ -23,6 +29,14 @@ class Letter < ActiveRecord::Base
         pdf.start_new_page unless self.legislators.last == legislator
       end
     end.render
+  end
+
+  private
+
+  def presence_of_recipients
+    if recipients.empty?
+      self.errors.add(:recipients, "You must select at least one legislator.")
+    end
   end
 
 end

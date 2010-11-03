@@ -9,6 +9,11 @@ Feature: Finding Congress People
     When  I submit the address form with my information
     Then  I should see my congress people
 
+  Scenario: Submitting an empty search
+    Given I am on the home page
+    When  I press "Find"
+    Then  I should see "Home address is required."
+
   #@envjs
   #Scenario: Searching for my congress people with a client side geocode lookup
     #Given I do not expect a server side geocode lookup

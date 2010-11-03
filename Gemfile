@@ -15,6 +15,8 @@ gem 'SystemTimer'
 gem 'cups', :git => 'git@github.com:bcardarella/cups.git', :branch => 'options', :require => 'cups/print_job/transient'
 gem 'prawn'
 
+gem 'dynamic_form'
+
 group :development do
   gem 'mongrel', '1.2.0.pre2'
 end
