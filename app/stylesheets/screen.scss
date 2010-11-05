@@ -51,6 +51,9 @@ ul.legislators {
       bottom: 2px;
       display: none;
     }
+    img.selected {
+      display: inline;
+    }
   }
   .monochrome {
     background-position: 100px 0px !important;

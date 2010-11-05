@@ -1,6 +1,7 @@
 $(function() {
   $('ul.legislators .bioguide').click(function() { toggleLegislator($(this).parent()) });
   $('ul.legislators label').click(function() { toggleLegislator($(this).parent()); });
+  updateCost();
 });
 
 function toggleLegislator(list_item) {

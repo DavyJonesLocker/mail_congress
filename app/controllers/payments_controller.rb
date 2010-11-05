@@ -6,7 +6,7 @@ class PaymentsController < ApplicationController
     if @letter.valid?
       @payment = @letter.build_payment
     else
-      @letter.recipients = Legislator.search(@geoloc).map { |legislator| Recipient.new(:legislator => legislator) }
+      @letter.build_recipients(@geoloc)
       render :template => 'search/show'
     end
   end

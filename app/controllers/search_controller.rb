@@ -15,9 +15,10 @@ class SearchController < ApplicationController
       :street     => @geoloc.street_address,
       :city       => @geoloc.city,
       :state      => @geoloc.state,
-      :zip        => @geoloc.zip,
-      :recipients => Legislator.search(@geoloc).map { |legislator| Recipient.new(:legislator => legislator) }
+      :zip        => @geoloc.zip
     )
+
+    @letter.build_recipients(@geoloc)
   end
 
 end

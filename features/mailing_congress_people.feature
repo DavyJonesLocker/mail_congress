@@ -25,3 +25,10 @@ Feature: Mailing congress people
     Then  I should see the error "can't be blank" for "Body"
     And   I should see the error "can't be blank" for "First name"
     And   I should see the error "can't be blank" for "Last name"
+
+  Scenario: Persisting legislator choices after failed validation
+    Given I have found my congress people
+    When  I click the label "Sen. John Kerry"
+    And   I press "Send"
+    Then  legislator K000148 should be selected
+    And   I should see "$1 to send this letter."

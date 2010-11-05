@@ -13,11 +13,11 @@
   %ul.legislators
     = letter.simple_fields_for :recipients do |recipient|
       %li{:id => recipient.object.legislator.bioguide_id}
-        .bioguide.monochrome{:style => "background:url('/images/#{recipient.object.legislator.bioguide_image}')"}
-          = image_tag 'icons/mail.png', :class => 'mail'
+        %div{:class => "bioguide #{recipient.object.css_class}", :style => "background:url('/images/#{recipient.object.legislator.bioguide_image}')"}
+          = image_tag 'icons/mail.png', :class => "mail #{"selected" if recipient.object.selected?}".strip
         = recipient.label :id, recipient.object.legislator.name
-        = recipient.input :legislator_id, :as => :hidden, :input_html => { :class => 'legislator_id', :disabled => true }
-  %h2.cost $0 no legislators chosen.
+        = recipient.input :legislator_id, :as => :hidden, :input_html => { :class => 'legislator_id', :disabled => !recipient.object.selected? }
+  %h2.cost= cost_to_send_letters(@letter.recipients)
   - if !@letter.errors[:recipients].empty?
     %h3= @letter.errors[:recipients].join(' ')
 

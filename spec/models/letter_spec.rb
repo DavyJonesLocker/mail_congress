@@ -49,4 +49,46 @@ describe Letter do
     end
   end
 
+  describe '#build_recipients' do
+    before do
+      @geoloc = mock('GeoLoc')
+      @letter = Letter.new
+      @legislator = Legislator.first
+      Legislator.stubs(:search).returns([@legislator])
+    end
+
+    context 'no pre-existing recipients' do
+      before do
+        @letter.build_recipients(@geoloc)
+      end
+
+      it 'searches for Legislators' do
+        Legislator.should have_received(:search).with(@geoloc)
+      end
+
+      it 'will return Legislators not marked as selected' do
+        @letter.recipients.first.should_not be_selected
+      end
+    end
+
+    context 'pre-existing recipients' do
+      before do
+        @letter.recipients = [Recipient.new(:legislator => @legislator)]
+        @letter.build_recipients(@geoloc)
+      end
+
+      it 'seraches for Legislators' do
+        Legislator.should have_received(:search).with(@geoloc)
+      end
+
+      it 'marks all pre-existing recipients as selected' do
+        @letter.recipients.first.should be_selected
+      end
+
+      it 'will ignore duplicates from the Legislator.search results' do
+        @letter.recipients.size.should == 1
+      end
+    end
+  end
+
 end

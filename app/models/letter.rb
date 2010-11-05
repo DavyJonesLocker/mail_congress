@@ -31,6 +31,15 @@ class Letter < ActiveRecord::Base
     end.render
   end
 
+  def build_recipients(geoloc)
+    self.recipients.each { |recipient| recipient.selected = true }
+    selected_legislator_ids = self.recipients.map { |recipient| recipient.legislator_id }
+
+    self.recipients = Legislator.search(geoloc).map do |legislator|
+      Recipient.new(:legislator => legislator, :selected => selected_legislator_ids.include?(legislator.id))
+    end
+  end
+
   private
 
   def presence_of_recipients
