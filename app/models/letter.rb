@@ -11,8 +11,10 @@ class Letter < ActiveRecord::Base
 
   def build_payment
     Payment.new(
-      :first_name => name_first,
-      :last_name  => name_last,
+      :credit_card => {
+        :first_name => name_first,
+        :last_name  => name_last
+      },
       :street     => street,
       :city       => city,
       :state      => state,

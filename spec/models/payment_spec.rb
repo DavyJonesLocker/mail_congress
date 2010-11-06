@@ -1,14 +1,16 @@
 require 'spec_helper'
 
 describe Payment do
+  it { should validate_presence_of :street, :city, :state, :zip }
+  # it { should validate_associated :credit_card }
 
   describe '.new' do
     before do
-      @payment = Payment.new(:first_name => "John")
+      @payment = Payment.new(:street => 'Main St.')
     end
 
     it 'assigns the hash values to the accessors' do
-      @payment.first_name.should == "John"
+      @payment.street.should == 'Main St.'
     end
   end
 
@@ -26,6 +28,16 @@ describe Payment do
     end
   end
 
+  describe '#credit_card=' do
+    before do
+      @payment = Payment.new(:credit_card => { :number => 123 })
+    end
+
+    it 'creates an instance of ActiveMerchant::Billing::CreditCard' do
+      @payment.credit_card.should be_instance_of(CreditCard)
+    end
+  end
+
   describe '#to_key' do
     it 'always returns nil' do
       Payment.new.to_key.should be_nil
@@ -33,24 +45,22 @@ describe Payment do
   end
 
   describe 'Making a payment' do
+    before do
+      @response = mock('Response')
+      @response.stubs(:success?).returns(true)
+      @gateway  = mock('PaypalGateway')
+      @gateway.stubs(:purchase).returns(@response)
+      ActiveMerchant::Billing::PaypalGateway.stubs(:new).returns(@gateway)
+    end
+
     context 'when succesfull' do
       before do
-        response  = mock('Response')
-        response.stubs(:success?).returns(true)
-        @gateway  = mock('PaypalGateway')
-        @gateway.stubs(:purchase).returns(response)
-        ActiveMerchant::Billing::PaypalGateway.stubs(:new).returns(@gateway)
-        @payment  = Factory.build(:payment)
+        @payment = Factory.build(:payment)
       end
 
       context 'one letter purchased' do
         before do
           @result = @payment.make(1, {})
-        end
-
-        it 'creates a credit card' do
-          @payment.credit_card.should be_instance_of ActiveMerchant::Billing::CreditCard
-          @payment.credit_card.should be_valid
         end
 
         it 'creates a gateway' do

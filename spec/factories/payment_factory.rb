@@ -1,11 +1,13 @@
 Factory.define :payment do |payment|
-  payment.number              { '4149244372702504' }
-  payment.month               { '10' }
-  payment.year                { '2015' }
-  payment.verification_value  { '000' }
-
-  payment.first_name          { 'John' }
-  payment.last_name           { 'Doe' }
+  payment.credit_card {
+    { :number             => '4149244372702504',
+      :month              => '10',
+      :year               => '2015',
+      :verification_value => '000',
+      :first_name         => 'John',
+      :last_name          => 'Doe'
+    }
+  }
 
   payment.street              { '123 Fake St.' }
   payment.city                { 'Boston' }

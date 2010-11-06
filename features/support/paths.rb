@@ -10,6 +10,8 @@ module NavigationHelpers
 
     when /the home\s?page/
       root_path
+    when /the payment page/
+      '/payments/new'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

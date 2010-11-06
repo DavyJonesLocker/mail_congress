@@ -1,17 +1,31 @@
 class Payment
+  class AssociatedValidator < ActiveModel::EachValidator
+    def validate_each(record, attribute, value)
+      return if (value.is_a?(Array) ? value : [value]).collect{ |r| r.nil? || r.valid? }.all?
+      record.errors.add(attribute, :invalid, options.merge(:value => value))
+    end
+  end
+
+  def self.validates_associated(*attr_names)
+    validates_with AssociatedValidator, _merge_attributes(attr_names)
+  end
+  
   include ActiveModel::Validations
   
-  attr_accessor :number, :month, :year, :verification_value
-
-  attr_accessor :first_name, :last_name
   attr_accessor :street, :city, :state, :zip
-
   attr_accessor :gateway, :credit_card
+
+  validates_presence_of :street, :city, :state, :zip
+  validates_associated  :credit_card
 
   def initialize(attributes = {})
     attributes.each do |key, value|
       self.send("#{key}=", value)
     end
+  end
+
+  def credit_card=(attributes={})
+    @credit_card = CreditCard.new(attributes)
   end
 
   def self.model_name
@@ -24,16 +38,12 @@ class Payment
 
   def make(number, extra_options)
     self.gateway = ActiveMerchant::Billing::PaypalGateway.new(paypal_credentials)
-    self.credit_card = ActiveMerchant::Billing::CreditCard.new(
-      :number             => self.number,
-      :month              => self.month,
-      :year               => self.year,
-      :verification_value => self.verification_value,
-      :first_name         => self.first_name,
-      :last_name          => self.last_name
-    )
-    response = gateway.purchase(100 * number, credit_card, options(extra_options))
-    response.success?
+    if self.valid?
+      response = gateway.purchase(100 * number, credit_card, options(extra_options))
+      response.success?
+    else
+      false
+    end
   end
 
   def paypal_credentials
@@ -44,7 +54,7 @@ class Payment
   def options(extras)
     {
       :billing_address => {
-        :name      => "#{self.first_name} #{self.last_name}",
+        :name      => "#{self.credit_card.name}",
         :address_1 => self.street,
         :city      => self.city,
         :state     => self.state,

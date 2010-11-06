@@ -29,12 +29,12 @@ describe Letter do
 
     it 'builds a new instance of Payment copying the proper values' do
       @payment.should be_instance_of(Payment)
-      @payment.first_name.should == @letter.name_first
-      @payment.last_name.should  == @letter.name_last
-      @payment.street.should     == @letter.street
-      @payment.city.should       == @letter.city
-      @payment.state.should      == @letter.state
-      @payment.zip.should        == @letter.zip
+      @payment.credit_card.first_name.should == @letter.name_first
+      @payment.credit_card.last_name.should  == @letter.name_last
+      @payment.street.should                 == @letter.street
+      @payment.city.should                   == @letter.city
+      @payment.state.should                  == @letter.state
+      @payment.zip.should                    == @letter.zip
     end
   end
 
