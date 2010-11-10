@@ -20,4 +20,8 @@ class Sender < ActiveRecord::Base
   def envelope_text
     "#{first_name} #{last_name}\n#{street}\n#{city}, #{state} #{zip}"
   end
+
+  def name
+    "#{first_name} #{last_name}"
+  end
 end
