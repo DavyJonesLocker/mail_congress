@@ -9,11 +9,11 @@ Given /^a new enqueued letter with (\d+) recipient$/ do |count|
   end
 
   letter = Factory(:letter, :recipients => recipients)
-  Resque::Job.create('print_jobs-test', PrintJob, letter.id)
+  Resque::Job.create('high', PrintJob, letter.id)
 end
 
 When /^the job is processed$/ do
-  worker = Resque::Worker.new('print_jobs-test')
+  worker = Resque::Worker.new('high')
   job    = worker.reserve
   worker.perform(job)
   worker.failed.should == 0

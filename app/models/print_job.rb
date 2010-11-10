@@ -1,5 +1,5 @@
 class PrintJob
-  @queue = "print_jobs-#{Rails.env}"
+  @queue = 'high'
 
   def self.enqueue(letter)
     Resque.enqueue(PrintJob, letter.id)
