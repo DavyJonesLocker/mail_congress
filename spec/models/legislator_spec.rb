@@ -80,7 +80,7 @@ order by legislators.district DESC
     end
 
     it 'formats the address information for printing on the evelope' do
-      @legislator.envelope_text.should == "John Doe\n2243 Rayburn House Office Building\nWashington, DC 20515"
+      @legislator.envelope_text.should == "Rep. John Doe\n2243 Rayburn House Office Building\nWashington, DC 20515"
     end
   end
 

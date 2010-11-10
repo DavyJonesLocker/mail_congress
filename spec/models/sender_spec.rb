@@ -4,6 +4,8 @@ describe Sender do
   it { should have_many :letters }
   it { should validate_presence_of :first_name, :last_name }
   it { should validate_presence_of :street, :city, :state, :zip }
+  it { should allow_values_for(:email, 'john@test.com') }
+  it { should_not allow_values_for(:email, 'john', 'john@', '.com')}
   
   describe 'validations' do
     describe 'email' do
