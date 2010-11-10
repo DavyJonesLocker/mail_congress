@@ -38,12 +38,8 @@ class Payment
 
   def make(number, extra_options)
     self.gateway = ActiveMerchant::Billing::PaypalGateway.new(paypal_credentials)
-    if self.valid?
-      response = gateway.purchase(100 * number, credit_card, options(extra_options))
-      response.success?
-    else
-      false
-    end
+    response = gateway.purchase(100 * number, credit_card, options(extra_options))
+    response.success?
   end
 
   def paypal_credentials

@@ -2,6 +2,7 @@ class Sender < ActiveRecord::Base
   has_many :letters
   validates_presence_of :first_name, :last_name
   validates_presence_of :street, :city, :state, :zip
+  validates_presence_of :email, :unless => Proc.new { |sender| sender.email.nil? }
   
   def build_payment
     Payment.new(

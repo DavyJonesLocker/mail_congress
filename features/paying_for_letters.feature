@@ -12,7 +12,8 @@ Feature: Paying for letters
     When  I write my letter to all of my congress people
     And   I clear all of the fields
     And   I press "Make payment"
-    Then  I should see the error "can't be blank" for "First name"
+    Then  I should see the error "can't be blank" for "Email"
+    And   I should see the error "can't be blank" for "First name"
     And   I should see the error "can't be blank" for "Last name"
     And   I should see the error "can't be blank" for "Street address"
     And   I should see the error "can't be blank" for "City"

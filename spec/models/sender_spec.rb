@@ -4,6 +4,7 @@ describe Sender do
   it { should have_many :letters }
   it { should validate_presence_of :first_name, :last_name }
   it { should validate_presence_of :street, :city, :state, :zip }
+  it { should validate_presence_of :email }
   
   describe '#build_payment' do
     before do
