@@ -17,12 +17,13 @@ class Letter < ActiveRecord::Base
     fit_letter_on_one_page
 
     Prawn::Document.new do |pdf|
-      pdf.font_size self.font_size
       self.legislators.each do |legislator|
-        pdf.text "#{legislator.name}", :leading => font_size
+        pdf.font_size self.font_size
+        pdf.text "#{legislator.name},", :leading => font_size
         pdf.text self.body
-        pdf.text "Your constituent,\n"
+        pdf.text "Your constituent,\n#{sender.name}", :align => :right
         pdf.start_new_page
+        pdf.font_size 12
         pdf.text_box sender.envelope_text, 
           :at => [pdf.bounds.left, pdf.bounds.top * 0.65]
         pdf.text_box legislator.envelope_text,
@@ -59,7 +60,7 @@ class Letter < ActiveRecord::Base
 
   def fit_letter_on_one_page
     self.font_size     = 12.0
-    self.min_font_size = 6.5
+    self.min_font_size = 7
 
     document = Prawn::Document.new
     text     = "\n\n#{body}\n\n\n"

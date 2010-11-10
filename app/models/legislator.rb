@@ -26,7 +26,7 @@ order by legislators.district DESC
   end
 
   def envelope_text
-    "#{firstname} #{lastname}\n#{congress_office}\nWashington, DC #{zip}"
+    "#{name}\n#{congress_office}\nWashington, DC #{zip}"
   end
 
   def zip
