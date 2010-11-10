@@ -130,4 +130,10 @@ describe Letter do
     end
   end
 
+  # describe '#preview' do
+    # before do
+      # @letter = Factory.build(:letter)
+    # end
+  # end
+
 end

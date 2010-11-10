@@ -1,6 +1,7 @@
 When /^I write my letter to all of my congress people$/ do
   When %{I select my congress people}
   And  %{I write them a thank-you letter}
+  When %{I press "Send"}
 end
 
 When /^I select my congress people$/ do
@@ -33,7 +34,6 @@ When /^I write (?:|him |her |them )a thank\-you letter$/ do
   I just wanted to thank you for your service.
 LETTER
   fill_in('Body', :with => letter)
-  When %{I press "Send"}
 end
 
 When /^I click the label "([^"]*)"$/ do |text|

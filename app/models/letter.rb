@@ -64,6 +64,7 @@ class Letter < ActiveRecord::Base
 
     document = Prawn::Document.new
     text     = "\n\n#{body}\n\n\n"
+    box      = nil
     loop do
       box = Prawn::Text::Box.new(text, :width => document.bounds.width, :height => document.bounds.height, :document => document, :size => font_size)
       if box.render == ""

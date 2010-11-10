@@ -15,6 +15,7 @@ Feature: Mailing congress people
   Scenario: Submitting a letter with no legislators selected
     Given I have found my congress people
     When  I write a thank-you letter
+    When  I press "Send"
     Then  I should see my congress people
     Then  I should see "You must select at least one legislator."
 

@@ -14,6 +14,7 @@ gem 'resque'
 gem 'SystemTimer'
 gem 'cups', :git => 'git@github.com:bcardarella/cups.git', :branch => 'options', :require => 'cups/print_job/transient'
 gem 'prawn', :git => 'git://github.com/bcardarella/prawn.git', :submodules => true
+gem 'rmagick'
 
 gem 'dynamic_form'
 
