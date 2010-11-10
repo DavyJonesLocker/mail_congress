@@ -17,6 +17,8 @@ class PrintJob
 
     if print_job.state == :completed
       letter.update_attribute(:printed, true)
+    else
+      self.enqueue(letter)
     end
 
   end

@@ -57,7 +57,9 @@ describe PrintJob do
         Cups::PrintJob::Transient.stubs(:new).returns(@cups_print_job)
         @letter = Factory.build(:letter)
         @letter.stubs(:to_pdf).returns('')
+        @letter.stubs(:update_attribute)
         Letter.stubs(:find).returns(@letter)
+        PrintJob.stubs(:enqueue)
         PrintJob.perform(@letter.id)
       end
 
@@ -66,7 +68,11 @@ describe PrintJob do
       end
 
       it 'does not mark the letter as printed' do
-        @letter.should_not be_printed
+        @letter.should_not have_received(:update_attribute)
+      end
+
+      it 'should re-enqueue the job' do
+        PrintJob.should have_received(:enqueue).with(@letter)
       end
     end
   end
