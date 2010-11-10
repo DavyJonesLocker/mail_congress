@@ -12,10 +12,12 @@ class SearchController < ApplicationController
     end
 
     @letter = Letter.new(
-      :street     => @geoloc.street_address,
-      :city       => @geoloc.city,
-      :state      => @geoloc.state,
-      :zip        => @geoloc.zip
+      :sender_attributes => {
+        :street     => @geoloc.street_address,
+        :city       => @geoloc.city,
+        :state      => @geoloc.state,
+        :zip        => @geoloc.zip
+      }
     )
 
     @letter.build_recipients(@geoloc)

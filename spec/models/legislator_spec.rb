@@ -69,5 +69,34 @@ order by legislators.district DESC
     end
   end
 
+  describe '#evelope_text' do
+    before do
+      @legislator = Legislator.new(
+        :firstname      => 'John',
+        :lastname       => 'Doe',
+        :congress_office => '2243 Rayburn House Office Building',
+        :title           => 'Rep'
+      )
+    end
+
+    it 'formats the address information for printing on the evelope' do
+      @legislator.envelope_text.should == "John Doe\n2243 Rayburn House Office Building\nWashington, DC 20515"
+    end
+  end
+
+  describe '#zip' do
+    context 'Senators' do
+      it { Legislator.new(:title => 'Sen').zip.should == '20510' }
+    end
+    context 'Represenatives' do
+      it { Legislator.new(:title => 'Rep').zip.should == '20515' }
+    end
+    context 'Delegates' do
+      it { Legislator.new(:title => 'Del').zip.should == '20515' }
+    end
+    context 'Resident Commissioner' do
+      it { Legislator.new(:title => 'Com').zip.should == '20515' }
+    end
+  end
 end
 

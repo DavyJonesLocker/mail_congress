@@ -3,16 +3,16 @@ require 'spec_helper'
 describe Letter do
   it { should have_many :recipients }
   it { should have_many :legislators, :through => :recipients }
+  it { should belong_to :sender }
   it { should accept_nested_attributes_for :recipients }
-  it { should validate_presence_of :name_first, :name_last }
-  it { should validate_presence_of :street, :city, :state, :zip }
+  it { should accept_nested_attributes_for :sender }
   it { should validate_presence_of :body }
 
   describe 'validate there is at least 1 recipient' do
     before do
       @letter_without_recipients = Letter.new
-      @letter_without_recipients.valid?
       @letter_with_recipients    = Letter.new(:recipients => [Recipient.new])
+      @letter_without_recipients.valid?
       @letter_with_recipients.valid?
     end
 
@@ -21,31 +21,56 @@ describe Letter do
     end
   end
 
-  describe '#build_payment' do
+  describe 'validate the length of text for body' do
     before do
-      @letter  = Factory.build(:letter)
-      @payment = @letter.build_payment
+      @letter = Letter.new
+      
+      @text = <<-TEXT
+      This is sample Text
+
+      Paragraph 1
+
+      Paragraph 2
+      TEXT
     end
 
-    it 'builds a new instance of Payment copying the proper values' do
-      @payment.should be_instance_of(Payment)
-      @payment.credit_card.first_name.should == @letter.name_first
-      @payment.credit_card.last_name.should  == @letter.name_last
-      @payment.street.should                 == @letter.street
-      @payment.city.should                   == @letter.city
-      @payment.state.should                  == @letter.state
-      @payment.zip.should                    == @letter.zip
+    context 'when it is too long to fit' do
+      before do
+        @letter.body = @text * 500
+        @letter.valid?
+      end
+
+      it 'should not be valid for :body' do
+        @letter.errors[:body].should include('The letter is too long to fit on one page.')
+      end
+    end
+
+    context 'when the text is too long for the standard font size' do
+      before do
+        @letter.body = @text * 10
+        @letter.valid?
+      end
+
+      it 'should be valid for :body' do
+        @letter.errors[:body].should be_empty
+      end
+
+      it 'should reduce the font_size from 12' do
+        @letter.font_size.should < 12
+      end
     end
   end
 
   describe '#to_pdf' do
     before do
-      @letter = Factory(:letter)
-      @pdf    = @letter.to_pdf
+      Prawn::Document.any_instance.stubs(:render)
+      @letter   = Factory(:letter, :sender => Factory.build(:sender))
+      @letter.stubs(:fit_letter_on_one_page)
+      @pdf      = @letter.to_pdf
     end
 
-    it 'responds to #read' do
-      @pdf.should be_instance_of(String)
+    it 'renders a pdf' do
+      Prawn::Document.any_instance.should have_received(:render)
     end
   end
 
@@ -87,6 +112,20 @@ describe Letter do
 
       it 'will ignore duplicates from the Legislator.search results' do
         @letter.recipients.size.should == 1
+      end
+    end
+  end
+
+  context 'a sender email address already exists' do
+    before do
+      @sender = Factory(:sender)
+    end
+
+    describe 'instantizing a new letter with sender attributes' do
+      it 'searches for an existing sender with the same email address and updates the sender_attributes as well as #sender_id' do
+        letter = Letter.new(:sender_attributes => {:email => @sender.email})
+        letter.sender_id.should == @sender.id
+        letter.sender.id.should == @sender.id
       end
     end
   end

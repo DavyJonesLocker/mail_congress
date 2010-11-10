@@ -1,4 +1,8 @@
 = simple_form_for @payment, :url => payments_path do |payment|
+  = simple_fields_for @letter do |letter|
+    = letter.simple_fields_for :sender do |sender|
+      = sender.input :email
+
   = payment.simple_fields_for :credit_card, @payment.credit_card do |credit_card|
     = credit_card.input :first_name, :label => 'First name'
     = credit_card.input :last_name, :label => 'Last name'
@@ -15,13 +19,14 @@
     = credit_card.input :verification_value, :label => 'CVV2'
 
   = simple_fields_for @letter do |letter|
-    = letter.input :name_first, :as => :hidden
-    = letter.input :name_last, :as => :hidden
-    = letter.input :street, :as => :hidden
-    = letter.input :city, :as => :hidden
-    = letter.input :state, :as => :hidden
-    = letter.input :zip, :as => :hidden
     = letter.input :body, :as => :hidden
+    = letter.simple_fields_for :sender do |sender|
+      = sender.input :first_name, :as => :hidden
+      = sender.input :last_name, :as => :hidden
+      = sender.input :street, :as => :hidden
+      = sender.input :city, :as => :hidden
+      = sender.input :state, :as => :hidden
+      = sender.input :zip, :as => :hidden
 
     = letter.simple_fields_for :recipients do |recipient|
       = recipient.input :legislator_id, :as => :hidden

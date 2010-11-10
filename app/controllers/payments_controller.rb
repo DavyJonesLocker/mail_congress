@@ -5,7 +5,7 @@ class PaymentsController < ApplicationController
     @geoloc.success = true
 
     if @letter.valid?
-      @payment = @letter.build_payment
+      @payment = @letter.sender.build_payment
     else
       @letter.build_recipients(@geoloc)
       render :template => 'search/show'
@@ -16,7 +16,7 @@ class PaymentsController < ApplicationController
     @letter  = Letter.new(params[:letter])
     @payment = Payment.new(params[:payment])
 
-    if @payment.make(@letter.recipients.size, { :email => @letter.email, :ip => request.headers["REMOTE_ADDR"] })
+    if @payment.make(@letter.recipients.size, { :email => @letter.sender.email, :ip => request.headers["REMOTE_ADDR"] })
       @letter.save
       PrintJob.enqueue(@letter)
       redirect_to thank_you_path

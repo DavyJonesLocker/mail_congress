@@ -25,5 +25,17 @@ order by legislators.district DESC
     "bioguides/#{bioguide_id}.jpg"
   end
 
+  def envelope_text
+    "#{firstname} #{lastname}\n#{congress_office}\nWashington, DC #{zip}"
+  end
+
+  def zip
+    if title == 'Sen'
+      '20510'
+    else
+      '20515'
+    end
+  end
+
 end
 

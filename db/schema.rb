@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101023062248) do
+ActiveRecord::Schema.define(:version => 20101106155442) do
 
 # Could not dump table "cd99_110" because of following StandardError
 #   Unknown type 'geometry' for column 'the_geom'
@@ -60,13 +60,7 @@ ActiveRecord::Schema.define(:version => 20101023062248) do
   add_index "legislators", ["district"], :name => "legislators_district"
 
   create_table "letters", :force => true do |t|
-    t.string   "email"
-    t.string   "name_first"
-    t.string   "name_last"
-    t.string   "street"
-    t.string   "city"
-    t.string   "state"
-    t.string   "zip"
+    t.integer  "sender_id"
     t.text     "body"
     t.boolean  "printed",    :default => false
     t.datetime "created_at"
@@ -76,6 +70,18 @@ ActiveRecord::Schema.define(:version => 20101023062248) do
   create_table "recipients", :force => true do |t|
     t.integer  "letter_id"
     t.string   "legislator_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "senders", :force => true do |t|
+    t.string   "email"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

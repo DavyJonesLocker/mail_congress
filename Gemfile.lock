@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/bcardarella/prawn.git
+  revision: 15be00b538909259fa85b32053aa00c7cbbd8353
+  submodules: true
+  specs:
+    prawn (0.11.1.pre)
+      pdf-reader (>= 0.8.1)
+
+GIT
   remote: git@github.com:bcardarella/cups.git
   revision: cb095b7c41a459543a5223d1692dbc0c136d86f6
   branch: options
@@ -16,6 +24,7 @@ GIT
 GEM
   remote: http://rubygems.org/
   specs:
+    Ascii85 (1.0.0)
     SystemTimer (1.2)
     ZenTest (4.4.0)
     abstract (1.0.0)
@@ -131,15 +140,10 @@ GEM
       daemons (~> 1.0.10)
       gem_plugin (~> 0.2.3)
     nokogiri (1.4.3.1)
+    pdf-reader (0.8.6)
+      Ascii85 (>= 0.9)
     pg (0.9.0)
     polyglot (0.3.1)
-    prawn (0.8.4)
-      prawn-core (>= 0.8.4, < 0.9)
-      prawn-layout (>= 0.8.4, < 0.9)
-      prawn-security (>= 0.8.4, < 0.9)
-    prawn-core (0.8.4)
-    prawn-layout (0.8.4)
-    prawn-security (0.8.4)
     rack (1.2.1)
     rack-mount (0.6.13)
       rack (>= 1.0.0)
@@ -249,7 +253,7 @@ DEPENDENCIES
   launchy
   mongrel (= 1.2.0.pre2)
   pg
-  prawn
+  prawn!
   rails (= 3.0.1)
   remarkable_activerecord (= 4.0.0.alpha4)
   resque

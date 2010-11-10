@@ -13,7 +13,7 @@ gem 'activemerchant'
 gem 'resque'
 gem 'SystemTimer'
 gem 'cups', :git => 'git@github.com:bcardarella/cups.git', :branch => 'options', :require => 'cups/print_job/transient'
-gem 'prawn'
+gem 'prawn', :git => 'git://github.com/bcardarella/prawn.git', :submodules => true
 
 gem 'dynamic_form'
 

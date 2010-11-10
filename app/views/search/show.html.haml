@@ -3,10 +3,11 @@
 
 %h1 Please choose whom you wish to write.
 = simple_form_for @letter, :url => new_payment_path do |letter|
-  = letter.input :street, :as => :hidden
-  = letter.input :city, :as => :hidden
-  = letter.input :state, :as => :hidden
-  = letter.input :zip, :as => :hidden
+  = letter.simple_fields_for :sender do |sender|
+    = sender.input :street, :as => :hidden
+    = sender.input :city, :as => :hidden
+    = sender.input :state, :as => :hidden
+    = sender.input :zip, :as => :hidden
   = hidden_field_tag 'geoloc[lat]', @geoloc.lat
   = hidden_field_tag 'geoloc[lng]', @geoloc.lng
 
@@ -23,6 +24,7 @@
 
   = letter.input :body, :as => :text
   Sincerely,
-  = letter.input :name_first, :label => 'First name'
-  = letter.input :name_last, :label => 'Last name'
+  = letter.simple_fields_for :sender do |sender|
+    = sender.input :first_name, :label => 'First name'
+    = sender.input :last_name, :label => 'Last name'
   = letter.submit 'Send'
