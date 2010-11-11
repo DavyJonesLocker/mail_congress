@@ -1,7 +1,7 @@
 $(function() {
   $('ul.legislators .bioguide').click(function() { toggleLegislator($(this).parent()) });
   $('ul.legislators label').click(function() { toggleLegislator($(this).parent()); });
-  $('.preview').change(showLetterPreview);
+  $('.preview').keyup(showLetterPreview);
   updateCost();
   showLetterPreview();
 });
@@ -36,6 +36,7 @@ function previewLetter() {
   $.each($('.preview'), function(index, input) {
     data[input.getAttribute('name')] = input.value;
   })
+  $('#letter_preview').html('<img src="/images/ajax-loader.gif" />');
   $.ajax({
     type: 'POST',
     url: '/letters/preview',
