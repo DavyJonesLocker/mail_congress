@@ -1,8 +1,51 @@
 $(function() {
   $('ul.legislators .bioguide').click(function() { toggleLegislator($(this).parent()) });
   $('ul.legislators label').click(function() { toggleLegislator($(this).parent()); });
+  $('.preview').change(showLetterPreview);
   updateCost();
+  showLetterPreview();
 });
+
+function showLetterPreview() {
+  var present = true;
+  $.each($('.preview'), function(index, input) {
+    // This crazy conditional is necessary for Capybara-Envjs...
+    // Capybara-Envjs sets .innerText on TEXTAREA elements instead of .value
+    if (typeof(Ruby) != 'undefined') {
+      if (input.tagName == 'TEXTAREA') {
+        var value = input.innerText;
+      } else {
+        var value = input.value;
+      }
+    } else {
+      var value = input.value;
+    }
+    present = present && value.length > 0;
+  });
+
+  if (present) {
+    $('#letter_preview').html("<a href='/letters/preview' data-preview='true'>Preview letter</a>");
+    $('a[data-preview]').click(previewLetter);
+  } else {
+    $('#letter_preview').html('');
+  }
+}
+
+function previewLetter() {
+  data = {}
+  $.each($('.preview'), function(index, input) {
+    data[input.getAttribute('name')] = input.value;
+  })
+  $.ajax({
+    type: 'POST',
+    url: '/letters/preview',
+    data: data,
+    success: function(data, status, xhr) {
+      $('#letter_preview').html('<img src="/images/tmp/' + data + '"/>')
+    }
+  });
+  return false;
+}
 
 function toggleLegislator(list_item) {
   toggleBioguide(list_item);

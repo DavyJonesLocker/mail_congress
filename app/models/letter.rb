@@ -20,7 +20,7 @@ class Letter < ActiveRecord::Base
       self.legislators.each do |legislator|
         pdf.font_size self.font_size
         pdf.text "#{legislator.name},", :leading => font_size
-        pdf.text self.body
+        pdf.text self.body, :indent_paragraphs => font_size
         pdf.text "Your constituent,\n#{sender.name}", :align => :right
         pdf.start_new_page
         pdf.font_size 12
@@ -48,6 +48,24 @@ class Letter < ActiveRecord::Base
       self.sender_id   = sender.id
     end
     assign_nested_attributes_for_one_to_one_association(:sender, attributes)
+  end
+
+  def to_png
+    fit_letter_on_one_page
+    document = Prawn::Document.new do |pdf|
+      pdf.font_size self.font_size
+      pdf.text "Legislator's Name,", :leading => font_size
+      pdf.text self.body, :indent_paragraphs => font_size
+      pdf.text "Your constituent,\n#{sender.name}", :align => :right
+    end
+    file_name  = "#{Digest::SHA1.hexdigest("#{body}-#{sender.name}-#{Time.now}")}.png"
+    base64     = Base64.encode64(document.render)
+    images     = Magick::Image.read_inline(base64)
+    image_list = Magick::ImageList.new
+    images.each { |image| image.border!(1,1, '#000000') }
+    images.map  { |image| image_list.push(image.extent(image.columns, image.rows + 5)) }
+    image_list.append(true).write("#{Rails.root}/public/images/tmp/#{file_name}")
+    file_name
   end
 
   private

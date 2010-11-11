@@ -130,10 +130,17 @@ describe Letter do
     end
   end
 
-  # describe '#preview' do
-    # before do
-      # @letter = Factory.build(:letter)
-    # end
-  # end
+  describe '#to_png' do
+    before do
+      @letter    = Factory.build(:letter)
+      @file_name = @letter.to_png
+    end
+
+    it 'writes a PNG' do
+      expect {
+        file = File.open("#{Rails.root}/public/images/tmp/#{@file_name}")
+      }.to_not raise_error
+    end
+  end
 
 end

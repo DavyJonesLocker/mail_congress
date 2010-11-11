@@ -22,9 +22,11 @@
   - if !@letter.errors[:recipients].empty?
     %h3= @letter.errors[:recipients].join(' ')
 
-  = letter.input :body, :as => :text
+  = letter.input :body, :as => :text, :input_html =>  { :class => :preview }
   Sincerely,
   = letter.simple_fields_for :sender do |sender|
-    = sender.input :first_name, :label => 'First name'
-    = sender.input :last_name, :label => 'Last name'
+    = sender.input :first_name, :label => 'First name', :input_html => { :class => :preview }
+    = sender.input :last_name, :label => 'Last name', :input_html => { :class => :preview }
   = letter.submit 'Send'
+
+#letter_preview

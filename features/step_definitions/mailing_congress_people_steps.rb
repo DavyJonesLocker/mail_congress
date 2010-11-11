@@ -30,10 +30,7 @@ end
 When /^I write (?:|him |her |them )a thank\-you letter$/ do
   When %{I fill in "First name" with "John"}
   When %{I fill in "Last name" with "Doe"}
-  letter = <<-LETTER
-  I just wanted to thank you for your service.
-LETTER
-  fill_in('Body', :with => letter)
+  When %{I fill in "Body" with "I just wanted to thank you for your service."}
 end
 
 When /^I click the label "([^"]*)"$/ do |text|

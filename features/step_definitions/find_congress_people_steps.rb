@@ -13,9 +13,6 @@ Then /^I should see my congress people$/ do
   Then %{I should see bioguide image "L000562"}
 end
 
-Then /^I should see bioguide image "([^"]*)"$/ do |image_id|
-  page.find("div[style=\"background:url(\'/images/bioguides/#{image_id}.jpg\')\"]").should_not be_nil
-end
 
 When /^I submit the address form with bad information$/ do
   When %{I fill in "Address" with "Africa"}
