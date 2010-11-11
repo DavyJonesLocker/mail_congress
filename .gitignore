@@ -5,4 +5,4 @@ tmp/**/*
 *.swp
 rerun.txt
 paypal/production.yml
-public/images/tmp/*
+public/images/tmp
