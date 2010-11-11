@@ -21,6 +21,12 @@ GIT
       capybara (~> 0.4.0)
       envjs (>= 0.3.7)
 
+GIT
+  remote: https://github.com/bmabey/email-spec.git
+  revision: 16abd6d144cc78f96c783c3308e7a1858b4bbccc
+  specs:
+    email_spec (1.0.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -246,6 +252,7 @@ DEPENDENCIES
   cups!
   database_cleaner
   dynamic_form
+  email_spec!
   escape_utils
   factory_girl
   factory_girl_rails

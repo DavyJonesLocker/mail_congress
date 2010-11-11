@@ -46,4 +46,5 @@ group :test do
   gem 'launchy'
   gem 'remarkable_activerecord', '4.0.0.alpha4'
   gem 'resque_spec'
+  gem 'email_spec', :git => 'https://github.com/bmabey/email-spec.git'
 end
