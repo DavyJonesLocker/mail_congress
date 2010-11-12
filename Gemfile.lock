@@ -1,17 +1,17 @@
 GIT
+  remote: git://github.com/bcardarella/cups.git
+  revision: cb095b7c41a459543a5223d1692dbc0c136d86f6
+  branch: options
+  specs:
+    cups (0.0.6)
+
+GIT
   remote: git://github.com/bcardarella/prawn.git
   revision: 15be00b538909259fa85b32053aa00c7cbbd8353
   submodules: true
   specs:
     prawn (0.11.1.pre)
       pdf-reader (>= 0.8.1)
-
-GIT
-  remote: git@github.com:bcardarella/cups.git
-  revision: cb095b7c41a459543a5223d1692dbc0c136d86f6
-  branch: options
-  specs:
-    cups (0.0.6)
 
 GIT
   remote: http://github.com/smparkes/capybara-envjs.git
