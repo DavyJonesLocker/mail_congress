@@ -1,6 +1,6 @@
 $(function() {
-  $('ul.legislators .bioguide').click(function() { toggleLegislator($(this).parent()) });
-  $('ul.legislators label').click(function() { toggleLegislator($(this).parent()); });
+  //$('ul.legislators .bioguide').click(function() { toggleLegislator($(this).parent()) });
+  $('ul.legislators li').click(function() { toggleLegislator(this); });
   $('.preview').keyup(showLetterPreview);
   updateCost();
   showLetterPreview();
@@ -48,23 +48,26 @@ function previewLetter() {
   return false;
 }
 
-function toggleLegislator(list_item) {
-  toggleBioguide(list_item);
+function toggleLegislator(listItem) {
+  toggleBioguide(listItem);
   updateCost();
 }
 
-function toggleBioguide(list_item) {
-  var bioguide = list_item.find('.bioguide'),
-      id       = list_item.find('.legislator_id'),
-      mail   = list_item.find('img.mail');
+function toggleBioguide(listItem) {
+  listItem    = $(listItem);
+  var bioguide = listItem.find('.bioguide'),
+      id       = listItem.find('.legislator_id'),
+      mail     = listItem.find('img.mail');
 
   if (id.attr('disabled')) {
     bioguide.removeClass('monochrome');
+    listItem.addClass('active');
     bioguide.addClass('color');
     id.attr('disabled', null);
     mail.fadeIn();
   } else {
     bioguide.removeClass('color');
+    listItem.removeClass('active');
     bioguide.addClass('monochrome');
     id.attr('disabled', 'disabled');
     mail.fadeOut();
@@ -72,7 +75,8 @@ function toggleBioguide(list_item) {
 }
 
 function updateCost() {
-  var total = 0;
+  var total    = 0;
+  var costHeader = $('h2.cost');
   $('ul.legislators .legislator_id').each(function() {
     if (!this.disabled) {
      total += 1;
@@ -80,16 +84,19 @@ function updateCost() {
   });
   switch(total) {
     case 0:
-      var cost_html = "$0 no legislators chosen.";
+      var costHTML = "$0 no legislators chosen.";
+      costHeader.removeClass('money');
       break;
     
     case 1:
-      var cost_html = "$1 to send this letter.";
+      var costHTML = "$1 to send this letter.";
+      costHeader.addClass('money');
       break;
     
     default:
-      var cost_html = "$" + total + " to send these letters.";
+      var costHTML = "$" + total + " to send these letters.";
+      costHeader.addClass('money');
       break;
   }
-  $('h2.cost').text(cost_html);
+  costHeader.text(costHTML);
 }
