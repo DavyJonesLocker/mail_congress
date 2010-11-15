@@ -1,32 +1,36 @@
 - content_for :javascript do
   = javascript_include_tag 'letter'
 
-%h1 Please choose whom you wish to write.
 = simple_form_for @letter, :url => new_payment_path do |letter|
-  = letter.simple_fields_for :sender do |sender|
-    = sender.input :street, :as => :hidden
-    = sender.input :city, :as => :hidden
-    = sender.input :state, :as => :hidden
-    = sender.input :zip, :as => :hidden
-  = hidden_field_tag 'geoloc[lat]', @geoloc.lat
-  = hidden_field_tag 'geoloc[lng]', @geoloc.lng
+  %fieldset
+    %h1 Please choose whom you wish to write.
+    = letter.simple_fields_for :sender do |sender|
+      = sender.input :street, :as => :hidden
+      = sender.input :city, :as => :hidden
+      = sender.input :state, :as => :hidden
+      = sender.input :zip, :as => :hidden
+    = hidden_field_tag 'geoloc[lat]', @geoloc.lat
+    = hidden_field_tag 'geoloc[lng]', @geoloc.lng
 
-  %ul.legislators
-    = letter.simple_fields_for :recipients do |recipient|
-      %li{:id => recipient.object.legislator.bioguide_id}
-        %div{:class => "bioguide #{recipient.object.css_class}", :style => "background:url('/images/#{recipient.object.legislator.bioguide_image}')"}
-          = image_tag 'icons/mail.png', :class => "mail #{"selected" if recipient.object.selected?}".strip
-        = recipient.label :id, recipient.object.legislator.name
-        = recipient.input :legislator_id, :as => :hidden, :input_html => { :class => 'legislator_id', :disabled => !recipient.object.selected? }
-  %h2.cost= cost_to_send_letters(@letter.recipients)
-  - if !@letter.errors[:recipients].empty?
-    %h3= @letter.errors[:recipients].join(' ')
-
-  = letter.input :body, :as => :text, :input_html =>  { :class => :preview }
-  Sincerely,
-  = letter.simple_fields_for :sender do |sender|
-    = sender.input :first_name, :label => 'First name', :input_html => { :class => :preview }
-    = sender.input :last_name, :label => 'Last name', :input_html => { :class => :preview }
-  = letter.submit 'Send'
-
-#letter_preview
+    %ul.legislators
+      = letter.simple_fields_for :recipients do |recipient|
+        %li{:id => recipient.object.legislator.bioguide_id}
+          %div{:class => "bioguide #{recipient.object.css_class}", :style => "background:url('/images/#{recipient.object.legislator.bioguide_image}')"}
+            = image_tag 'icons/mail.png', :class => "mail #{"selected" if recipient.object.selected?}".strip
+          = recipient.label :id, recipient.object.legislator.name
+          = recipient.input :legislator_id, :as => :hidden, :input_html => { :class => 'legislator_id', :disabled => !recipient.object.selected? }
+    %h2.cost= cost_to_send_letters(@letter.recipients)
+    
+  %fieldset
+    %h1 Dear Legislator,
+    - if !@letter.errors[:recipients].empty?
+      %h3= @letter.errors[:recipients].join(' ')
+  
+    = letter.input :body, :as => :text, :input_html =>  { :class => :preview }
+    %div Your Constituent,
+    = letter.simple_fields_for :sender do |sender|
+      = sender.input :first_name, :label => 'First name', :input_html => { :class => :preview }
+      = sender.input :last_name, :label => 'Last name', :input_html => { :class => :preview }
+    %div
+      = letter.submit 'Send'
+      #letter_preview

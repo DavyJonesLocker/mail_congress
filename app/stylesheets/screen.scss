@@ -36,12 +36,14 @@ ul.legislators {
   li {
     @include horizontal-list-item;
   }
+  li:hover {
+    background: #F00;
+  }
   .bioguide {
     position: relative;
     width: 100px;
     height: 125px;
     overflow: hidden;
-    border: 1px solid #FFF;
     background-repeat: no-repeat;
     img.mail {
       position: absolute;
@@ -62,7 +64,6 @@ ul.legislators {
     background-position: 0px 0px !important;
   }
   .bioguide:hover {
-    border: 1px solid blue;
     cursor: pointer;
   }
   img.monochrome {
@@ -78,4 +79,115 @@ ul.legislators {
 #letter_body {
   width: 600px;
   height: 300px;
+}
+
+body, html {
+  color: #F9F9F9;
+  background: #356;
+}
+
+h1 {
+  width: auto;
+  font-size: 24px;
+  font-family: Arial, sans-serif;
+  margin: 0 0 20px 0;
+}
+
+#address_search {
+  width:910px;
+  color: #F9F9F9;
+  background: #134;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  -moz-border-radius: 5px;
+  #address {
+    width: 80%;
+    display: block;
+    padding: 10px;
+    border: 1px solid #FFF;
+    margin: 20px auto;
+    font-size: 36px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    -moz-border-radius: 5px;
+  }
+}
+
+#new_letter {
+  margin: 40px auto;
+  fieldset {
+    width:910px;
+    color: #F9F9F9;
+    background: #134;
+    margin: 20px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    -moz-border-radius: 5px;
+    label {
+      margin: 6px 0;
+      display: block;
+      color: rgba(155,255,255,.5)
+    }
+    .legislators {
+      width: auto;
+      padding: 20px;
+      background: rgba(0,0,0,.25);
+      li {
+        padding: 10px;
+        margin: 0 20px 0 0;
+        background: #245;
+        -moz-border-radius: 5px;
+        .bioguide {
+          margin: 0 auto 20px auto;
+        }
+      }
+      li:hover {
+        label {
+          color: #FFF;
+          text-decoration: none;
+        }
+        cursor: pointer;
+        background: #467;
+      }
+    }
+  }
+  .cost {
+    color: #9F6;
+    margin: 20px 0 0 0;
+    text-align: center;
+    font-weight: bold;
+  }
+  .text textarea {
+    width: 890px;
+    padding: 5px;
+    margin: 0 0 20px 0;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+  }
+  div.string {
+    margin: 0 10px 0 0;
+    display: inline-block;
+    input {
+      width: 200px;
+      padding: 5px;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+    }
+  }
+  #letter_submit {
+    margin: 20px 0 0 0;
+  }
+  #letter_preview {
+    margin: 0 0 0 10px;
+    display: inline-block;
+    a {
+      color: #0FF;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
 }
