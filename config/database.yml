@@ -22,10 +22,13 @@ test: &test
   template: mail_congress_template
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: postgresql
+  database: mail_congress_development
+  username: deploy
+  encoding: utf8
+  port: 5432
+  min_messages: warning
+  template: mail_congress_template
 
 cucumber:
   <<: *test
