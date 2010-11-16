@@ -13,7 +13,9 @@
   %body
     .container
       #header
-
+        %a{:href => "/", :class => "logo"}
+          MailCongress
+          
       #content
         = flash[:notice]
         = yield
