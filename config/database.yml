@@ -23,7 +23,7 @@ test: &test
 
 production:
   adapter: postgresql
-  database: mail_congress_development
+  database: mail_congress_production
   username: deploy
   encoding: utf8
   port: 5432
