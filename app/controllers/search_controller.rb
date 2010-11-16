@@ -7,7 +7,8 @@ class SearchController < ApplicationController
     elsif params[:address].present?
       @geoloc = GeoKit::Geocoders::GoogleGeocoder.geocode(params[:address])
     else
-      redirect_to root_path, :notice => 'Home address is required.'
+      @address_error = 'Home address is required.'
+      render :template => 'home/index'
       return
     end
 
