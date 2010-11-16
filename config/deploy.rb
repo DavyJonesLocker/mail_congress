@@ -3,6 +3,12 @@ require 'bundler/capistrano'
 set :application, 'mail_congress'
 set :deploy_to, "/home/deploy/#{application}"
 
+set :branch, "master"
+
+role :web, "mailcongress.org"
+role :app, "mailcongress.org"
+role :db,  "mailcongress.org", :primary => true
+
 set :user, "deploy"
 set :use_sudo, false
 
