@@ -37,7 +37,7 @@ namespace :deploy do
   end
   
   task :symlink_tmp do
-    run "ln -s /tmp/images #{current_path}/public/images/tmp"
+    run "ln -sf #{current_path}/public/images/tmp /tmp/images" 
   end
 end
 
