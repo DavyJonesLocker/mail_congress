@@ -12,4 +12,15 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def url_for(options = nil)
+    case options
+    when Hash
+      if Rails.env == 'production'
+        options[:protocol] = 'https'
+      end
+    end
+    super
+  end
+
+  helper_method :url_for 
 end

@@ -14,7 +14,7 @@
 
     %ul.legislators
       = letter.simple_fields_for :recipients do |recipient|
-        %li{:id => recipient.object.legislator.bioguide_id}
+        %li{:id => recipient.object.legislator.bioguide_id, :class => recipient.object.selected? ? 'active': nil}
           %div{:class => "bioguide #{recipient.object.css_class}", :style => "background:url('/images/#{recipient.object.legislator.bioguide_image}')"}
             = image_tag 'icons/mail.png', :class => "mail #{"selected" if recipient.object.selected?}".strip
           = recipient.label :id, recipient.object.legislator.name
