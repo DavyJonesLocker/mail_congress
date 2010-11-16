@@ -36,9 +36,6 @@ ul.legislators {
   li {
     @include horizontal-list-item;
   }
-  li:hover {
-    background: #F00;
-  }
   .bioguide {
     position: relative;
     width: 100px;
@@ -83,7 +80,7 @@ ul.legislators {
 
 body, html {
   color: #F9F9F9;
-  background: #356;
+  background: #003F4B;
 }
 
 h1 {
@@ -99,7 +96,7 @@ h1 {
 #address_search {
   width:910px;
   color: #F9F9F9;
-  background: #134;
+  background: #006F7B;
   margin: 40px auto;
   padding: 20px;
   text-align: center;
@@ -122,7 +119,7 @@ h1 {
   fieldset {
     width:910px;
     color: #F9F9F9;
-    background: #134;
+    background: #006F7B;
     margin: 20px auto;
     padding: 20px;
     font-family: Arial, sans-serif;
@@ -135,23 +132,32 @@ h1 {
     .legislators {
       width: auto;
       padding: 20px;
-      background: rgba(0,0,0,.25);
+      background: #004F5B;
+      -moz-border-radius: 5px;
+      -moz-box-shadow: 0 0 10px rgba(0,0,0,.5) inset;
       li {
         padding: 10px;
         margin: 0 20px 0 0;
-        background: #245;
+        background: #006F7B;
         -moz-border-radius: 5px;
+        -moz-box-shadow: 0 0 10px rgba(0,0,0,.5);
         .bioguide {
           margin: 0 auto 20px auto;
         }
       }
       li:hover {
+        cursor: pointer;
+        background: #009CAE;
         label {
           color: #FFF;
           text-decoration: none;
         }
-        cursor: pointer;
-        background: #467;
+      }
+      li.active {
+        background: #009CAE;
+        label {
+          color: #FFF;
+        }
       }
     }
     input.gray {
@@ -165,7 +171,7 @@ h1 {
     font-weight: bold;
   }
   .text textarea {
-    width: 890px;
+    width: 880px;
     padding: 5px;
     font-size: 16px;
     font-family: Arial, sans-serif;
@@ -174,7 +180,7 @@ h1 {
     margin: 0 0 20px 0;
   }
   div.string {
-    margin: 0 10px 0 0;
+    margin: 10px 10px 0 0;
     display: inline-block;
     input {
       width: 200px;
@@ -200,6 +206,14 @@ h1 {
   }
 }
 
+.field_with_errors {
+  color: #FEE;
+  background: #B21;
+  padding: 10px;
+  -moz-border-radius: 3px;
+}
+
 .error {
-  color: #DD2222;
+  font-weight: bold;
+  padding: 10px 0 0 5px;
 }
