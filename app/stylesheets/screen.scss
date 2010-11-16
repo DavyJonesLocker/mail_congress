@@ -226,6 +226,35 @@ h1 {
   }
 }
 
+#new_payment {
+  margin: 0 auto 40px auto;
+  width:910px;
+  color: #F9F9F9;
+  background: #006F7B;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  label {
+    width: 110px;
+    margin: 0 10px 0 0;
+    display: inline-block;
+    text-align: right;
+  }
+  div.select,  
+  div.string {
+    margin: 0 10px 10px 0;
+    input {
+      width: 400px;
+      padding: 5px;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+    }
+  }
+}
+
 .legislators .error,
 .field_with_errors {
   color: #FEE;

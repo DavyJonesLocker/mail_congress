@@ -854,7 +854,41 @@ h1 label {
   text-decoration: underline;
 }
 
-/* line 230, ../../../app/stylesheets/screen.scss */
+/* line 229, ../../../app/stylesheets/screen.scss */
+#new_payment {
+  margin: 0 auto 40px auto;
+  width: 910px;
+  color: #F9F9F9;
+  background: #006F7B;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 240, ../../../app/stylesheets/screen.scss */
+#new_payment label {
+  width: 110px;
+  margin: 0 10px 0 0;
+  display: inline-block;
+  text-align: right;
+}
+/* line 247, ../../../app/stylesheets/screen.scss */
+#new_payment div.select,
+#new_payment div.string {
+  margin: 0 10px 10px 0;
+}
+/* line 249, ../../../app/stylesheets/screen.scss */
+#new_payment div.select input,
+#new_payment div.string input {
+  width: 400px;
+  padding: 5px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+/* line 259, ../../../app/stylesheets/screen.scss */
 .legislators .error,
 .field_with_errors {
   color: #FEE;
@@ -865,18 +899,18 @@ h1 label {
   border-radius: 3px;
 }
 
-/* line 239, ../../../app/stylesheets/screen.scss */
+/* line 268, ../../../app/stylesheets/screen.scss */
 .legislators .error {
   margin: 20px 0 0 0;
 }
 
-/* line 243, ../../../app/stylesheets/screen.scss */
+/* line 272, ../../../app/stylesheets/screen.scss */
 .error {
   font-weight: bold;
   padding: 10px 0 0 5px;
 }
 
-/* line 248, ../../../app/stylesheets/screen.scss */
+/* line 277, ../../../app/stylesheets/screen.scss */
 input[type="submit"] {
   font-size: 20px;
 }
