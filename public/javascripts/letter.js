@@ -1,5 +1,4 @@
 $(function() {
-  //$('ul.legislators .bioguide').click(function() { toggleLegislator($(this).parent()) });
   $('ul.legislators li').click(function() { toggleLegislator(this); });
   $('.preview').keyup(showLetterPreview);
   updateCost();
@@ -54,7 +53,7 @@ function toggleLegislator(listItem) {
 }
 
 function toggleBioguide(listItem) {
-  listItem    = $(listItem);
+  listItem     = $(listItem);
   var bioguide = listItem.find('.bioguide'),
       id       = listItem.find('.legislator_id'),
       mail     = listItem.find('img.mail');
@@ -75,7 +74,7 @@ function toggleBioguide(listItem) {
 }
 
 function updateCost() {
-  var total    = 0;
+  var total      = 0;
   var costHeader = $('h2.cost');
   $('ul.legislators .legislator_id').each(function() {
     if (!this.disabled) {
