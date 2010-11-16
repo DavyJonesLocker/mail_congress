@@ -23,7 +23,7 @@ class PaymentsController < ApplicationController
     if valid && @payment.make(@letter.recipients.size, { :email => @letter.sender.email, :ip => request.headers["REMOTE_ADDR"] })
       @letter.save
       PrintJob.enqueue(@letter)
-      redirect_to thank_you_url(:protocol => Rails.env == 'production' ? 'https' : 'http')
+      redirect_to thank_you_path
     else
       render 'new'
     end
