@@ -32,8 +32,8 @@ namespace :deploy do
   desc "Restart the unicorn server"
   task :restart, :roles => :app, :except => { :no_release => true } do  
     run "god stop #{application}"
-    run "RAILS_ENV=#{stage} god load #{current_path}/config/deploy/mail_congress.god"
-    run "RAILS_ENV=#{stage} god start #{application}"
+    run "god load #{current_path}/config/deploy/mail_congress.god"
+    run "god start #{application}"
   end
   
   task :symlink_tmp do
