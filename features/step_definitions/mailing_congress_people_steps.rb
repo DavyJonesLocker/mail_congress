@@ -28,8 +28,8 @@ When /^I unselect my congress people$/ do
 end
 
 When /^I write (?:|him |her |them )a thank\-you letter$/ do
-  When %{I fill in "First name" with "John"}
-  When %{I fill in "Last name" with "Doe"}
+  When %{I fill in "letter_sender_attributes_first_name" with "John"}
+  When %{I fill in "letter_sender_attributes_last_name" with "Doe"}
   When %{I fill in "Dear Legislator," with "I just wanted to thank you for your service."}
 end
 

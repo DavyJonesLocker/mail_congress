@@ -9,7 +9,7 @@ SimpleForm.setup do |config|
   # config.hint_tag = :span
 
   # Default tag used on errors.
-  # config.error_tag = :span
+  config.error_tag = :div
 
   # Method used to tidy up errors.
   # config.error_method = :first

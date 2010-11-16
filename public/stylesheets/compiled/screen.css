@@ -747,7 +747,7 @@ h1 {
   width: auto;
   font-size: 24px;
   font-family: Arial, sans-serif;
-  margin: 0 0 20px 0;
+  margin: 0 0 10px 0;
 }
 /* line 94, ../../../app/stylesheets/screen.scss */
 h1 label {
@@ -824,49 +824,61 @@ h1 label {
   color: #FFF;
   text-decoration: none;
 }
-/* line 158, ../../../app/stylesheets/screen.scss */
+/* line 157, ../../../app/stylesheets/screen.scss */
+#new_letter fieldset input.gray {
+  color: #888888;
+}
+/* line 161, ../../../app/stylesheets/screen.scss */
 #new_letter .cost {
   color: #9F6;
   margin: 20px 0 0 0;
   text-align: center;
   font-weight: bold;
 }
-/* line 164, ../../../app/stylesheets/screen.scss */
+/* line 167, ../../../app/stylesheets/screen.scss */
 #new_letter .text textarea {
   width: 890px;
   padding: 5px;
-  margin: 0 0 20px 0;
   font-size: 16px;
   font-family: Arial, sans-serif;
 }
-/* line 171, ../../../app/stylesheets/screen.scss */
+/* line 173, ../../../app/stylesheets/screen.scss */
+#new_letter div.text {
+  margin: 0 0 20px 0;
+}
+/* line 176, ../../../app/stylesheets/screen.scss */
 #new_letter div.string {
   margin: 0 10px 0 0;
   display: inline-block;
 }
-/* line 174, ../../../app/stylesheets/screen.scss */
+/* line 179, ../../../app/stylesheets/screen.scss */
 #new_letter div.string input {
   width: 200px;
   padding: 5px;
   font-size: 16px;
   font-family: Arial, sans-serif;
 }
-/* line 181, ../../../app/stylesheets/screen.scss */
+/* line 186, ../../../app/stylesheets/screen.scss */
 #new_letter #letter_submit {
   margin: 20px 0 0 0;
 }
-/* line 184, ../../../app/stylesheets/screen.scss */
+/* line 189, ../../../app/stylesheets/screen.scss */
 #new_letter #letter_preview {
   margin: 0 0 0 10px;
   display: inline-block;
 }
-/* line 187, ../../../app/stylesheets/screen.scss */
+/* line 192, ../../../app/stylesheets/screen.scss */
 #new_letter #letter_preview a {
   color: #0FF;
   font-weight: bold;
   text-decoration: none;
 }
-/* line 192, ../../../app/stylesheets/screen.scss */
+/* line 197, ../../../app/stylesheets/screen.scss */
 #new_letter #letter_preview a:hover {
   text-decoration: underline;
+}
+
+/* line 203, ../../../app/stylesheets/screen.scss */
+.error {
+  color: #DD2222;
 }

@@ -23,8 +23,8 @@ Feature: Mailing congress people
     Given I have found my congress people
     When  I press "Send"
     Then  I should see the error "can't be blank" for "Dear Legislator,"
-    And   I should see the error "can't be blank" for "First name"
-    And   I should see the error "can't be blank" for "Last name"
+    And   I should see the error "can't be blank" for "letter_sender_attributes_first_name"
+    And   I should see the error "can't be blank" for "letter_sender_attributes_last_name"
 
   Scenario: Persisting legislator choices after failed validation
     Given I have found my congress people

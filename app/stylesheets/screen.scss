@@ -90,7 +90,7 @@ h1 {
   width: auto;
   font-size: 24px;
   font-family: Arial, sans-serif;
-  margin: 0 0 20px 0;
+  margin: 0 0 10px 0;
   label {
     color: #F9F9F9 !important;
   }
@@ -154,6 +154,9 @@ h1 {
         background: #467;
       }
     }
+    input.gray {
+      color: #888888;
+    }
   }
   .cost {
     color: #9F6;
@@ -164,9 +167,11 @@ h1 {
   .text textarea {
     width: 890px;
     padding: 5px;
-    margin: 0 0 20px 0;
     font-size: 16px;
     font-family: Arial, sans-serif;
+  }
+  div.text {
+    margin: 0 0 20px 0;
   }
   div.string {
     margin: 0 10px 0 0;
@@ -193,4 +198,8 @@ h1 {
       text-decoration: underline;
     }
   }
+}
+
+.error {
+  color: #DD2222;
 }

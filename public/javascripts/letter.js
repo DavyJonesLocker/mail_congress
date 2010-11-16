@@ -3,7 +3,24 @@ $(function() {
   $('.preview').keyup(showLetterPreview);
   updateCost();
   showLetterPreview();
+  $('#letter_sender_attributes_first_name').blur(function() { placeHolder($(this), 'First name'); });
+  $('#letter_sender_attributes_first_name').focus(function() { if (this.value == 'First name') {this.value = ''; $(this).removeClass('gray');} });
+  placeHolder($('#letter_sender_attributes_first_name'), 'First name');
+  $('#letter_sender_attributes_last_name').blur(function() { placeHolder($(this), 'Last name'); });
+  $('#letter_sender_attributes_last_name').focus(function() { if (this.value == 'Last name') {this.value = ''; $(this).removeClass('gray');} });
+  placeHolder($('#letter_sender_attributes_last_name'), 'Last name');
 });
+
+function placeHolder(input, text) {
+  if (input.val() == '') {
+    input[0].value = text;
+    input.addClass('gray');
+  } else if (input.val() == text) {
+    input.addClass('gray');
+  } else { 
+    input.removeClass('gray');
+  }
+}
 
 function showLetterPreview() {
   var present = true;
@@ -17,7 +34,11 @@ function showLetterPreview() {
         var value = input.value;
       }
     } else {
-      var value = input.value;
+      if (input.value == 'First name' || input.value == 'Last name') {
+        var value = '';
+      } else {
+        var value = input.value;
+      }
     }
     present = present && value.length > 0;
   });

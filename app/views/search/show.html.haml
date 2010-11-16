@@ -19,19 +19,18 @@
             = image_tag 'icons/mail.png', :class => "mail #{"selected" if recipient.object.selected?}".strip
           = recipient.label :id, recipient.object.legislator.name
           = recipient.input :legislator_id, :as => :hidden, :input_html => { :class => 'legislator_id', :disabled => !recipient.object.selected? }
-    %h2.cost= cost_to_send_letters(@letter.recipients)
+      %h2.cost= cost_to_send_letters(@letter.recipients)
+      = letter.error :recipients
     
   %fieldset
     %h1
       %label{:for => 'letter_body', :class => 'string required'}Dear Legislator,
-    - if !@letter.errors[:recipients].empty?
-      %h3= @letter.errors[:recipients].join(' ')
   
     = letter.input :body, :as => :text, :label => false, :input_html =>  { :class => :preview }
     %div Your Constituent,
     = letter.simple_fields_for :sender do |sender|
-      = sender.input :first_name, :label => 'First name', :input_html => { :class => :preview }
-      = sender.input :last_name, :label => 'Last name', :input_html => { :class => :preview }
+      = sender.input :first_name, :label => false, :input_html => { :class => :preview }
+      = sender.input :last_name, :label => false, :input_html => { :class => :preview }
     %div
       = letter.submit 'Send'
       #letter_preview
