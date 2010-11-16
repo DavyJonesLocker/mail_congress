@@ -12,7 +12,7 @@ God.watch do |w|
   w.interval = 30.seconds # default
  
   # unicorn needs to be run from the rails root
-  w.start = "cd #{rails_root} && /usr/local/ree/bin/unicorn_rails -c #{rails_root}/config/unicorn.conf -E #{rails_env} -D"
+  w.start = "cd #{rails_root} && /usr/local/ree/bin/unicorn_rails -c #{rails_root}/config/deploy/unicorn.rb -E #{rails_env} -D"
  
   # QUIT gracefully shuts down workers
   w.stop = "kill -QUIT `cat #{rails_root}/tmp/pids/unicorn.pid`"
