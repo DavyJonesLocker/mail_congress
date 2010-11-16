@@ -20,9 +20,9 @@ set :deploy_via, :remote_cache
 # set :stage, :production
 set :keep_releases, 5
 
-before 'deploy:restart', 'deploy:symlink_tmp'
-after  'deploy:update', 'deploy:cleanup'
-after  'deploy:restart', 'resque:restart'
+after 'deploy:symlink', 'deploy:extra_symlinks'
+after 'deploy:update',  'deploy:cleanup'
+after 'deploy:restart', 'resque:restart'
 
 namespace :deploy do
   desc "Start the unicorn server"
@@ -36,8 +36,8 @@ namespace :deploy do
     run "god start #{application}"
   end
   
-  task :symlink_tmp do
-    run "ln -sf #{current_path}/public/images/tmp /tmp/images" 
+  task :extra_symlinks do
+    run "ln -sf /tmp/images #{current_path}/public/images/tmp" 
   end
 end
 
