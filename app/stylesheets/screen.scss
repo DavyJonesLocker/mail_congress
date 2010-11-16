@@ -23,10 +23,10 @@ $blueprint_grid_width: 40px;
 }
 
 ul.legislators {
-  width: 500px;
-  @include horizontal-list;
+  text-align: center;
   li {
-    @include horizontal-list-item;
+    vertical-align: top;
+    display: inline-block;
   }
   .bioguide {
     position: relative;
@@ -122,6 +122,9 @@ h1 {
 
 #new_letter {
   margin: 0 auto 40px auto;
+  fieldset.legislator {
+    text-align: center;
+  }
   fieldset {
     width:910px;
     color: #F9F9F9;
@@ -182,9 +185,9 @@ h1 {
   }
   .cost {
     color: #9F6;
-    line-height: 187px;
     font-weight: bold;
-    text-align: center;
+    margin: 20px 0 0 0;
+    font-size: 24px;
   }
   .text textarea {
     width: 880px;

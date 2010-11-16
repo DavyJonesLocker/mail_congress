@@ -614,51 +614,12 @@ a img {
 
 /* line 25, ../../../app/stylesheets/screen.scss */
 ul.legislators {
-  width: 500px;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  overflow: hidden;
-  *zoom: 1;
+  text-align: center;
 }
-/* line 57, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+/* line 27, ../../../app/stylesheets/screen.scss */
 ul.legislators li {
-  list-style-image: none;
-  list-style-type: none;
-  margin-left: 0px;
-  white-space: nowrap;
-  display: inline;
-  float: left;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-/* line 45, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
-ul.legislators li:first-child, ul.legislators li.first {
-  padding-left: 0;
-}
-/* line 46, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
-ul.legislators li:last-child, ul.legislators li.last {
-  padding-right: 0;
-}
-/* line 28, ../../../app/stylesheets/screen.scss */
-ul.legislators li {
-  list-style-image: none;
-  list-style-type: none;
-  margin-left: 0px;
-  white-space: nowrap;
-  display: inline;
-  float: left;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-/* line 45, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
-ul.legislators li:first-child, ul.legislators li.first {
-  padding-left: 0;
-}
-/* line 46, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
-ul.legislators li:last-child, ul.legislators li.last {
-  padding-right: 0;
+  vertical-align: top;
+  display: inline-block;
 }
 /* line 31, ../../../app/stylesheets/screen.scss */
 ul.legislators .bioguide {
@@ -771,6 +732,10 @@ h1 label {
   margin: 0 auto 40px auto;
 }
 /* line 125, ../../../app/stylesheets/screen.scss */
+#new_letter fieldset.legislator {
+  text-align: center;
+}
+/* line 128, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset {
   width: 910px;
   color: #F9F9F9;
@@ -782,12 +747,12 @@ h1 label {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 135, ../../../app/stylesheets/screen.scss */
+/* line 138, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset label {
   margin: 6px 0;
   display: block;
 }
-/* line 139, ../../../app/stylesheets/screen.scss */
+/* line 142, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators {
   width: auto;
   padding: 20px;
@@ -799,7 +764,7 @@ h1 label {
   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) inset;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) inset;
 }
-/* line 149, ../../../app/stylesheets/screen.scss */
+/* line 152, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li {
   color: #999;
   padding: 10px;
@@ -812,84 +777,84 @@ h1 label {
   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-/* line 160, ../../../app/stylesheets/screen.scss */
+/* line 163, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li .bioguide {
   margin: 0 auto 20px auto;
 }
-/* line 164, ../../../app/stylesheets/screen.scss */
+/* line 167, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li:hover {
   cursor: pointer;
   background: #178;
 }
-/* line 167, ../../../app/stylesheets/screen.scss */
+/* line 170, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li:hover label {
   color: #FFF;
   text-decoration: none;
 }
-/* line 172, ../../../app/stylesheets/screen.scss */
+/* line 175, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li.active {
   background: #009CAE;
 }
-/* line 174, ../../../app/stylesheets/screen.scss */
+/* line 177, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li.active label {
   color: #FFF;
 }
-/* line 179, ../../../app/stylesheets/screen.scss */
+/* line 182, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset input.gray {
   color: #888888;
 }
-/* line 183, ../../../app/stylesheets/screen.scss */
+/* line 186, ../../../app/stylesheets/screen.scss */
 #new_letter .cost {
   color: #9F6;
-  line-height: 187px;
   font-weight: bold;
-  text-align: center;
+  margin: 20px 0 0 0;
+  font-size: 24px;
 }
-/* line 189, ../../../app/stylesheets/screen.scss */
+/* line 192, ../../../app/stylesheets/screen.scss */
 #new_letter .text textarea {
   width: 880px;
   padding: 5px;
   font-size: 16px;
   font-family: Arial, sans-serif;
 }
-/* line 195, ../../../app/stylesheets/screen.scss */
+/* line 198, ../../../app/stylesheets/screen.scss */
 #new_letter div.text {
   margin: 0 0 20px 0;
 }
-/* line 198, ../../../app/stylesheets/screen.scss */
+/* line 201, ../../../app/stylesheets/screen.scss */
 #new_letter div.string {
   margin: 10px 10px 0 0;
   display: inline-block;
   vertical-align: top;
 }
-/* line 202, ../../../app/stylesheets/screen.scss */
+/* line 205, ../../../app/stylesheets/screen.scss */
 #new_letter div.string input {
   width: 200px;
   padding: 5px;
   font-size: 16px;
   font-family: Arial, sans-serif;
 }
-/* line 209, ../../../app/stylesheets/screen.scss */
+/* line 212, ../../../app/stylesheets/screen.scss */
 #new_letter #letter_submit {
   margin: 20px 0 0 0;
 }
-/* line 212, ../../../app/stylesheets/screen.scss */
+/* line 215, ../../../app/stylesheets/screen.scss */
 #new_letter #letter_preview {
   margin: 0 0 0 10px;
   display: inline-block;
 }
-/* line 215, ../../../app/stylesheets/screen.scss */
+/* line 218, ../../../app/stylesheets/screen.scss */
 #new_letter #letter_preview a {
   color: #0FF;
   font-weight: bold;
   text-decoration: none;
 }
-/* line 220, ../../../app/stylesheets/screen.scss */
+/* line 223, ../../../app/stylesheets/screen.scss */
 #new_letter #letter_preview a:hover {
   text-decoration: underline;
 }
 
-/* line 226, ../../../app/stylesheets/screen.scss */
+/* line 229, ../../../app/stylesheets/screen.scss */
 .field_with_errors {
   color: #FEE;
   background: #B21;
@@ -899,13 +864,13 @@ h1 label {
   border-radius: 3px;
 }
 
-/* line 235, ../../../app/stylesheets/screen.scss */
+/* line 238, ../../../app/stylesheets/screen.scss */
 .error {
   font-weight: bold;
   padding: 10px 0 0 5px;
 }
 
-/* line 240, ../../../app/stylesheets/screen.scss */
+/* line 243, ../../../app/stylesheets/screen.scss */
 input[type="submit"] {
   font-size: 20px;
 }
