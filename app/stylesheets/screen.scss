@@ -101,7 +101,9 @@ h1 {
   padding: 20px;
   text-align: center;
   font-family: Arial, sans-serif;
+  -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
+  border-radius: 5px;
   #address {
     width: 80%;
     display: block;
@@ -110,7 +112,9 @@ h1 {
     margin: 20px auto;
     font-size: 36px;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
+    border-radius: 5px;
   }
 }
 
@@ -123,7 +127,9 @@ h1 {
     margin: 20px auto;
     padding: 20px;
     font-family: Arial, sans-serif;
+    -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
+    border-radius: 5px;
     label {
       margin: 6px 0;
       display: block;
@@ -133,14 +139,22 @@ h1 {
       width: auto;
       padding: 20px;
       background: #004F5B;
+      -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
+      border-radius: 5px;
+      -webkit-box-shadow: 0 0 10px rgba(0,0,0,.5) inset;
       -moz-box-shadow: 0 0 10px rgba(0,0,0,.5) inset;
+      box-shadow: 0 0 10px rgba(0,0,0,.5) inset;
       li {
         padding: 10px;
         margin: 0 20px 0 0;
         background: #006F7B;
+        -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
+        border-radius: 5px;
+        -webkit-box-shadow: 0 0 10px rgba(0,0,0,.5);
         -moz-box-shadow: 0 0 10px rgba(0,0,0,.5);
+        box-shadow: 0 0 10px rgba(0,0,0,.5);
         .bioguide {
           margin: 0 auto 20px auto;
         }
@@ -182,6 +196,7 @@ h1 {
   div.string {
     margin: 10px 10px 0 0;
     display: inline-block;
+    vertical-align: top;
     input {
       width: 200px;
       padding: 5px;
@@ -210,7 +225,9 @@ h1 {
   color: #FEE;
   background: #B21;
   padding: 10px;
+  -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 
 .error {

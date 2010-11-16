@@ -759,9 +759,11 @@ h1 label {
   padding: 20px;
   text-align: center;
   font-family: Arial, sans-serif;
+  -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
+  border-radius: 5px;
 }
-/* line 105, ../../../app/stylesheets/screen.scss */
+/* line 107, ../../../app/stylesheets/screen.scss */
 #address_search #address {
   width: 80%;
   display: block;
@@ -770,14 +772,16 @@ h1 label {
   margin: 20px auto;
   font-size: 36px;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 
-/* line 117, ../../../app/stylesheets/screen.scss */
+/* line 121, ../../../app/stylesheets/screen.scss */
 #new_letter {
   margin: 40px auto;
 }
-/* line 119, ../../../app/stylesheets/screen.scss */
+/* line 123, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset {
   width: 910px;
   color: #F9F9F9;
@@ -785,115 +789,124 @@ h1 label {
   margin: 20px auto;
   padding: 20px;
   font-family: Arial, sans-serif;
+  -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
+  border-radius: 5px;
 }
-/* line 127, ../../../app/stylesheets/screen.scss */
+/* line 133, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset label {
   margin: 6px 0;
   display: block;
   color: rgba(155, 255, 255, 0.5);
 }
-/* line 132, ../../../app/stylesheets/screen.scss */
+/* line 138, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators {
   width: auto;
   padding: 20px;
   background: #004F5B;
+  -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
+  border-radius: 5px;
   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) inset;
 }
-/* line 138, ../../../app/stylesheets/screen.scss */
+/* line 146, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li {
   padding: 10px;
   margin: 0 20px 0 0;
   background: #006F7B;
+  -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
+  border-radius: 5px;
   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-/* line 144, ../../../app/stylesheets/screen.scss */
+/* line 154, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li .bioguide {
   margin: 0 auto 20px auto;
 }
-/* line 148, ../../../app/stylesheets/screen.scss */
+/* line 158, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li:hover {
   cursor: pointer;
   background: #009CAE;
 }
-/* line 151, ../../../app/stylesheets/screen.scss */
+/* line 161, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li:hover label {
   color: #FFF;
   text-decoration: none;
 }
-/* line 156, ../../../app/stylesheets/screen.scss */
+/* line 166, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li.active {
   background: #009CAE;
 }
-/* line 158, ../../../app/stylesheets/screen.scss */
+/* line 168, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li.active label {
   color: #FFF;
 }
-/* line 163, ../../../app/stylesheets/screen.scss */
+/* line 173, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset input.gray {
   color: #888888;
 }
-/* line 167, ../../../app/stylesheets/screen.scss */
+/* line 177, ../../../app/stylesheets/screen.scss */
 #new_letter .cost {
   color: #9F6;
   margin: 20px 0 0 0;
   text-align: center;
   font-weight: bold;
 }
-/* line 173, ../../../app/stylesheets/screen.scss */
+/* line 183, ../../../app/stylesheets/screen.scss */
 #new_letter .text textarea {
   width: 880px;
   padding: 5px;
   font-size: 16px;
   font-family: Arial, sans-serif;
 }
-/* line 179, ../../../app/stylesheets/screen.scss */
+/* line 189, ../../../app/stylesheets/screen.scss */
 #new_letter div.text {
   margin: 0 0 20px 0;
 }
-/* line 182, ../../../app/stylesheets/screen.scss */
+/* line 192, ../../../app/stylesheets/screen.scss */
 #new_letter div.string {
   margin: 10px 10px 0 0;
   display: inline-block;
+  vertical-align: top;
 }
-/* line 185, ../../../app/stylesheets/screen.scss */
+/* line 196, ../../../app/stylesheets/screen.scss */
 #new_letter div.string input {
   width: 200px;
   padding: 5px;
   font-size: 16px;
   font-family: Arial, sans-serif;
 }
-/* line 192, ../../../app/stylesheets/screen.scss */
+/* line 203, ../../../app/stylesheets/screen.scss */
 #new_letter #letter_submit {
   margin: 20px 0 0 0;
 }
-/* line 195, ../../../app/stylesheets/screen.scss */
+/* line 206, ../../../app/stylesheets/screen.scss */
 #new_letter #letter_preview {
   margin: 0 0 0 10px;
   display: inline-block;
 }
-/* line 198, ../../../app/stylesheets/screen.scss */
+/* line 209, ../../../app/stylesheets/screen.scss */
 #new_letter #letter_preview a {
   color: #0FF;
   font-weight: bold;
   text-decoration: none;
 }
-/* line 203, ../../../app/stylesheets/screen.scss */
+/* line 214, ../../../app/stylesheets/screen.scss */
 #new_letter #letter_preview a:hover {
   text-decoration: underline;
 }
 
-/* line 209, ../../../app/stylesheets/screen.scss */
+/* line 220, ../../../app/stylesheets/screen.scss */
 .field_with_errors {
   color: #FEE;
   background: #B21;
   padding: 10px;
+  -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 
-/* line 216, ../../../app/stylesheets/screen.scss */
+/* line 229, ../../../app/stylesheets/screen.scss */
 .error {
   font-weight: bold;
   padding: 10px 0 0 5px;
