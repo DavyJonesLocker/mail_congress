@@ -22,7 +22,8 @@
     %h2.cost= cost_to_send_letters(@letter.recipients)
     
   %fieldset
-    %h1 Dear Legislator,
+    %h1
+      %label{:for => 'letter_body', :class => 'string required'}Dear Legislator,
     - if !@letter.errors[:recipients].empty?
       %h3= @letter.errors[:recipients].join(' ')
   
