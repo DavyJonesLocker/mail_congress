@@ -48,4 +48,3 @@ MailCongress::Application.configure do
   config.active_support.deprecation = :notify
 end
 
-ActiveMerchant::Billing::Base.mode = :production
