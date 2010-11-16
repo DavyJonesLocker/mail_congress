@@ -854,7 +854,8 @@ h1 label {
   text-decoration: underline;
 }
 
-/* line 229, ../../../app/stylesheets/screen.scss */
+/* line 230, ../../../app/stylesheets/screen.scss */
+.legislators .error,
 .field_with_errors {
   color: #FEE;
   background: #B21;
@@ -864,13 +865,18 @@ h1 label {
   border-radius: 3px;
 }
 
-/* line 238, ../../../app/stylesheets/screen.scss */
+/* line 239, ../../../app/stylesheets/screen.scss */
+.legislators .error {
+  margin: 20px 0 0 0;
+}
+
+/* line 243, ../../../app/stylesheets/screen.scss */
 .error {
   font-weight: bold;
   padding: 10px 0 0 5px;
 }
 
-/* line 243, ../../../app/stylesheets/screen.scss */
+/* line 248, ../../../app/stylesheets/screen.scss */
 input[type="submit"] {
   font-size: 20px;
 }

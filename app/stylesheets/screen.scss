@@ -226,6 +226,7 @@ h1 {
   }
 }
 
+.legislators .error,
 .field_with_errors {
   color: #FEE;
   background: #B21;
@@ -233,6 +234,10 @@ h1 {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
+}
+
+.legislators .error {
+  margin: 20px 0 0 0;
 }
 
 .error {
