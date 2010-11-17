@@ -1,4 +1,9 @@
+
 = simple_form_for @payment, :url => payments_path do |payment|
+  %h1.group
+    %strong Billing Info
+    %span You will be charged $2 to send 2 letters.
+    
   %fieldset.billing
     %div.help
       We have filled in the home address you supplied to us. If need be, please modify these fields to reflect your correct billing information.

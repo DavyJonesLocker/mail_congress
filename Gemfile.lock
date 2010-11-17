@@ -275,6 +275,3 @@ DEPENDENCIES
   simple_form
   spork (= 0.9.0.rc2)
   unicorn
-
-METADATA
-  version: 1.0.6
