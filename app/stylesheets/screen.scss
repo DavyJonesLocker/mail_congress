@@ -26,6 +26,10 @@ $blueprint_grid_width: 40px;
 	font-style: normal;
 }
 
+body {
+  font-family: Arial, sans-serif;
+}
+
 .container {
   width: 950px;
   margin: 0 auto;
@@ -212,9 +216,7 @@ h1 {
     }
   }
   .cost {
-    color: #9F6;
-    color: #6f9;
-    color: #6D9;
+    color: #6E9;
     margin: 20px 0 0 0;
     padding: 10px 20px;
     font-size: 24px;
@@ -390,4 +392,14 @@ a:hover {
 
 input[type="submit"] {
   font-size: 20px;
+}
+
+#footer {
+  color: #699;
+  font-size: 14px;
+  text-align: center;
+  margin: 0 0 40px 0;
+  strong {
+    font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
+  }
 }
