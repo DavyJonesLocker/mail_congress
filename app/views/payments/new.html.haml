@@ -20,7 +20,7 @@
     = simple_fields_for @letter do |letter|
       = letter.simple_fields_for :sender do |sender|
         %div.help
-          We will only use your email to let you know when your message has been delivered. 
+          We will use your email to let you know when your message has been mailed.
         = sender.input :email
   
   %fieldset.credit_card
