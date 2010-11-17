@@ -24,6 +24,7 @@
         = sender.input :email
   
   %fieldset.credit_card
+    = payment.error :gateway
     = payment.simple_fields_for :credit_card, @payment.credit_card do |credit_card|
       = credit_card.input :number, :label => 'Card number'
       %div.month_year

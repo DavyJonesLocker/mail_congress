@@ -39,7 +39,12 @@ class Payment
   def make(number, extra_options)
     self.gateway = ActiveMerchant::Billing::PaypalGateway.new(paypal_credentials)
     response = gateway.purchase(100 * number, credit_card, options(extra_options))
-    response.success?
+    if response.success?
+      true
+    else
+      self.errors.add(:gateway, 'payment authorization failed')
+      false
+    end
   end
 
   def paypal_credentials

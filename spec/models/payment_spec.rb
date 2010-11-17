@@ -47,15 +47,15 @@ describe Payment do
   describe 'Making a payment' do
     before do
       @response = mock('Response')
-      @response.stubs(:success?).returns(true)
-      @gateway  = mock('PaypalGateway')
-      @gateway.stubs(:purchase).returns(@response)
-      ActiveMerchant::Billing::PaypalGateway.stubs(:new).returns(@gateway)
     end
 
-    context 'when succesfull' do
+    context 'succesfull' do
       before do
         @payment = Factory.build(:payment)
+        @response.stubs(:success?).returns(true)
+        @gateway  = mock('PaypalGateway')
+        @gateway.stubs(:purchase).returns(@response)
+        ActiveMerchant::Billing::PaypalGateway.stubs(:new).returns(@gateway)
       end
 
       context 'one letter purchased' do
@@ -71,7 +71,7 @@ describe Payment do
           @gateway.should have_received(:purchase).with(100, @payment.credit_card, @payment.options({}))
         end
 
-        it 'should respond with success' do
+        it 'returns true' do
           @result.should be_true
         end
       end
@@ -85,6 +85,25 @@ describe Payment do
           @gateway.should have_received(:purchase).with(300, @payment.credit_card, @payment.options({}))
         end
 
+      end
+    end
+
+    context 'failed' do
+      before do
+        @payment = Factory.build(:payment)
+        @response.stubs(:success?).returns(false)
+        @gateway  = mock('PaypalGateway')
+        @gateway.stubs(:purchase).returns(@response)
+        ActiveMerchant::Billing::PaypalGateway.stubs(:new).returns(@gateway)
+        @result = @payment.make(1, {})
+      end
+
+      it 'returns false' do
+        @result.should be_false
+      end
+
+      it 'adds a validation error' do
+        @payment.errors['gateway'].should include('payment authorization failed')
       end
     end
 
