@@ -1,5 +1,7 @@
 = simple_form_for @payment, :url => payments_path do |payment|
-  %fieldset
+  %fieldset.billing
+    %div.help
+      We have filled in the home address you supplied to us. If need be, please modify these fields to reflect your correct billing information.
     = payment.simple_fields_for :credit_card, @payment.credit_card do |credit_card|
       = credit_card.input :first_name, :label => 'First name'
       = credit_card.input :last_name, :label => 'Last name'
@@ -9,12 +11,14 @@
     = payment.input :state, :label => 'State'
     = payment.input :zip, :label => 'Zipcode'
   
-  %fieldset
+  %fieldset.email
     = simple_fields_for @letter do |letter|
       = letter.simple_fields_for :sender do |sender|
+        %div.help
+          We will only use your email to let you know when your message has been delivered. 
         = sender.input :email
   
-  %fieldset
+  %fieldset.credit_card
     = payment.simple_fields_for :credit_card, @payment.credit_card do |credit_card|
       = credit_card.input :number, :label => 'Card number'
       = credit_card.input :month, :as => :select, :collection => 1..12
@@ -35,3 +39,4 @@
       = recipient.input :legislator_id, :as => :hidden
 
   = payment.submit 'Make payment'
+  %img{ :src => '/images/lock.png', :alt => 'Lock icon', :title => 'Payment over secure connection' }

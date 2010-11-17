@@ -19,7 +19,8 @@ $blueprint_grid_width: 40px;
 @import "compass/utilities";
 
 .container {
-  @include container;
+  width: 950px;
+  margin: 0 auto;
 }
 
 ul.legislators {
@@ -106,6 +107,9 @@ h1 {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  -webkit-box-shadow: 0 0 20px rgba(0,0,0,.1);
+  -moz-box-shadow: 0 0 20px rgba(0,0,0,.1);
+  -box-shadow: 0 0 20px rgba(0,0,0,.1);
   #address {
     width: 80%;
     display: block;
@@ -135,6 +139,9 @@ h1 {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,.1);
+    -moz-box-shadow: 0 0 20px rgba(0,0,0,.1);
+    -box-shadow: 0 0 20px rgba(0,0,0,.1);
     label {
       margin: 6px 0;
       display: block;
@@ -142,13 +149,13 @@ h1 {
     .legislators {
       width: auto;
       padding: 20px;
-      background: #004F5B;
+      background: #004352;
       -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
       border-radius: 5px;
-      -webkit-box-shadow: 0 0 10px rgba(0,0,0,.5) inset;
-      -moz-box-shadow: 0 0 10px rgba(0,0,0,.5) inset;
-      box-shadow: 0 0 10px rgba(0,0,0,.5) inset;
+      -webkit-box-shadow: 0 0 10px rgba(0,0,0,.25) inset;
+      -moz-box-shadow: 0 0 10px rgba(0,0,0,.25) inset;
+      box-shadow: 0 0 10px rgba(0,0,0,.25) inset;
       li {
         color: #999;
         padding: 10px;
@@ -157,9 +164,9 @@ h1 {
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         border-radius: 5px;
-        -webkit-box-shadow: 0 0 10px rgba(0,0,0,.5);
-        -moz-box-shadow: 0 0 10px rgba(0,0,0,.5);
-        box-shadow: 0 0 10px rgba(0,0,0,.5);
+        -webkit-box-shadow: 0 0 10px rgba(0,0,0,.25);
+        -moz-box-shadow: 0 0 10px rgba(0,0,0,.25);
+        box-shadow: 0 0 10px rgba(0,0,0,.25);
         .bioguide {
           margin: 0 auto 20px auto;
         }
@@ -228,15 +235,33 @@ h1 {
 
 #new_payment {
   margin: 0 auto 40px auto;
-  width:910px;
+  width: 910px;
   color: #F9F9F9;
   background: #006F7B;
-  margin: 20px auto;
   padding: 20px;
   font-family: Arial, sans-serif;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  -webkit-box-shadow: 0 0 20px rgba(0,0,0,.1);
+  -moz-box-shadow: 0 0 20px rgba(0,0,0,.1);
+  -box-shadow: 0 0 20px rgba(0,0,0,.1);
+  fieldset {
+    border-bottom: 1px solid rgba(255,255,255,.25)
+  }
+  fieldset.billing {
+    padding: 0 0 10px 0;
+  }
+  fieldset.email {
+    padding: 20px 0;
+    div.string {
+      margin: 0;  
+    }
+  }
+  fieldset.credit_card {
+    margin: 0 0 20px 0;
+    padding: 20px 0 10px 0;
+  }
   label {
     width: 110px;
     margin: 0 10px 0 0;
@@ -252,6 +277,20 @@ h1 {
       font-size: 16px;
       font-family: Arial, sans-serif;
     }
+  }
+  #payment_submit {
+    margin: 0 0 0 120px;
+    vertical-align: middle;
+  }
+  img {
+    vertical-align: middle;
+  }
+  .help {
+    width: 350px;
+    color: #9CC;
+    float: right;
+    font-size: 14px;
+    line-height: 1.4;
   }
 }
 
