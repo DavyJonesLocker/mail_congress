@@ -30,6 +30,10 @@ body {
   font-family: Arial, sans-serif;
 }
 
+p {
+  margin: 0 0 20px 0;
+}
+
 .container {
   width: 950px;
   margin: 0 auto;
@@ -392,6 +396,28 @@ a:hover {
 
 input[type="submit"] {
   font-size: 20px;
+}
+
+h1.tag {
+  margin: 0 0 40px 0;
+  text-align: center;
+  font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
+}
+
+.home {
+  overflow: hidden;
+  line-height: 1.4;
+  margin: 0 0 40px 0;
+  .text {
+    float: right;
+    width: 455px;
+  }
+  .video {
+    float: left;
+    width: 455px;
+    background: rgba(0,0,0,.5);
+    height: 300px;
+  }
 }
 
 #footer {

@@ -618,21 +618,26 @@ body {
 }
 
 /* line 33, ../../../app/stylesheets/screen.scss */
+p {
+  margin: 0 0 20px 0;
+}
+
+/* line 37, ../../../app/stylesheets/screen.scss */
 .container {
   width: 950px;
   margin: 0 auto;
 }
 
-/* line 38, ../../../app/stylesheets/screen.scss */
+/* line 42, ../../../app/stylesheets/screen.scss */
 ul.legislators {
   text-align: center;
 }
-/* line 40, ../../../app/stylesheets/screen.scss */
+/* line 44, ../../../app/stylesheets/screen.scss */
 ul.legislators li {
   vertical-align: top;
   display: inline-block;
 }
-/* line 44, ../../../app/stylesheets/screen.scss */
+/* line 48, ../../../app/stylesheets/screen.scss */
 ul.legislators .bioguide {
   position: relative;
   width: 100px;
@@ -640,7 +645,7 @@ ul.legislators .bioguide {
   overflow: hidden;
   background-repeat: no-repeat;
 }
-/* line 50, ../../../app/stylesheets/screen.scss */
+/* line 54, ../../../app/stylesheets/screen.scss */
 ul.legislators .bioguide img.mail {
   position: absolute;
   height: 16px;
@@ -649,58 +654,58 @@ ul.legislators .bioguide img.mail {
   bottom: 2px;
   display: none;
 }
-/* line 58, ../../../app/stylesheets/screen.scss */
+/* line 62, ../../../app/stylesheets/screen.scss */
 ul.legislators .bioguide img.selected {
   display: inline;
 }
-/* line 62, ../../../app/stylesheets/screen.scss */
+/* line 66, ../../../app/stylesheets/screen.scss */
 ul.legislators .monochrome {
   background-position: 100px 0px !important;
 }
-/* line 65, ../../../app/stylesheets/screen.scss */
+/* line 69, ../../../app/stylesheets/screen.scss */
 ul.legislators .color {
   background-position: 0px 0px !important;
 }
-/* line 68, ../../../app/stylesheets/screen.scss */
+/* line 72, ../../../app/stylesheets/screen.scss */
 ul.legislators .bioguide:hover {
   cursor: pointer;
 }
-/* line 71, ../../../app/stylesheets/screen.scss */
+/* line 75, ../../../app/stylesheets/screen.scss */
 ul.legislators img.monochrome {
   margin-left: -100px;
 }
-/* line 74, ../../../app/stylesheets/screen.scss */
+/* line 78, ../../../app/stylesheets/screen.scss */
 ul.legislators label:hover {
   cursor: pointer;
   text-decoration: underline;
   color: blue;
 }
 
-/* line 81, ../../../app/stylesheets/screen.scss */
+/* line 85, ../../../app/stylesheets/screen.scss */
 #letter_body {
   width: 600px;
   height: 300px;
 }
 
-/* line 86, ../../../app/stylesheets/screen.scss */
+/* line 90, ../../../app/stylesheets/screen.scss */
 body, html {
   color: #F9F9F9;
   background: #003f4b url(/images/html.gif);
 }
 
-/* line 91, ../../../app/stylesheets/screen.scss */
+/* line 95, ../../../app/stylesheets/screen.scss */
 h1 {
   width: auto;
   font-size: 24px;
   font-family: Arial, sans-serif;
   margin: 0 0 10px 0;
 }
-/* line 96, ../../../app/stylesheets/screen.scss */
+/* line 100, ../../../app/stylesheets/screen.scss */
 h1 label {
   color: #F9F9F9 !important;
 }
 
-/* line 101, ../../../app/stylesheets/screen.scss */
+/* line 105, ../../../app/stylesheets/screen.scss */
 .container #header a.logo {
   width: 256px;
   height: 40px;
@@ -711,7 +716,7 @@ h1 label {
   background: url(/images/logo.png) 0 0 no-repeat;
 }
 
-/* line 111, ../../../app/stylesheets/screen.scss */
+/* line 115, ../../../app/stylesheets/screen.scss */
 #address_search {
   width: 910px;
   color: #F9F9F9;
@@ -727,7 +732,7 @@ h1 label {
   -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   -box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
-/* line 125, ../../../app/stylesheets/screen.scss */
+/* line 129, ../../../app/stylesheets/screen.scss */
 #address_search #address {
   color: #233;
   width: 90%;
@@ -741,11 +746,11 @@ h1 label {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 138, ../../../app/stylesheets/screen.scss */
+/* line 142, ../../../app/stylesheets/screen.scss */
 #address_search .field_with_errors {
   background: none;
 }
-/* line 141, ../../../app/stylesheets/screen.scss */
+/* line 145, ../../../app/stylesheets/screen.scss */
 #address_search .error {
   color: #FEE;
   background: #B21;
@@ -756,15 +761,15 @@ h1 label {
   border-radius: 3px;
 }
 
-/* line 152, ../../../app/stylesheets/screen.scss */
+/* line 156, ../../../app/stylesheets/screen.scss */
 #new_letter {
   margin: 0 auto 40px auto;
 }
-/* line 154, ../../../app/stylesheets/screen.scss */
+/* line 158, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset.legislator {
   text-align: center;
 }
-/* line 157, ../../../app/stylesheets/screen.scss */
+/* line 161, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset {
   width: 910px;
   color: #F9F9F9;
@@ -779,12 +784,12 @@ h1 label {
   -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   -box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
-/* line 170, ../../../app/stylesheets/screen.scss */
+/* line 174, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset label {
   margin: 6px 0;
   display: block;
 }
-/* line 174, ../../../app/stylesheets/screen.scss */
+/* line 178, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators {
   width: auto;
   padding: 20px;
@@ -796,7 +801,7 @@ h1 label {
   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25) inset;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25) inset;
 }
-/* line 184, ../../../app/stylesheets/screen.scss */
+/* line 188, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li {
   color: #ABB;
   padding: 10px;
@@ -809,33 +814,33 @@ h1 label {
   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
-/* line 195, ../../../app/stylesheets/screen.scss */
+/* line 199, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li .bioguide {
   margin: 0 auto 20px auto;
 }
-/* line 199, ../../../app/stylesheets/screen.scss */
+/* line 203, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li:hover {
   cursor: pointer;
   background: #178;
 }
-/* line 202, ../../../app/stylesheets/screen.scss */
+/* line 206, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li:hover label {
   color: #FFF;
   text-decoration: none;
 }
-/* line 207, ../../../app/stylesheets/screen.scss */
+/* line 211, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li.active {
   background: #009CAE;
 }
-/* line 209, ../../../app/stylesheets/screen.scss */
+/* line 213, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li.active label {
   color: #FFF;
 }
-/* line 214, ../../../app/stylesheets/screen.scss */
+/* line 218, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset input.gray {
   color: #888888;
 }
-/* line 218, ../../../app/stylesheets/screen.scss */
+/* line 222, ../../../app/stylesheets/screen.scss */
 #new_letter .cost {
   color: #6E9;
   margin: 20px 0 0 0;
@@ -857,52 +862,52 @@ h1 label {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#223333', EndColorStr='#112222');
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#223333', EndColorStr='#112222')";
 }
-/* line 239, ../../../app/stylesheets/screen.scss */
+/* line 243, ../../../app/stylesheets/screen.scss */
 #new_letter .text textarea {
   width: 880px;
   padding: 5px;
   font-size: 16px;
   font-family: Arial, sans-serif;
 }
-/* line 245, ../../../app/stylesheets/screen.scss */
+/* line 249, ../../../app/stylesheets/screen.scss */
 #new_letter div.text {
   margin: 0 0 20px 0;
 }
-/* line 248, ../../../app/stylesheets/screen.scss */
+/* line 252, ../../../app/stylesheets/screen.scss */
 #new_letter div.string {
   margin: 10px 10px 0 0;
   display: inline-block;
   vertical-align: top;
 }
-/* line 252, ../../../app/stylesheets/screen.scss */
+/* line 256, ../../../app/stylesheets/screen.scss */
 #new_letter div.string input {
   width: 200px;
   padding: 5px;
   font-size: 16px;
   font-family: Arial, sans-serif;
 }
-/* line 259, ../../../app/stylesheets/screen.scss */
+/* line 263, ../../../app/stylesheets/screen.scss */
 #new_letter #letter_submit {
   margin: 20px 0 0 0;
 }
-/* line 262, ../../../app/stylesheets/screen.scss */
+/* line 266, ../../../app/stylesheets/screen.scss */
 #new_letter #letter_preview {
   margin: 0 0 0 10px;
   display: inline-block;
 }
 
-/* line 268, ../../../app/stylesheets/screen.scss */
+/* line 272, ../../../app/stylesheets/screen.scss */
 a {
   color: #6FF;
   text-decoration: none;
 }
 
-/* line 272, ../../../app/stylesheets/screen.scss */
+/* line 276, ../../../app/stylesheets/screen.scss */
 a:hover {
   text-decoration: underline;
 }
 
-/* line 276, ../../../app/stylesheets/screen.scss */
+/* line 280, ../../../app/stylesheets/screen.scss */
 #new_payment {
   margin: 0 auto 40px auto;
   width: 910px;
@@ -917,97 +922,97 @@ a:hover {
   -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   -box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
-/* line 289, ../../../app/stylesheets/screen.scss */
+/* line 293, ../../../app/stylesheets/screen.scss */
 #new_payment h1 {
   overflow: hidden;
   margin: 0 0 20px 0;
   padding: 0 0 20px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
-/* line 294, ../../../app/stylesheets/screen.scss */
+/* line 298, ../../../app/stylesheets/screen.scss */
 #new_payment h1 span {
   color: #9CC;
   float: right;
   font-size: 18px;
   line-height: 1.333;
 }
-/* line 300, ../../../app/stylesheets/screen.scss */
+/* line 304, ../../../app/stylesheets/screen.scss */
 #new_payment h1 strong {
   float: left;
 }
-/* line 304, ../../../app/stylesheets/screen.scss */
+/* line 308, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset {
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
-/* line 307, ../../../app/stylesheets/screen.scss */
+/* line 311, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset.billing {
   padding: 0 0 10px 0;
 }
-/* line 310, ../../../app/stylesheets/screen.scss */
+/* line 314, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset.email {
   padding: 20px 0;
 }
-/* line 312, ../../../app/stylesheets/screen.scss */
+/* line 316, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset.email div.string {
   margin-bottom: 0;
 }
-/* line 316, ../../../app/stylesheets/screen.scss */
+/* line 320, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset.credit_card {
   margin: 0 0 20px 0;
   padding: 20px 0 10px 0;
 }
-/* line 320, ../../../app/stylesheets/screen.scss */
+/* line 324, ../../../app/stylesheets/screen.scss */
 #new_payment label {
   width: 110px;
   margin: 0 10px 0 0;
   display: inline-block;
   text-align: right;
 }
-/* line 326, ../../../app/stylesheets/screen.scss */
+/* line 330, ../../../app/stylesheets/screen.scss */
 #new_payment div.select {
   display: inline;
 }
-/* line 328, ../../../app/stylesheets/screen.scss */
+/* line 332, ../../../app/stylesheets/screen.scss */
 #new_payment div.select label {
   width: auto;
 }
-/* line 331, ../../../app/stylesheets/screen.scss */
+/* line 335, ../../../app/stylesheets/screen.scss */
 #new_payment div.select select {
   margin: 0 10px 0 0;
 }
-/* line 335, ../../../app/stylesheets/screen.scss */
+/* line 339, ../../../app/stylesheets/screen.scss */
 #new_payment div.month_year {
   float: left;
   clear: left;
   margin: 5px 10px 15px 66px;
 }
-/* line 340, ../../../app/stylesheets/screen.scss */
+/* line 344, ../../../app/stylesheets/screen.scss */
 #new_payment div.string {
   float: left;
   clear: left;
   margin: 0 10px 10px 0;
 }
-/* line 344, ../../../app/stylesheets/screen.scss */
+/* line 348, ../../../app/stylesheets/screen.scss */
 #new_payment div.string input {
   width: 400px;
   padding: 5px;
   font-size: 16px;
   font-family: Arial, sans-serif;
 }
-/* line 350, ../../../app/stylesheets/screen.scss */
+/* line 354, ../../../app/stylesheets/screen.scss */
 #new_payment div.string input#payment_credit_card_verification_value {
   width: 100px;
 }
-/* line 354, ../../../app/stylesheets/screen.scss */
+/* line 358, ../../../app/stylesheets/screen.scss */
 #new_payment #payment_submit {
   margin: 0 0 0 120px;
   vertical-align: middle;
 }
-/* line 358, ../../../app/stylesheets/screen.scss */
+/* line 362, ../../../app/stylesheets/screen.scss */
 #new_payment img {
   vertical-align: middle;
 }
-/* line 361, ../../../app/stylesheets/screen.scss */
+/* line 365, ../../../app/stylesheets/screen.scss */
 #new_payment .help {
   width: 318px;
   color: #9CC;
@@ -1015,13 +1020,13 @@ a:hover {
   font-size: 14px;
   line-height: 1.4;
 }
-/* line 368, ../../../app/stylesheets/screen.scss */
+/* line 372, ../../../app/stylesheets/screen.scss */
 #new_payment .error {
   padding: 5px 0 0 0;
   margin: 0 0 0 120px;
 }
 
-/* line 375, ../../../app/stylesheets/screen.scss */
+/* line 379, ../../../app/stylesheets/screen.scss */
 .legislators .error,
 .field_with_errors {
   color: #FEE;
@@ -1032,30 +1037,56 @@ a:hover {
   border-radius: 3px;
 }
 
-/* line 384, ../../../app/stylesheets/screen.scss */
+/* line 388, ../../../app/stylesheets/screen.scss */
 .legislators .error {
   margin: 20px 0 0 0;
 }
 
-/* line 388, ../../../app/stylesheets/screen.scss */
+/* line 392, ../../../app/stylesheets/screen.scss */
 .error {
   font-weight: bold;
   padding: 10px 0 0 5px;
 }
 
-/* line 393, ../../../app/stylesheets/screen.scss */
+/* line 397, ../../../app/stylesheets/screen.scss */
 input[type="submit"] {
   font-size: 20px;
 }
 
-/* line 397, ../../../app/stylesheets/screen.scss */
+/* line 401, ../../../app/stylesheets/screen.scss */
+h1.tag {
+  margin: 0 0 40px 0;
+  text-align: center;
+  font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
+}
+
+/* line 407, ../../../app/stylesheets/screen.scss */
+.home {
+  overflow: hidden;
+  line-height: 1.4;
+  margin: 0 0 40px 0;
+}
+/* line 411, ../../../app/stylesheets/screen.scss */
+.home .text {
+  float: right;
+  width: 455px;
+}
+/* line 415, ../../../app/stylesheets/screen.scss */
+.home .video {
+  float: left;
+  width: 455px;
+  background: rgba(0, 0, 0, 0.5);
+  height: 300px;
+}
+
+/* line 423, ../../../app/stylesheets/screen.scss */
 #footer {
   color: #699;
   font-size: 14px;
   text-align: center;
   margin: 0 0 40px 0;
 }
-/* line 402, ../../../app/stylesheets/screen.scss */
+/* line 428, ../../../app/stylesheets/screen.scss */
 #footer strong {
   font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
 }
