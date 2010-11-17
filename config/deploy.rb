@@ -37,7 +37,7 @@ namespace :deploy do
   end
   
   task :extra_symlinks do
-    run "ln -sf /tmp/images #{current_path}/public/images/tmp" 
+    run "ln -sf /tmp #{current_path}/public/images/tmp" 
     run "ln -sf #{shared_path}/config/paypal.yml #{current_path}/config/paypal/production.yml"
   end
 end
