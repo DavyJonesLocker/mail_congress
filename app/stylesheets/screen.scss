@@ -255,7 +255,7 @@ h1 {
   fieldset.email {
     padding: 20px 0;
     div.string {
-      margin: 0;  
+      margin-bottom: 0;  
     }
   }
   fieldset.credit_card {
@@ -270,6 +270,8 @@ h1 {
   }
   div.select,  
   div.string {
+    float: left;
+    clear: left;
     margin: 0 10px 10px 0;
     input {
       width: 400px;
@@ -286,11 +288,15 @@ h1 {
     vertical-align: middle;
   }
   .help {
-    width: 350px;
+    width: 340px;
     color: #9CC;
     float: right;
     font-size: 14px;
     line-height: 1.4;
+  }
+  .error {
+    padding: 5px 0 0 0;
+    margin: 0 0 0 120px;
   }
 }
 

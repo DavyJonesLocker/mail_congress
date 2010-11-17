@@ -887,7 +887,7 @@ h1 label {
 }
 /* line 257, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset.email div.string {
-  margin: 0;
+  margin-bottom: 0;
 }
 /* line 261, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset.credit_card {
@@ -904,9 +904,11 @@ h1 label {
 /* line 272, ../../../app/stylesheets/screen.scss */
 #new_payment div.select,
 #new_payment div.string {
+  float: left;
+  clear: left;
   margin: 0 10px 10px 0;
 }
-/* line 274, ../../../app/stylesheets/screen.scss */
+/* line 276, ../../../app/stylesheets/screen.scss */
 #new_payment div.select input,
 #new_payment div.string input {
   width: 400px;
@@ -914,25 +916,30 @@ h1 label {
   font-size: 16px;
   font-family: Arial, sans-serif;
 }
-/* line 281, ../../../app/stylesheets/screen.scss */
+/* line 283, ../../../app/stylesheets/screen.scss */
 #new_payment #payment_submit {
   margin: 0 0 0 120px;
   vertical-align: middle;
 }
-/* line 285, ../../../app/stylesheets/screen.scss */
+/* line 287, ../../../app/stylesheets/screen.scss */
 #new_payment img {
   vertical-align: middle;
 }
-/* line 288, ../../../app/stylesheets/screen.scss */
+/* line 290, ../../../app/stylesheets/screen.scss */
 #new_payment .help {
-  width: 350px;
+  width: 340px;
   color: #9CC;
   float: right;
   font-size: 14px;
   line-height: 1.4;
 }
+/* line 297, ../../../app/stylesheets/screen.scss */
+#new_payment .error {
+  padding: 5px 0 0 0;
+  margin: 0 0 0 120px;
+}
 
-/* line 298, ../../../app/stylesheets/screen.scss */
+/* line 304, ../../../app/stylesheets/screen.scss */
 .legislators .error,
 .field_with_errors {
   color: #FEE;
@@ -943,18 +950,18 @@ h1 label {
   border-radius: 3px;
 }
 
-/* line 307, ../../../app/stylesheets/screen.scss */
+/* line 313, ../../../app/stylesheets/screen.scss */
 .legislators .error {
   margin: 20px 0 0 0;
 }
 
-/* line 311, ../../../app/stylesheets/screen.scss */
+/* line 317, ../../../app/stylesheets/screen.scss */
 .error {
   font-weight: bold;
   padding: 10px 0 0 5px;
 }
 
-/* line 316, ../../../app/stylesheets/screen.scss */
+/* line 322, ../../../app/stylesheets/screen.scss */
 input[type="submit"] {
   font-size: 20px;
 }
