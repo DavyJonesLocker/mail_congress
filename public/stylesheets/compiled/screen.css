@@ -970,7 +970,7 @@ a:hover {
 }
 /* line 330, ../../../app/stylesheets/screen.scss */
 #new_payment div.select {
-  display: inline;
+  display: inline-block;
 }
 /* line 332, ../../../app/stylesheets/screen.scss */
 #new_payment div.select label {
@@ -984,35 +984,43 @@ a:hover {
 #new_payment div.month_year {
   float: left;
   clear: left;
-  margin: 5px 10px 15px 66px;
+  margin: 5px 10px 15px 0;
 }
-/* line 344, ../../../app/stylesheets/screen.scss */
+/* line 343, ../../../app/stylesheets/screen.scss */
+#new_payment div.month_year div:first-child {
+  margin: 0 0 0 66px;
+}
+/* line 346, ../../../app/stylesheets/screen.scss */
+#new_payment div.month_year .error {
+  margin: 0;
+}
+/* line 350, ../../../app/stylesheets/screen.scss */
 #new_payment div.string {
   float: left;
   clear: left;
   margin: 0 10px 10px 0;
 }
-/* line 348, ../../../app/stylesheets/screen.scss */
+/* line 354, ../../../app/stylesheets/screen.scss */
 #new_payment div.string input {
   width: 400px;
   padding: 5px;
   font-size: 16px;
   font-family: Arial, sans-serif;
 }
-/* line 354, ../../../app/stylesheets/screen.scss */
+/* line 360, ../../../app/stylesheets/screen.scss */
 #new_payment div.string input#payment_credit_card_verification_value {
   width: 100px;
 }
-/* line 358, ../../../app/stylesheets/screen.scss */
+/* line 364, ../../../app/stylesheets/screen.scss */
 #new_payment #payment_submit {
   margin: 0 0 0 120px;
   vertical-align: middle;
 }
-/* line 362, ../../../app/stylesheets/screen.scss */
+/* line 368, ../../../app/stylesheets/screen.scss */
 #new_payment img {
   vertical-align: middle;
 }
-/* line 365, ../../../app/stylesheets/screen.scss */
+/* line 371, ../../../app/stylesheets/screen.scss */
 #new_payment .help {
   width: 318px;
   color: #9CC;
@@ -1020,13 +1028,13 @@ a:hover {
   font-size: 14px;
   line-height: 1.4;
 }
-/* line 372, ../../../app/stylesheets/screen.scss */
+/* line 378, ../../../app/stylesheets/screen.scss */
 #new_payment .error {
   padding: 5px 0 0 0;
   margin: 0 0 0 120px;
 }
 
-/* line 379, ../../../app/stylesheets/screen.scss */
+/* line 385, ../../../app/stylesheets/screen.scss */
 .legislators .error,
 .field_with_errors {
   color: #FEE;
@@ -1037,41 +1045,41 @@ a:hover {
   border-radius: 3px;
 }
 
-/* line 388, ../../../app/stylesheets/screen.scss */
+/* line 394, ../../../app/stylesheets/screen.scss */
 .legislators .error {
   margin: 20px 0 0 0;
 }
 
-/* line 392, ../../../app/stylesheets/screen.scss */
+/* line 398, ../../../app/stylesheets/screen.scss */
 .error {
   font-weight: bold;
   padding: 10px 0 0 5px;
 }
 
-/* line 397, ../../../app/stylesheets/screen.scss */
+/* line 403, ../../../app/stylesheets/screen.scss */
 input[type="submit"] {
   font-size: 20px;
 }
 
-/* line 401, ../../../app/stylesheets/screen.scss */
+/* line 407, ../../../app/stylesheets/screen.scss */
 h1.tag {
   margin: 0 0 40px 0;
   text-align: center;
   font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
 }
 
-/* line 407, ../../../app/stylesheets/screen.scss */
+/* line 413, ../../../app/stylesheets/screen.scss */
 .home {
   overflow: hidden;
   line-height: 1.4;
   margin: 0 0 40px 0;
 }
-/* line 411, ../../../app/stylesheets/screen.scss */
+/* line 417, ../../../app/stylesheets/screen.scss */
 .home .text {
   float: right;
   width: 455px;
 }
-/* line 415, ../../../app/stylesheets/screen.scss */
+/* line 421, ../../../app/stylesheets/screen.scss */
 .home .video {
   float: left;
   width: 455px;
@@ -1079,14 +1087,25 @@ h1.tag {
   height: 300px;
 }
 
-/* line 423, ../../../app/stylesheets/screen.scss */
+/* line 429, ../../../app/stylesheets/screen.scss */
+.thank_you {
+  text-align: center;
+  padding: 0 0 40px 0;
+}
+/* line 432, ../../../app/stylesheets/screen.scss */
+.thank_you h1 {
+  margin: 0 0 20px 0;
+  font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
+}
+
+/* line 438, ../../../app/stylesheets/screen.scss */
 #footer {
   color: #699;
   font-size: 14px;
   text-align: center;
   margin: 0 0 40px 0;
 }
-/* line 428, ../../../app/stylesheets/screen.scss */
+/* line 443, ../../../app/stylesheets/screen.scss */
 #footer strong {
   font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
 }

@@ -328,7 +328,7 @@ a:hover {
     text-align: right;
   }
   div.select {
-    display: inline;
+    display: inline-block;
     label {
       width: auto;
     }
@@ -339,7 +339,13 @@ a:hover {
   div.month_year {
     float: left;
     clear: left;
-    margin: 5px 10px 15px 66px;
+    margin: 5px 10px 15px 0;
+    div:first-child {
+      margin: 0 0 0 66px;
+    }
+    .error {
+      margin: 0;
+    }
   }
   div.string {
     float: left;
@@ -417,6 +423,15 @@ h1.tag {
     width: 455px;
     background: rgba(0,0,0,.5);
     height: 300px;
+  }
+}
+
+.thank_you {
+  text-align: center;
+  padding: 0 0 40px 0;
+  h1 {
+    margin: 0 0 20px 0;
+    font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
   }
 }
 
