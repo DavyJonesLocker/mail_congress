@@ -283,7 +283,20 @@ h1 {
     display: inline-block;
     text-align: right;
   }
-  div.select,  
+  div.select {
+    display: inline;
+    label {
+      width: auto;
+    }
+    select {
+      margin: 0 10px 0 0;
+    }
+  }
+  div.month_year {
+    float: left;
+    clear: left;
+    margin: 5px 10px 15px 66px;
+  }
   div.string {
     float: left;
     clear: left;

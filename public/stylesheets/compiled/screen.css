@@ -919,31 +919,47 @@ h1 label {
   display: inline-block;
   text-align: right;
 }
-/* line 287, ../../../app/stylesheets/screen.scss */
-#new_payment div.select,
+/* line 286, ../../../app/stylesheets/screen.scss */
+#new_payment div.select {
+  display: inline;
+}
+/* line 288, ../../../app/stylesheets/screen.scss */
+#new_payment div.select label {
+  width: auto;
+}
+/* line 291, ../../../app/stylesheets/screen.scss */
+#new_payment div.select select {
+  margin: 0 10px 0 0;
+}
+/* line 295, ../../../app/stylesheets/screen.scss */
+#new_payment div.month_year {
+  float: left;
+  clear: left;
+  margin: 5px 10px 15px 66px;
+}
+/* line 300, ../../../app/stylesheets/screen.scss */
 #new_payment div.string {
   float: left;
   clear: left;
   margin: 0 10px 10px 0;
 }
-/* line 291, ../../../app/stylesheets/screen.scss */
-#new_payment div.select input,
+/* line 304, ../../../app/stylesheets/screen.scss */
 #new_payment div.string input {
   width: 400px;
   padding: 5px;
   font-size: 16px;
   font-family: Arial, sans-serif;
 }
-/* line 298, ../../../app/stylesheets/screen.scss */
+/* line 311, ../../../app/stylesheets/screen.scss */
 #new_payment #payment_submit {
   margin: 0 0 0 120px;
   vertical-align: middle;
 }
-/* line 302, ../../../app/stylesheets/screen.scss */
+/* line 315, ../../../app/stylesheets/screen.scss */
 #new_payment img {
   vertical-align: middle;
 }
-/* line 305, ../../../app/stylesheets/screen.scss */
+/* line 318, ../../../app/stylesheets/screen.scss */
 #new_payment .help {
   width: 340px;
   color: #9CC;
@@ -951,13 +967,13 @@ h1 label {
   font-size: 14px;
   line-height: 1.4;
 }
-/* line 312, ../../../app/stylesheets/screen.scss */
+/* line 325, ../../../app/stylesheets/screen.scss */
 #new_payment .error {
   padding: 5px 0 0 0;
   margin: 0 0 0 120px;
 }
 
-/* line 319, ../../../app/stylesheets/screen.scss */
+/* line 332, ../../../app/stylesheets/screen.scss */
 .legislators .error,
 .field_with_errors {
   color: #FEE;
@@ -968,18 +984,18 @@ h1 label {
   border-radius: 3px;
 }
 
-/* line 328, ../../../app/stylesheets/screen.scss */
+/* line 341, ../../../app/stylesheets/screen.scss */
 .legislators .error {
   margin: 20px 0 0 0;
 }
 
-/* line 332, ../../../app/stylesheets/screen.scss */
+/* line 345, ../../../app/stylesheets/screen.scss */
 .error {
   font-weight: bold;
   padding: 10px 0 0 5px;
 }
 
-/* line 337, ../../../app/stylesheets/screen.scss */
+/* line 350, ../../../app/stylesheets/screen.scss */
 input[type="submit"] {
   font-size: 20px;
 }
