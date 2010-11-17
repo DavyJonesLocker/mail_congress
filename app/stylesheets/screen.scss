@@ -260,15 +260,15 @@ h1 {
   #letter_preview {
     margin: 0 0 0 10px;
     display: inline-block;
-    a {
-      color: #0FF;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
   }
+}
+
+a {
+  color: #6FF;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 
 #new_payment {
@@ -344,6 +344,9 @@ h1 {
       padding: 5px;
       font-size: 16px;
       font-family: Arial, sans-serif;
+    }
+    input#payment_credit_card_verification_value {
+      width: 100px;
     }
   }
   #payment_submit {

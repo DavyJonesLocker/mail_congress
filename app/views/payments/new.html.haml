@@ -44,5 +44,11 @@
     = letter.simple_fields_for :recipients do |recipient|
       = recipient.input :legislator_id, :as => :hidden
 
-  = payment.submit 'Make payment'
+  %div.help
+    By submitting payment, you agree to the 
+    %a{:href => '/tos'}
+      %abbr{:title => 'Terms of Service'}
+        TOS.
+
+  = payment.submit 'Make secure payment'
   %img{ :src => '/images/lock.png', :alt => 'Lock icon', :title => 'Payment over secure connection' }

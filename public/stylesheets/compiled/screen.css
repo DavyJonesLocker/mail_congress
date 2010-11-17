@@ -842,9 +842,9 @@ h1 label {
   display: inline-block;
   text-transform: uppercase;
   font-family: "AdelleBasicBold", Arial, sans-serif;
-  -webkit-border-radius: 5px;
+  -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
-  border-radius: 5px;
+  border-radius: 25px;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25) inset;
   -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25) inset;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25) inset;
@@ -887,14 +887,15 @@ h1 label {
   margin: 0 0 0 10px;
   display: inline-block;
 }
-/* line 263, ../../../app/stylesheets/screen.scss */
-#new_letter #letter_preview a {
-  color: #0FF;
-  font-weight: bold;
+
+/* line 266, ../../../app/stylesheets/screen.scss */
+a {
+  color: #6FF;
   text-decoration: none;
 }
-/* line 268, ../../../app/stylesheets/screen.scss */
-#new_letter #letter_preview a:hover {
+
+/* line 270, ../../../app/stylesheets/screen.scss */
+a:hover {
   text-decoration: underline;
 }
 
@@ -990,16 +991,20 @@ h1 label {
   font-size: 16px;
   font-family: Arial, sans-serif;
 }
-/* line 349, ../../../app/stylesheets/screen.scss */
+/* line 348, ../../../app/stylesheets/screen.scss */
+#new_payment div.string input#payment_credit_card_verification_value {
+  width: 100px;
+}
+/* line 352, ../../../app/stylesheets/screen.scss */
 #new_payment #payment_submit {
   margin: 0 0 0 120px;
   vertical-align: middle;
 }
-/* line 353, ../../../app/stylesheets/screen.scss */
+/* line 356, ../../../app/stylesheets/screen.scss */
 #new_payment img {
   vertical-align: middle;
 }
-/* line 356, ../../../app/stylesheets/screen.scss */
+/* line 359, ../../../app/stylesheets/screen.scss */
 #new_payment .help {
   width: 318px;
   color: #9CC;
@@ -1007,13 +1012,13 @@ h1 label {
   font-size: 14px;
   line-height: 1.4;
 }
-/* line 363, ../../../app/stylesheets/screen.scss */
+/* line 366, ../../../app/stylesheets/screen.scss */
 #new_payment .error {
   padding: 5px 0 0 0;
   margin: 0 0 0 120px;
 }
 
-/* line 370, ../../../app/stylesheets/screen.scss */
+/* line 373, ../../../app/stylesheets/screen.scss */
 .legislators .error,
 .field_with_errors {
   color: #FEE;
@@ -1024,18 +1029,18 @@ h1 label {
   border-radius: 3px;
 }
 
-/* line 379, ../../../app/stylesheets/screen.scss */
+/* line 382, ../../../app/stylesheets/screen.scss */
 .legislators .error {
   margin: 20px 0 0 0;
 }
 
-/* line 383, ../../../app/stylesheets/screen.scss */
+/* line 386, ../../../app/stylesheets/screen.scss */
 .error {
   font-weight: bold;
   padding: 10px 0 0 5px;
 }
 
-/* line 388, ../../../app/stylesheets/screen.scss */
+/* line 391, ../../../app/stylesheets/screen.scss */
 input[type="submit"] {
   font-size: 20px;
 }
