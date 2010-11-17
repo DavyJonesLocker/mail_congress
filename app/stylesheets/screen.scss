@@ -18,6 +18,14 @@ $blueprint_grid_width: 40px;
 @import "compass/reset";
 @import "compass/utilities";
 
+@font-face {
+	font-family: 'AdelleBasicBold';
+	src: url('/fonts/adellebasic_bold-webfont.eot');
+	src: local('☺'), url('/fonts/adellebasic_bold-webfont.woff') format('woff'), url('/fonts/adellebasic_bold-webfont.ttf') format('truetype'), url('/fonts/adellebasic_bold-webfont.svg#webfontqqI6w5ED') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 .container {
   width: 950px;
   margin: 0 auto;
@@ -111,13 +119,14 @@ h1 {
   -moz-box-shadow: 0 0 20px rgba(0,0,0,.1);
   -box-shadow: 0 0 20px rgba(0,0,0,.1);
   #address {
-    width: 80%;
+    color: #233;
+    width: 90%;
     display: block;
     padding: 10px;
     border: 1px solid #FFF;
     margin: 20px auto;
     font-size: 36px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
@@ -157,7 +166,7 @@ h1 {
       -moz-box-shadow: 0 0 10px rgba(0,0,0,.25) inset;
       box-shadow: 0 0 10px rgba(0,0,0,.25) inset;
       li {
-        color: #999;
+        color: #ABB;
         padding: 10px;
         margin: 0 20px 0 0;
         background: #3A606B;
