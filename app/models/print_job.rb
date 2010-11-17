@@ -17,10 +17,10 @@ class PrintJob
 
     if print_job.state == :completed
       letter.update_attribute(:printed, true)
+      SenderMailer.print_notification(letter).deliver
     else
       self.enqueue(letter)
     end
-
   end
   
 end
