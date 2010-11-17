@@ -3,7 +3,6 @@
 
 = simple_form_for @letter, :url => new_payment_path do |letter|
   %fieldset.legislator
-    %h1 Please choose to whom you wish to write.
     = letter.simple_fields_for :sender do |sender|
       = sender.input :street, :as => :hidden
       = sender.input :city, :as => :hidden

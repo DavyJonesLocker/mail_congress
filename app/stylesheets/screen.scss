@@ -213,9 +213,26 @@ h1 {
   }
   .cost {
     color: #9F6;
-    font-weight: bold;
+    color: #6f9;
+    color: #6D9;
     margin: 20px 0 0 0;
+    padding: 10px 20px;
     font-size: 24px;
+    background: #233;
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: "AdelleBasicBold", Arial, sans-serif;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.25) inset;
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.25) inset;
+    box-shadow: 0 0 10px rgba(0,0,0,.25) inset;
+    background-color: #223333;
+    background-image: -moz-linear-gradient(top, #223333, #112222); 
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #223333),color-stop(1, #112222)); 
+              filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#223333', EndColorStr='#112222'); 
+          -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#223333', EndColorStr='#112222')"; 
   }
   .text textarea {
     width: 880px;

@@ -833,55 +833,72 @@ h1 label {
 /* line 214, ../../../app/stylesheets/screen.scss */
 #new_letter .cost {
   color: #9F6;
-  font-weight: bold;
+  color: #6f9;
+  color: #6D9;
   margin: 20px 0 0 0;
+  padding: 10px 20px;
   font-size: 24px;
+  background: #233;
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: "AdelleBasicBold", Arial, sans-serif;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 25px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25) inset;
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25) inset;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25) inset;
+  background-color: #223333;
+  background-image: -moz-linear-gradient(top, #223333, #112222);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #223333), color-stop(1, #112222));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#223333', EndColorStr='#112222');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#223333', EndColorStr='#112222')";
 }
-/* line 220, ../../../app/stylesheets/screen.scss */
+/* line 237, ../../../app/stylesheets/screen.scss */
 #new_letter .text textarea {
   width: 880px;
   padding: 5px;
   font-size: 16px;
   font-family: Arial, sans-serif;
 }
-/* line 226, ../../../app/stylesheets/screen.scss */
+/* line 243, ../../../app/stylesheets/screen.scss */
 #new_letter div.text {
   margin: 0 0 20px 0;
 }
-/* line 229, ../../../app/stylesheets/screen.scss */
+/* line 246, ../../../app/stylesheets/screen.scss */
 #new_letter div.string {
   margin: 10px 10px 0 0;
   display: inline-block;
   vertical-align: top;
 }
-/* line 233, ../../../app/stylesheets/screen.scss */
+/* line 250, ../../../app/stylesheets/screen.scss */
 #new_letter div.string input {
   width: 200px;
   padding: 5px;
   font-size: 16px;
   font-family: Arial, sans-serif;
 }
-/* line 240, ../../../app/stylesheets/screen.scss */
+/* line 257, ../../../app/stylesheets/screen.scss */
 #new_letter #letter_submit {
   margin: 20px 0 0 0;
 }
-/* line 243, ../../../app/stylesheets/screen.scss */
+/* line 260, ../../../app/stylesheets/screen.scss */
 #new_letter #letter_preview {
   margin: 0 0 0 10px;
   display: inline-block;
 }
-/* line 246, ../../../app/stylesheets/screen.scss */
+/* line 263, ../../../app/stylesheets/screen.scss */
 #new_letter #letter_preview a {
   color: #0FF;
   font-weight: bold;
   text-decoration: none;
 }
-/* line 251, ../../../app/stylesheets/screen.scss */
+/* line 268, ../../../app/stylesheets/screen.scss */
 #new_letter #letter_preview a:hover {
   text-decoration: underline;
 }
 
-/* line 257, ../../../app/stylesheets/screen.scss */
+/* line 274, ../../../app/stylesheets/screen.scss */
 #new_payment {
   margin: 0 auto 40px auto;
   width: 910px;
@@ -896,93 +913,93 @@ h1 label {
   -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   -box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
-/* line 270, ../../../app/stylesheets/screen.scss */
+/* line 287, ../../../app/stylesheets/screen.scss */
 #new_payment h1 {
   overflow: hidden;
   margin: 0 0 20px 0;
   padding: 0 0 20px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
-/* line 275, ../../../app/stylesheets/screen.scss */
+/* line 292, ../../../app/stylesheets/screen.scss */
 #new_payment h1 span {
   color: #9CC;
   float: right;
   font-size: 18px;
   line-height: 1.333;
 }
-/* line 281, ../../../app/stylesheets/screen.scss */
+/* line 298, ../../../app/stylesheets/screen.scss */
 #new_payment h1 strong {
   float: left;
 }
-/* line 285, ../../../app/stylesheets/screen.scss */
+/* line 302, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset {
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
-/* line 288, ../../../app/stylesheets/screen.scss */
+/* line 305, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset.billing {
   padding: 0 0 10px 0;
 }
-/* line 291, ../../../app/stylesheets/screen.scss */
+/* line 308, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset.email {
   padding: 20px 0;
 }
-/* line 293, ../../../app/stylesheets/screen.scss */
+/* line 310, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset.email div.string {
   margin-bottom: 0;
 }
-/* line 297, ../../../app/stylesheets/screen.scss */
+/* line 314, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset.credit_card {
   margin: 0 0 20px 0;
   padding: 20px 0 10px 0;
 }
-/* line 301, ../../../app/stylesheets/screen.scss */
+/* line 318, ../../../app/stylesheets/screen.scss */
 #new_payment label {
   width: 110px;
   margin: 0 10px 0 0;
   display: inline-block;
   text-align: right;
 }
-/* line 307, ../../../app/stylesheets/screen.scss */
+/* line 324, ../../../app/stylesheets/screen.scss */
 #new_payment div.select {
   display: inline;
 }
-/* line 309, ../../../app/stylesheets/screen.scss */
+/* line 326, ../../../app/stylesheets/screen.scss */
 #new_payment div.select label {
   width: auto;
 }
-/* line 312, ../../../app/stylesheets/screen.scss */
+/* line 329, ../../../app/stylesheets/screen.scss */
 #new_payment div.select select {
   margin: 0 10px 0 0;
 }
-/* line 316, ../../../app/stylesheets/screen.scss */
+/* line 333, ../../../app/stylesheets/screen.scss */
 #new_payment div.month_year {
   float: left;
   clear: left;
   margin: 5px 10px 15px 66px;
 }
-/* line 321, ../../../app/stylesheets/screen.scss */
+/* line 338, ../../../app/stylesheets/screen.scss */
 #new_payment div.string {
   float: left;
   clear: left;
   margin: 0 10px 10px 0;
 }
-/* line 325, ../../../app/stylesheets/screen.scss */
+/* line 342, ../../../app/stylesheets/screen.scss */
 #new_payment div.string input {
   width: 400px;
   padding: 5px;
   font-size: 16px;
   font-family: Arial, sans-serif;
 }
-/* line 332, ../../../app/stylesheets/screen.scss */
+/* line 349, ../../../app/stylesheets/screen.scss */
 #new_payment #payment_submit {
   margin: 0 0 0 120px;
   vertical-align: middle;
 }
-/* line 336, ../../../app/stylesheets/screen.scss */
+/* line 353, ../../../app/stylesheets/screen.scss */
 #new_payment img {
   vertical-align: middle;
 }
-/* line 339, ../../../app/stylesheets/screen.scss */
+/* line 356, ../../../app/stylesheets/screen.scss */
 #new_payment .help {
   width: 318px;
   color: #9CC;
@@ -990,13 +1007,13 @@ h1 label {
   font-size: 14px;
   line-height: 1.4;
 }
-/* line 346, ../../../app/stylesheets/screen.scss */
+/* line 363, ../../../app/stylesheets/screen.scss */
 #new_payment .error {
   padding: 5px 0 0 0;
   margin: 0 0 0 120px;
 }
 
-/* line 353, ../../../app/stylesheets/screen.scss */
+/* line 370, ../../../app/stylesheets/screen.scss */
 .legislators .error,
 .field_with_errors {
   color: #FEE;
@@ -1007,18 +1024,18 @@ h1 label {
   border-radius: 3px;
 }
 
-/* line 362, ../../../app/stylesheets/screen.scss */
+/* line 379, ../../../app/stylesheets/screen.scss */
 .legislators .error {
   margin: 20px 0 0 0;
 }
 
-/* line 366, ../../../app/stylesheets/screen.scss */
+/* line 383, ../../../app/stylesheets/screen.scss */
 .error {
   font-weight: bold;
   padding: 10px 0 0 5px;
 }
 
-/* line 371, ../../../app/stylesheets/screen.scss */
+/* line 388, ../../../app/stylesheets/screen.scss */
 input[type="submit"] {
   font-size: 20px;
 }

@@ -104,17 +104,17 @@ function updateCost() {
   });
   switch(total) {
     case 0:
-      var costHTML = "$0 no legislators chosen.";
+      var costHTML = "Please choose to whom you wish to write.";
       costHeader.removeClass('money');
       break;
     
     case 1:
-      var costHTML = "$1 to send this letter.";
+      var costHTML = "$1 to send this letter";
       costHeader.addClass('money');
       break;
     
     default:
-      var costHTML = "$" + total + " to send these letters.";
+      var costHTML = "$" + total + " to send these letters";
       costHeader.addClass('money');
       break;
   }
