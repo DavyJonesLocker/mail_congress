@@ -2,7 +2,7 @@
 = simple_form_for @payment, :url => payments_path do |payment|
   %h1.group
     %strong Billing Info
-    %span You will be charged $2 to send 2 letters.
+    %span= final_cost(@letter.recipients)
     
   %fieldset.billing
     %div.help
