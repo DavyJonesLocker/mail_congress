@@ -200,6 +200,9 @@ h1 {
           margin: 0 auto 20px auto;
         }
       }
+      li:last-child {
+        margin: 0px;
+      }
       li:hover {
         cursor: pointer;
         background: #178;
