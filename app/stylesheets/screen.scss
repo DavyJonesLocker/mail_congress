@@ -218,9 +218,6 @@ h1 {
         }
       }
     }
-    input.gray {
-      color: #888888;
-    }
   }
   .cost {
     color: #6E9;
@@ -340,12 +337,19 @@ a:hover {
       margin: 0 10px 0 0;
     }
   }
-  div.month_year {
+  div.expiration {
     float: left;
     clear: left;
     margin: 5px 10px 15px 0;
-    div:first-child {
-      margin: 0 0 0 66px;
+    span {
+      display: inline-block;
+      width: 110px;
+      text-align: right;
+      margin: 0 10px 0 0;
+      vertical-align: middle;
+    }
+    label {
+      vertical-align: middle;
     }
     .error {
       margin: 0;
@@ -447,4 +451,7 @@ h1.tag {
   strong {
     font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
   }
+}
+input.gray {
+  color: #AAAAAA !important;
 }

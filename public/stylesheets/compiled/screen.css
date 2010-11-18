@@ -840,11 +840,7 @@ h1 label {
 #new_letter fieldset .legislators li.active label {
   color: #FFF;
 }
-/* line 221, ../../../app/stylesheets/screen.scss */
-#new_letter fieldset input.gray {
-  color: #888888;
-}
-/* line 225, ../../../app/stylesheets/screen.scss */
+/* line 222, ../../../app/stylesheets/screen.scss */
 #new_letter .cost {
   color: #6E9;
   margin: 20px 0 0 0;
@@ -866,52 +862,52 @@ h1 label {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#223333', EndColorStr='#112222');
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#223333', EndColorStr='#112222')";
 }
-/* line 246, ../../../app/stylesheets/screen.scss */
+/* line 243, ../../../app/stylesheets/screen.scss */
 #new_letter .text textarea {
   width: 880px;
   padding: 5px;
   font-size: 16px;
   font-family: Arial, sans-serif;
 }
-/* line 252, ../../../app/stylesheets/screen.scss */
+/* line 249, ../../../app/stylesheets/screen.scss */
 #new_letter div.text {
   margin: 0 0 20px 0;
 }
-/* line 255, ../../../app/stylesheets/screen.scss */
+/* line 252, ../../../app/stylesheets/screen.scss */
 #new_letter div.string {
   margin: 10px 10px 0 0;
   display: inline-block;
   vertical-align: top;
 }
-/* line 259, ../../../app/stylesheets/screen.scss */
+/* line 256, ../../../app/stylesheets/screen.scss */
 #new_letter div.string input {
   width: 200px;
   padding: 5px;
   font-size: 16px;
   font-family: Arial, sans-serif;
 }
-/* line 266, ../../../app/stylesheets/screen.scss */
+/* line 263, ../../../app/stylesheets/screen.scss */
 #new_letter #letter_submit {
   margin: 20px 0 0 0;
 }
-/* line 269, ../../../app/stylesheets/screen.scss */
+/* line 266, ../../../app/stylesheets/screen.scss */
 #new_letter #letter_preview {
   margin: 0 0 0 10px;
   display: inline-block;
 }
 
-/* line 275, ../../../app/stylesheets/screen.scss */
+/* line 272, ../../../app/stylesheets/screen.scss */
 a {
   color: #6FF;
   text-decoration: none;
 }
 
-/* line 279, ../../../app/stylesheets/screen.scss */
+/* line 276, ../../../app/stylesheets/screen.scss */
 a:hover {
   text-decoration: underline;
 }
 
-/* line 283, ../../../app/stylesheets/screen.scss */
+/* line 280, ../../../app/stylesheets/screen.scss */
 #new_payment {
   margin: 0 auto 40px auto;
   width: 910px;
@@ -926,106 +922,114 @@ a:hover {
   -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   -box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
-/* line 296, ../../../app/stylesheets/screen.scss */
+/* line 293, ../../../app/stylesheets/screen.scss */
 #new_payment h1 {
   overflow: hidden;
   margin: 0 0 20px 0;
   padding: 0 0 20px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
-/* line 301, ../../../app/stylesheets/screen.scss */
+/* line 298, ../../../app/stylesheets/screen.scss */
 #new_payment h1 span {
   color: #9CC;
   float: right;
   font-size: 18px;
   line-height: 1.333;
 }
-/* line 307, ../../../app/stylesheets/screen.scss */
+/* line 304, ../../../app/stylesheets/screen.scss */
 #new_payment h1 strong {
   float: left;
 }
-/* line 311, ../../../app/stylesheets/screen.scss */
+/* line 308, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset {
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
-/* line 314, ../../../app/stylesheets/screen.scss */
+/* line 311, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset.billing {
   padding: 0 0 10px 0;
 }
-/* line 317, ../../../app/stylesheets/screen.scss */
+/* line 314, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset.email {
   padding: 20px 0;
 }
-/* line 319, ../../../app/stylesheets/screen.scss */
+/* line 316, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset.email div.string {
   margin-bottom: 0;
 }
-/* line 323, ../../../app/stylesheets/screen.scss */
+/* line 320, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset.credit_card {
   margin: 0 0 20px 0;
   padding: 20px 0 10px 0;
 }
-/* line 327, ../../../app/stylesheets/screen.scss */
+/* line 324, ../../../app/stylesheets/screen.scss */
 #new_payment label {
   width: 110px;
   margin: 0 10px 0 0;
   display: inline-block;
   text-align: right;
 }
-/* line 333, ../../../app/stylesheets/screen.scss */
+/* line 330, ../../../app/stylesheets/screen.scss */
 #new_payment div.select {
   display: inline-block;
   vertical-align: middle;
 }
-/* line 336, ../../../app/stylesheets/screen.scss */
+/* line 333, ../../../app/stylesheets/screen.scss */
 #new_payment div.select label {
   width: auto;
 }
-/* line 339, ../../../app/stylesheets/screen.scss */
+/* line 336, ../../../app/stylesheets/screen.scss */
 #new_payment div.select select {
   margin: 0 10px 0 0;
 }
-/* line 343, ../../../app/stylesheets/screen.scss */
-#new_payment div.month_year {
+/* line 340, ../../../app/stylesheets/screen.scss */
+#new_payment div.expiration {
   float: left;
   clear: left;
   margin: 5px 10px 15px 0;
 }
-/* line 347, ../../../app/stylesheets/screen.scss */
-#new_payment div.month_year div:first-child {
-  margin: 0 0 0 66px;
+/* line 344, ../../../app/stylesheets/screen.scss */
+#new_payment div.expiration span {
+  display: inline-block;
+  width: 110px;
+  text-align: right;
+  margin: 0 10px 0 0;
+  vertical-align: middle;
 }
-/* line 350, ../../../app/stylesheets/screen.scss */
-#new_payment div.month_year .error {
-  margin: 0;
+/* line 351, ../../../app/stylesheets/screen.scss */
+#new_payment div.expiration label {
+  vertical-align: middle;
 }
 /* line 354, ../../../app/stylesheets/screen.scss */
+#new_payment div.expiration .error {
+  margin: 0;
+}
+/* line 358, ../../../app/stylesheets/screen.scss */
 #new_payment div.string {
   float: left;
   clear: left;
   margin: 0 10px 10px 0;
 }
-/* line 358, ../../../app/stylesheets/screen.scss */
+/* line 362, ../../../app/stylesheets/screen.scss */
 #new_payment div.string input {
   width: 400px;
   padding: 5px;
   font-size: 16px;
   font-family: Arial, sans-serif;
 }
-/* line 364, ../../../app/stylesheets/screen.scss */
+/* line 368, ../../../app/stylesheets/screen.scss */
 #new_payment div.string input#payment_credit_card_verification_value {
   width: 100px;
 }
-/* line 368, ../../../app/stylesheets/screen.scss */
+/* line 372, ../../../app/stylesheets/screen.scss */
 #new_payment #payment_submit {
   margin: 0 0 0 120px;
   vertical-align: middle;
 }
-/* line 372, ../../../app/stylesheets/screen.scss */
+/* line 376, ../../../app/stylesheets/screen.scss */
 #new_payment img {
   vertical-align: middle;
 }
-/* line 375, ../../../app/stylesheets/screen.scss */
+/* line 379, ../../../app/stylesheets/screen.scss */
 #new_payment .help {
   width: 318px;
   color: #9CC;
@@ -1033,13 +1037,13 @@ a:hover {
   font-size: 14px;
   line-height: 1.4;
 }
-/* line 382, ../../../app/stylesheets/screen.scss */
+/* line 386, ../../../app/stylesheets/screen.scss */
 #new_payment .error {
   padding: 5px 0 0 0;
   margin: 0 0 0 120px;
 }
 
-/* line 389, ../../../app/stylesheets/screen.scss */
+/* line 393, ../../../app/stylesheets/screen.scss */
 .legislators .error,
 .field_with_errors {
   color: #FEE;
@@ -1050,41 +1054,41 @@ a:hover {
   border-radius: 3px;
 }
 
-/* line 398, ../../../app/stylesheets/screen.scss */
+/* line 402, ../../../app/stylesheets/screen.scss */
 .legislators .error {
   margin: 20px 0 0 0;
 }
 
-/* line 402, ../../../app/stylesheets/screen.scss */
+/* line 406, ../../../app/stylesheets/screen.scss */
 .error {
   font-weight: bold;
   padding: 10px 0 0 5px;
 }
 
-/* line 407, ../../../app/stylesheets/screen.scss */
+/* line 411, ../../../app/stylesheets/screen.scss */
 input[type="submit"] {
   font-size: 20px;
 }
 
-/* line 411, ../../../app/stylesheets/screen.scss */
+/* line 415, ../../../app/stylesheets/screen.scss */
 h1.tag {
   margin: 0 0 40px 0;
   text-align: center;
   font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
 }
 
-/* line 417, ../../../app/stylesheets/screen.scss */
+/* line 421, ../../../app/stylesheets/screen.scss */
 .home {
   overflow: hidden;
   line-height: 1.4;
   margin: 0 0 40px 0;
 }
-/* line 421, ../../../app/stylesheets/screen.scss */
+/* line 425, ../../../app/stylesheets/screen.scss */
 .home .text {
   float: right;
   width: 455px;
 }
-/* line 425, ../../../app/stylesheets/screen.scss */
+/* line 429, ../../../app/stylesheets/screen.scss */
 .home .video {
   float: left;
   width: 455px;
@@ -1092,25 +1096,30 @@ h1.tag {
   height: 300px;
 }
 
-/* line 433, ../../../app/stylesheets/screen.scss */
+/* line 437, ../../../app/stylesheets/screen.scss */
 .thank_you {
   text-align: center;
   padding: 0 0 40px 0;
 }
-/* line 436, ../../../app/stylesheets/screen.scss */
+/* line 440, ../../../app/stylesheets/screen.scss */
 .thank_you h1 {
   margin: 0 0 20px 0;
   font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
 }
 
-/* line 442, ../../../app/stylesheets/screen.scss */
+/* line 446, ../../../app/stylesheets/screen.scss */
 #footer {
   color: #699;
   font-size: 14px;
   text-align: center;
   margin: 0 0 40px 0;
 }
-/* line 447, ../../../app/stylesheets/screen.scss */
+/* line 451, ../../../app/stylesheets/screen.scss */
 #footer strong {
   font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
+}
+
+/* line 455, ../../../app/stylesheets/screen.scss */
+input.gray {
+  color: #AAAAAA !important;
 }

@@ -24,10 +24,13 @@
         = sender.input :email
   
   %fieldset.credit_card
+    .help
+      Your credit card's type will be automatically determined based upon the number.
     = payment.error :gateway
     = payment.simple_fields_for :credit_card, @payment.credit_card do |credit_card|
       = credit_card.input :number, :label => 'Card number'
-      %div.month_year
+      .expiration
+        %span Expires
         = credit_card.input :month, :as => :select, :collection => 1..12
         = credit_card.input :year, :as => :select, :collection => 0.years.from_now.year..6.years.from_now.year
       = credit_card.input :verification_value, :label => 'CVV2'

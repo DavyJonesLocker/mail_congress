@@ -5,6 +5,10 @@ class SearchController < ApplicationController
       @geoloc = GeoKit::GeoLoc.new(params[:geoloc])
       @geoloc.success = true
     elsif params[:address].present?
+      if bogus_address?(params[:address])
+        invalid_address
+        return
+      end
       @geoloc = GeoKit::Geocoders::GoogleGeocoder.geocode(params[:address])
       unless @geoloc.success
         invalid_address
@@ -37,6 +41,12 @@ class SearchController < ApplicationController
   def invalid_address
     @address_error = 'Valid home address is required'
     render :template => 'home/index'
+  end
+
+  def bogus_address?(address)
+    bogus_addresses = [
+      '1640 Riverside Drive Hill Valley, CA'
+    ].include?(address)
   end
 
 end
