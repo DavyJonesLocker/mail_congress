@@ -1123,3 +1123,9 @@ h1.tag {
 input.gray {
   color: #AAAAAA !important;
 }
+
+/* line 459, ../../../app/stylesheets/screen.scss */
+div.input .hint {
+  margin-left: 10px;
+  font-size: 75%;
+}
