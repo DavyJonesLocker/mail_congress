@@ -4,10 +4,10 @@
 = simple_form_for @letter, :url => new_payment_path do |letter|
   %fieldset.legislator
     = letter.simple_fields_for :sender do |sender|
-      = sender.input :street, :as => :hidden
-      = sender.input :city, :as => :hidden
-      = sender.input :state, :as => :hidden
-      = sender.input :zip, :as => :hidden
+      = sender.input :street, :as => :hidden, :input_html => { :class => :preview }
+      = sender.input :city, :as => :hidden, :input_html => { :class => :preview }
+      = sender.input :state, :as => :hidden, :input_html => { :class => :preview }
+      = sender.input :zip, :as => :hidden, :input_html => { :class => :preview }
     = hidden_field_tag 'geoloc[lat]', @geoloc.lat
     = hidden_field_tag 'geoloc[lng]', @geoloc.lng
 

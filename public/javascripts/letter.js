@@ -55,7 +55,8 @@ function previewLetter() {
   data = {}
   $.each($('.preview'), function(index, input) {
     data[input.getAttribute('name')] = input.value;
-  })
+  });
+
   $('#letter_preview').html('<img src="/images/ajax-loader.gif" />');
   $.ajax({
     type: 'POST',
