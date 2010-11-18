@@ -1,6 +1,7 @@
 @envjs
 Feature: Mailing congress people
 
+  @test
   Scenario: Mailing my congress people
     Given I have found my congress people
     When  I write my letter to all of my congress people
@@ -10,7 +11,7 @@ Feature: Mailing congress people
     Given I have found my congress people
     When  I select my congress people
     And   I unselect my congress people
-    Then  I should see "$0 no legislators chosen."
+    Then  I should see "Please choose to whom you wish to write"
 
   Scenario: Submitting a letter with no legislators selected
     Given I have found my congress people
@@ -28,7 +29,7 @@ Feature: Mailing congress people
 
   Scenario: Persisting legislator choices after failed validation
     Given I have found my congress people
-    When  I click the label "Sen. John Kerry"
+    When  I click on "Sen. John Kerry"
     And   I press "Send"
-    Then  legislator K000148 should be selected
-    And   I should see "$1 to send this letter."
+    Then  Sen. John Kerry should be selected
+    And   I should see "$1 to send this letter"

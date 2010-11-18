@@ -4,13 +4,13 @@ When /^I submit the address form with my information$/ do
 end
 
 Then /^I should see my congress people$/ do
-  Then %{I should see "Please choose whom you wish to write."}
+  Then %{I should see "Please choose to whom you wish to write"}
   Then %{I should see "Sen. John Kerry"}
-  Then %{I should see bioguide image "K000148"}
+  Then %{I should see Sen. John Kerry's photo}
   Then %{I should see "Sen. Scott Brown"}
-  Then %{I should see bioguide image "B001268"}
+  Then %{I should see Sen. Scott Brown's photo}
   Then %{I should see "Rep. Stephen Lynch"}
-  Then %{I should see bioguide image "L000562"}
+  Then %{I should see Rep. Stephen Lynch's photo}
 end
 
 

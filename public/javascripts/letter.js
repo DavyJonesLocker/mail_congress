@@ -104,7 +104,7 @@ function updateCost() {
   });
   switch(total) {
     case 0:
-      var costHTML = "Please choose to whom you wish to write.";
+      var costHTML = "Please choose to whom you wish to write";
       costHeader.removeClass('money');
       break;
     

@@ -4,6 +4,6 @@ When /^I pay for the letters with my credit card$/ do
   When %{I select "10" from "Month"}
   When %{I select "2015" from "Year"}
   When %{I fill in "CVV2" with "000"}
-  When %{I press "Make payment"}
+  When %{I press "Make secure payment"}
 end
 
