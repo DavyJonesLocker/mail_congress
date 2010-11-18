@@ -54,7 +54,7 @@ class Letter < ActiveRecord::Base
     fit_letter_on_one_page
     document = Prawn::Document.new do |pdf|
       pdf.font_size self.font_size
-      pdf.text "Legislator's Name,", :leading => font_size
+      pdf.text "[Legislator's name will go here on the printed letter],", :leading => font_size
       pdf.text self.body, :indent_paragraphs => font_size
       pdf.text "Your constituent,\n#{sender.envelope_text}", :align => :right
     end
@@ -62,7 +62,7 @@ class Letter < ActiveRecord::Base
     base64     = Base64.encode64(document.render)
     images     = ::Magick::Image.read_inline(base64)
     image_list = ::Magick::ImageList.new
-    images.each { |image| image.border!(1,1, '#000000') }
+    # images.each { |image| image.border!(1,1, '#000000') }
     images.map  { |image| image_list.push(image.extent(image.columns, image.rows + 5)) }
     image_list.append(true).write("#{Rails.root}/public/images/tmp/#{file_name}")
     file_name
