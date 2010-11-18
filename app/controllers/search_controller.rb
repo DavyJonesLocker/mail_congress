@@ -6,9 +6,12 @@ class SearchController < ApplicationController
       @geoloc.success = true
     elsif params[:address].present?
       @geoloc = GeoKit::Geocoders::GoogleGeocoder.geocode(params[:address])
+      unless @geoloc.success
+        invalid_address
+        return
+      end
     else
-      @address_error = 'Home address is required.'
-      render :template => 'home/index'
+      invalid_address
       return
     end
 
@@ -21,7 +24,19 @@ class SearchController < ApplicationController
       }
     )
 
+    if @letter.sender.street.blank?
+      invalid_address
+      return
+    end
+
     @letter.build_recipients(@geoloc)
+  end
+
+  private
+
+  def invalid_address
+    @address_error = 'Valid home address is required'
+    render :template => 'home/index'
   end
 
 end
