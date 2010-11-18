@@ -62,7 +62,6 @@ class Letter < ActiveRecord::Base
     base64     = Base64.encode64(document.render)
     images     = ::Magick::Image.read_inline(base64)
     image_list = ::Magick::ImageList.new
-    # images.each { |image| image.border!(1,1, '#000000') }
     images.map  { |image| image_list.push(image.extent(image.columns, image.rows + 5)) }
     image_list.append(true).write("#{Rails.root}/public/images/tmp/#{file_name}")
     file_name
