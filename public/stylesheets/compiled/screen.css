@@ -923,71 +923,84 @@ a:hover {
   -box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 /* line 293, ../../../app/stylesheets/screen.scss */
+#new_payment .field_with_errors {
+  padding-left: 0px !important;
+}
+/* line 296, ../../../app/stylesheets/screen.scss */
 #new_payment h1 {
   overflow: hidden;
   margin: 0 0 20px 0;
   padding: 0 0 20px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
-/* line 298, ../../../app/stylesheets/screen.scss */
+/* line 301, ../../../app/stylesheets/screen.scss */
 #new_payment h1 span {
   color: #9CC;
   float: right;
   font-size: 18px;
   line-height: 1.333;
 }
-/* line 304, ../../../app/stylesheets/screen.scss */
+/* line 307, ../../../app/stylesheets/screen.scss */
 #new_payment h1 strong {
   float: left;
 }
-/* line 308, ../../../app/stylesheets/screen.scss */
+/* line 311, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset {
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
-/* line 311, ../../../app/stylesheets/screen.scss */
+/* line 314, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset.billing {
   padding: 0 0 10px 0;
 }
-/* line 314, ../../../app/stylesheets/screen.scss */
+/* line 316, ../../../app/stylesheets/screen.scss */
+#new_payment fieldset.billing legend {
+  padding: 0px !important;
+}
+/* line 319, ../../../app/stylesheets/screen.scss */
+#new_payment fieldset.billing legend .error {
+  margin: 0px !important;
+  padding: 10px !important;
+}
+/* line 324, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset.email {
   padding: 20px 0;
 }
-/* line 316, ../../../app/stylesheets/screen.scss */
+/* line 326, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset.email div.string {
   margin-bottom: 0;
 }
-/* line 320, ../../../app/stylesheets/screen.scss */
+/* line 330, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset.credit_card {
   margin: 0 0 20px 0;
   padding: 20px 0 10px 0;
 }
-/* line 324, ../../../app/stylesheets/screen.scss */
+/* line 334, ../../../app/stylesheets/screen.scss */
 #new_payment label {
   width: 110px;
   margin: 0 10px 0 0;
   display: inline-block;
   text-align: right;
 }
-/* line 330, ../../../app/stylesheets/screen.scss */
+/* line 340, ../../../app/stylesheets/screen.scss */
 #new_payment div.select {
   display: inline-block;
   vertical-align: middle;
 }
-/* line 333, ../../../app/stylesheets/screen.scss */
+/* line 343, ../../../app/stylesheets/screen.scss */
 #new_payment div.select label {
   width: auto;
 }
-/* line 336, ../../../app/stylesheets/screen.scss */
+/* line 346, ../../../app/stylesheets/screen.scss */
 #new_payment div.select select {
   margin: 0 10px 0 0;
 }
-/* line 340, ../../../app/stylesheets/screen.scss */
+/* line 350, ../../../app/stylesheets/screen.scss */
 #new_payment div.expiration {
   float: left;
   clear: left;
   margin: 5px 10px 15px 0;
 }
-/* line 344, ../../../app/stylesheets/screen.scss */
+/* line 354, ../../../app/stylesheets/screen.scss */
 #new_payment div.expiration span {
   display: inline-block;
   width: 110px;
@@ -995,41 +1008,41 @@ a:hover {
   margin: 0 10px 0 0;
   vertical-align: middle;
 }
-/* line 351, ../../../app/stylesheets/screen.scss */
+/* line 361, ../../../app/stylesheets/screen.scss */
 #new_payment div.expiration label {
   vertical-align: middle;
 }
-/* line 354, ../../../app/stylesheets/screen.scss */
+/* line 364, ../../../app/stylesheets/screen.scss */
 #new_payment div.expiration .error {
   margin: 0;
 }
-/* line 358, ../../../app/stylesheets/screen.scss */
+/* line 368, ../../../app/stylesheets/screen.scss */
 #new_payment div.string {
   float: left;
   clear: left;
   margin: 0 10px 10px 0;
 }
-/* line 362, ../../../app/stylesheets/screen.scss */
+/* line 372, ../../../app/stylesheets/screen.scss */
 #new_payment div.string input {
   width: 400px;
   padding: 5px;
   font-size: 16px;
   font-family: Arial, sans-serif;
 }
-/* line 368, ../../../app/stylesheets/screen.scss */
+/* line 378, ../../../app/stylesheets/screen.scss */
 #new_payment div.string input#payment_credit_card_verification_value {
   width: 100px;
 }
-/* line 372, ../../../app/stylesheets/screen.scss */
+/* line 382, ../../../app/stylesheets/screen.scss */
 #new_payment #payment_submit {
   margin: 0 0 0 120px;
   vertical-align: middle;
 }
-/* line 376, ../../../app/stylesheets/screen.scss */
+/* line 386, ../../../app/stylesheets/screen.scss */
 #new_payment img {
   vertical-align: middle;
 }
-/* line 379, ../../../app/stylesheets/screen.scss */
+/* line 389, ../../../app/stylesheets/screen.scss */
 #new_payment .help {
   width: 318px;
   color: #9CC;
@@ -1037,15 +1050,15 @@ a:hover {
   font-size: 14px;
   line-height: 1.4;
 }
-/* line 386, ../../../app/stylesheets/screen.scss */
+/* line 396, ../../../app/stylesheets/screen.scss */
 #new_payment .error {
   padding: 5px 0 0 0;
   margin: 0 0 0 120px;
 }
 
-/* line 393, ../../../app/stylesheets/screen.scss */
+/* line 403, ../../../app/stylesheets/screen.scss */
 .legislators .error,
-.field_with_errors {
+.field_with_errors, fieldset.billing legend {
   color: #FEE;
   background: #B21;
   padding: 10px;
@@ -1054,41 +1067,41 @@ a:hover {
   border-radius: 3px;
 }
 
-/* line 402, ../../../app/stylesheets/screen.scss */
+/* line 412, ../../../app/stylesheets/screen.scss */
 .legislators .error {
   margin: 20px 0 0 0;
 }
 
-/* line 406, ../../../app/stylesheets/screen.scss */
+/* line 416, ../../../app/stylesheets/screen.scss */
 .error {
   font-weight: bold;
   padding: 10px 0 0 5px;
 }
 
-/* line 411, ../../../app/stylesheets/screen.scss */
+/* line 421, ../../../app/stylesheets/screen.scss */
 input[type="submit"] {
   font-size: 20px;
 }
 
-/* line 415, ../../../app/stylesheets/screen.scss */
+/* line 425, ../../../app/stylesheets/screen.scss */
 h1.tag {
   margin: 0 0 40px 0;
   text-align: center;
   font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
 }
 
-/* line 421, ../../../app/stylesheets/screen.scss */
+/* line 431, ../../../app/stylesheets/screen.scss */
 .home {
   overflow: hidden;
   line-height: 1.4;
   margin: 0 0 40px 0;
 }
-/* line 425, ../../../app/stylesheets/screen.scss */
+/* line 435, ../../../app/stylesheets/screen.scss */
 .home .text {
   float: right;
   width: 455px;
 }
-/* line 429, ../../../app/stylesheets/screen.scss */
+/* line 439, ../../../app/stylesheets/screen.scss */
 .home .video {
   float: left;
   width: 455px;
@@ -1096,76 +1109,76 @@ h1.tag {
   height: 300px;
 }
 
-/* line 437, ../../../app/stylesheets/screen.scss */
+/* line 447, ../../../app/stylesheets/screen.scss */
 .legalese {
   padding: 0 0 40px 0;
 }
 
-/* line 441, ../../../app/stylesheets/screen.scss */
+/* line 451, ../../../app/stylesheets/screen.scss */
 .thank_you {
   text-align: center;
   padding: 0 0 40px 0;
 }
-/* line 444, ../../../app/stylesheets/screen.scss */
+/* line 454, ../../../app/stylesheets/screen.scss */
 .thank_you h1 {
   margin: 0 0 20px 0;
   font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
 }
 
-/* line 450, ../../../app/stylesheets/screen.scss */
+/* line 460, ../../../app/stylesheets/screen.scss */
 #footer {
   color: #699;
   font-size: 14px;
   text-align: center;
   margin: 0 0 40px 0;
 }
-/* line 455, ../../../app/stylesheets/screen.scss */
+/* line 465, ../../../app/stylesheets/screen.scss */
 #footer .legal {
   margin-top: 5px;
 }
-/* line 459, ../../../app/stylesheets/screen.scss */
+/* line 469, ../../../app/stylesheets/screen.scss */
 #footer .info :first-child {
   font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
 }
 
-/* line 464, ../../../app/stylesheets/screen.scss */
+/* line 474, ../../../app/stylesheets/screen.scss */
 input.gray {
   color: #AAAAAA !important;
 }
 
-/* line 468, ../../../app/stylesheets/screen.scss */
+/* line 478, ../../../app/stylesheets/screen.scss */
 ul.cards {
   margin-top: -15px;
   margin-left: 114px;
 }
-/* line 471, ../../../app/stylesheets/screen.scss */
+/* line 481, ../../../app/stylesheets/screen.scss */
 ul.cards .card {
   display: inline-block;
   width: 32px;
   height: 32px;
   margin-left: 5px;
 }
-/* line 477, ../../../app/stylesheets/screen.scss */
+/* line 487, ../../../app/stylesheets/screen.scss */
 ul.cards .visa {
   background-image: url("../../images/icons/visa.png");
 }
-/* line 480, ../../../app/stylesheets/screen.scss */
+/* line 490, ../../../app/stylesheets/screen.scss */
 ul.cards .master {
   background-image: url("../../images/icons/master.png");
 }
-/* line 484, ../../../app/stylesheets/screen.scss */
+/* line 494, ../../../app/stylesheets/screen.scss */
 ul.cards .american_express {
   background-image: url("../../images/icons/american_express.png");
 }
-/* line 488, ../../../app/stylesheets/screen.scss */
+/* line 498, ../../../app/stylesheets/screen.scss */
 ul.cards .discover {
   background-image: url("../../images/icons/discover.png");
 }
-/* line 492, ../../../app/stylesheets/screen.scss */
+/* line 502, ../../../app/stylesheets/screen.scss */
 ul.cards .diners_club {
   background-image: url("../../images/icons/diners_club.png");
 }
-/* line 496, ../../../app/stylesheets/screen.scss */
+/* line 506, ../../../app/stylesheets/screen.scss */
 ul.cards .disabled {
   opacity: 0.3;
 }

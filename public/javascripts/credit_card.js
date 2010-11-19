@@ -1,5 +1,6 @@
 $(function() {
   $('#payment_credit_card_number').keyup(function() { determineCardType(this.value) });
+  determineCardType($('#payment_credit_card_number').val());
 });
 
 function determineCardType(number) {

@@ -290,6 +290,9 @@ a:hover {
   -webkit-box-shadow: 0 0 20px rgba(0,0,0,.1);
   -moz-box-shadow: 0 0 20px rgba(0,0,0,.1);
   -box-shadow: 0 0 20px rgba(0,0,0,.1);
+  .field_with_errors {
+    padding-left: 0px !important;
+  }
   h1 {
     overflow: hidden;
     margin: 0 0 20px 0;
@@ -310,6 +313,13 @@ a:hover {
   }
   fieldset.billing {
     padding: 0 0 10px 0;
+    legend {
+      padding: 0px !important;
+    }
+    legend .error {
+      margin: 0px !important;
+      padding: 10px !important;
+    }
   }
   fieldset.email {
     padding: 20px 0;
@@ -390,7 +400,7 @@ a:hover {
 }
 
 .legislators .error,
-.field_with_errors {
+.field_with_errors, fieldset.billing legend {
   color: #FEE;
   background: #B21;
   padding: 10px;

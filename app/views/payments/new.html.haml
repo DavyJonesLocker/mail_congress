@@ -7,6 +7,7 @@
     %span= final_cost(@letter.recipients)
     
   %fieldset.billing
+    %legend= payment.error :gateway
     %div.help
       We have filled in the home address you supplied to us. If need be, please modify these fields to reflect your correct billing information.
     = payment.simple_fields_for :credit_card, @payment.credit_card do |credit_card|
@@ -28,7 +29,6 @@
   %fieldset.credit_card
     .help
       Your credit card's type will be automatically determined based upon the number.
-    = payment.error :gateway
     = payment.simple_fields_for :credit_card, @payment.credit_card do |credit_card|
       %ul.cards
         - %w{visa master american_express discover diners_club}.each do |card|
