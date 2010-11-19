@@ -49,9 +49,13 @@
 
   %div.help
     By submitting payment, you agree to the 
-    %a{:href => '/tos'}
+    %a{:href => '/terms', :target => '_blank'}
       %abbr{:title => 'Terms of Service'}
-        TOS.
+        Terms of Service
+    and
+    %a{:href => '/privacy', :target => '_blank'}
+      %abbr{:title => 'Privacy Policy'}
+        Privacy Policy
 
   = payment.submit 'Make secure payment'
   %img{ :src => '/images/icons/lock.png', :alt => 'Lock icon', :title => 'Payment over secure connection' }
