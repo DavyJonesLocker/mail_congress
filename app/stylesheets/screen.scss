@@ -452,8 +452,13 @@ h1.tag {
   font-size: 14px;
   text-align: center;
   margin: 0 0 40px 0;
-  strong {
-    font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
+  .legal {
+    margin-top: 5px;
+  }
+  .info {
+    :first-child {
+      font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
+    }
   }
 }
 input.gray {

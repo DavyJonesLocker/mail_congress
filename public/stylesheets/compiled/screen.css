@@ -1120,11 +1120,15 @@ h1.tag {
   margin: 0 0 40px 0;
 }
 /* line 455, ../../../app/stylesheets/screen.scss */
-#footer strong {
+#footer .legal {
+  margin-top: 5px;
+}
+/* line 459, ../../../app/stylesheets/screen.scss */
+#footer .info :first-child {
   font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
 }
 
-/* line 459, ../../../app/stylesheets/screen.scss */
+/* line 464, ../../../app/stylesheets/screen.scss */
 input.gray {
   color: #AAAAAA !important;
 }
