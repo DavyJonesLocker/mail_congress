@@ -1,3 +1,5 @@
+- content_for :javascript do
+  = javascript_include_tag 'credit_card'
 
 = simple_form_for @payment, :url => payments_path do |payment|
   %h1.group
@@ -28,6 +30,9 @@
       Your credit card's type will be automatically determined based upon the number.
     = payment.error :gateway
     = payment.simple_fields_for :credit_card, @payment.credit_card do |credit_card|
+      %ul.cards
+        - %w{visa master american_express discover diners_club}.each do |card|
+          %li{:class => [card, 'card']}
       = credit_card.input :number, :label => 'Card number'
       .expiration
         %span Expires

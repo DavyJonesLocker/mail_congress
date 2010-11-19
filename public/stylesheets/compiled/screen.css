@@ -1132,3 +1132,40 @@ h1.tag {
 input.gray {
   color: #AAAAAA !important;
 }
+
+/* line 468, ../../../app/stylesheets/screen.scss */
+ul.cards {
+  margin-top: -15px;
+  margin-left: 114px;
+}
+/* line 471, ../../../app/stylesheets/screen.scss */
+ul.cards .card {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  margin-left: 5px;
+}
+/* line 477, ../../../app/stylesheets/screen.scss */
+ul.cards .visa {
+  background-image: url("../../images/icons/visa.png");
+}
+/* line 480, ../../../app/stylesheets/screen.scss */
+ul.cards .master {
+  background-image: url("../../images/icons/master.png");
+}
+/* line 484, ../../../app/stylesheets/screen.scss */
+ul.cards .american_express {
+  background-image: url("../../images/icons/american_express.png");
+}
+/* line 488, ../../../app/stylesheets/screen.scss */
+ul.cards .discover {
+  background-image: url("../../images/icons/discover.png");
+}
+/* line 492, ../../../app/stylesheets/screen.scss */
+ul.cards .diners_club {
+  background-image: url("../../images/icons/diners_club.png");
+}
+/* line 496, ../../../app/stylesheets/screen.scss */
+ul.cards .disabled {
+  opacity: 0.3;
+}

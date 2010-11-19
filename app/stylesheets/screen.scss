@@ -465,3 +465,35 @@ input.gray {
   color: #AAAAAA !important;
 }
 
+ul.cards {
+  margin-top: -15px;
+  margin-left: 114px;
+  .card {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin-left: 5px;
+  }
+  .visa {
+    background-image: url('../../images/icons/visa.png')
+  }
+  .master {
+    background-image: url('../../images/icons/master.png')
+  }
+
+  .american_express {
+    background-image: url('../../images/icons/american_express.png')
+  }
+
+  .discover {
+    background-image: url('../../images/icons/discover.png')
+  }
+
+  .diners_club {
+    background-image: url('../../images/icons/diners_club.png')
+  }
+
+  .disabled {
+    opacity: 0.3;
+  }
+}
