@@ -33,7 +33,6 @@
         %span Expires
         = credit_card.input :month, :as => :select, :collection => 1..12
         = credit_card.input :year, :as => :select, :collection => 0.years.from_now.year..6.years.from_now.year
-      = credit_card.input :verification_value, :label => 'Security Code', :hint => 'What is this?'
 
   = simple_fields_for @letter do |letter|
     = letter.input :body, :as => :hidden

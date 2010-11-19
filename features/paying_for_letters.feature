@@ -22,5 +22,4 @@ Feature: Paying for letters
     And   I should see the error "is not a valid credit card number" for "Card number"
     And   I should see the error "is not a valid month" for "Month"
     And   I should see the error "expired" for "Year"
-    And   I should see the error "can't be blank" for "CVV2"
 
