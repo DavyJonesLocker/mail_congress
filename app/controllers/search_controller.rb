@@ -43,6 +43,7 @@ class SearchController < ApplicationController
     render :template => 'home/index'
   end
 
+  # Lifted from: http://wikibin.org/articles/list-of-the-addresses-of-fictional-characters.html
   def bogus_address?(address)
     bogus_addresses = [
       '1640 Riverside Drive Hill Valley, CA',
