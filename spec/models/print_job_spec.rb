@@ -53,6 +53,10 @@ describe PrintJob do
         @letter.should be_printed
       end
 
+      it 'clears the body of the letter' do
+        @letter.body.should be_empty
+      end
+
       it 'sends a print confirmation email' do
         SenderMailer.should have_received(:print_notification).with(@letter)
         @mail.should have_received(:deliver)
@@ -67,7 +71,7 @@ describe PrintJob do
         Cups::PrintJob::Transient.stubs(:new).returns(@cups_print_job)
         @letter = Factory.build(:letter)
         @letter.stubs(:to_pdf).returns('')
-        @letter.stubs(:update_attribute)
+        @letter.stubs(:update_attributes)
         Letter.stubs(:find).returns(@letter)
         PrintJob.stubs(:enqueue)
         PrintJob.perform(@letter.id)
@@ -78,7 +82,7 @@ describe PrintJob do
       end
 
       it 'does not mark the letter as printed' do
-        @letter.should_not have_received(:update_attribute)
+        @letter.should_not have_received(:update_attributes)
       end
 
       it 'should re-enqueue the job' do
