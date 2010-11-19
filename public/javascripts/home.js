@@ -33,7 +33,7 @@ var Address = function() {
     '11435 18th Avenue, Oahu, HI',
     '2630 Hegal Place, Apt. 42, Alexandria, VA',
     '129 West 81st Street Apt 5E New York, NY',
-    '88 Edgemont, Palisades, CA',
+    '88 Edgemont Drive, Palisades, CA',
     '633 Stag Trail Road North Caldwell, NJ',
     '1630 Revello Drive, Sunnydale, CA',
     '111 Archer Avenue, New York City, NY'
