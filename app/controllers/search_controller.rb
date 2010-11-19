@@ -9,6 +9,7 @@ class SearchController < ApplicationController
         invalid_address
         return
       end
+      params[:address].sub!('#', 'Apt. ')
       @geoloc = GeoKit::Geocoders::GoogleGeocoder.geocode(params[:address])
       unless @geoloc.success
         invalid_address
