@@ -10,7 +10,7 @@ class CreditCard
   ## Attributes
   
   cattr_accessor :require_verification_value
-  self.require_verification_value = true
+  self.require_verification_value = false
   
   # Essential attributes for a valid, non-bogus creditcards
   attr_accessor :number, :month, :year, :type
