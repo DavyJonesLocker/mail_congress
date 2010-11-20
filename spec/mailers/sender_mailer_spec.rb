@@ -27,7 +27,7 @@ describe SenderMailer do
       end
 
       it 'has a subject notifying this is a print notification' do
-        @email.should have_subject('Your letter has finished printing and is ready to ship.')
+        @email.should have_subject('[MailCongress] Your letter has finished printing and is ready to ship.')
       end
     end
     context 'more than 1 recipient' do
@@ -53,7 +53,7 @@ describe SenderMailer do
       end
 
       it 'has a subject notifying this is a print notification' do
-        @email.should have_subject('Your letters have finished printing and are ready to ship.')
+        @email.should have_subject('[MailCongress] Your letters have finished printing and are ready to ship.')
       end
     end
   end
