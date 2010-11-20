@@ -41,7 +41,7 @@ MailCongress::Application.configure do
     :address              => 'smtp.gmail.com',
     :port                 =>  587,
     :domain               => 'mailcongress.org',
-    :user_name            => 'notice',
+    :user_name            => 'notice@mailcongress.org',
     :password             => '1a2s3d4f5g6h7j8k9l0;',
     :authentication       => 'plain',
     :enable_starttls_auto =>  true
