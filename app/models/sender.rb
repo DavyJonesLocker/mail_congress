@@ -26,4 +26,12 @@ class Sender < ActiveRecord::Base
   def name
     "#{first_name} #{last_name}"
   end
+
+  def first_name=(first_name)
+    super(first_name.nil? ? nil : first_name.capitalize)
+  end
+
+  def last_name=(last_name)
+    super(last_name.nil? ? nil : last_name.capitalize)
+  end
 end

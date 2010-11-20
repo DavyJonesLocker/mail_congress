@@ -45,4 +45,24 @@ describe Sender do
       @sender.name.should == 'John Doe'
     end
   end
+
+  describe '#first_name=' do
+    before { @sender = Sender.new }
+    context 'when a poorly formatted first_name is given' do
+      it 'auto-corrects the capitalization' do
+        @sender.first_name = 'john'
+        @sender.first_name.should == 'John'
+      end
+    end
+  end
+
+  describe '#last_name=' do
+    before { @sender = Sender.new }
+    context 'when a poorly formatted last_name is given' do
+      it 'auto-corrects the capitalization' do
+        @sender.last_name = 'doe'
+        @sender.last_name.should == 'Doe'
+      end
+    end
+  end
 end
