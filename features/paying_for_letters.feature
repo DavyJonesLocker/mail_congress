@@ -11,7 +11,7 @@ Feature: Paying for letters
     Given I have found my congress people
     When  I write my letter to all of my congress people
     And   I clear all of the fields
-    And   I press "Make payment"
+    And   I press "Make secure payment"
     Then  I should see the error "is invalid" for "Email"
     And   I should see the error "can't be blank" for "First name"
     And   I should see the error "can't be blank" for "Last name"
@@ -22,5 +22,4 @@ Feature: Paying for letters
     And   I should see the error "is not a valid credit card number" for "Card number"
     And   I should see the error "is not a valid month" for "Month"
     And   I should see the error "expired" for "Year"
-    And   I should see the error "can't be blank" for "CVV2"
 

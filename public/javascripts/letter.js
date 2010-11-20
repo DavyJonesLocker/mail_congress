@@ -55,7 +55,8 @@ function previewLetter() {
   data = {}
   $.each($('.preview'), function(index, input) {
     data[input.getAttribute('name')] = input.value;
-  })
+  });
+
   $('#letter_preview').html('<img src="/images/ajax-loader.gif" />');
   $.ajax({
     type: 'POST',
@@ -104,7 +105,7 @@ function updateCost() {
   });
   switch(total) {
     case 0:
-      var costHTML = "Please choose to whom you wish to write.";
+      var costHTML = "Please choose to whom you wish to write";
       costHeader.removeClass('money');
       break;
     

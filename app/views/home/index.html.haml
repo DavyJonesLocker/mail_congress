@@ -1,11 +1,12 @@
--#= content_for :javascript do
+= content_for :javascript do
   -#%script{ :src => 'http://maps.google.com/maps/api/js?sensor=false', :type => 'text/javascript' }
   -#= javascript_include_tag 'search'
+  = javascript_include_tag 'home'
 
 = form_tag search_path, :id => 'address_search' do
   %div{:class => "input string required#{@address_error.present? ? ' field_with_errors' : '' }"}
     = label_tag :address, 'Please enter your home address.'
-    = text_field_tag :address
+    = text_field_tag :address, params['address']
     - if @address_error.present?
       %div.error=@address_error
   %input{:type => 'submit', :value => 'Find'}

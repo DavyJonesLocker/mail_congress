@@ -10,17 +10,18 @@
     = javascript_include_tag :defaults
     = yield :javascript
     = csrf_meta_tag
-    :javascript
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-19740623-1']);
-      _gaq.push(['_setDomainName', '.mailcongress.org']);
-      _gaq.push(['_trackPageview']);
+    - unless Rails.env == 'test'
+      :javascript
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-19740623-1']);
+        _gaq.push(['_setDomainName', '.mailcongress.org']);
+        _gaq.push(['_trackPageview']);
 
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
   %body
     .container
       #header
@@ -32,10 +33,14 @@
         = yield
         
       #footer
-        %a{ :href => "/" }
-          %strong MailCongress
-        is brought to you by 
-        %a{ :href => "#"} Brian Cardarella 
-        and 
-        %a{ :href => "http://www.cssboy.com/"} Angelo Simeoni
-        – © 2010
+        .info
+          %a{ :href => "/" } MailCongress.org
+          Built by 
+          %a{ :href => "mailto:brian@mailcongress.org"} Brian Cardarella 
+          Designed by 
+          %a{ :href => "http://www.cssboy.com/"} Angelo Simeoni
+          – &#64; 2010
+        .legal
+          %a{ :href => '/terms' } Terms of Service
+          ●
+          %a{ :href => '/privacy' } Privacy Policy

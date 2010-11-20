@@ -14,6 +14,11 @@ describe PrintJob do
   end
 
   describe '.perform' do
+    before do
+      @mail = mock('Mail')
+      @mail.stubs(:deliver)
+      SenderMailer.stubs(:print_notification).returns(@mail)
+    end
     context 'succesfull printing' do
       before do
         @cups_print_job = mock('PrintJob')
@@ -47,6 +52,15 @@ describe PrintJob do
       it 'marks the letter as printed' do
         @letter.should be_printed
       end
+
+      it 'clears the body of the letter' do
+        @letter.body.should be_empty
+      end
+
+      it 'sends a print confirmation email' do
+        SenderMailer.should have_received(:print_notification).with(@letter)
+        @mail.should have_received(:deliver)
+      end
     end
     
     context 'unsuccesfull printing' do
@@ -57,7 +71,7 @@ describe PrintJob do
         Cups::PrintJob::Transient.stubs(:new).returns(@cups_print_job)
         @letter = Factory.build(:letter)
         @letter.stubs(:to_pdf).returns('')
-        @letter.stubs(:update_attribute)
+        @letter.stubs(:update_attributes)
         Letter.stubs(:find).returns(@letter)
         PrintJob.stubs(:enqueue)
         PrintJob.perform(@letter.id)
@@ -68,11 +82,15 @@ describe PrintJob do
       end
 
       it 'does not mark the letter as printed' do
-        @letter.should_not have_received(:update_attribute)
+        @letter.should_not have_received(:update_attributes)
       end
 
       it 'should re-enqueue the job' do
         PrintJob.should have_received(:enqueue).with(@letter)
+      end
+
+      it 'does not send a print confirmation email' do
+        SenderMailer.should_not have_received(:print_notification)
       end
     end
   end

@@ -3,7 +3,7 @@ Feature: Finding Congress People
   Scenario: Viewing the home page
     When  I go to the home page
     Then  I should see "Please enter your home address."
-
+  
   Scenario: Searching for my congress people with a server side geocode lookup
     Given I am on the home page
     When  I submit the address form with my information
@@ -12,7 +12,7 @@ Feature: Finding Congress People
   Scenario: Submitting an empty search
     Given I am on the home page
     When  I press "Find"
-    Then  I should see "Home address is required."
+    Then  I should see "Valid home address is required"
 
   #@envjs
   #Scenario: Searching for my congress people with a client side geocode lookup

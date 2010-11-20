@@ -1,0 +1,1 @@
+class LegalController < ApplicationController; end

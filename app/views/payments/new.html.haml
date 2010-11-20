@@ -1,10 +1,13 @@
+- content_for :javascript do
+  = javascript_include_tag 'credit_card'
 
 = simple_form_for @payment, :url => payments_path do |payment|
   %h1.group
     %strong Billing Info
-    %span You will be charged $2 to send 2 letters.
+    %span= final_cost(@letter.recipients)
     
   %fieldset.billing
+    %legend= payment.error :gateway
     %div.help
       We have filled in the home address you supplied to us. If need be, please modify these fields to reflect your correct billing information.
     = payment.simple_fields_for :credit_card, @payment.credit_card do |credit_card|
@@ -24,13 +27,17 @@
         = sender.input :email
   
   %fieldset.credit_card
-    = payment.error :gateway
+    .help
+      Your credit card's type will be automatically determined based upon the number.
     = payment.simple_fields_for :credit_card, @payment.credit_card do |credit_card|
+      %ul.cards
+        - %w{visa master american_express discover diners_club}.each do |card|
+          %li{:class => [card, 'card']}
       = credit_card.input :number, :label => 'Card number'
-      %div.month_year
+      .expiration
+        %span Expires
         = credit_card.input :month, :as => :select, :collection => 1..12
         = credit_card.input :year, :as => :select, :collection => 0.years.from_now.year..6.years.from_now.year
-      = credit_card.input :verification_value, :label => 'CVV2'
 
   = simple_fields_for @letter do |letter|
     = letter.input :body, :as => :hidden
@@ -47,9 +54,13 @@
 
   %div.help
     By submitting payment, you agree to the 
-    %a{:href => '/tos'}
+    %a{:href => '/terms', :target => '_blank'}
       %abbr{:title => 'Terms of Service'}
-        TOS.
+        Terms of Service
+    and
+    %a{:href => '/privacy', :target => '_blank'}
+      %abbr{:title => 'Privacy Policy'}
+        Privacy Policy
 
   = payment.submit 'Make secure payment'
   %img{ :src => '/images/icons/lock.png', :alt => 'Lock icon', :title => 'Payment over secure connection' }

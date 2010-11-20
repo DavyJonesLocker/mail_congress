@@ -200,6 +200,9 @@ h1 {
           margin: 0 auto 20px auto;
         }
       }
+      li:last-child {
+        margin: 0px;
+      }
       li:hover {
         cursor: pointer;
         background: #178;
@@ -214,9 +217,6 @@ h1 {
           color: #FFF;
         }
       }
-    }
-    input.gray {
-      color: #888888;
     }
   }
   .cost {
@@ -290,6 +290,9 @@ a:hover {
   -webkit-box-shadow: 0 0 20px rgba(0,0,0,.1);
   -moz-box-shadow: 0 0 20px rgba(0,0,0,.1);
   -box-shadow: 0 0 20px rgba(0,0,0,.1);
+  .field_with_errors {
+    padding-left: 0px !important;
+  }
   h1 {
     overflow: hidden;
     margin: 0 0 20px 0;
@@ -310,6 +313,13 @@ a:hover {
   }
   fieldset.billing {
     padding: 0 0 10px 0;
+    legend {
+      padding: 0px !important;
+    }
+    legend .error {
+      margin: 0px !important;
+      padding: 10px !important;
+    }
   }
   fieldset.email {
     padding: 20px 0;
@@ -337,12 +347,19 @@ a:hover {
       margin: 0 10px 0 0;
     }
   }
-  div.month_year {
+  div.expiration {
     float: left;
     clear: left;
     margin: 5px 10px 15px 0;
-    div:first-child {
-      margin: 0 0 0 66px;
+    span {
+      display: inline-block;
+      width: 110px;
+      text-align: right;
+      margin: 0 10px 0 0;
+      vertical-align: middle;
+    }
+    label {
+      vertical-align: middle;
     }
     .error {
       margin: 0;
@@ -383,7 +400,7 @@ a:hover {
 }
 
 .legislators .error,
-.field_with_errors {
+.field_with_errors, fieldset.billing legend {
   color: #FEE;
   background: #B21;
   padding: 10px;
@@ -427,6 +444,10 @@ h1.tag {
   }
 }
 
+.legalese {
+  padding: 0 0 40px 0;
+}
+
 .thank_you {
   text-align: center;
   padding: 0 0 40px 0;
@@ -441,7 +462,48 @@ h1.tag {
   font-size: 14px;
   text-align: center;
   margin: 0 0 40px 0;
-  strong {
-    font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
+  .legal {
+    margin-top: 5px;
+  }
+  .info {
+    :first-child {
+      font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
+    }
+  }
+}
+input.gray {
+  color: #AAAAAA !important;
+}
+
+ul.cards {
+  margin-top: -15px;
+  margin-left: 114px;
+  .card {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin-left: 5px;
+  }
+  .visa {
+    background-image: url('../../images/icons/visa.png')
+  }
+  .master {
+    background-image: url('../../images/icons/master.png')
+  }
+
+  .american_express {
+    background-image: url('../../images/icons/american_express.png')
+  }
+
+  .discover {
+    background-image: url('../../images/icons/discover.png')
+  }
+
+  .diners_club {
+    background-image: url('../../images/icons/diners_club.png')
+  }
+
+  .disabled {
+    opacity: 0.3;
   }
 }
