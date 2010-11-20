@@ -1,7 +1,9 @@
 $(function() {
   $('#payment_credit_card_number').keyup(function() { determineCardType(this.value) });
+  $('form').submit(function(){$('input[type=submit]', this).attr('disabled', 'disabled');});
   determineCardType($('#payment_credit_card_number').val());
 });
+
 
 function determineCardType(number) {
   if (number == "") {
