@@ -970,8 +970,8 @@ a:hover {
 }
 /* line 330, ../../../app/stylesheets/screen.scss */
 #new_payment div.select {
-  vertical-align: middle;
   display: inline-block;
+  vertical-align: middle;
 }
 /* line 333, ../../../app/stylesheets/screen.scss */
 #new_payment div.select label {
