@@ -36,6 +36,16 @@ MailCongress::Application.configure do
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.delivery_methods = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => 'smpt.gmail.com',
+    :port                 =>  587,
+    :domain               => 'mailcongress.org',
+    :user_name            => 'notice',
+    :password             => '1a2s3d4f5g6h7j8k9l0;',
+    :authentication       => 'plain',
+    :enable_starttls_auto =>  true
+  }
 
   # Enable threaded mode
   # config.threadsafe!
