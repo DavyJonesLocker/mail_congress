@@ -1,6 +1,5 @@
 MailCongress::Application.routes.draw do
   post 'search' => 'search#show', :as => 'search'
-  post 'letters' => 'letters#create', :as => 'letters'
   post 'letters/preview' => 'letters#show', :as => 'preview_letter'
   post 'payments/new' => 'payments#new', :as => 'new_payment'
   post 'payments' => 'payments#create', :as => 'payments'
