@@ -60,6 +60,3 @@ namespace :resque do
   end
 end
 
-
-        require 'config/boot'
-        require 'hoptoad_notifier/capistrano'
