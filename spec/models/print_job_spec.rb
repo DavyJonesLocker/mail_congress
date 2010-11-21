@@ -19,6 +19,7 @@ describe PrintJob do
       @mail.stubs(:deliver)
       SenderMailer.stubs(:print_notification).returns(@mail)
     end
+
     context 'succesfull printing' do
       before do
         @cups_print_job = mock('PrintJob')

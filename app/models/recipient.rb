@@ -3,7 +3,8 @@ class Recipient< ActiveRecord::Base
   belongs_to :legislator
 
   # place holder for failed server side validations
-  attr_accessor :selected
+  attr_accessor    :selected
+  attr_accessible  :selected, :legislator, :legislator_id
   alias :selected? :selected
 
   def css_class

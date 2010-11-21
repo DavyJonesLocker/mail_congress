@@ -10,8 +10,9 @@ class Letter < ActiveRecord::Base
   validate :presence_of_recipients
   validate :fit_letter_on_one_page
 
-  attr_accessor :font_size
-  attr_accessor :min_font_size
+  attr_accessor   :font_size
+  attr_accessor   :min_font_size
+  attr_accessible :body, :printed, :sender_attributes, :recipients_attributes
 
   def to_pdf
     fit_letter_on_one_page
