@@ -124,6 +124,9 @@ GEM
       json (~> 1.4.6)
       term-ansicolor (~> 1.0.5)
     haml (3.1.0.alpha.22)
+    hoptoad_notifier (2.3.12)
+      activesupport
+      builder
     i18n (0.4.2)
     johnson (2.0.0.pre3)
       stackdeck (~> 0.2)
@@ -259,6 +262,7 @@ DEPENDENCIES
   factory_girl_rails
   geokit
   haml (= 3.1.0.alpha.22)
+  hoptoad_notifier
   launchy
   mongrel (= 1.2.0.pre2)
   pg
