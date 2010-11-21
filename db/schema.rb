@@ -61,8 +61,9 @@ ActiveRecord::Schema.define(:version => 20101106155442) do
 
   create_table "letters", :force => true do |t|
     t.integer  "sender_id"
+    t.integer  "campaign_id"
     t.text     "body"
-    t.boolean  "printed",    :default => false
+    t.boolean  "printed",     :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

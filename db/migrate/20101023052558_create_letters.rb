@@ -2,6 +2,7 @@ class CreateLetters < ActiveRecord::Migration
   def self.up
     create_table :letters do |t|
       t.integer :sender_id
+      t.integer :campaign_id
       t.text :body
       t.boolean :printed, :default => false
       t.timestamps
