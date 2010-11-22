@@ -28,3 +28,12 @@ namespace :spork do
     print 'Done.'
   end
 end
+
+namespace :db do
+  desc 'Shortcut to drop, create and migrate'
+  task :recreate do
+    %w{drop create migrate}.each do |type|
+      Rake::Task["db:#{type}"].invoke
+    end
+  end
+end

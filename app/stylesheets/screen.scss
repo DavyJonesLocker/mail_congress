@@ -249,7 +249,7 @@ h1 {
   div.text {
     margin: 0 0 20px 0;
   }
-  div.string {
+  div.string, div.password {
     margin: 10px 10px 0 0;
     display: inline-block;
     vertical-align: top;
@@ -277,7 +277,7 @@ a:hover {
   text-decoration: underline;
 }
 
-#new_payment {
+#new_payment, #new_advocacy_group {
   margin: 0 auto 40px auto;
   width: 910px;
   color: #F9F9F9;
@@ -323,7 +323,7 @@ a:hover {
   }
   fieldset.email {
     padding: 20px 0;
-    div.string {
+    div.string, div.password {
       margin-bottom: 0;  
     }
   }
@@ -365,7 +365,7 @@ a:hover {
       margin: 0;
     }
   }
-  div.string {
+  div.string, div.password {
     float: left;
     clear: left;
     margin: 0 10px 10px 0;

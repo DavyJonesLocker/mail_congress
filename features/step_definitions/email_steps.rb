@@ -6,3 +6,17 @@ Then /^I should receive the print confirmation email$/ do
   And  %{I should see "You will be notified when it arrives." in the email body}
 end
 
+Then /^I should receive an email noting the confirmation process$/ do
+  @advocacy_group ||= AdvocacyGroup.last
+  Then %{"#{@advocacy_group.email}" should receive an email}
+  When %{I open the email}
+  Then %{I should see "[MailCongress] We have received your application." in the email subject}
+end
+
+Then /^I should receive an email confirming me$/ do
+  @advocacy_group ||= AdvocacyGroup.last
+  Then %{"#{@advocacy_group.email}" should receive an email}
+  When %{I open the email}
+  Then %{I should see "[MailCongress] Your group has been approved!" in the email subject}
+end
+

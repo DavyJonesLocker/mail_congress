@@ -10,10 +10,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101122162405) do
+ActiveRecord::Schema.define(:version => 20101123011704) do
+
+  create_table "advocacy_groups", :force => true do |t|
+    t.boolean  "approved",                          :default => false
+    t.string   "name"
+    t.string   "contact_name"
+    t.string   "phone_number"
+    t.string   "email",                             :default => "",    :null => false
+    t.text     "purpose"
+    t.string   "web_site"
+    t.string   "encrypted_password", :limit => 128, :default => "",    :null => false
+    t.string   "password_salt",                     :default => "",    :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "campaigns", :force => true do |t|
-    t.integer  "partner_id"
+    t.integer  "advocacy_group_id"
     t.text     "body"
     t.string   "title"
     t.datetime "created_at"

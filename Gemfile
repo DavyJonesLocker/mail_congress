@@ -16,8 +16,7 @@ gem 'cups', :git => 'git://github.com/bcardarella/cups.git', :branch => 'options
 gem 'prawn', :git => 'git://github.com/bcardarella/prawn.git', :submodules => true
 gem 'rmagick', :require => 'RMagick'
 gem 'hoptoad_notifier'
-
-gem 'dynamic_form'
+gem 'devise'
 
 group :development do
   gem 'mongrel', '1.2.0.pre2'

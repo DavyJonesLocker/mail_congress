@@ -1,0 +1,4 @@
+<% %w{name contact_name email phone_number web_site purpose created_at}.each do |attr| -%>
+  <%= attr -%>: <%= @advocacy_group.send(attr) %>
+
+<% end -%>

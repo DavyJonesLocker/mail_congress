@@ -1,4 +1,5 @@
 MailCongress::Application.routes.draw do
+  resources :advocacy_groups
   get  'c/:id' => 'campaigns#show', :as => 'campaign'
   post 'search' => 'search#show', :as => 'search'
   post 'letters/preview' => 'letters#show', :as => 'preview_letter'
@@ -7,5 +8,5 @@ MailCongress::Application.routes.draw do
   get  'thank-you' => 'thank_you#show', :as => 'thank_you'
   get  'terms' => 'legal#terms', :as => 'terms'
   get  'privacy' => 'legal#privacy', :as => 'privacy'
-  root  :to => 'home#index'
+  root :to => 'home#index'
 end
