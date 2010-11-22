@@ -25,8 +25,14 @@
   %fieldset
     %h1
       %label{:for => 'letter_body', :class => 'string required'}Dear Legislator,
-  
-    = letter.input :body, :as => :text, :label => false, :input_html =>  { :class => :preview }
+    
+    - if letter.object.campaign
+      .campaign
+        = letter.input :campaign_id, :as => :hidden, :input_html => { :class => :preview }
+        %h1= letter.object.campaign.title
+        .body= letter.object.campaign.body
+    - else
+      = letter.input :body, :as => :text, :label => false, :input_html =>  { :class => :preview }
     %div Your Constituent,
     = letter.simple_fields_for :sender do |sender|
       = sender.input :first_name, :label => false, :input_html => { :class => :preview }

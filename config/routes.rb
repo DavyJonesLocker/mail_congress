@@ -1,4 +1,5 @@
 MailCongress::Application.routes.draw do
+  get  'c/:id' => 'campaigns#show', :as => 'campaign'
   post 'search' => 'search#show', :as => 'search'
   post 'letters/preview' => 'letters#show', :as => 'preview_letter'
   post 'payments/new' => 'payments#new', :as => 'new_payment'

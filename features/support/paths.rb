@@ -12,6 +12,9 @@ module NavigationHelpers
       root_path
     when /the payment page/
       '/payments/new'
+    when /the campaign page/
+      @campaign ||= Campaign.last
+      campaign_path(@campaign)
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

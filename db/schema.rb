@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101106155442) do
+ActiveRecord::Schema.define(:version => 20101122162405) do
+
+  create_table "campaigns", :force => true do |t|
+    t.integer  "partner_id"
+    t.text     "body"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 # Could not dump table "cd99_110" because of following StandardError
 #   Unknown type 'geometry' for column 'the_geom'

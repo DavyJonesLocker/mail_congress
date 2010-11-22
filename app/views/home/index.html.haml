@@ -7,15 +7,23 @@
   %div{:class => "input string required#{@address_error.present? ? ' field_with_errors' : '' }"}
     = label_tag :address, 'Please enter your home address.'
     = text_field_tag :address, params['address']
+    - if @campaign
+      = hidden_field_tag :campaign_id, @campaign.id
     - if @address_error.present?
       %div.error=@address_error
   %input{:type => 'submit', :value => 'Find'}
+
+- if @campaign
+  .campaign
+    %h1= @campaign.title
+    .body= @campaign.body
 
 %h1.tag We mail letters to your legislators for a dollar each.
 
 %div.home
   %div.video
-    %iframe{:src => "http://player.vimeo.com/video/17059317", :width => "455", :height => "300", :frameborder => "0"}
+    - unless Rails.env == 'test'
+      %iframe{:src => "http://player.vimeo.com/video/17059317", :width => "455", :height => "300", :frameborder => "0"}
   %div.text
     %p MailCongress helps you write letters to your representatives in Congress. How does it work? It&rsquo;s easy.
     %p We automatically find your representatives by your address. You submit your letter using our handy form. When you&rsquo;re done, simply pay by credit card.

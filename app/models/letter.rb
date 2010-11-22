@@ -2,17 +2,26 @@ class Letter < ActiveRecord::Base
   has_many   :recipients
   has_many   :legislators, :through => :recipients
   belongs_to :sender
+  belongs_to :campaign
   accepts_nested_attributes_for :recipients, :allow_destroy => true
   accepts_nested_attributes_for :sender
 
-  validates_presence_of :body
+  validates_presence_of :body #, :unless => Proc.new { |letter| letter.campaign }
   
   validate :presence_of_recipients
   validate :fit_letter_on_one_page
 
   attr_accessor   :font_size
   attr_accessor   :min_font_size
-  attr_accessible :body, :printed, :sender_attributes, :recipients_attributes
+  attr_accessible :body, :printed, :sender_attributes, :recipients_attributes, :campaign_id, :campaign
+
+  def body
+    if campaign
+      campaign.body
+    else
+      super
+    end
+  end
 
   def to_pdf
     fit_letter_on_one_page

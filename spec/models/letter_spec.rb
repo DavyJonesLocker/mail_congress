@@ -4,9 +4,28 @@ describe Letter do
   it { should have_many :recipients }
   it { should have_many :legislators, :through => :recipients }
   it { should belong_to :sender }
+  it { should belong_to :campaign }
   it { should accept_nested_attributes_for :recipients }
   it { should accept_nested_attributes_for :sender }
   it { should validate_presence_of :body }
+
+  # context 'associated with a campaign' do
+    # subject { Factory.build(:letter, :campaign => Factory.build(:campaign)) }
+    # it { should_not validate_presence_of :body }
+  # end
+  
+  describe '#body' do
+    context 'associated with a campaign' do
+      let(:campaign) { Factory.build(:campaign) }
+      subject { Factory.build(:letter, :campaign => campaign) }
+      its(:body) { should == campaign.body }
+    end
+
+    context 'not associated with a campaign' do
+      subject { Letter.new(:body => 'Test Body') }
+      its(:body) { should == 'Test Body' }
+    end
+  end
 
   describe 'validate there is at least 1 recipient' do
     before do

@@ -26,7 +26,8 @@ class SearchController < ApplicationController
         :city       => @geoloc.city,
         :state      => @geoloc.state,
         :zip        => @geoloc.zip
-      }
+      },
+      :campaign_id => params[:campaign_id]
     )
 
     if @letter.sender.street.blank?

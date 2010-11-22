@@ -41,6 +41,7 @@
 
   = simple_fields_for @letter do |letter|
     = letter.input :body, :as => :hidden
+    = letter.input :campaign_id, :as => :hidden
     = letter.simple_fields_for :sender do |sender|
       = sender.input :first_name, :as => :hidden
       = sender.input :last_name, :as => :hidden

@@ -70,6 +70,7 @@ Spork.each_run do
     rescue LoadError => ignore_if_database_cleaner_not_present
     end
   end
+  require 'factory_girl/step_definitions'
 end
 
 class DRb::DRbObject
