@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20101123011704) do
   create_table "campaigns", :force => true do |t|
     t.integer  "advocacy_group_id"
     t.text     "body"
+    t.text     "summary"
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
