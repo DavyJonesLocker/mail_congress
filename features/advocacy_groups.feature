@@ -17,3 +17,8 @@ Feature: Advocacy groups
     When  I follow "Create advocacy group"
     When  I press "Submit"
     Then  I should see the advocacy group validation errors
+
+  Scenario: Signing in
+    Given I am an approved advocacy group
+    When  I sign in
+    Then  I should be on my dashboard

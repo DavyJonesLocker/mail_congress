@@ -23,10 +23,8 @@ describe Legislator do
       it 'should find legislators by complex SQL query' do
         sql = <<-SQL
 select legislators.*
-from (select * from cd99_110 where ST_CONTAINS(the_geom, PointFromText('POINT(456 123)'))) as congress
-join states on (cast(congress.state as integer) = states.fips)
-join legislators on (legislators.state = states.code)
-where ((legislators.title != 'Sen' and (legislators.district = '0' or cast(legislators.district as integer) = cast(congress.cd as integer))) or (legislators.title = 'Sen'))
+from legislators
+where legislators.state = 'AA' and ((legislators.title != 'Sen' and (legislators.district = '0' or cast(legislators.district as integer) = cast((select cd from cd99_110 where ST_CONTAINS(the_geom, PointFromText('POINT(456 123)'))) as integer))) or (legislators.title = 'Sen'))
 and legislators.in_office is true
 order by legislators.district DESC
         SQL

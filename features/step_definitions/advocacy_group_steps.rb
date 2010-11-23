@@ -7,7 +7,7 @@ When /^I submit the advocacy group details$/ do
   When %{I fill in "Purpose" with "To mail lots of letters"}
   When %{I fill in "Password" with "12345abcdef"}
   When %{I fill in "Password confirmation" with "12345abcdef"}
-  When %{I press "Submit"}
+  When %{I press "Submit application"}
 end
 
 When /^my advocacy group is approved$/ do

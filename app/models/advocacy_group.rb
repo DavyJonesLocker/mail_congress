@@ -6,7 +6,7 @@ class AdvocacyGroup < ActiveRecord::Base
   validates_presence_of :purpose
 
   devise :database_authenticatable, :registerable, :validatable
-  attr_accessible :email, :password, :password_confirmation, :name, :contact_name, :phone_number, :web_site, :purpose
+  attr_accessible :email, :password, :password_confirmation, :name, :contact_name, :phone_number, :website, :purpose
 
   def approve!
     self.update_attribute(:approved, true)

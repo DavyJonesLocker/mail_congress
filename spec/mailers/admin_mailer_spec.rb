@@ -19,7 +19,7 @@ describe AdminMailer do
     end
 
     it 'contains all of the data for the group' do
-      %w{name contact_name email web_site phone_number purpose created_at}.each do |attr|
+      %w{name contact_name email website phone_number purpose created_at}.each do |attr|
         @email.should have_body_text(/#{@advocacy_group.send(attr)}/)
       end
     end
