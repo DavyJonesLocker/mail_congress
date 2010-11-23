@@ -3,6 +3,7 @@ class CreateCampaigns < ActiveRecord::Migration
     create_table :campaigns do |t|
       t.integer :partner_id
       t.text    :body
+      t.text    :summary
       t.string  :title
 
       t.timestamps
