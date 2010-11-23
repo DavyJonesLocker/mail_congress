@@ -19,11 +19,11 @@ $blueprint_grid_width: 40px;
 @import "compass/utilities";
 
 @font-face {
-	font-family: 'AdelleBasicBold';
-	src: url('/fonts/adellebasic_bold-webfont.eot');
-	src: local('☺'), url('/fonts/adellebasic_bold-webfont.woff') format('woff'), url('/fonts/adellebasic_bold-webfont.ttf') format('truetype'), url('/fonts/adellebasic_bold-webfont.svg#webfontqqI6w5ED') format('svg');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'AdelleBasicBold';
+  src: url('/fonts/adellebasic_bold-webfont.eot');
+  src: local('☺'), url('/fonts/adellebasic_bold-webfont.woff') format('woff'), url('/fonts/adellebasic_bold-webfont.ttf') format('truetype'), url('/fonts/adellebasic_bold-webfont.svg#webfontqqI6w5ED') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
@@ -311,7 +311,8 @@ a:hover {
   fieldset {
     border-bottom: 1px solid rgba(255,255,255,.25)
   }
-  fieldset.billing {
+  fieldset.billing,
+  fieldset.group {
     padding: 0 0 10px 0;
     legend {
       padding: 0px !important;
@@ -326,16 +327,38 @@ a:hover {
     div.string, div.password {
       margin-bottom: 0;  
     }
-  }
+  }  
+  fieldset.contact, 
   fieldset.credit_card {
     margin: 0 0 20px 0;
     padding: 20px 0 10px 0;
   }
+  fieldset.details {
+    margin: 0 0 20px 0;
+    padding: 0 0 20px 0;
+  }
+  fieldset.password {
+    margin: 0 0 20px 0;
+    padding: 0 0 10px 0;
+  }
   label {
     width: 110px;
+    text-align: right;
     margin: 0 10px 0 0;
     display: inline-block;
-    text-align: right;
+    vertical-align: middle;
+  }
+  .text {
+    textarea {
+      width: 400px;
+      padding: 5px;
+      height: 200px;
+      vertical-align: middle;
+    }
+    label {
+      margin: 10px 10px 0 0;
+      vertical-align: top;
+    }
   }
   div.select {
     display: inline-block;
@@ -365,7 +388,7 @@ a:hover {
       margin: 0;
     }
   }
-  div.string, div.password {
+  div.string, div.text, div.password {
     float: left;
     clear: left;
     margin: 0 10px 10px 0;
@@ -379,10 +402,12 @@ a:hover {
       width: 100px;
     }
   }
-  #payment_submit {
+  #payment_submit,
+  #advocacy_group_submit {
     margin: 0 0 0 120px;
     vertical-align: middle;
   }
+  
   img {
     vertical-align: middle;
   }
@@ -508,12 +533,12 @@ ul.cards {
 }
 
 .campaign {
-	.body {
-		width: 480px;
-		margin: 0 auto;
-	}
-	line-height: 1.4;
-	margin: 0 0 40px 0;
-	padding: 0 0 40px 0;
-	border-bottom: 1px solid rgba(255,255,255,.25);
+  .body {
+    width: 480px;
+    margin: 0 auto;
+  }
+  line-height: 1.4;
+  margin: 0 0 40px 0;
+  padding: 0 0 40px 0;
+  border-bottom: 1px solid rgba(255,255,255,.25);
 }

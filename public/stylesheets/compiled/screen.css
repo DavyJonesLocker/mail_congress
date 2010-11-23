@@ -948,59 +948,86 @@ a:hover {
 #new_payment fieldset, #new_advocacy_group fieldset {
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
-/* line 314, ../../../app/stylesheets/screen.scss */
-#new_payment fieldset.billing, #new_advocacy_group fieldset.billing {
+/* line 315, ../../../app/stylesheets/screen.scss */
+#new_payment fieldset.billing,
+#new_payment fieldset.group, #new_advocacy_group fieldset.billing, #new_advocacy_group fieldset.group {
   padding: 0 0 10px 0;
 }
-/* line 316, ../../../app/stylesheets/screen.scss */
-#new_payment fieldset.billing legend, #new_advocacy_group fieldset.billing legend {
+/* line 317, ../../../app/stylesheets/screen.scss */
+#new_payment fieldset.billing legend,
+#new_payment fieldset.group legend, #new_advocacy_group fieldset.billing legend, #new_advocacy_group fieldset.group legend {
   padding: 0px !important;
 }
-/* line 319, ../../../app/stylesheets/screen.scss */
-#new_payment fieldset.billing legend .error, #new_advocacy_group fieldset.billing legend .error {
+/* line 320, ../../../app/stylesheets/screen.scss */
+#new_payment fieldset.billing legend .error,
+#new_payment fieldset.group legend .error, #new_advocacy_group fieldset.billing legend .error, #new_advocacy_group fieldset.group legend .error {
   margin: 0px !important;
   padding: 10px !important;
 }
-/* line 324, ../../../app/stylesheets/screen.scss */
+/* line 325, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset.email, #new_advocacy_group fieldset.email {
   padding: 20px 0;
 }
-/* line 326, ../../../app/stylesheets/screen.scss */
+/* line 327, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset.email div.string, #new_payment fieldset.email div.password, #new_advocacy_group fieldset.email div.string, #new_advocacy_group fieldset.email div.password {
   margin-bottom: 0;
 }
-/* line 330, ../../../app/stylesheets/screen.scss */
-#new_payment fieldset.credit_card, #new_advocacy_group fieldset.credit_card {
+/* line 332, ../../../app/stylesheets/screen.scss */
+#new_payment fieldset.contact,
+#new_payment fieldset.credit_card, #new_advocacy_group fieldset.contact, #new_advocacy_group fieldset.credit_card {
   margin: 0 0 20px 0;
   padding: 20px 0 10px 0;
 }
-/* line 334, ../../../app/stylesheets/screen.scss */
-#new_payment label, #new_advocacy_group label {
-  width: 110px;
-  margin: 0 10px 0 0;
-  display: inline-block;
-  text-align: right;
+/* line 336, ../../../app/stylesheets/screen.scss */
+#new_payment fieldset.details, #new_advocacy_group fieldset.details {
+  margin: 0 0 20px 0;
+  padding: 0 0 20px 0;
 }
 /* line 340, ../../../app/stylesheets/screen.scss */
+#new_payment fieldset.password, #new_advocacy_group fieldset.password {
+  margin: 0 0 20px 0;
+  padding: 0 0 10px 0;
+}
+/* line 344, ../../../app/stylesheets/screen.scss */
+#new_payment label, #new_advocacy_group label {
+  width: 110px;
+  text-align: right;
+  margin: 0 10px 0 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+/* line 352, ../../../app/stylesheets/screen.scss */
+#new_payment .text textarea, #new_advocacy_group .text textarea {
+  width: 400px;
+  padding: 5px;
+  height: 200px;
+  vertical-align: middle;
+}
+/* line 358, ../../../app/stylesheets/screen.scss */
+#new_payment .text label, #new_advocacy_group .text label {
+  margin: 10px 10px 0 0;
+  vertical-align: top;
+}
+/* line 363, ../../../app/stylesheets/screen.scss */
 #new_payment div.select, #new_advocacy_group div.select {
   display: inline-block;
   vertical-align: middle;
 }
-/* line 343, ../../../app/stylesheets/screen.scss */
+/* line 366, ../../../app/stylesheets/screen.scss */
 #new_payment div.select label, #new_advocacy_group div.select label {
   width: auto;
 }
-/* line 346, ../../../app/stylesheets/screen.scss */
+/* line 369, ../../../app/stylesheets/screen.scss */
 #new_payment div.select select, #new_advocacy_group div.select select {
   margin: 0 10px 0 0;
 }
-/* line 350, ../../../app/stylesheets/screen.scss */
+/* line 373, ../../../app/stylesheets/screen.scss */
 #new_payment div.expiration, #new_advocacy_group div.expiration {
   float: left;
   clear: left;
   margin: 5px 10px 15px 0;
 }
-/* line 354, ../../../app/stylesheets/screen.scss */
+/* line 377, ../../../app/stylesheets/screen.scss */
 #new_payment div.expiration span, #new_advocacy_group div.expiration span {
   display: inline-block;
   width: 110px;
@@ -1008,41 +1035,42 @@ a:hover {
   margin: 0 10px 0 0;
   vertical-align: middle;
 }
-/* line 361, ../../../app/stylesheets/screen.scss */
+/* line 384, ../../../app/stylesheets/screen.scss */
 #new_payment div.expiration label, #new_advocacy_group div.expiration label {
   vertical-align: middle;
 }
-/* line 364, ../../../app/stylesheets/screen.scss */
+/* line 387, ../../../app/stylesheets/screen.scss */
 #new_payment div.expiration .error, #new_advocacy_group div.expiration .error {
   margin: 0;
 }
-/* line 368, ../../../app/stylesheets/screen.scss */
-#new_payment div.string, #new_payment div.password, #new_advocacy_group div.string, #new_advocacy_group div.password {
+/* line 391, ../../../app/stylesheets/screen.scss */
+#new_payment div.string, #new_payment div.text, #new_payment div.password, #new_advocacy_group div.string, #new_advocacy_group div.text, #new_advocacy_group div.password {
   float: left;
   clear: left;
   margin: 0 10px 10px 0;
 }
-/* line 372, ../../../app/stylesheets/screen.scss */
-#new_payment div.string input, #new_payment div.password input, #new_advocacy_group div.string input, #new_advocacy_group div.password input {
+/* line 395, ../../../app/stylesheets/screen.scss */
+#new_payment div.string input, #new_payment div.text input, #new_payment div.password input, #new_advocacy_group div.string input, #new_advocacy_group div.text input, #new_advocacy_group div.password input {
   width: 400px;
   padding: 5px;
   font-size: 16px;
   font-family: Arial, sans-serif;
 }
-/* line 378, ../../../app/stylesheets/screen.scss */
-#new_payment div.string input#payment_credit_card_verification_value, #new_payment div.password input#payment_credit_card_verification_value, #new_advocacy_group div.string input#payment_credit_card_verification_value, #new_advocacy_group div.password input#payment_credit_card_verification_value {
+/* line 401, ../../../app/stylesheets/screen.scss */
+#new_payment div.string input#payment_credit_card_verification_value, #new_payment div.text input#payment_credit_card_verification_value, #new_payment div.password input#payment_credit_card_verification_value, #new_advocacy_group div.string input#payment_credit_card_verification_value, #new_advocacy_group div.text input#payment_credit_card_verification_value, #new_advocacy_group div.password input#payment_credit_card_verification_value {
   width: 100px;
 }
-/* line 382, ../../../app/stylesheets/screen.scss */
-#new_payment #payment_submit, #new_advocacy_group #payment_submit {
+/* line 406, ../../../app/stylesheets/screen.scss */
+#new_payment #payment_submit,
+#new_payment #advocacy_group_submit, #new_advocacy_group #payment_submit, #new_advocacy_group #advocacy_group_submit {
   margin: 0 0 0 120px;
   vertical-align: middle;
 }
-/* line 386, ../../../app/stylesheets/screen.scss */
+/* line 411, ../../../app/stylesheets/screen.scss */
 #new_payment img, #new_advocacy_group img {
   vertical-align: middle;
 }
-/* line 389, ../../../app/stylesheets/screen.scss */
+/* line 414, ../../../app/stylesheets/screen.scss */
 #new_payment .help, #new_advocacy_group .help {
   width: 318px;
   color: #9CC;
@@ -1050,13 +1078,13 @@ a:hover {
   font-size: 14px;
   line-height: 1.4;
 }
-/* line 396, ../../../app/stylesheets/screen.scss */
+/* line 421, ../../../app/stylesheets/screen.scss */
 #new_payment .error, #new_advocacy_group .error {
   padding: 5px 0 0 0;
   margin: 0 0 0 120px;
 }
 
-/* line 403, ../../../app/stylesheets/screen.scss */
+/* line 428, ../../../app/stylesheets/screen.scss */
 .legislators .error,
 .field_with_errors, fieldset.billing legend {
   color: #FEE;
@@ -1067,129 +1095,129 @@ a:hover {
   border-radius: 3px;
 }
 
-/* line 412, ../../../app/stylesheets/screen.scss */
+/* line 437, ../../../app/stylesheets/screen.scss */
 .legislators .error {
   margin: 20px 0 0 0;
 }
 
-/* line 416, ../../../app/stylesheets/screen.scss */
+/* line 441, ../../../app/stylesheets/screen.scss */
 .error {
   font-weight: bold;
   padding: 10px 0 0 5px;
 }
 
-/* line 421, ../../../app/stylesheets/screen.scss */
+/* line 446, ../../../app/stylesheets/screen.scss */
 input[type="submit"] {
   font-size: 20px;
 }
 
-/* line 425, ../../../app/stylesheets/screen.scss */
+/* line 450, ../../../app/stylesheets/screen.scss */
 h1.tag {
   margin: 0 0 40px 0;
   text-align: center;
   font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
 }
 
-/* line 431, ../../../app/stylesheets/screen.scss */
+/* line 456, ../../../app/stylesheets/screen.scss */
 .home {
   overflow: hidden;
   line-height: 1.4;
   margin: 0 0 40px 0;
 }
-/* line 435, ../../../app/stylesheets/screen.scss */
+/* line 460, ../../../app/stylesheets/screen.scss */
 .home .text {
   float: right;
   width: 455px;
 }
-/* line 439, ../../../app/stylesheets/screen.scss */
+/* line 464, ../../../app/stylesheets/screen.scss */
 .home .video {
   float: left;
   width: 455px;
   height: 300px;
 }
 
-/* line 446, ../../../app/stylesheets/screen.scss */
+/* line 471, ../../../app/stylesheets/screen.scss */
 .legalese {
   padding: 0 0 40px 0;
 }
 
-/* line 450, ../../../app/stylesheets/screen.scss */
+/* line 475, ../../../app/stylesheets/screen.scss */
 .thank_you {
   text-align: center;
   padding: 0 0 40px 0;
 }
-/* line 453, ../../../app/stylesheets/screen.scss */
+/* line 478, ../../../app/stylesheets/screen.scss */
 .thank_you h1 {
   margin: 0 0 20px 0;
   font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
 }
 
-/* line 459, ../../../app/stylesheets/screen.scss */
+/* line 484, ../../../app/stylesheets/screen.scss */
 #footer {
   color: #699;
   font-size: 14px;
   text-align: center;
   margin: 0 0 40px 0;
 }
-/* line 464, ../../../app/stylesheets/screen.scss */
+/* line 489, ../../../app/stylesheets/screen.scss */
 #footer .legal {
   margin-top: 5px;
 }
-/* line 468, ../../../app/stylesheets/screen.scss */
+/* line 493, ../../../app/stylesheets/screen.scss */
 #footer .info :first-child {
   font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
 }
 
-/* line 473, ../../../app/stylesheets/screen.scss */
+/* line 498, ../../../app/stylesheets/screen.scss */
 input.gray {
   color: #AAAAAA !important;
 }
 
-/* line 477, ../../../app/stylesheets/screen.scss */
+/* line 502, ../../../app/stylesheets/screen.scss */
 ul.cards {
   margin-top: -15px;
   margin-left: 114px;
 }
-/* line 480, ../../../app/stylesheets/screen.scss */
+/* line 505, ../../../app/stylesheets/screen.scss */
 ul.cards .card {
   display: inline-block;
   width: 32px;
   height: 32px;
   margin-left: 5px;
 }
-/* line 486, ../../../app/stylesheets/screen.scss */
+/* line 511, ../../../app/stylesheets/screen.scss */
 ul.cards .visa {
   background-image: url("../../images/icons/visa.png");
 }
-/* line 489, ../../../app/stylesheets/screen.scss */
+/* line 514, ../../../app/stylesheets/screen.scss */
 ul.cards .master {
   background-image: url("../../images/icons/master.png");
 }
-/* line 493, ../../../app/stylesheets/screen.scss */
+/* line 518, ../../../app/stylesheets/screen.scss */
 ul.cards .american_express {
   background-image: url("../../images/icons/american_express.png");
 }
-/* line 497, ../../../app/stylesheets/screen.scss */
+/* line 522, ../../../app/stylesheets/screen.scss */
 ul.cards .discover {
   background-image: url("../../images/icons/discover.png");
 }
-/* line 501, ../../../app/stylesheets/screen.scss */
+/* line 526, ../../../app/stylesheets/screen.scss */
 ul.cards .diners_club {
   background-image: url("../../images/icons/diners_club.png");
 }
-/* line 505, ../../../app/stylesheets/screen.scss */
+/* line 530, ../../../app/stylesheets/screen.scss */
 ul.cards .disabled {
   opacity: 0.3;
 }
 
-/* line 510, ../../../app/stylesheets/screen.scss */
+/* line 535, ../../../app/stylesheets/screen.scss */
 .campaign {
   line-height: 1.4;
   margin: 0 0 40px 0;
   padding: 0 0 40px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
-/* line 511, ../../../app/stylesheets/screen.scss */
+/* line 536, ../../../app/stylesheets/screen.scss */
 .campaign .body {
   width: 480px;
   margin: 0 auto;

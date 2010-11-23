@@ -1,14 +1,13 @@
 = simple_form_for @advocacy_group do |advocacy_group|
   %h1.group
-    %strong Please provide details about your group
+    %strong Please provide details about your group.
   %fieldset.group
     %div.help The name of your advocacy group, this will be viewable by others.
     = advocacy_group.input :name, :label => 'Group name'
 
   %fieldset.contact
-    %div.help Please provide details for a contact at your group. Note: the email address provided will be used to sign in.
+    %div.help Please provide details for a contact at your group.
     = advocacy_group.input :contact_name 
-    = advocacy_group.input :email
     = advocacy_group.input :web_site
     = advocacy_group.input :phone_number
 
@@ -17,8 +16,9 @@
     = advocacy_group.input :purpose, :as => :text
 
   %fieldset.password
-    %div.help This will be used along with the email address provided in the contact section to sign in once your group has been approved.
+    %div.help This information will be used to sign in once your group has been approved.
+    = advocacy_group.input :email
     = advocacy_group.input :password, :as => :password
     = advocacy_group.input :password_confirmation, :as => :password, :label => 'Confirmation'
 
-  = advocacy_group.submit "Submit"
+  = advocacy_group.submit "Submit advocacy group"
