@@ -1,7 +1,7 @@
 class AdvocacyGroup < ActiveRecord::Base
   validates_presence_of :name
   validates_presence_of :contact_name
-  validates_presence_of :web_site
+  validates_presence_of :website
   validates_format_of :phone_number, :with => /^(1\W?)?(\([2-9]\d{2}\)|[2-9]\d{2})\W?[2-9]\d{2}\W?\d{4}$/
   validates_presence_of :purpose
 

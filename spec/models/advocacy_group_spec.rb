@@ -3,7 +3,7 @@ require 'spec_helper'
 describe AdvocacyGroup do
   it { should validate_presence_of :name }
   it { should validate_presence_of :contact_name }
-  it { should validate_presence_of :web_site }
+  it { should validate_presence_of :website }
   it { should validate_presence_of :purpose }
 
   describe '#approve!' do

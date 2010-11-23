@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(:version => 20101123011704) do
     t.string   "phone_number"
     t.string   "email",                             :default => "",    :null => false
     t.text     "purpose"
-    t.string   "web_site"
+    t.string   "website"
     t.string   "encrypted_password", :limit => 128, :default => "",    :null => false
     t.string   "password_salt",                     :default => "",    :null => false
     t.datetime "created_at"

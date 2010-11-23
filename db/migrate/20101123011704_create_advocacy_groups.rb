@@ -7,7 +7,7 @@ class CreateAdvocacyGroups < ActiveRecord::Migration
       t.string :phone_number
       t.string :email
       t.text   :purpose
-      t.string :web_site
+      t.string :website
       t.database_authenticatable
 
       t.timestamps
