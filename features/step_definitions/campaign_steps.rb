@@ -1,6 +1,14 @@
-Then /^I should see the campaign$/ do
+Then /^I should see the campaign summary$/ do
   @campaign ||= Campaign.last
   Then %{I should see "#{@campaign.title}"}
+  lines = @campaign.summary.split("\n")
+  lines.each do |line|
+    Then %{I should see "#{line}"}
+  end
+end
+
+Then /^I should see the campaign body$/ do
+  @campaign ||= Campaign.last
   lines = @campaign.body.split("\n")
   lines.each do |line|
     Then %{I should see "#{line}"}

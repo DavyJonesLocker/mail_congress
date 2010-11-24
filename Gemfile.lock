@@ -14,6 +14,21 @@ GIT
       pdf-reader (>= 0.8.1)
 
 GIT
+  remote: git://github.com/ianwhite/orm_adapter.git
+  revision: a5b28d2bdede7f5ae865d8bb84acc96043c74811
+  specs:
+    orm_adapter (0.0.3)
+
+GIT
+  remote: git://github.com/plataformatec/devise.git
+  revision: ed30114bd8700c7e5c44b80ceeed39e4977d13e5
+  specs:
+    devise (1.2.rc)
+      bcrypt-ruby (~> 2.1.2)
+      orm_adapter (~> 0.0.2)
+      warden (~> 1.0.2)
+
+GIT
   remote: http://github.com/smparkes/capybara-envjs.git
   revision: 63adb64c19ee7fcc575b181baf84c0b0b8fa654b
   specs:
@@ -106,9 +121,6 @@ GEM
     culerity (0.2.12)
     daemons (1.0.10)
     database_cleaner (0.6.0)
-    devise (1.1.rc2)
-      bcrypt-ruby (~> 2.1.2)
-      warden (~> 0.10.7)
     diff-lcs (1.1.2)
     envjs (0.3.8)
       johnson (>= 2.0.0.pre3)
@@ -236,7 +248,7 @@ GEM
       rack
     vegas (0.1.8)
       rack (>= 1.0.0)
-    warden (0.10.7)
+    warden (1.0.2)
       rack (>= 1.0.0)
     xpath (0.1.2)
       nokogiri (~> 1.3)
@@ -260,7 +272,7 @@ DEPENDENCIES
   cucumber-rails
   cups!
   database_cleaner
-  devise
+  devise!
   email_spec!
   escape_utils
   factory_girl
@@ -270,6 +282,7 @@ DEPENDENCIES
   hoptoad_notifier
   launchy
   mongrel (= 1.2.0.pre2)
+  orm_adapter!
   pg
   prawn!
   rails (= 3.0.3)

@@ -1,0 +1,16 @@
+%a{:href => "/", :class => "logo"}
+  MailCongress
+#menus
+  %ul.menu
+    %li= link_to 'Create advocacy group', new_sign_up_path
+    - if advocacy_group_signed_in?
+      %li#sign_out
+        %a{:href => 'sign_out'}Sign out
+    - else
+      %li#sign_in
+        %a{:href => '#', :id => 'sign_in_link'}Sign in
+  #sign_in_form
+    = form_tag sign_in_path do
+      = text_field_tag 'advocacy_group[email]', nil, :id => 'sign_in_email'
+      = password_field_tag 'advocacy_group[password]', nil, :id => 'sign_in_password'
+      = submit_tag 'Sign in'

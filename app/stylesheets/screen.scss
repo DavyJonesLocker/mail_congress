@@ -39,6 +39,20 @@ p {
   margin: 0 auto;
 }
 
+#menus {
+  @include float-right;
+}
+
+#sign_in_form {
+  //display: none;
+}
+
+#menus ul.menu {
+  font-size: .75em;
+  @include horizontal-list;
+  line-height: 1.25em;
+}
+
 ul.legislators {
   text-align: center;
   li {
@@ -497,6 +511,15 @@ h1.tag {
 }
 input.gray {
   color: #AAAAAA !important;
+}
+
+ul.numbers {
+  margin-top: 15px;
+  li {
+    list-style: decimal;
+    margin-bottom: 10px;
+    line-height: 1.25em;
+  }
 }
 
 ul.cards {

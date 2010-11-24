@@ -1,5 +1,11 @@
 MailCongress::Application.routes.draw do
-  resources :advocacy_groups
+  get  'dashboard', :to => 'advocacy_groups#show', :as => 'dashboard'
+  get  'sign_up',  :to => 'advocacy_groups#new', :as => 'new_sign_up'
+  post 'sign_up',  :to => 'advocacy_groups#create'
+  devise_for :advocacy_groups, :controllers => { :sessions => 'sessions' } do
+    post 'sign_in',  :to => 'sessions#create'
+    get  'sign_out', :to => 'sessions#destroy'
+  end
   get  'c/:id' => 'campaigns#show', :as => 'campaign'
   post 'search' => 'search#show', :as => 'search'
   post 'letters/preview' => 'letters#show', :as => 'preview_letter'

@@ -6,7 +6,7 @@ When /^I submit the advocacy group details$/ do
   When %{I fill in "Website" with "http://test.com"}
   When %{I fill in "Purpose" with "To mail lots of letters"}
   When %{I fill in "Password" with "12345abcdef"}
-  When %{I fill in "Password confirmation" with "12345abcdef"}
+  When %{I fill in "Confirmation" with "12345abcdef"}
   When %{I press "Submit application"}
 end
 
@@ -22,5 +22,9 @@ Then /^I should see the advocacy group validation errors$/ do
   Then %{I should see the error "can't be blank" for "Website"}
   Then %{I should see the error "is invalid" for "Phone number"}
   Then %{I should see the error "can't be blank" for "Purpose"}
+end
+
+Given /^I am an approved advocacy group$/ do
+  @advocacy_group = Factory(:advocacy_group, :approved => true)
 end
 

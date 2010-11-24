@@ -25,24 +25,12 @@
   %body
     .container
       #header
-        %a{:href => "/", :class => "logo"}
-          MailCongress
+        = render :partial => 'shared/header'
           
       #content
         = flash[:notice]
+        = flash[:alert]
         = yield
         
       #footer
-        .info
-          %a{ :href => "/" } MailCongress.org
-          Built by 
-          %a{ :href => "mailto:brian@mailcongress.org"} Brian Cardarella 
-          Designed by 
-          %a{ :href => "http://www.cssboy.com/"} Angelo Simeoni
-          – &#64; 2010
-        .legal
-          = link_to 'Create advocacy group', new_advocacy_group_path
-          ●
-          %a{ :href => '/terms' } Terms of Service
-          ●
-          %a{ :href => '/privacy' } Privacy Policy
+        = render :partial => 'shared/footer'

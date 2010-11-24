@@ -5,17 +5,6 @@ $(function() {
   placeHolder($('#address'), address);
 });
 
-function placeHolder(input, text) {
-  if (input.val() == '') {
-    input[0].value = text;
-    input.addClass('gray');
-  } else if (input.val() == text) {
-    input.addClass('gray');
-  } else { 
-    input.removeClass('gray');
-  }
-}
-
 var Address = function() {
   var data = [
     '1640 Riverside Drive Hill Valley, CA',

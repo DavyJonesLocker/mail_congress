@@ -11,17 +11,6 @@ $(function() {
   placeHolder($('#letter_sender_attributes_last_name'), 'Last name');
 });
 
-function placeHolder(input, text) {
-  if (input.val() == '') {
-    input[0].value = text;
-    input.addClass('gray');
-  } else if (input.val() == text) {
-    input.addClass('gray');
-  } else { 
-    input.removeClass('gray');
-  }
-}
-
 function showLetterPreview() {
   var present = true;
   $.each($('.preview'), function(index, input) {

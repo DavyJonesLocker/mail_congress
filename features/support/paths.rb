@@ -15,6 +15,8 @@ module NavigationHelpers
     when /the campaign page/
       @campaign ||= Campaign.last
       campaign_path(@campaign)
+    when /(my|the) dashboard( page)?/
+      dashboard_path
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

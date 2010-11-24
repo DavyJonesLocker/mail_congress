@@ -5,7 +5,7 @@ class AdvocacyGroup < ActiveRecord::Base
   validates_format_of :phone_number, :with => /^(1\W?)?(\([2-9]\d{2}\)|[2-9]\d{2})\W?[2-9]\d{2}\W?\d{4}$/
   validates_presence_of :purpose
 
-  devise :database_authenticatable, :registerable, :validatable
+  devise :database_authenticatable, :validatable
   attr_accessible :email, :password, :password_confirmation, :name, :contact_name, :phone_number, :website, :purpose
 
   def approve!

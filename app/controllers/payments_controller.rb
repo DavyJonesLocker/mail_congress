@@ -2,6 +2,7 @@ class PaymentsController < ApplicationController
   def new
     @letter = Letter.new(params[:letter])
     @geoloc = GeoKit::GeoLoc.new(params[:geoloc])
+    @geoloc.state   = @letter.sender.state
     @geoloc.success = true
 
     if @letter.valid?
