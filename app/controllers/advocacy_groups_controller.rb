@@ -1,4 +1,6 @@
 class AdvocacyGroupsController < ApplicationController
+  prepend_before_filter :authenticate_advocacy_group!, :only => [:show]
+
   def show
     @advocacy_group = current_advocacy_group
   end

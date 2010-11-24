@@ -1,4 +1,6 @@
 class CampaignsController < ApplicationController
+  prepend_before_filter :authenticate_advocacy_group!
+
   before_filter :define_advocacy_group
   def show
     @campaign = @advocacy_group.campaigns.find(params[:id])
