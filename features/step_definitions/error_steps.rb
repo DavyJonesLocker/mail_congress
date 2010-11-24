@@ -21,3 +21,9 @@ Then /^I should see the errors for the payment$/ do
   Then  %{I should see the error "is not a valid month" for "Month"}
   Then  %{I should see the error "expired" for "Year"}
 end
+
+Then /^I should see the errors for campaign$/ do
+  Then %{I should see the error "can't be blank" for "Title"}
+  Then %{I should see the error "can't be blank" for "Summary"}
+  Then %{I should see the error "can't be blank" for "Body"}
+end

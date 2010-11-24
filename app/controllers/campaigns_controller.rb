@@ -9,8 +9,12 @@ class CampaignsController < ApplicationController
   end
 
   def create
-    @campaign = @advocacy_group.campaigns.create(params[:campaign])
-    redirect_to @campaign
+    @campaign = @advocacy_group.campaigns.build(params[:campaign])
+    if @campaign.save
+      redirect_to @campaign
+    else
+      render :action => :new
+    end
   end
 
   private

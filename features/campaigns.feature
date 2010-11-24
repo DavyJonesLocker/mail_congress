@@ -13,9 +13,16 @@ Feature: Campaigns
     And   I pay for the letters with my credit card
     Then  My letters should be on their way
 
-  @envjs @test
+  @envjs
   Scenario: Creating a campaign
     Given I am signed in
     When  I follow "Create campaign"
     And   I submit new campaign details
     Then  I should see the new campaign
+
+  @envjs @test
+  Scenario: Creating a campaign without providing data
+    Given I am signed in
+    When  I follow "Create campaign"
+    And   I press "Submit"
+    Then  I should see the errors for campaign
