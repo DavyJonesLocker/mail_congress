@@ -1,0 +1,9 @@
+%h1= @campaign.title
+
+%div.summary
+  = @campaign.summary
+
+%div.body
+  = @campaign.body
+
+= campaign_permalink_url(@campaign, :protocol => 'https')

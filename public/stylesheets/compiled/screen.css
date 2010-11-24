@@ -634,6 +634,11 @@ p {
   float: right;
 }
 
+/* line 46, ../../../app/stylesheets/screen.scss */
+#sign_in_form {
+  display: none;
+}
+
 /* line 50, ../../../app/stylesheets/screen.scss */
 #menus ul.menu {
   font-size: .75em;

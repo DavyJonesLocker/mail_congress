@@ -1,0 +1,15 @@
+= simple_form_for @campaign do |campaign|
+  %fieldset.title
+    %div.help
+      The title for this campaign.
+    = campaign.input :title
+  %fieldset.summary
+    %div.help
+      A short paragraph describing this campaign.
+    = campaign.input :summary, :as => :text
+  %fieldset.body
+    %div.help
+      The body of the letter to be sent by your advocates.
+    = campaign.input :body, :as => :text
+
+  = campaign.submit 'Submit'

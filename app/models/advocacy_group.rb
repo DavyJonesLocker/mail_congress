@@ -1,4 +1,6 @@
 class AdvocacyGroup < ActiveRecord::Base
+  has_many :campaigns
+
   validates_presence_of :name
   validates_presence_of :contact_name
   validates_presence_of :website

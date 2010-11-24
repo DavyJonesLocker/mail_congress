@@ -12,9 +12,9 @@ module NavigationHelpers
       root_path
     when /the payment page/
       '/payments/new'
-    when /the campaign page/
+    when /the campaign permalink page/
       @campaign ||= Campaign.last
-      campaign_path(@campaign)
+      campaign_permalink_path(@campaign)
     when /(my|the) dashboard( page)?/
       dashboard_path
 
