@@ -1,5 +1,8 @@
 $(function() {
-  $('li#sign_in a').click(function() { $('#sign_in_form').fadeToggle();});
+  $('li#sign_in a').click(function() { 
+    $(this).hide(); 
+    $('#sign_in_form form').fadeToggle();
+  });
   $('#sign_in_email').blur(function() { placeHolder($(this), 'Email'); });
   $('#sign_in_email').focus(function() { if (this.value == 'Email') {this.value = ''; $(this).removeClass('gray');} });
   placeHolder($('#sign_in_email'), 'Email');

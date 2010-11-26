@@ -22,15 +22,15 @@
           ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
           var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
+
   %body
-    .container
-      #header
-        = render :partial => 'shared/header'
-          
-      #content
-        = flash[:notice]
-        = flash[:alert]
-        = yield
+
+    = render :partial => 'shared/header'
         
-      #footer
-        = render :partial => 'shared/footer'
+    #content
+      = flash[:notice]
+      = flash[:alert]
+      = yield
+      
+    #footer
+      = render :partial => 'shared/footer'

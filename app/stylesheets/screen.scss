@@ -34,23 +34,39 @@ p {
   margin: 0 0 20px 0;
 }
 
-.container {
+a {
+  color: #6FF;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#header,
+#content,
+#footer {
   width: 950px;
   margin: 0 auto;
 }
 
 #menus {
-  @include float-right;
-}
-
-#sign_in_form {
-  display: none;
-}
-
-#menus ul.menu {
-  font-size: .75em;
-  @include horizontal-list;
-  line-height: 1.25em;
+  height: 44px;
+  padding: 0 14px;
+  font-size: 14px;
+  overflow: hidden;
+  line-height: 44px;
+  background: rgba(0,0,0,.25);
+  .menu {
+    float: left;
+  }
+  #sign_in_form {
+    float: right;
+    form {
+      height: 22px;
+      display: none;
+    }
+  }
 }
 
 ul.legislators {
@@ -116,7 +132,7 @@ h1 {
   }
 }
 
-.container #header a.logo {
+#header a.logo {
   width: 256px;
   height: 40px;
   display: block;
@@ -281,14 +297,6 @@ h1 {
     margin: 0 0 0 10px;
     display: inline-block;
   }
-}
-
-a {
-  color: #6FF;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
 }
 
 #new_payment, #new_advocacy_group {
@@ -457,7 +465,7 @@ a:hover {
   padding: 10px 0 0 5px;
 }
 
-input[type="submit"] {
+#content input[type="submit"] {
   font-size: 20px;
 }
 
@@ -499,7 +507,7 @@ h1.tag {
   color: #699;
   font-size: 14px;
   text-align: center;
-  margin: 0 0 40px 0;
+  margin-bottom: 40px;
   .legal {
     margin-top: 5px;
   }
