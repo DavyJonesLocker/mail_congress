@@ -29,8 +29,7 @@
     - if letter.object.campaign
       .campaign
         = letter.input :campaign_id, :as => :hidden, :input_html => { :class => :preview }
-        %h1= letter.object.campaign.title
-        .body= letter.object.campaign.body
+        .body= simple_format(letter.object.campaign.body)
     - else
       = letter.input :body, :as => :text, :label => false, :input_html =>  { :class => :preview }
     %div Your Constituent,

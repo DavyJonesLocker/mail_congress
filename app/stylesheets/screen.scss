@@ -565,8 +565,11 @@ ul.cards {
 
 .campaign {
   .body {
-    width: 480px;
+    width: 720px;
     margin: 0 auto;
+    p {
+      text-indent: 1em;
+    }
   }
   line-height: 1.4;
   margin: 0 0 40px 0;
