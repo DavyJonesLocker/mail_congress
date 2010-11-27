@@ -1272,3 +1272,9 @@ div.campaign div.body {
 div.campaign div.body p {
   text-indent: 1em;
 }
+
+/* line 591, ../../../app/stylesheets/screen.scss */
+#chart {
+  width: 900px;
+  height: 400px;
+}

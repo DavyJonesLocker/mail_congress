@@ -1,3 +1,6 @@
+- content_for :javascript do
+  = javascript_include_tag 'highcharts', 'campaign'
+
 %h1= @campaign.title
 
 %div.summary
@@ -7,5 +10,7 @@
   = @campaign.body
 
 = campaign_permalink_url(@campaign, :protocol => 'https')
+
+%div#chart
 
 = link_to 'Edit', [:edit, @campaign]
