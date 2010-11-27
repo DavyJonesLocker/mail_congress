@@ -1,7 +1,7 @@
 MailCongress::Application.routes.draw do
   resources :campaigns
   get  'dashboard', :to => 'advocacy_groups#show', :as => 'dashboard'
-  get  'sign_up',  :to => 'advocacy_groups#new', :as => 'new_sign_up'
+  get  'sign_up',  :to => 'advocacy_groups#new', :as => 'sign_up'
   post 'sign_up',  :to => 'advocacy_groups#create'
   devise_for :advocacy_groups, :controllers => { :sessions => 'sessions' } do
     post 'sign_in',  :to => 'sessions#create'

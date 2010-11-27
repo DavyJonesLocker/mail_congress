@@ -1,0 +1,11 @@
+%ul.actions
+  %li= link_to 'Create advocacy group', sign_up_path
+
+%ul.session
+  %li#sign_in
+    %a{:href => '#', :id => 'sign_in_link'}Sign in
+  = form_tag sign_in_path do
+    = text_field_tag 'advocacy_group[email]', nil, :id => 'sign_in_email'
+    = password_field_tag 'advocacy_group[password]', nil, :id => 'sign_in_password'
+    = submit_tag 'Sign in'
+

@@ -651,15 +651,15 @@ a:hover {
   background: rgba(0, 0, 0, 0.25);
 }
 /* line 60, ../../../app/stylesheets/screen.scss */
-#menus .menu {
+#menus .actions {
   float: left;
 }
 /* line 63, ../../../app/stylesheets/screen.scss */
-#menus #sign_in_form {
+#menus .session {
   float: right;
 }
 /* line 65, ../../../app/stylesheets/screen.scss */
-#menus #sign_in_form form {
+#menus .session form {
   height: 22px;
   display: none;
 }
