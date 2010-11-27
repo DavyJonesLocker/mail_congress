@@ -20,6 +20,11 @@ When /^I sign the campaign$/ do
   When %{I press "Send"}
 end
 
+When /^I submit new campaign details for (\w+)$/ do |title|
+  When %{I choose "#{title.capitalize}"}
+  When %{I submit new campaign details}
+end
+
 When /^I submit new campaign details$/ do
   When %{I fill in "Title" with "Campaign Title"}
   When %{I fill in "Summary" with "Campaign Summary"}

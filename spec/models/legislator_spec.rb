@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe Legislator do
+
   context 'Searching by location' do
     before do
       @geoloc  = Geokit::GeoLoc.new(
@@ -16,20 +17,54 @@ describe Legislator do
       before do
         @geoloc.stubs(:success).returns(true)
         Geokit::Geocoders::GoogleGeocoder.stubs(:geocode).returns(@geoloc)
-        Legislator.stubs(:find_by_sql)
-        Legislator.search(@geoloc)
       end
 
-      it 'should find legislators by complex SQL query' do
-        sql = <<-SQL
+      context 'default' do
+        before do
+          Legislator.stubs(:find_by_sql)
+          Legislator.search(@geoloc)
+        end
+
+        it 'finds legislators by complex SQL query' do
+          sql = <<-SQL
 select legislators.*
 from legislators
 where legislators.state = 'AA' and ((legislators.title != 'Sen' and (legislators.district = '0' or cast(legislators.district as integer) = cast((select cd from cd99_110 where ST_CONTAINS(the_geom, PointFromText('POINT(456 123)'))) as integer))) or (legislators.title = 'Sen'))
 and legislators.in_office is true
 order by legislators.district DESC
-        SQL
+          SQL
 
-        Legislator.should have_received(:find_by_sql).with(sql)
+          Legislator.should have_received(:find_by_sql).with(sql)
+        end
+      end
+
+      context 'for senators' do
+        before do
+          Legislator.stubs(:find_senators)
+          Legislator.search_senators(@geoloc)
+        end
+
+        it 'finds senators in the given state' do
+          Legislator.should have_received(:find_senators).with(@geoloc)
+        end
+      end
+
+      context 'for representatives' do
+        before do
+          Legislator.stubs(:find_by_sql)
+          Legislator.search_representatives(@geoloc)
+        end
+
+        it 'finds representatives in the given state' do
+          sql = <<-SQL
+select legislators.*
+from legislators
+where legislators.state = 'AA' and ((legislators.title != 'Sen' and (legislators.district = '0' or cast(legislators.district as integer) = cast((select cd from cd99_110 where ST_CONTAINS(the_geom, PointFromText('POINT(456 123)'))) as integer))))
+and legislators.in_office is true
+order by legislators.district DESC
+          SQL
+          Legislator.should have_received(:find_by_sql).with(sql)
+        end
       end
     end
 
@@ -39,10 +74,17 @@ order by legislators.district DESC
         Geokit::Geocoders::GoogleGeocoder.stubs(:geocode).returns(@geoloc)
       end
 
-      it 'should return false' do
+      it 'returns false for default' do
         Legislator.search(@geoloc).should be_false
       end
-      
+
+      it 'returns false for senators' do
+        Legislator.search_senators(@geoloc).should be_false
+      end
+
+      it 'returns false for representatives' do
+        Legislator.search_representatives(@geoloc).should be_false
+      end
     end
   end
 

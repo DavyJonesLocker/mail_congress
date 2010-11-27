@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(:version => 20101123011704) do
     t.text     "purpose"
     t.string   "website"
     t.string   "encrypted_password", :limit => 128, :default => "",    :null => false
-    t.string   "password_salt",                     :default => "",    :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -30,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20101123011704) do
     t.integer  "advocacy_group_id"
     t.text     "body"
     t.text     "summary"
+    t.string   "type",              :default => "both"
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"

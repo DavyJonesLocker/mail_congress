@@ -47,7 +47,7 @@ class Letter < ActiveRecord::Base
     self.recipients.each { |recipient| recipient.selected = true }
     selected_legislator_ids = self.recipients.map { |recipient| recipient.legislator_id }
 
-    self.recipients = Legislator.search(geoloc).map do |legislator|
+    self.recipients = Legislator.send(search_type, geoloc).map do |legislator|
       Recipient.new(:legislator => legislator, :selected => selected_legislator_ids.include?(legislator.id))
     end
   end
@@ -78,6 +78,17 @@ class Letter < ActiveRecord::Base
   end
 
   private
+
+  def search_type
+    type = 'search'
+
+    if campaign
+      unless campaign.type.empty? || campaign.type == 'both'
+        type = "#{type}_#{campaign.type.pluralize}"
+      end
+    end
+    type
+  end
 
   def presence_of_recipients
     if recipients.empty?

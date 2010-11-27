@@ -133,6 +133,32 @@ describe Letter do
         @letter.recipients.size.should == 1
       end
     end
+
+    context 'campaign for only senators' do
+      before do
+        @campaign = Factory.build(:campaign, :type => 'senator')
+        @letter.campaign = @campaign
+        Legislator.stubs(:search_senators).returns([@legislator])
+        @letter.build_recipients(@geoloc)
+      end
+
+      it 'searches only for senators' do
+        Legislator.should have_received(:search_senators)
+      end
+    end
+    
+    context 'campaign for only representatives' do
+      before do
+        @campaign = Factory.build(:campaign, :type => 'representative')
+        @letter.campaign = @campaign
+        Legislator.stubs(:search_representatives).returns([@legislator])
+        @letter.build_recipients(@geoloc)
+      end
+
+      it 'searches only for representatives' do
+        Legislator.should have_received(:search_representatives)
+      end
+    end
   end
 
   context 'a sender email address already exists' do

@@ -14,4 +14,9 @@ class AdvocacyGroup < ActiveRecord::Base
     self.update_attribute(:approved, true)
     AdvocacyGroupMailer.approval_confirmation(self).deliver
   end
+
+  def self.find_for_authentication(conditions={})
+    conditions[:approved] = true
+    super
+  end
 end

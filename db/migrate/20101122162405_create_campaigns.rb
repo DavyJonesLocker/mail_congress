@@ -4,6 +4,7 @@ class CreateCampaigns < ActiveRecord::Migration
       t.integer :advocacy_group_id
       t.text    :body
       t.text    :summary
+      t.string  :type, :default => 'both'
       t.string  :title
 
       t.timestamps
