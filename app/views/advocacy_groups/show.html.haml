@@ -1,5 +1,5 @@
 = link_to 'Create campaign', new_campaign_path
-.campaigns
+%ul.campaigns
   - @advocacy_group.campaigns.each do |campaign|
-    = link_to campaign.title, campaign
+    %li= link_to campaign.title, campaign
 
