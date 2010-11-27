@@ -44,3 +44,13 @@ Feature: Campaigns
     Then  I should not see "Sen. John Kerry"
     And   I should not see "Sen. Scott Brown"
     But   I should see "Rep. Stephen Lynch"
+
+  Scenario: Editing a campaign
+    Given I am an approved advocacy group
+    And   I have a campaign
+    When  I sign in
+    And   I follow "Test Campaign Title"
+    And   I follow "Edit"
+    When  I update the campaign details
+    Then  I should see "Campaign Title 2 has been updated."
+    And   I should see the updated campaign details

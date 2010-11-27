@@ -44,3 +44,22 @@ Then /^I should see the campaign permalink$/ do
   Then %{I should see "#{campaign_permalink_url(@campaign, :protocol => 'https')}"}
 end
 
+Given /^I have a campaign$/ do
+  @advocacy_group ||= AdvocacyGroup.last
+  @campaign = Factory(:campaign, :advocacy_group => @advocacy_group)
+end
+
+When /^I update the campaign details$/ do
+  When %{I fill in "Title" with "Campaign Title 2"}
+  When %{I fill in "Summary" with "Campaign Summary 2"}
+  When %{I fill in "Body" with "Campaign Body 2"}
+  When %{I press "Submit"}
+end
+
+Then /^I should see the updated campaign details$/ do
+  Then %{I should see "Campaign Title 2"}
+  Then %{I should see "Campaign Summary 2"}
+  Then %{I should see "Campaign Body 2"}
+  Then %{I should see the campaign permalink}
+end
+

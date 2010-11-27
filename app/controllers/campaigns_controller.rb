@@ -1,10 +1,7 @@
 class CampaignsController < ApplicationController
   prepend_before_filter :authenticate_advocacy_group!
-
   before_filter :define_advocacy_group
-  def show
-    @campaign = @advocacy_group.campaigns.find(params[:id])
-  end
+  before_filter :find_campaign, :only => [:show, :edit, :update]
 
   def new
     @campaign = @advocacy_group.campaigns.build
@@ -19,9 +16,18 @@ class CampaignsController < ApplicationController
     end
   end
 
+  def update
+    @campaign.update_attributes(params[:campaign])
+    redirect_to @campaign, :notice => "#{@campaign.title} has been updated."
+  end
+
   private
 
   def define_advocacy_group
     @advocacy_group = current_advocacy_group
+  end
+
+  def find_campaign
+    @campaign = @advocacy_group.campaigns.find(params[:id])
   end
 end
