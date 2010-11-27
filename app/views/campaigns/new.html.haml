@@ -1,19 +1,2 @@
-= simple_form_for @campaign do |campaign|
-  %fieldset.title
-    %div.help
-      The title for this campaign.
-    = campaign.input :title
-  %fieldset.limit
-    %div.help
-      Is this campaign meant for only senators, represenatives or both?
-    = campaign.collection_radio :type, [['senators', 'Senators'], ['representatives', 'Representatives'],['both','Both']], :first, :last
-  %fieldset.summary
-    %div.help
-      A short paragraph describing this campaign.
-    = campaign.input :summary, :as => :text
-  %fieldset.body
-    %div.help
-      The body of the letter to be sent by your advocates. Keep in mind, they will have the option to add a personal message at the bottom.
-    = campaign.input :body, :as => :text
-
-  = campaign.submit 'Submit'
+%h1 New Campaign
+= render :partial => 'campaign'

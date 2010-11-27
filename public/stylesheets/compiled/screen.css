@@ -933,17 +933,17 @@ h1 label {
 }
 
 /* line 303, ../../../app/stylesheets/screen.scss */
-#new_campaign label.collection_radio {
+form.campaign label.collection_radio {
   width: auto;
   margin-left: 5px;
 }
 /* line 308, ../../../app/stylesheets/screen.scss */
-#new_campaign #campaign_type_senators {
+form.campaign #campaign_type_senators {
   margin-left: 120px;
 }
 
 /* line 313, ../../../app/stylesheets/screen.scss */
-#new_payment, #new_advocacy_group, #new_campaign {
+#new_payment, #new_advocacy_group, form.campaign {
   margin: 0 auto 40px auto;
   width: 910px;
   color: #F9F9F9;
@@ -958,73 +958,73 @@ h1 label {
   -box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 /* line 326, ../../../app/stylesheets/screen.scss */
-#new_payment .field_with_errors, #new_advocacy_group .field_with_errors, #new_campaign .field_with_errors {
+#new_payment .field_with_errors, #new_advocacy_group .field_with_errors, form.campaign .field_with_errors {
   padding-left: 0px !important;
 }
 /* line 329, ../../../app/stylesheets/screen.scss */
-#new_payment h1, #new_advocacy_group h1, #new_campaign h1 {
+#new_payment h1, #new_advocacy_group h1, form.campaign h1 {
   overflow: hidden;
   margin: 0 0 20px 0;
   padding: 0 0 20px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
 /* line 334, ../../../app/stylesheets/screen.scss */
-#new_payment h1 span, #new_advocacy_group h1 span, #new_campaign h1 span {
+#new_payment h1 span, #new_advocacy_group h1 span, form.campaign h1 span {
   color: #9CC;
   float: right;
   font-size: 18px;
   line-height: 1.333;
 }
 /* line 340, ../../../app/stylesheets/screen.scss */
-#new_payment h1 strong, #new_advocacy_group h1 strong, #new_campaign h1 strong {
+#new_payment h1 strong, #new_advocacy_group h1 strong, form.campaign h1 strong {
   float: left;
 }
 /* line 344, ../../../app/stylesheets/screen.scss */
-#new_payment fieldset, #new_advocacy_group fieldset, #new_campaign fieldset {
+#new_payment fieldset, #new_advocacy_group fieldset, form.campaign fieldset {
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
 /* line 348, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset.billing,
-#new_payment fieldset.group, #new_advocacy_group fieldset.billing, #new_advocacy_group fieldset.group, #new_campaign fieldset.billing, #new_campaign fieldset.group {
+#new_payment fieldset.group, #new_advocacy_group fieldset.billing, #new_advocacy_group fieldset.group, form.campaign fieldset.billing, form.campaign fieldset.group {
   padding: 0 0 10px 0;
 }
 /* line 350, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset.billing legend,
-#new_payment fieldset.group legend, #new_advocacy_group fieldset.billing legend, #new_advocacy_group fieldset.group legend, #new_campaign fieldset.billing legend, #new_campaign fieldset.group legend {
+#new_payment fieldset.group legend, #new_advocacy_group fieldset.billing legend, #new_advocacy_group fieldset.group legend, form.campaign fieldset.billing legend, form.campaign fieldset.group legend {
   padding: 0px !important;
 }
 /* line 353, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset.billing legend .error,
-#new_payment fieldset.group legend .error, #new_advocacy_group fieldset.billing legend .error, #new_advocacy_group fieldset.group legend .error, #new_campaign fieldset.billing legend .error, #new_campaign fieldset.group legend .error {
+#new_payment fieldset.group legend .error, #new_advocacy_group fieldset.billing legend .error, #new_advocacy_group fieldset.group legend .error, form.campaign fieldset.billing legend .error, form.campaign fieldset.group legend .error {
   margin: 0px !important;
   padding: 10px !important;
 }
 /* line 358, ../../../app/stylesheets/screen.scss */
-#new_payment fieldset.email, #new_advocacy_group fieldset.email, #new_campaign fieldset.email {
+#new_payment fieldset.email, #new_advocacy_group fieldset.email, form.campaign fieldset.email {
   padding: 20px 0;
 }
 /* line 360, ../../../app/stylesheets/screen.scss */
-#new_payment fieldset.email div.string, #new_payment fieldset.email div.password, #new_advocacy_group fieldset.email div.string, #new_advocacy_group fieldset.email div.password, #new_campaign fieldset.email div.string, #new_campaign fieldset.email div.password {
+#new_payment fieldset.email div.string, #new_payment fieldset.email div.password, #new_advocacy_group fieldset.email div.string, #new_advocacy_group fieldset.email div.password, form.campaign fieldset.email div.string, form.campaign fieldset.email div.password {
   margin-bottom: 0;
 }
 /* line 365, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset.contact,
-#new_payment fieldset.credit_card, #new_advocacy_group fieldset.contact, #new_advocacy_group fieldset.credit_card, #new_campaign fieldset.contact, #new_campaign fieldset.credit_card {
+#new_payment fieldset.credit_card, #new_advocacy_group fieldset.contact, #new_advocacy_group fieldset.credit_card, form.campaign fieldset.contact, form.campaign fieldset.credit_card {
   margin: 0 0 20px 0;
   padding: 20px 0 10px 0;
 }
 /* line 369, ../../../app/stylesheets/screen.scss */
-#new_payment fieldset.details, #new_advocacy_group fieldset.details, #new_campaign fieldset.details {
+#new_payment fieldset.details, #new_advocacy_group fieldset.details, form.campaign fieldset.details {
   margin: 0 0 20px 0;
   padding: 0 0 20px 0;
 }
 /* line 373, ../../../app/stylesheets/screen.scss */
-#new_payment fieldset.password, #new_advocacy_group fieldset.password, #new_campaign fieldset.password {
+#new_payment fieldset.password, #new_advocacy_group fieldset.password, form.campaign fieldset.password {
   margin: 0 0 20px 0;
   padding: 0 0 10px 0;
 }
 /* line 377, ../../../app/stylesheets/screen.scss */
-#new_payment label, #new_advocacy_group label, #new_campaign label {
+#new_payment label, #new_advocacy_group label, form.campaign label {
   width: 110px;
   text-align: right;
   margin: 0 10px 0 0;
@@ -1032,38 +1032,38 @@ h1 label {
   vertical-align: middle;
 }
 /* line 385, ../../../app/stylesheets/screen.scss */
-#new_payment .text textarea, #new_advocacy_group .text textarea, #new_campaign .text textarea {
+#new_payment .text textarea, #new_advocacy_group .text textarea, form.campaign .text textarea {
   width: 400px;
   padding: 5px;
   height: 200px;
   vertical-align: middle;
 }
 /* line 391, ../../../app/stylesheets/screen.scss */
-#new_payment .text label, #new_advocacy_group .text label, #new_campaign .text label {
+#new_payment .text label, #new_advocacy_group .text label, form.campaign .text label {
   margin: 10px 10px 0 0;
   vertical-align: top;
 }
 /* line 396, ../../../app/stylesheets/screen.scss */
-#new_payment div.select, #new_advocacy_group div.select, #new_campaign div.select {
+#new_payment div.select, #new_advocacy_group div.select, form.campaign div.select {
   display: inline-block;
   vertical-align: middle;
 }
 /* line 399, ../../../app/stylesheets/screen.scss */
-#new_payment div.select label, #new_advocacy_group div.select label, #new_campaign div.select label {
+#new_payment div.select label, #new_advocacy_group div.select label, form.campaign div.select label {
   width: auto;
 }
 /* line 402, ../../../app/stylesheets/screen.scss */
-#new_payment div.select select, #new_advocacy_group div.select select, #new_campaign div.select select {
+#new_payment div.select select, #new_advocacy_group div.select select, form.campaign div.select select {
   margin: 0 10px 0 0;
 }
 /* line 406, ../../../app/stylesheets/screen.scss */
-#new_payment div.expiration, #new_advocacy_group div.expiration, #new_campaign div.expiration {
+#new_payment div.expiration, #new_advocacy_group div.expiration, form.campaign div.expiration {
   float: left;
   clear: left;
   margin: 5px 10px 15px 0;
 }
 /* line 410, ../../../app/stylesheets/screen.scss */
-#new_payment div.expiration span, #new_advocacy_group div.expiration span, #new_campaign div.expiration span {
+#new_payment div.expiration span, #new_advocacy_group div.expiration span, form.campaign div.expiration span {
   display: inline-block;
   width: 110px;
   text-align: right;
@@ -1071,42 +1071,42 @@ h1 label {
   vertical-align: middle;
 }
 /* line 417, ../../../app/stylesheets/screen.scss */
-#new_payment div.expiration label, #new_advocacy_group div.expiration label, #new_campaign div.expiration label {
+#new_payment div.expiration label, #new_advocacy_group div.expiration label, form.campaign div.expiration label {
   vertical-align: middle;
 }
 /* line 420, ../../../app/stylesheets/screen.scss */
-#new_payment div.expiration .error, #new_advocacy_group div.expiration .error, #new_campaign div.expiration .error {
+#new_payment div.expiration .error, #new_advocacy_group div.expiration .error, form.campaign div.expiration .error {
   margin: 0;
 }
 /* line 424, ../../../app/stylesheets/screen.scss */
-#new_payment div.string, #new_payment div.text, #new_payment div.password, #new_advocacy_group div.string, #new_advocacy_group div.text, #new_advocacy_group div.password, #new_campaign div.string, #new_campaign div.text, #new_campaign div.password {
+#new_payment div.string, #new_payment div.text, #new_payment div.password, #new_advocacy_group div.string, #new_advocacy_group div.text, #new_advocacy_group div.password, form.campaign div.string, form.campaign div.text, form.campaign div.password {
   float: left;
   clear: left;
   margin: 0 10px 10px 0;
 }
 /* line 428, ../../../app/stylesheets/screen.scss */
-#new_payment div.string input, #new_payment div.text input, #new_payment div.password input, #new_advocacy_group div.string input, #new_advocacy_group div.text input, #new_advocacy_group div.password input, #new_campaign div.string input, #new_campaign div.text input, #new_campaign div.password input {
+#new_payment div.string input, #new_payment div.text input, #new_payment div.password input, #new_advocacy_group div.string input, #new_advocacy_group div.text input, #new_advocacy_group div.password input, form.campaign div.string input, form.campaign div.text input, form.campaign div.password input {
   width: 400px;
   padding: 5px;
   font-size: 16px;
   font-family: Arial, sans-serif;
 }
 /* line 434, ../../../app/stylesheets/screen.scss */
-#new_payment div.string input#payment_credit_card_verification_value, #new_payment div.text input#payment_credit_card_verification_value, #new_payment div.password input#payment_credit_card_verification_value, #new_advocacy_group div.string input#payment_credit_card_verification_value, #new_advocacy_group div.text input#payment_credit_card_verification_value, #new_advocacy_group div.password input#payment_credit_card_verification_value, #new_campaign div.string input#payment_credit_card_verification_value, #new_campaign div.text input#payment_credit_card_verification_value, #new_campaign div.password input#payment_credit_card_verification_value {
+#new_payment div.string input#payment_credit_card_verification_value, #new_payment div.text input#payment_credit_card_verification_value, #new_payment div.password input#payment_credit_card_verification_value, #new_advocacy_group div.string input#payment_credit_card_verification_value, #new_advocacy_group div.text input#payment_credit_card_verification_value, #new_advocacy_group div.password input#payment_credit_card_verification_value, form.campaign div.string input#payment_credit_card_verification_value, form.campaign div.text input#payment_credit_card_verification_value, form.campaign div.password input#payment_credit_card_verification_value {
   width: 100px;
 }
 /* line 439, ../../../app/stylesheets/screen.scss */
 #new_payment #payment_submit,
-#new_payment #advocacy_group_submit, #new_advocacy_group #payment_submit, #new_advocacy_group #advocacy_group_submit, #new_campaign #payment_submit, #new_campaign #advocacy_group_submit {
+#new_payment #advocacy_group_submit, #new_advocacy_group #payment_submit, #new_advocacy_group #advocacy_group_submit, form.campaign #payment_submit, form.campaign #advocacy_group_submit {
   margin: 0 0 0 120px;
   vertical-align: middle;
 }
 /* line 444, ../../../app/stylesheets/screen.scss */
-#new_payment img, #new_advocacy_group img, #new_campaign img {
+#new_payment img, #new_advocacy_group img, form.campaign img {
   vertical-align: middle;
 }
 /* line 447, ../../../app/stylesheets/screen.scss */
-#new_payment .help, #new_advocacy_group .help, #new_campaign .help {
+#new_payment .help, #new_advocacy_group .help, form.campaign .help {
   width: 318px;
   color: #9CC;
   float: right;
@@ -1114,7 +1114,7 @@ h1 label {
   line-height: 1.4;
 }
 /* line 454, ../../../app/stylesheets/screen.scss */
-#new_payment .error, #new_advocacy_group .error, #new_campaign .error {
+#new_payment .error, #new_advocacy_group .error, form.campaign .error {
   padding: 5px 0 0 0;
   margin: 0 0 0 120px;
 }
