@@ -1,5 +1,6 @@
-- content_for :javascript do
-  = javascript_include_tag 'highcharts', 'campaign'
+- unless Rails.env == 'test'
+  - content_for :javascript do
+    = javascript_include_tag 'highcharts', 'campaign'
 
 %h1= @campaign.title
 

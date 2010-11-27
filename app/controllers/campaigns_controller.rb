@@ -17,8 +17,11 @@ class CampaignsController < ApplicationController
   end
 
   def update
-    @campaign.update_attributes(params[:campaign])
-    redirect_to @campaign, :notice => "#{@campaign.title} has been updated."
+    if @campaign.update_attributes(params[:campaign])
+      redirect_to @campaign, :notice => "#{@campaign.title} has been updated."
+    else
+      render :action => :edit
+    end
   end
 
   private

@@ -54,3 +54,12 @@ Feature: Campaigns
     When  I update the campaign details
     Then  I should see "Campaign Title 2 has been updated."
     And   I should see the updated campaign details
+
+  Scenario: Editing a campaign with invalid data
+    Given I am an approved advocacy group
+    And   I have a campaign
+    When  I sign in
+    And   I follow "Test Campaign Title"
+    And   I follow "Edit"
+    When  I update the campaign details with invalid data
+    Then  I should see the errors for campaign

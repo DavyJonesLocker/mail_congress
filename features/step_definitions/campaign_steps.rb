@@ -56,6 +56,13 @@ When /^I update the campaign details$/ do
   When %{I press "Submit"}
 end
 
+When /^I update the campaign details with invalid data$/ do
+  When %{I fill in "Title" with ""}
+  When %{I fill in "Summary" with ""}
+  When %{I fill in "Body" with ""}
+  When %{I press "Submit"}
+end
+
 Then /^I should see the updated campaign details$/ do
   Then %{I should see "Campaign Title 2"}
   Then %{I should see "Campaign Summary 2"}
