@@ -36,6 +36,9 @@ function showLetterPreview() {
       } else {
         if (input.tagName == 'TEXTAREA') {
           var value = $('.campaign .body').text() || input.value;
+          if (value == 'Please write your letter here.') {
+            value = '';
+          }
         } else {
           var value = input.value;
         }
