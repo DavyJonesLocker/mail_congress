@@ -1194,7 +1194,7 @@ h1.tag {
 }
 
 /* line 520, ../../../app/stylesheets/screen.scss */
-input.gray {
+input.gray, textarea.gray {
   color: #AAAAAA !important;
 }
 

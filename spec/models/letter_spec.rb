@@ -16,9 +16,9 @@ describe Letter do
   
   describe '#body' do
     context 'associated with a campaign' do
-      let(:campaign) { Factory.build(:campaign) }
-      subject { Factory.build(:letter, :campaign => campaign) }
-      its(:body) { should == campaign.body }
+      let(:campaign) { Factory.build(:campaign, :body => 'Line 1') }
+      subject { Factory.build(:letter, :body => 'Line 2', :campaign => campaign) }
+      its(:body) { should == "Line 1\n\nLine 2" }
     end
 
     context 'not associated with a campaign' do

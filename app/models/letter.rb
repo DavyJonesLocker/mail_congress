@@ -17,7 +17,7 @@ class Letter < ActiveRecord::Base
 
   def body
     if campaign
-      campaign.body
+      "#{campaign.body}\n\n#{super}"
     else
       super
     end

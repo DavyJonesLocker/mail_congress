@@ -9,6 +9,14 @@ $(function() {
   $('#letter_sender_attributes_last_name').blur(function() { placeHolder($(this), 'Last name'); });
   $('#letter_sender_attributes_last_name').focus(function() { if (this.value == 'Last name') {this.value = ''; $(this).removeClass('gray');} });
   placeHolder($('#letter_sender_attributes_last_name'), 'Last name');
+  if ($('.campaign .body').length == 0) {
+    var bodyPlaceHolderText = 'Please write your letter here.'
+  } else {
+    var bodyPlaceHolderText = 'Please add a personal message here.'
+  }
+  $('#letter_body').blur(function() { placeHolder($(this), bodyPlaceHolderText); });
+  $('#letter_body').focus(function() { if (this.value == bodyPlaceHolderText) {this.value = ''; $(this).removeClass('gray');} });
+  placeHolder($('#letter_body'), bodyPlaceHolderText);
 });
 
 function showLetterPreview() {
@@ -26,7 +34,11 @@ function showLetterPreview() {
       if (input.value == 'First name' || input.value == 'Last name') {
         var value = '';
       } else {
-        var value = input.value;
+        if (input.tagName == 'TEXTAREA') {
+          var value = $('.campaign .body').text() || input.value;
+        } else {
+          var value = input.value;
+        }
       }
     }
     present = present && value.length > 0;

@@ -30,8 +30,7 @@
       .campaign
         = letter.input :campaign_id, :as => :hidden, :input_html => { :class => :preview }
         .body= simple_format(letter.object.campaign.body)
-    - else
-      = letter.input :body, :as => :text, :label => false, :input_html =>  { :class => :preview }
+    = letter.input :body, :as => :text, :label => false, :input_html =>  { :class => :preview }
     %div Your Constituent,
     = letter.simple_fields_for :sender do |sender|
       = sender.input :first_name, :label => false, :input_html => { :class => :preview }
