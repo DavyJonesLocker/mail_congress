@@ -932,8 +932,18 @@ h1 label {
   display: inline-block;
 }
 
-/* line 302, ../../../app/stylesheets/screen.scss */
-#new_payment, #new_advocacy_group {
+/* line 303, ../../../app/stylesheets/screen.scss */
+#new_campaign label.collection_radio {
+  width: auto;
+  margin-left: 5px;
+}
+/* line 308, ../../../app/stylesheets/screen.scss */
+#new_campaign #campaign_type_senators {
+  margin-left: 120px;
+}
+
+/* line 313, ../../../app/stylesheets/screen.scss */
+#new_payment, #new_advocacy_group, #new_campaign {
   margin: 0 auto 40px auto;
   width: 910px;
   color: #F9F9F9;
@@ -947,169 +957,169 @@ h1 label {
   -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   -box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
-/* line 315, ../../../app/stylesheets/screen.scss */
-#new_payment .field_with_errors, #new_advocacy_group .field_with_errors {
+/* line 326, ../../../app/stylesheets/screen.scss */
+#new_payment .field_with_errors, #new_advocacy_group .field_with_errors, #new_campaign .field_with_errors {
   padding-left: 0px !important;
 }
-/* line 318, ../../../app/stylesheets/screen.scss */
-#new_payment h1, #new_advocacy_group h1 {
+/* line 329, ../../../app/stylesheets/screen.scss */
+#new_payment h1, #new_advocacy_group h1, #new_campaign h1 {
   overflow: hidden;
   margin: 0 0 20px 0;
   padding: 0 0 20px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
-/* line 323, ../../../app/stylesheets/screen.scss */
-#new_payment h1 span, #new_advocacy_group h1 span {
+/* line 334, ../../../app/stylesheets/screen.scss */
+#new_payment h1 span, #new_advocacy_group h1 span, #new_campaign h1 span {
   color: #9CC;
   float: right;
   font-size: 18px;
   line-height: 1.333;
 }
-/* line 329, ../../../app/stylesheets/screen.scss */
-#new_payment h1 strong, #new_advocacy_group h1 strong {
+/* line 340, ../../../app/stylesheets/screen.scss */
+#new_payment h1 strong, #new_advocacy_group h1 strong, #new_campaign h1 strong {
   float: left;
 }
-/* line 333, ../../../app/stylesheets/screen.scss */
-#new_payment fieldset, #new_advocacy_group fieldset {
+/* line 344, ../../../app/stylesheets/screen.scss */
+#new_payment fieldset, #new_advocacy_group fieldset, #new_campaign fieldset {
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
-/* line 337, ../../../app/stylesheets/screen.scss */
+/* line 348, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset.billing,
-#new_payment fieldset.group, #new_advocacy_group fieldset.billing, #new_advocacy_group fieldset.group {
+#new_payment fieldset.group, #new_advocacy_group fieldset.billing, #new_advocacy_group fieldset.group, #new_campaign fieldset.billing, #new_campaign fieldset.group {
   padding: 0 0 10px 0;
 }
-/* line 339, ../../../app/stylesheets/screen.scss */
+/* line 350, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset.billing legend,
-#new_payment fieldset.group legend, #new_advocacy_group fieldset.billing legend, #new_advocacy_group fieldset.group legend {
+#new_payment fieldset.group legend, #new_advocacy_group fieldset.billing legend, #new_advocacy_group fieldset.group legend, #new_campaign fieldset.billing legend, #new_campaign fieldset.group legend {
   padding: 0px !important;
 }
-/* line 342, ../../../app/stylesheets/screen.scss */
+/* line 353, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset.billing legend .error,
-#new_payment fieldset.group legend .error, #new_advocacy_group fieldset.billing legend .error, #new_advocacy_group fieldset.group legend .error {
+#new_payment fieldset.group legend .error, #new_advocacy_group fieldset.billing legend .error, #new_advocacy_group fieldset.group legend .error, #new_campaign fieldset.billing legend .error, #new_campaign fieldset.group legend .error {
   margin: 0px !important;
   padding: 10px !important;
 }
-/* line 347, ../../../app/stylesheets/screen.scss */
-#new_payment fieldset.email, #new_advocacy_group fieldset.email {
+/* line 358, ../../../app/stylesheets/screen.scss */
+#new_payment fieldset.email, #new_advocacy_group fieldset.email, #new_campaign fieldset.email {
   padding: 20px 0;
 }
-/* line 349, ../../../app/stylesheets/screen.scss */
-#new_payment fieldset.email div.string, #new_payment fieldset.email div.password, #new_advocacy_group fieldset.email div.string, #new_advocacy_group fieldset.email div.password {
+/* line 360, ../../../app/stylesheets/screen.scss */
+#new_payment fieldset.email div.string, #new_payment fieldset.email div.password, #new_advocacy_group fieldset.email div.string, #new_advocacy_group fieldset.email div.password, #new_campaign fieldset.email div.string, #new_campaign fieldset.email div.password {
   margin-bottom: 0;
 }
-/* line 354, ../../../app/stylesheets/screen.scss */
+/* line 365, ../../../app/stylesheets/screen.scss */
 #new_payment fieldset.contact,
-#new_payment fieldset.credit_card, #new_advocacy_group fieldset.contact, #new_advocacy_group fieldset.credit_card {
+#new_payment fieldset.credit_card, #new_advocacy_group fieldset.contact, #new_advocacy_group fieldset.credit_card, #new_campaign fieldset.contact, #new_campaign fieldset.credit_card {
   margin: 0 0 20px 0;
   padding: 20px 0 10px 0;
 }
-/* line 358, ../../../app/stylesheets/screen.scss */
-#new_payment fieldset.details, #new_advocacy_group fieldset.details {
+/* line 369, ../../../app/stylesheets/screen.scss */
+#new_payment fieldset.details, #new_advocacy_group fieldset.details, #new_campaign fieldset.details {
   margin: 0 0 20px 0;
   padding: 0 0 20px 0;
 }
-/* line 362, ../../../app/stylesheets/screen.scss */
-#new_payment fieldset.password, #new_advocacy_group fieldset.password {
+/* line 373, ../../../app/stylesheets/screen.scss */
+#new_payment fieldset.password, #new_advocacy_group fieldset.password, #new_campaign fieldset.password {
   margin: 0 0 20px 0;
   padding: 0 0 10px 0;
 }
-/* line 366, ../../../app/stylesheets/screen.scss */
-#new_payment label, #new_advocacy_group label {
+/* line 377, ../../../app/stylesheets/screen.scss */
+#new_payment label, #new_advocacy_group label, #new_campaign label {
   width: 110px;
   text-align: right;
   margin: 0 10px 0 0;
   display: inline-block;
   vertical-align: middle;
 }
-/* line 374, ../../../app/stylesheets/screen.scss */
-#new_payment .text textarea, #new_advocacy_group .text textarea {
+/* line 385, ../../../app/stylesheets/screen.scss */
+#new_payment .text textarea, #new_advocacy_group .text textarea, #new_campaign .text textarea {
   width: 400px;
   padding: 5px;
   height: 200px;
   vertical-align: middle;
 }
-/* line 380, ../../../app/stylesheets/screen.scss */
-#new_payment .text label, #new_advocacy_group .text label {
+/* line 391, ../../../app/stylesheets/screen.scss */
+#new_payment .text label, #new_advocacy_group .text label, #new_campaign .text label {
   margin: 10px 10px 0 0;
   vertical-align: top;
 }
-/* line 385, ../../../app/stylesheets/screen.scss */
-#new_payment div.select, #new_advocacy_group div.select {
+/* line 396, ../../../app/stylesheets/screen.scss */
+#new_payment div.select, #new_advocacy_group div.select, #new_campaign div.select {
   display: inline-block;
   vertical-align: middle;
 }
-/* line 388, ../../../app/stylesheets/screen.scss */
-#new_payment div.select label, #new_advocacy_group div.select label {
+/* line 399, ../../../app/stylesheets/screen.scss */
+#new_payment div.select label, #new_advocacy_group div.select label, #new_campaign div.select label {
   width: auto;
 }
-/* line 391, ../../../app/stylesheets/screen.scss */
-#new_payment div.select select, #new_advocacy_group div.select select {
+/* line 402, ../../../app/stylesheets/screen.scss */
+#new_payment div.select select, #new_advocacy_group div.select select, #new_campaign div.select select {
   margin: 0 10px 0 0;
 }
-/* line 395, ../../../app/stylesheets/screen.scss */
-#new_payment div.expiration, #new_advocacy_group div.expiration {
+/* line 406, ../../../app/stylesheets/screen.scss */
+#new_payment div.expiration, #new_advocacy_group div.expiration, #new_campaign div.expiration {
   float: left;
   clear: left;
   margin: 5px 10px 15px 0;
 }
-/* line 399, ../../../app/stylesheets/screen.scss */
-#new_payment div.expiration span, #new_advocacy_group div.expiration span {
+/* line 410, ../../../app/stylesheets/screen.scss */
+#new_payment div.expiration span, #new_advocacy_group div.expiration span, #new_campaign div.expiration span {
   display: inline-block;
   width: 110px;
   text-align: right;
   margin: 0 10px 0 0;
   vertical-align: middle;
 }
-/* line 406, ../../../app/stylesheets/screen.scss */
-#new_payment div.expiration label, #new_advocacy_group div.expiration label {
+/* line 417, ../../../app/stylesheets/screen.scss */
+#new_payment div.expiration label, #new_advocacy_group div.expiration label, #new_campaign div.expiration label {
   vertical-align: middle;
 }
-/* line 409, ../../../app/stylesheets/screen.scss */
-#new_payment div.expiration .error, #new_advocacy_group div.expiration .error {
+/* line 420, ../../../app/stylesheets/screen.scss */
+#new_payment div.expiration .error, #new_advocacy_group div.expiration .error, #new_campaign div.expiration .error {
   margin: 0;
 }
-/* line 413, ../../../app/stylesheets/screen.scss */
-#new_payment div.string, #new_payment div.text, #new_payment div.password, #new_advocacy_group div.string, #new_advocacy_group div.text, #new_advocacy_group div.password {
+/* line 424, ../../../app/stylesheets/screen.scss */
+#new_payment div.string, #new_payment div.text, #new_payment div.password, #new_advocacy_group div.string, #new_advocacy_group div.text, #new_advocacy_group div.password, #new_campaign div.string, #new_campaign div.text, #new_campaign div.password {
   float: left;
   clear: left;
   margin: 0 10px 10px 0;
 }
-/* line 417, ../../../app/stylesheets/screen.scss */
-#new_payment div.string input, #new_payment div.text input, #new_payment div.password input, #new_advocacy_group div.string input, #new_advocacy_group div.text input, #new_advocacy_group div.password input {
+/* line 428, ../../../app/stylesheets/screen.scss */
+#new_payment div.string input, #new_payment div.text input, #new_payment div.password input, #new_advocacy_group div.string input, #new_advocacy_group div.text input, #new_advocacy_group div.password input, #new_campaign div.string input, #new_campaign div.text input, #new_campaign div.password input {
   width: 400px;
   padding: 5px;
   font-size: 16px;
   font-family: Arial, sans-serif;
 }
-/* line 423, ../../../app/stylesheets/screen.scss */
-#new_payment div.string input#payment_credit_card_verification_value, #new_payment div.text input#payment_credit_card_verification_value, #new_payment div.password input#payment_credit_card_verification_value, #new_advocacy_group div.string input#payment_credit_card_verification_value, #new_advocacy_group div.text input#payment_credit_card_verification_value, #new_advocacy_group div.password input#payment_credit_card_verification_value {
+/* line 434, ../../../app/stylesheets/screen.scss */
+#new_payment div.string input#payment_credit_card_verification_value, #new_payment div.text input#payment_credit_card_verification_value, #new_payment div.password input#payment_credit_card_verification_value, #new_advocacy_group div.string input#payment_credit_card_verification_value, #new_advocacy_group div.text input#payment_credit_card_verification_value, #new_advocacy_group div.password input#payment_credit_card_verification_value, #new_campaign div.string input#payment_credit_card_verification_value, #new_campaign div.text input#payment_credit_card_verification_value, #new_campaign div.password input#payment_credit_card_verification_value {
   width: 100px;
 }
-/* line 428, ../../../app/stylesheets/screen.scss */
+/* line 439, ../../../app/stylesheets/screen.scss */
 #new_payment #payment_submit,
-#new_payment #advocacy_group_submit, #new_advocacy_group #payment_submit, #new_advocacy_group #advocacy_group_submit {
+#new_payment #advocacy_group_submit, #new_advocacy_group #payment_submit, #new_advocacy_group #advocacy_group_submit, #new_campaign #payment_submit, #new_campaign #advocacy_group_submit {
   margin: 0 0 0 120px;
   vertical-align: middle;
 }
-/* line 433, ../../../app/stylesheets/screen.scss */
-#new_payment img, #new_advocacy_group img {
+/* line 444, ../../../app/stylesheets/screen.scss */
+#new_payment img, #new_advocacy_group img, #new_campaign img {
   vertical-align: middle;
 }
-/* line 436, ../../../app/stylesheets/screen.scss */
-#new_payment .help, #new_advocacy_group .help {
+/* line 447, ../../../app/stylesheets/screen.scss */
+#new_payment .help, #new_advocacy_group .help, #new_campaign .help {
   width: 318px;
   color: #9CC;
   float: right;
   font-size: 14px;
   line-height: 1.4;
 }
-/* line 443, ../../../app/stylesheets/screen.scss */
-#new_payment .error, #new_advocacy_group .error {
+/* line 454, ../../../app/stylesheets/screen.scss */
+#new_payment .error, #new_advocacy_group .error, #new_campaign .error {
   padding: 5px 0 0 0;
   margin: 0 0 0 120px;
 }
 
-/* line 450, ../../../app/stylesheets/screen.scss */
+/* line 461, ../../../app/stylesheets/screen.scss */
 .legislators .error,
 .field_with_errors, fieldset.billing legend {
   color: #FEE;
@@ -1120,145 +1130,145 @@ h1 label {
   border-radius: 3px;
 }
 
-/* line 459, ../../../app/stylesheets/screen.scss */
+/* line 470, ../../../app/stylesheets/screen.scss */
 .legislators .error {
   margin: 20px 0 0 0;
 }
 
-/* line 463, ../../../app/stylesheets/screen.scss */
+/* line 474, ../../../app/stylesheets/screen.scss */
 .error {
   font-weight: bold;
   padding: 10px 0 0 5px;
 }
 
-/* line 468, ../../../app/stylesheets/screen.scss */
+/* line 479, ../../../app/stylesheets/screen.scss */
 #content input[type="submit"] {
   font-size: 20px;
 }
 
-/* line 472, ../../../app/stylesheets/screen.scss */
+/* line 483, ../../../app/stylesheets/screen.scss */
 h1.tag {
   margin: 0 0 40px 0;
   text-align: center;
   font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
 }
 
-/* line 478, ../../../app/stylesheets/screen.scss */
+/* line 489, ../../../app/stylesheets/screen.scss */
 .home {
   overflow: hidden;
   line-height: 1.4;
   margin: 0 0 40px 0;
 }
-/* line 482, ../../../app/stylesheets/screen.scss */
+/* line 493, ../../../app/stylesheets/screen.scss */
 .home .text {
   float: right;
   width: 455px;
 }
-/* line 486, ../../../app/stylesheets/screen.scss */
+/* line 497, ../../../app/stylesheets/screen.scss */
 .home .video {
   float: left;
   width: 455px;
   height: 300px;
 }
 
-/* line 493, ../../../app/stylesheets/screen.scss */
+/* line 504, ../../../app/stylesheets/screen.scss */
 .legalese {
   padding: 0 0 40px 0;
 }
 
-/* line 497, ../../../app/stylesheets/screen.scss */
+/* line 508, ../../../app/stylesheets/screen.scss */
 .thank_you {
   text-align: center;
   padding: 0 0 40px 0;
 }
-/* line 500, ../../../app/stylesheets/screen.scss */
+/* line 511, ../../../app/stylesheets/screen.scss */
 .thank_you h1 {
   margin: 0 0 20px 0;
   font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
 }
 
-/* line 506, ../../../app/stylesheets/screen.scss */
+/* line 517, ../../../app/stylesheets/screen.scss */
 #footer {
   color: #699;
   font-size: 14px;
   text-align: center;
   margin-bottom: 40px;
 }
-/* line 511, ../../../app/stylesheets/screen.scss */
+/* line 522, ../../../app/stylesheets/screen.scss */
 #footer .legal {
   margin-top: 5px;
 }
-/* line 515, ../../../app/stylesheets/screen.scss */
+/* line 526, ../../../app/stylesheets/screen.scss */
 #footer .info :first-child {
   font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
 }
 
-/* line 520, ../../../app/stylesheets/screen.scss */
+/* line 531, ../../../app/stylesheets/screen.scss */
 input.gray, textarea.gray {
   color: #AAAAAA !important;
 }
 
-/* line 524, ../../../app/stylesheets/screen.scss */
+/* line 535, ../../../app/stylesheets/screen.scss */
 ul.numbers {
   margin-top: 15px;
 }
-/* line 526, ../../../app/stylesheets/screen.scss */
+/* line 537, ../../../app/stylesheets/screen.scss */
 ul.numbers li {
   list-style: decimal;
   margin-bottom: 10px;
   line-height: 1.25em;
 }
 
-/* line 533, ../../../app/stylesheets/screen.scss */
+/* line 544, ../../../app/stylesheets/screen.scss */
 ul.cards {
   margin-top: -15px;
   margin-left: 114px;
 }
-/* line 536, ../../../app/stylesheets/screen.scss */
+/* line 547, ../../../app/stylesheets/screen.scss */
 ul.cards .card {
   display: inline-block;
   width: 32px;
   height: 32px;
   margin-left: 5px;
 }
-/* line 542, ../../../app/stylesheets/screen.scss */
+/* line 553, ../../../app/stylesheets/screen.scss */
 ul.cards .visa {
   background-image: url("../../images/icons/visa.png");
 }
-/* line 545, ../../../app/stylesheets/screen.scss */
+/* line 556, ../../../app/stylesheets/screen.scss */
 ul.cards .master {
   background-image: url("../../images/icons/master.png");
 }
-/* line 549, ../../../app/stylesheets/screen.scss */
+/* line 560, ../../../app/stylesheets/screen.scss */
 ul.cards .american_express {
   background-image: url("../../images/icons/american_express.png");
 }
-/* line 553, ../../../app/stylesheets/screen.scss */
+/* line 564, ../../../app/stylesheets/screen.scss */
 ul.cards .discover {
   background-image: url("../../images/icons/discover.png");
 }
-/* line 557, ../../../app/stylesheets/screen.scss */
+/* line 568, ../../../app/stylesheets/screen.scss */
 ul.cards .diners_club {
   background-image: url("../../images/icons/diners_club.png");
 }
-/* line 561, ../../../app/stylesheets/screen.scss */
+/* line 572, ../../../app/stylesheets/screen.scss */
 ul.cards .disabled {
   opacity: 0.3;
 }
 
-/* line 566, ../../../app/stylesheets/screen.scss */
-.campaign {
+/* line 577, ../../../app/stylesheets/screen.scss */
+div.campaign {
   line-height: 1.4;
   margin: 0 0 40px 0;
   padding: 0 0 40px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
-/* line 567, ../../../app/stylesheets/screen.scss */
-.campaign .body {
+/* line 578, ../../../app/stylesheets/screen.scss */
+div.campaign div.body {
   width: 720px;
   margin: 0 auto;
 }
-/* line 570, ../../../app/stylesheets/screen.scss */
-.campaign .body p {
+/* line 581, ../../../app/stylesheets/screen.scss */
+div.campaign div.body p {
   text-indent: 1em;
 }

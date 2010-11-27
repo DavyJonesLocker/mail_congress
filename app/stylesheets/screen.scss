@@ -299,7 +299,18 @@ h1 {
   }
 }
 
-#new_payment, #new_advocacy_group {
+#new_campaign {
+  label.collection_radio {
+    width: auto;
+    margin-left: 5px;
+  }
+
+  #campaign_type_senators {
+    margin-left: 120px;
+  }
+}
+
+#new_payment, #new_advocacy_group, #new_campaign {
   margin: 0 auto 40px auto;
   width: 910px;
   color: #F9F9F9;
@@ -563,8 +574,8 @@ ul.cards {
   }
 }
 
-.campaign {
-  .body {
+div.campaign {
+  div.body {
     width: 720px;
     margin: 0 auto;
     p {
