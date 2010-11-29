@@ -1,3 +1,15 @@
+Given /^I have mailed (\d+) legislators?$/ do |number|
+  Given %{I am on the home page}
+  And   %{I have found my congress people}
+  legislators = all(:css, 'ul.legislators li label')
+  (1..number.to_i).each do |i|
+    When %{I click on "#{legislators[i-1].text}"}
+  end
+  When %{I write them a thank-you letter}
+  And  %{I press "Send"}
+  And  %{I make the payment}
+end
+
 When /^I write my letter to all of my congress people$/ do
   When %{I select my congress people}
   And  %{I write them a thank-you letter}

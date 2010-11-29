@@ -20,3 +20,13 @@ Then /^I should receive an email confirming me$/ do
   Then %{I should see "[MailCongress] Your group has been approved!" in the email subject}
 end
 
+Then /^I should receive a notification email (\d+) days later$/ do |arg1|
+  Given %{a clear email queue}
+  email = Sender.last.email
+  When  %{5 days pass}
+  When  %{the scheduled jobs have been processed}
+  Then  %{"#{email}" should receive an email}
+  When  %{I open the email}
+  Then  %{I should see "[MailCongress] Your letter has arrived." in the email subject}
+end
+

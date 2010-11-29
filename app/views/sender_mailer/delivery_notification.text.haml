@@ -1,0 +1,11 @@
+- if @letter.recipients.size == 1
+  Your letter has arrived!
+  Please make a follow up phone call.
+  = "#{@letter.recipients.first.legislator.name} - #{@letter.recipients.first.legislator.phone}"
+- else
+  Your letters have arrived!
+  Please make follow up phone calls.
+  - @letter.recipients.each do |recipient|
+    = "#{recipient.legislator.name} - #{recipient.legislator.phone}"
+
+Thank you for Mailing Congress!

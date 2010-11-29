@@ -1,4 +1,4 @@
-- unless Rails.env == 'test'
+- unless Rails.env == 'test' || Rails.env == 'cucumber'
   - content_for :javascript do
     = javascript_include_tag 'highcharts', 'campaign'
 

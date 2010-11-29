@@ -14,6 +14,40 @@ describe Letter do
     # it { should_not validate_presence_of :body }
   # end
   
+  describe '.perform' do
+    before do
+      @id     = 1
+      @method = :test_method
+      @letter = mock('Letter')
+      @letter.stubs(@method)
+      Letter.stubs(:find).returns(@letter)
+      Letter.perform(@id, @method)
+    end
+
+    it 'finds an instance by the id' do
+      Letter.should have_received(:find).with(@id)
+    end
+
+    it 'calls the method on the instance' do
+      @letter.should have_received(@method)
+    end
+  end
+
+  describe '#delivery_notification' do
+    before do
+      @mail = mock('mail')
+      @mail.stubs(:deliver)
+      SenderMailer.stubs(:delivery_notification).returns(@mail)
+      @letter = Letter.new
+      @letter.delivery_notification
+    end
+
+    it 'sends a delivery notfication email' do
+      SenderMailer.should have_received(:delivery_notification).with(@letter)
+      @mail.should have_received(:deliver)
+    end
+  end
+
   describe '#body' do
     context 'associated with a campaign' do
       let(:campaign) { Factory.build(:campaign, :body => 'Line 1') }

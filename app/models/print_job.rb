@@ -1,5 +1,5 @@
 class PrintJob
-  @queue = 'high'
+  @queue = :high
 
   def self.enqueue(letter)
     Resque.enqueue(PrintJob, letter.id)
@@ -18,6 +18,7 @@ class PrintJob
     if print_job.state == :completed
       letter.update_attributes(:printed => true) #, :body => '')
       SenderMailer.print_notification(letter).deliver
+      Resque.enqueue_at(5.business_days.from_now, Letter, letter.id, :delivery_notification)
     else
       self.enqueue(letter)
     end

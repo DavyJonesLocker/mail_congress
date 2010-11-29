@@ -14,10 +14,23 @@ GIT
       pdf-reader (>= 0.8.1)
 
 GIT
+  remote: git://github.com/dirtywater/business_time.git
+  revision: 57df4ce8f4bf0153b3f23d5beee9fe2960894c07
+  specs:
+    business_time (0.3.0)
+      activesupport (>= 2.0.0)
+
+GIT
   remote: git://github.com/ianwhite/orm_adapter.git
   revision: a5b28d2bdede7f5ae865d8bb84acc96043c74811
   specs:
     orm_adapter (0.0.3)
+
+GIT
+  remote: git://github.com/mojombo/chronic.git
+  revision: faad1de3b2e6039bdc9c624e47142e5cc93d22a1
+  specs:
+    chronic (0.3.0)
 
 GIT
   remote: git://github.com/plataformatec/devise.git
@@ -204,6 +217,10 @@ GEM
       redis-namespace (~> 0.8.0)
       sinatra (>= 0.9.2)
       vegas (~> 0.1.2)
+    resque-scheduler (1.9.7)
+      redis (>= 2.0.1)
+      resque (>= 1.8.0)
+      rufus-scheduler
     resque_spec (0.4.0)
       resque (>= 1.6.0)
       rspec (>= 2.0.0.beta.12)
@@ -224,6 +241,8 @@ GEM
     ruby-debug-base (0.10.4)
       linecache (>= 0.3)
     rubyzip (0.9.4)
+    rufus-scheduler (2.0.7)
+      tzinfo
     sass (3.1.0.alpha.19)
     selenium-webdriver (0.1.0)
       childprocess (= 0.1.4)
@@ -240,6 +259,7 @@ GEM
     term-ansicolor (1.0.5)
     thor (0.14.6)
     tilt (1.1)
+    timecop (0.3.5)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.23)
@@ -264,9 +284,11 @@ DEPENDENCIES
   autotest-growl
   autotest-rails
   bourne
+  business_time!
   capybara
   capybara-envjs!
   capybara-envjs-fixes
+  chronic!
   compass
   cucumber
   cucumber-rails
@@ -288,6 +310,7 @@ DEPENDENCIES
   rails (= 3.0.3)
   remarkable_activerecord (= 4.0.0.alpha4)
   resque
+  resque-scheduler
   resque_spec
   rmagick
   rspec
@@ -296,4 +319,5 @@ DEPENDENCIES
   sass (= 3.1.0.alpha.19)
   simple_form
   spork (= 0.9.0.rc2)
+  timecop
   unicorn

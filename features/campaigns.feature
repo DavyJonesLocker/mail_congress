@@ -2,7 +2,8 @@
 Feature: Campaigns
 
   Scenario: Adding my name to a campaign
-    Given a campaign exists
+    Given Resque is clear
+    And   a campaign exists
     When  I go to the campaign permalink page
     Then  I should see the campaign summary
     And   I submit the address form with my information

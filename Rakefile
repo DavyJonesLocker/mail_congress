@@ -4,6 +4,11 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 require 'resque/tasks'
+require 'resque_scheduler/tasks'
+require 'ruby-debug'
+require 'daemons'
+
+task "resque:setup" => :environment
 
 MailCongress::Application.load_tasks
 
@@ -21,11 +26,20 @@ namespace :spork do
     print 'Done.'
   end
 
-  desc 'Launch Cucumber Spork Server'
-  task :cucumber do
-    puts 'Launching Cucumber Spork Server... '
-    system('bundle exec spork cuc -p 8991 &')
-    print 'Done.'
+  namespace :cucumber do
+    desc 'Launch Cucumber Spork Server'
+    task :start do
+      path = File.dirname(File.expand_path(__FILE__))
+      puts 'Launching Cucumber Spork Server... '
+      Daemons.run_proc('cucumber', :ARGV => ['start']) do
+        Spork::Runner(['cuc', '-p', '8991'], STDOUT, STDERR)
+      end
+    end
+    
+    task :stop do
+      puts 'Stopping Cucumber Spork Server...'
+      Daemons.run_proc('cucumber', :ARGV => ['stop'])
+    end
   end
 end
 

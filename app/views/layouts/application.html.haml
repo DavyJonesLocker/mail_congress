@@ -10,7 +10,7 @@
     = javascript_include_tag :defaults
     = yield :javascript
     = csrf_meta_tag
-    - unless Rails.env == 'test'
+    - unless Rails.env == 'test' || Rails.env == 'cucumber'
       :javascript
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-19740623-1']);

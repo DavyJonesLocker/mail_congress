@@ -3,6 +3,7 @@ require 'spec_helper'
 describe PrintJob do
   describe '.enqueue' do
     before do
+      ResqueSpec.reset!
       @letter = Letter.new
       @letter.stubs(:id).returns(1)
       PrintJob.enqueue(@letter)
@@ -15,6 +16,7 @@ describe PrintJob do
 
   describe '.perform' do
     before do
+      ResqueSpec.reset!
       @mail = mock('Mail')
       @mail.stubs(:deliver)
       SenderMailer.stubs(:print_notification).returns(@mail)
@@ -29,6 +31,7 @@ describe PrintJob do
         Cups::PrintJob::Transient.stubs(:new).returns(@cups_print_job)
         @letter = Factory.build(:letter)
         @letter.stubs(:to_pdf).returns('')
+        @letter.stubs(:id).returns(1)
         Letter.stubs(:find).returns(@letter)
         PrintJob.perform(@letter.id)
       end
@@ -62,6 +65,10 @@ describe PrintJob do
         SenderMailer.should have_received(:print_notification).with(@letter)
         @mail.should have_received(:deliver)
       end
+
+      it 'schedules a delivery notification 5 business days later' do
+        Letter.should have_scheduled(@letter.id, :delivery_notification)
+      end
     end
     
     context 'unsuccesfull printing' do
@@ -92,6 +99,10 @@ describe PrintJob do
 
       it 'does not send a print confirmation email' do
         SenderMailer.should_not have_received(:print_notification)
+      end
+
+      it 'does not schedule a notification email' do
+        Letter.should_not have_queue_size_of(1)
       end
     end
   end

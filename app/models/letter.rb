@@ -1,4 +1,6 @@
 class Letter < ActiveRecord::Base
+  @queue = :letter
+
   has_many   :recipients
   has_many   :legislators, :through => :recipients
   belongs_to :sender
@@ -14,6 +16,15 @@ class Letter < ActiveRecord::Base
   attr_accessor   :font_size
   attr_accessor   :min_font_size
   attr_accessible :body, :printed, :sender_attributes, :recipients_attributes, :campaign_id, :campaign
+
+  def self.perform(id, method)
+    letter = Letter.find(id)
+    letter.send(method)
+  end
+
+  def delivery_notification
+    SenderMailer.delivery_notification(self).deliver
+  end
 
   def body
     if campaign

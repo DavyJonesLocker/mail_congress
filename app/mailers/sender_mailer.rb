@@ -11,4 +11,15 @@ class SenderMailer < ActionMailer::Base
 
     mail(:to => @letter.sender.email, :subject => subject)
   end
+
+  def delivery_notification(letter)
+    @letter = letter
+    if @letter.recipients.size == 1
+      subject = '[MailCongress] Your letter has arrived.'
+    else
+      subject = '[MailCongress] Your letters have arrived.'
+    end
+
+    mail(:to => @letter.sender.email, :subject => subject)
+  end
 end
