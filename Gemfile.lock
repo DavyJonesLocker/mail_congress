@@ -293,6 +293,7 @@ DEPENDENCIES
   cucumber
   cucumber-rails
   cups!
+  daemons
   database_cleaner
   devise!
   email_spec!
