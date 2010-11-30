@@ -67,6 +67,12 @@ describe Letter do
       its(:body) { should == "Line 1\n\nLine 2" }
     end
 
+    context 'associated with a campaign and has placeholder text' do
+      let(:campaign) { Factory.build(:campaign, :body => 'Line 1')}
+      subject { Factory.build(:letter, :body => 'Please add an optional personal message here.', :campaign => campaign)}
+      its(:body) { should == 'Line 1' }
+    end
+
     context 'not associated with a campaign' do
       subject { Letter.new(:body => 'Test Body') }
       its(:body) { should == 'Test Body' }

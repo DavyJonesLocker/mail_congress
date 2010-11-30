@@ -12,7 +12,7 @@ $(function() {
   if ($('.campaign .body').length == 0) {
     var bodyPlaceHolderText = 'Please write your letter here.'
   } else {
-    var bodyPlaceHolderText = 'Please add a personal message here.'
+    var bodyPlaceHolderText = 'Please add an optional personal message here.'
   }
   $('#letter_body').blur(function() { placeHolder($(this), bodyPlaceHolderText); });
   $('#letter_body').focus(function() { if (this.value == bodyPlaceHolderText) {this.value = ''; $(this).removeClass('gray');} });

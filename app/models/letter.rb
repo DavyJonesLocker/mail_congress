@@ -32,7 +32,11 @@ class Letter < ActiveRecord::Base
 
   def body
     if campaign
-      "#{campaign.body}\n\n#{super}"
+      if attributes["body"] == 'Please add an optional personal message here.'
+        campaign.body
+      else
+        "#{campaign.body}\n\n#{super}"
+      end
     else
       super
     end
