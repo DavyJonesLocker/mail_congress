@@ -1,4 +1,7 @@
 MailCongress::Application.configure do
+  App = {}
+  App[:host] = 'mailcongress.org'
+
   # Settings specified here will take precedence over those in config/environment.rb
 
   # The production environment is meant for finished, "live" apps.

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101123011704) do
+ActiveRecord::Schema.define(:version => 20101130031954) do
 
   create_table "advocacy_groups", :force => true do |t|
     t.boolean  "approved",                          :default => false
@@ -86,9 +86,11 @@ ActiveRecord::Schema.define(:version => 20101123011704) do
     t.integer  "sender_id"
     t.integer  "campaign_id"
     t.text     "body"
-    t.boolean  "printed",     :default => false
+    t.boolean  "printed",        :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "follow_up_made", :default => false
+    t.string   "follow_up_id"
   end
 
   create_table "recipients", :force => true do |t|

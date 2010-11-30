@@ -1,0 +1,7 @@
+%ul
+  - @letter.recipients.each do |recipient|
+    %li
+      = image_tag(recipient.legislator.bioguide_image)
+      = recipient.legislator.name
+      = recipient.legislator.phone
+

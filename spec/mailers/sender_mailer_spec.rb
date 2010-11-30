@@ -76,16 +76,11 @@ describe SenderMailer do
         end
       end
 
-      it 'includes the phone number of the recipient in the letter in the body' do
-        @letter.recipients.each do |recipient|
-          @email.should have_body_text(recipient.legislator.phone)
-        end
-      end
-
       it 'has a subject notifying this is a delivery notification' do
         @email.should have_subject('[MailCongress] Your letter has arrived.')
       end
     end
+
     context 'more than 1 recipient' do
       before :all do
         recipients = [Recipient.new(:legislator => Legislator.first),
@@ -101,12 +96,6 @@ describe SenderMailer do
       it 'lists the recipients of the letter in the body' do
         @letter.recipients.each do |recipient|
           @email.should have_body_text(recipient.legislator.name)
-        end
-      end
-
-      it 'includes the phone number of the recipient in the letter in the body' do
-        @letter.recipients.each do |recipient|
-          @email.should have_body_text(recipient.legislator.phone)
         end
       end
 

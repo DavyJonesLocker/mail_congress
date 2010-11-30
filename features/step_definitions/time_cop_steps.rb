@@ -1,4 +1,4 @@
-When '$time pass' do |time|
-  Timecop.travel Chronic.parse("#{time} from now")
+When /(\d+) days pass/ do |days|
+  Timecop.travel days.to_i.business_days.from_now
 end
 

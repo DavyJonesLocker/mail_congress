@@ -22,6 +22,10 @@ class Letter < ActiveRecord::Base
     letter.send(method)
   end
 
+  def generate_follow_up_id!
+    self.follow_up_id = Digest::MD5.hexdigest "#{sender.email}-#{DateTime.now}"
+  end
+
   def delivery_notification
     SenderMailer.delivery_notification(self).deliver
   end

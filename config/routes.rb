@@ -1,4 +1,5 @@
 MailCongress::Application.routes.draw do
+  get  'follow_ups/:id', :to => 'follow_ups#show', :as => 'follow_up'
   resources :campaigns
   get  'dashboard', :to => 'advocacy_groups#show', :as => 'dashboard'
   get  'sign_up',  :to => 'advocacy_groups#new', :as => 'sign_up'

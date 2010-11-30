@@ -1,4 +1,7 @@
 MailCongress::Application.configure do
+  App = {}
+  App[:host] = 'localhost:3000'
+
   # Settings specified here will take precedence over those in config/environment.rb
 
   # In the development environment your application's code is reloaded on

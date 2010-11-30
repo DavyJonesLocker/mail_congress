@@ -1,0 +1,9 @@
+<% if @letter.recipients.size == 1 -%>
+The letter you sent to <%= @letter.recipients.first.legislator.name %> has arrived.
+We encourage you to make a follow up phone call. Please go here: <%= follow_up_url(:id => @letter.follow_up_id, :host => App[:host]) -%>
+<% else -%>
+The letters you sent to <%= @letter.recipients.map { |recipient| recipient.legislator.name }.join(', ') %> have arrived.
+We encourage you to make follow up phone calls. Please go here: <%= follow_up_url(:id => @letter.follow_up_id, :host => App[:host]) -%>
+<% end -%>
+
+Thank you for Mailing Congress!

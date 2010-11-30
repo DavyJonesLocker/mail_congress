@@ -33,6 +33,18 @@ describe Letter do
     end
   end
 
+  describe '#generate_follow_up_id' do
+    before do
+      @letter = Letter.new(:sender_attributes => Factory.attributes_for(:sender))
+    end
+
+    it 'creates a randomized SHA1 string' do
+      @letter.follow_up_id.should be_blank
+      @letter.generate_follow_up_id!
+      @letter.follow_up_id.should_not be_blank
+    end
+  end
+
   describe '#delivery_notification' do
     before do
       @mail = mock('mail')
