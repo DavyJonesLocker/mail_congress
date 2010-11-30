@@ -1,5 +1,6 @@
 require 'bundler/capistrano'
 
+set :bundle_without,  [:development, :test, :cucumber]
 set :application, 'mail_congress'
 set :deploy_to, "/home/deploy/#{application}"
 
