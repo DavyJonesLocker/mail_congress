@@ -53,6 +53,9 @@
     = letter.simple_fields_for :recipients do |recipient|
       = recipient.input :legislator_id, :as => :hidden
 
+  = payment.submit 'Make secure payment'
+  %img{ :src => '/images/icons/lock.png', :alt => 'Lock icon', :title => 'Payment over secure connection' }
+
   %div.help
     By submitting payment, you agree to the 
     %a{:href => '/terms', :target => '_blank'}
@@ -62,6 +65,3 @@
     %a{:href => '/privacy', :target => '_blank'}
       %abbr{:title => 'Privacy Policy'}
         Privacy Policy
-
-  = payment.submit 'Make secure payment'
-  %img{ :src => '/images/icons/lock.png', :alt => 'Lock icon', :title => 'Payment over secure connection' }

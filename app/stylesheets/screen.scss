@@ -17,6 +17,18 @@ $blueprint_grid_width: 40px;
 
 @import "compass/reset";
 @import "compass/utilities";
+@import "compass/css3/border-radius";
+
+
+/* -----------------------------------------------------------------------------
+    Varibles
+----------------------------------------------------------------------------- */
+
+$form_sidebar: 324px;
+
+/* -----------------------------------------------------------------------------
+    Base
+----------------------------------------------------------------------------- */
 
 @font-face {
   font-family: 'AdelleBasicBold';
@@ -25,6 +37,12 @@ $blueprint_grid_width: 40px;
   font-weight: normal;
   font-style: normal;
 }
+
+body, html {
+  color: #F9F9F9;
+  background: #003F4B url(/images/html.gif);
+}
+
 
 body {
   font-family: Arial, sans-serif;
@@ -43,11 +61,40 @@ a:hover {
   text-decoration: underline;
 }
 
+/* -----------------------------------------------------------------------------
+    Layout
+----------------------------------------------------------------------------- */
+
+h1 {
+  width: auto;
+  font-size: 24px;
+  font-family: Arial, sans-serif;
+  label {
+    color: #F9F9F9 !important;
+  }
+}
+
+h1.tag {
+  margin: 0 0 40px 0;
+  text-align: center;
+  font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
+}
+
 #header,
 #content,
 #footer {
   width: 950px;
   margin: 0 auto;
+}
+
+#header a.logo {
+  width: 256px;
+  height: 40px;
+  display: block;
+  margin: 40px auto;
+  text-indent: -9999px;
+  text-decoration: none;
+  background: url(/images/logo.png) 0 0 no-repeat;
 }
 
 #menus {
@@ -65,81 +112,218 @@ a:hover {
     form {
       height: 22px;
       display: none;
+      background: none;
+      margin: 0;
+      padding: 0;
+      width: auto;
+      input[type="submit"] {
+        margin: 0;
+        font-size: inherit; 
+      }
     }
   }
 }
 
-ul.legislators {
+#footer {
+  color: #699;
+  font-size: 14px;
   text-align: center;
+  margin-bottom: 40px;
+  .legal {
+    margin-top: 5px;
+  }
+  .info {
+    :first-child {
+      font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
+    }
+  }
+}
+
+div.campaign {
+  div.body {
+    width: 720px;
+    margin: 0 auto;
+    p {
+      text-indent: 1em;
+    }
+  }
+  line-height: 1.4;
+  margin: 0 0 40px 0;
+  padding: 0 0 40px 0;
+  border-bottom: 1px solid rgba(255,255,255,.25);
+}
+
+#chart {
+  width: 900px;
+  height: 400px;
+}
+
+ul.numbers {
+  margin-top: 15px;
   li {
-    vertical-align: top;
+    list-style: decimal;
+    margin-bottom: 10px;
+    line-height: 1.25em;
+  }
+}
+
+ul.cards {
+  margin-left: 114px;
+  .card {
+    width: 32px;
+    height: 24px;
+    margin: 0 0 5px 5px;
     display: inline-block;
-  }
-  .bioguide {
-    position: relative;
-    width: 100px;
-    height: 125px;
-    overflow: hidden;
+    background-position: 0 -4px;
     background-repeat: no-repeat;
-    img.mail {
-      position: absolute;
-      height: 16px;
-      width: 16px;
-      right: 5px;
-      bottom: 2px;
-      display: none;
-    }
-    img.selected {
-      display: inline;
-    }
   }
-  .monochrome {
-    background-position: 100px 0px !important;
+  .visa {
+    background-image: url('../../images/icons/visa.png');
   }
-  .color {
-    background-position: 0px 0px !important;
+  .master {
+    background-image: url('../../images/icons/master.png');
   }
-  .bioguide:hover {
-    cursor: pointer;
+  .american_express {
+    background-image: url('../../images/icons/american_express.png');
   }
-  img.monochrome {
-    margin-left: -100px;
+  .discover {
+    background-image: url('../../images/icons/discover.png');
   }
-  label:hover {
-    cursor: pointer;
-    text-decoration: underline;
-    color: blue;
+  .diners_club {
+    background-image: url('../../images/icons/diners_club.png');
+  }
+  .disabled {
+    opacity: 0.3;
   }
 }
 
-#letter_body {
-  width: 600px;
-  height: 300px;
+.home {
+  overflow: hidden;
+  line-height: 1.4;
+  margin: 0 0 40px 0;
+  .text {
+    clear: none;
+    float: right;
+    width: 455px;
+  }
+  .video {
+    float: left;
+    width: 455px;
+    height: 300px;
+  }
 }
 
-body, html {
-  color: #F9F9F9;
-  background: #003F4B url(/images/html.gif);
+.legalese {
+  padding: 0 0 40px 0;
 }
 
-h1 {
-  width: auto;
-  font-size: 24px;
-  font-family: Arial, sans-serif;
+.thank_you {
+  text-align: center;
+  padding: 0 0 40px 0;
+  h1 {
+    margin: 0 0 20px 0;
+    font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+    Forms
+----------------------------------------------------------------------------- */
+
+.help {
+  color: #9CC;
+  display: inline;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+fieldset {
+  padding: 20px 0 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,.25);
+  .help {
+    float: right;
+    width: $form_sidebar;
+    margin: 0 0 10px 0;
+  }
+}
+
+div.text, 
+div.string, 
+div.password {
+  float: left;
+  clear: left;
   margin: 0 0 10px 0;
-  label {
-    color: #F9F9F9 !important;
+  input {
+    width: 400px;
+    padding: 5px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
   }
 }
 
-#header a.logo {
-  width: 256px;
-  height: 40px;
-  display: block;
-  margin: 40px auto;
-  text-indent: -9999px;
-  text-decoration: none;
-  background: url(/images/logo.png) 0 0 no-repeat;
+input[type="submit"] {
+  font-size: 20px;
+  margin: 20px 0 0 120px;
+}
+
+textarea {
+  padding: 5px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+input.gray, textarea.gray {
+  color: #AAAAAA !important;
+}
+
+label {
+  width: 110px;
+  text-align: right;
+  margin: 0 10px 0 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+form {
+  h1 {
+    overflow: hidden;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,.25);
+    span { 
+      color: #9CC;
+      float: right;
+      width: $form_sidebar;
+      font-size: 18px;
+      line-height: 1.333;
+    }
+    strong { 
+      float: left; 
+    }
+  }
+}
+
+.text {
+  textarea {
+    width: 400px;
+    padding: 5px;
+    height: 200px;
+    vertical-align: middle;
+  }
+  label {
+    margin: 10px 10px 0 0;
+    vertical-align: top;
+  }
+}
+
+div.select {
+  display: inline-block;
+  vertical-align: middle;
+  label {
+    width: auto;
+  }
+  select {
+    margin: 0 10px 0 0;
+  }
 }
 
 #address_search {
@@ -150,24 +334,32 @@ h1 {
   padding: 20px;
   text-align: center;
   font-family: Arial, sans-serif;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  @include border-radius(5px);
   -webkit-box-shadow: 0 0 20px rgba(0,0,0,.1);
   -moz-box-shadow: 0 0 20px rgba(0,0,0,.1);
   -box-shadow: 0 0 20px rgba(0,0,0,.1);
-  #address {
-    color: #233;
-    width: 90%;
+  label {
+    margin: 0;
+    width: auto;
     display: block;
-    padding: 10px;
-    border: 1px solid #FFF;
-    margin: 20px auto;
-    font-size: 36px;
-    font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+    text-align: center;
+  }
+  div.string {
+    float: none;
+    input#address {
+      width: 90%;
+      color: #233;
+      padding: 10px;
+      display: block;
+      font-size: 36px;
+      margin: 20px auto;
+      border: 1px solid #FFF;
+      font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
+      @include border-radius(5px);
+    }
+  }
+  input[type="submit"] {
+    margin: 0;
   }
   .field_with_errors {
     background: none;
@@ -177,41 +369,99 @@ h1 {
     background: #B21;
     padding: 10px;
     margin: 0 0 10px 0;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
+    @include border-radius(3px);
   }
 }
 
 #new_letter {
+  padding: 0;
+  width: auto;
+  background: none;
   margin: 0 auto 40px auto;
+  @include border-radius(0);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  ul.legislators {
+    text-align: center;
+    .error {
+      color: #FEE;
+      padding: 10px;
+      background: #B21;
+      margin: 20px 0 0 0;
+      @include border-radius(3px);
+    }
+    li {
+      vertical-align: top;
+      display: inline-block;
+    }
+    .bioguide {
+      position: relative;
+      width: 100px;
+      height: 125px;
+      overflow: hidden;
+      background-repeat: no-repeat;
+      img.mail {
+        position: absolute;
+        height: 16px;
+        width: 16px;
+        right: 5px;
+        bottom: 2px;
+        display: none;
+      }
+      img.selected {
+        display: inline;
+      }
+    }
+    .monochrome {
+      background-position: 100px 0px !important;
+    }
+    .color {
+      background-position: 0px 0px !important;
+    }
+    .bioguide:hover {
+      cursor: pointer;
+    }
+    img.monochrome {
+      margin-left: -100px;
+    }
+    label:hover {
+      color: blue;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  h1 {
+    padding: 0;
+    border: none;
+  }
   fieldset.legislator {
     text-align: center;
   }
   fieldset {
-    width:910px;
+    width: 910px;
     color: #F9F9F9;
     background: #006F7B;
     margin: 20px auto;
     padding: 20px;
     font-family: Arial, sans-serif;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+    border: none;
+    @include border-radius(5px);
     -webkit-box-shadow: 0 0 20px rgba(0,0,0,.1);
     -moz-box-shadow: 0 0 20px rgba(0,0,0,.1);
     -box-shadow: 0 0 20px rgba(0,0,0,.1);
     label {
-      margin: 6px 0;
+      width: auto;
       display: block;
+      text-align: left;
+      margin: 0 0 10px 0;
     }
     .legislators {
       width: auto;
       padding: 20px;
       background: #1A404B;
-      -webkit-border-radius: 5px;
-      -moz-border-radius: 5px;
-      border-radius: 5px;
+      @include border-radius(5px);
       -webkit-box-shadow: 0 0 10px rgba(0,0,0,.25) inset;
       -moz-box-shadow: 0 0 10px rgba(0,0,0,.25) inset;
       box-shadow: 0 0 10px rgba(0,0,0,.25) inset;
@@ -220,14 +470,15 @@ h1 {
         padding: 10px;
         margin: 0 20px 0 0;
         background: #3A606B;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        border-radius: 5px;
+        @include border-radius(5px);
         -webkit-box-shadow: 0 0 10px rgba(0,0,0,.25);
         -moz-box-shadow: 0 0 10px rgba(0,0,0,.25);
         box-shadow: 0 0 10px rgba(0,0,0,.25);
         .bioguide {
-          margin: 0 auto 20px auto;
+          margin: 0 auto;
+        }
+        label {
+          margin: 10px 0 0 0;
         }
       }
       li:last-child {
@@ -258,9 +509,7 @@ h1 {
     display: inline-block;
     text-transform: uppercase;
     font-family: "AdelleBasicBold", Arial, sans-serif;
-    -webkit-border-radius: 25px;
-    -moz-border-radius: 25px;
-    border-radius: 25px;
+    @include border-radius(25px);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.25) inset;
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.25) inset;
     box-shadow: 0 0 10px rgba(0,0,0,.25) inset;
@@ -270,19 +519,30 @@ h1 {
               filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#223333', EndColorStr='#112222'); 
           -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#223333', EndColorStr='#112222')"; 
   }
-  .text textarea {
-    width: 880px;
-    padding: 5px;
-    font-size: 16px;
-    font-family: Arial, sans-serif;
-  }
   div.text {
+    float: none;
+    clear: none;
     margin: 0 0 20px 0;
+  }
+  #letter_body {
+    width: 99%;
+    height: 300px;
+    display: block;
+  }
+  .text.field_with_errors,
+  .string.field_with_errors,
+  .password.field_with_errors {
+    padding: 10px;
+  }
+  .error {
+    margin: 0;
   }
   div.string, div.password {
     margin: 10px 10px 0 0;
     display: inline-block;
     vertical-align: top;
+    float: none;
+    clear: none;
     input {
       width: 200px;
       padding: 5px;
@@ -310,98 +570,24 @@ form.campaign {
   }
 }
 
-#new_payment, #new_advocacy_group, form.campaign {
+form {
   margin: 0 auto 40px auto;
   width: 910px;
   color: #F9F9F9;
   background: #006F7B;
   padding: 20px;
   font-family: Arial, sans-serif;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  @include border-radius(5px);
   -webkit-box-shadow: 0 0 20px rgba(0,0,0,.1);
   -moz-box-shadow: 0 0 20px rgba(0,0,0,.1);
   -box-shadow: 0 0 20px rgba(0,0,0,.1);
-  .field_with_errors {
-    padding-left: 0px !important;
+  input#payment_credit_card_verification_value {
+    width: 100px;
   }
-  h1 {
-    overflow: hidden;
-    margin: 0 0 20px 0;
-    padding: 0 0 20px 0;
-    border-bottom: 1px solid rgba(255,255,255,.25);
-    span { 
-      color: #9CC;
-      float: right;
-      font-size: 18px;
-      line-height: 1.333;
-    }
-    strong { 
-      float: left; 
-    }
-  }
-  fieldset {
-    border-bottom: 1px solid rgba(255,255,255,.25)
-  }
-  fieldset.billing,
-  fieldset.group {
-    padding: 0 0 10px 0;
-    legend {
-      padding: 0px !important;
-    }
-    legend .error {
-      margin: 0px !important;
-      padding: 10px !important;
-    }
-  }
-  fieldset.email {
-    padding: 20px 0;
-    div.string, div.password {
-      margin-bottom: 0;  
-    }
-  }  
-  fieldset.contact, 
-  fieldset.credit_card {
-    margin: 0 0 20px 0;
-    padding: 20px 0 10px 0;
-  }
-  fieldset.details {
-    margin: 0 0 20px 0;
-    padding: 0 0 20px 0;
-  }
-  fieldset.password {
-    margin: 0 0 20px 0;
-    padding: 0 0 10px 0;
-  }
-  label {
-    width: 110px;
-    text-align: right;
-    margin: 0 10px 0 0;
-    display: inline-block;
-    vertical-align: middle;
-  }
-  .text {
-    textarea {
-      width: 400px;
-      padding: 5px;
-      height: 200px;
-      vertical-align: middle;
-    }
-    label {
-      margin: 10px 10px 0 0;
-      vertical-align: top;
-    }
-  }
-  div.select {
-    display: inline-block;
-    vertical-align: middle;
-    label {
-      width: auto;
-    }
-    select {
-      margin: 0 10px 0 0;
-    }
+  .text.field_with_errors,
+  .string.field_with_errors,
+  .password.field_with_errors {
+    padding-left: 0px;
   }
   div.expiration {
     float: left;
@@ -421,35 +607,9 @@ form.campaign {
       margin: 0;
     }
   }
-  div.string, div.text, div.password {
-    float: left;
-    clear: left;
-    margin: 0 10px 10px 0;
-    input {
-      width: 400px;
-      padding: 5px;
-      font-size: 16px;
-      font-family: Arial, sans-serif;
-    }
-    input#payment_credit_card_verification_value {
-      width: 100px;
-    }
-  }
-  #payment_submit,
-  #advocacy_group_submit {
-    margin: 0 0 0 120px;
-    vertical-align: middle;
-  }
   
   img {
     vertical-align: middle;
-  }
-  .help {
-    width: 318px;
-    color: #9CC;
-    float: right;
-    font-size: 14px;
-    line-height: 1.4;
   }
   .error {
     padding: 5px 0 0 0;
@@ -457,138 +617,14 @@ form.campaign {
   }
 }
 
-.legislators .error,
-.field_with_errors, fieldset.billing legend {
+.field_with_errors {
   color: #FEE;
-  background: #B21;
   padding: 10px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-
-.legislators .error {
-  margin: 20px 0 0 0;
+  background: #B21;
+  @include border-radius(3px);
 }
 
 .error {
   font-weight: bold;
   padding: 10px 0 0 5px;
-}
-
-#content input[type="submit"] {
-  font-size: 20px;
-}
-
-h1.tag {
-  margin: 0 0 40px 0;
-  text-align: center;
-  font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
-}
-
-.home {
-  overflow: hidden;
-  line-height: 1.4;
-  margin: 0 0 40px 0;
-  .text {
-    float: right;
-    width: 455px;
-  }
-  .video {
-    float: left;
-    width: 455px;
-    height: 300px;
-  }
-}
-
-.legalese {
-  padding: 0 0 40px 0;
-}
-
-.thank_you {
-  text-align: center;
-  padding: 0 0 40px 0;
-  h1 {
-    margin: 0 0 20px 0;
-    font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
-  }
-}
-
-#footer {
-  color: #699;
-  font-size: 14px;
-  text-align: center;
-  margin-bottom: 40px;
-  .legal {
-    margin-top: 5px;
-  }
-  .info {
-    :first-child {
-      font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
-    }
-  }
-}
-input.gray, textarea.gray {
-  color: #AAAAAA !important;
-}
-
-ul.numbers {
-  margin-top: 15px;
-  li {
-    list-style: decimal;
-    margin-bottom: 10px;
-    line-height: 1.25em;
-  }
-}
-
-ul.cards {
-  margin-top: -15px;
-  margin-left: 114px;
-  .card {
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    margin-left: 5px;
-  }
-  .visa {
-    background-image: url('../../images/icons/visa.png')
-  }
-  .master {
-    background-image: url('../../images/icons/master.png')
-  }
-
-  .american_express {
-    background-image: url('../../images/icons/american_express.png')
-  }
-
-  .discover {
-    background-image: url('../../images/icons/discover.png')
-  }
-
-  .diners_club {
-    background-image: url('../../images/icons/diners_club.png')
-  }
-
-  .disabled {
-    opacity: 0.3;
-  }
-}
-
-div.campaign {
-  div.body {
-    width: 720px;
-    margin: 0 auto;
-    p {
-      text-indent: 1em;
-    }
-  }
-  line-height: 1.4;
-  margin: 0 0 40px 0;
-  padding: 0 0 40px 0;
-  border-bottom: 1px solid rgba(255,255,255,.25);
-}
-
-#chart {
-  width: 900px;
-  height: 400px;
 }
