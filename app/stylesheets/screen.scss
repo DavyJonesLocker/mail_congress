@@ -18,7 +18,7 @@ $blueprint_grid_width: 40px;
 @import "compass/reset";
 @import "compass/utilities";
 @import "compass/css3/border-radius";
-
+@import "compass/css3/box-shadow";
 
 /* -----------------------------------------------------------------------------
     Varibles
@@ -335,9 +335,7 @@ div.select {
   text-align: center;
   font-family: Arial, sans-serif;
   @include border-radius(5px);
-  -webkit-box-shadow: 0 0 20px rgba(0,0,0,.1);
-  -moz-box-shadow: 0 0 20px rgba(0,0,0,.1);
-  -box-shadow: 0 0 20px rgba(0,0,0,.1);
+  @include box-shadow(rgba(0,0,0,.1), 0, 0, 20px);
   label {
     margin: 0;
     width: auto;
@@ -379,9 +377,7 @@ div.select {
   background: none;
   margin: 0 auto 40px auto;
   @include border-radius(0);
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
+  @include box-shadow(none);
   ul.legislators {
     text-align: center;
     .error {
@@ -448,9 +444,7 @@ div.select {
     font-family: Arial, sans-serif;
     border: none;
     @include border-radius(5px);
-    -webkit-box-shadow: 0 0 20px rgba(0,0,0,.1);
-    -moz-box-shadow: 0 0 20px rgba(0,0,0,.1);
-    -box-shadow: 0 0 20px rgba(0,0,0,.1);
+    @include box-shadow(rgba(0,0,0,.1), 0, 0, 20px);
     label {
       width: auto;
       display: block;
@@ -462,18 +456,14 @@ div.select {
       padding: 20px;
       background: #1A404B;
       @include border-radius(5px);
-      -webkit-box-shadow: 0 0 10px rgba(0,0,0,.25) inset;
-      -moz-box-shadow: 0 0 10px rgba(0,0,0,.25) inset;
-      box-shadow: 0 0 10px rgba(0,0,0,.25) inset;
+      @include box-shadow(rgba(0,0,0,.25), 0, 0, 10px, inset);
       li {
         color: #ABB;
         padding: 10px;
         margin: 0 20px 0 0;
         background: #3A606B;
         @include border-radius(5px);
-        -webkit-box-shadow: 0 0 10px rgba(0,0,0,.25);
-        -moz-box-shadow: 0 0 10px rgba(0,0,0,.25);
-        box-shadow: 0 0 10px rgba(0,0,0,.25);
+        @include box-shadow(rgba(0,0,0,.25), 0, 0, 10px);
         .bioguide {
           margin: 0 auto;
         }
@@ -502,18 +492,15 @@ div.select {
   }
   .cost {
     color: #6E9;
+    font-size: 24px;
     margin: 20px 0 0 0;
     padding: 10px 20px;
-    font-size: 24px;
-    background: #233;
     display: inline-block;
     text-transform: uppercase;
     font-family: "AdelleBasicBold", Arial, sans-serif;
     @include border-radius(25px);
-    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.25) inset;
-    -moz-box-shadow: 0 0 10px rgba(0,0,0,.25) inset;
-    box-shadow: 0 0 10px rgba(0,0,0,.25) inset;
-    background-color: #223333;
+    @include box-shadow(rgba(0,0,0,.25), 0, 0, 10px, inset);
+    background-color: #233;
     background-image: -moz-linear-gradient(top, #223333, #112222); 
     background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #223333),color-stop(1, #112222)); 
               filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#223333', EndColorStr='#112222'); 
@@ -578,9 +565,7 @@ form {
   padding: 20px;
   font-family: Arial, sans-serif;
   @include border-radius(5px);
-  -webkit-box-shadow: 0 0 20px rgba(0,0,0,.1);
-  -moz-box-shadow: 0 0 20px rgba(0,0,0,.1);
-  -box-shadow: 0 0 20px rgba(0,0,0,.1);
+  @include box-shadow(rgba(0,0,0,.1), 0, 0, 20px);
   input#payment_credit_card_verification_value {
     width: 100px;
   }
