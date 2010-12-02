@@ -52,7 +52,7 @@ $form_sidebar: 324px;
 @mixin item {
   color: #ABB;
   padding: 10px;
-  margin: 0 20px 0 0;
+  margin-right: 20px;
   text-align: center;
   background: #3A606B;
   vertical-align: top;
@@ -87,6 +87,7 @@ $form_sidebar: 324px;
             filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#223333', EndColorStr='#112222'); 
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#223333', EndColorStr='#112222')"; 
 }
+
 /* -----------------------------------------------------------------------------
     Base
 ----------------------------------------------------------------------------- */
@@ -129,9 +130,19 @@ a:hover {
 h1 {
   width: auto;
   font-size: 24px;
+  overflow: hidden;
+  padding: 0 0 20px 0;
   font-family: Arial, sans-serif;
+  span {
+    float: right;
+    font-size: 18px;
+    line-height: 1.333;
+  }
+  strong {
+    float: left;
+  }
   label {
-    color: #F9F9F9 !important;
+    color: #F9F9F9;
   }
 }
 
@@ -207,6 +218,35 @@ h1.tag {
       font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
     }
   }
+}
+
+.dashboard {
+  @include group;
+}
+
+.campaigns {
+  @include well;
+  text-align: left;
+  overflow: hidden;
+  padding-bottom: 0;
+  li:nth-child(3n-2) {
+    clear: left;
+  }
+  li:nth-child(3n) {
+    margin: 0;
+  }
+  li {
+    float: left;
+    width: 256px;
+    margin-bottom: 20px;
+    @include item;
+    text-align: left;
+    h2 {
+      font-size: 18px;
+      margin: 0 0 10px 0;
+      font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
+    }
+  }  
 }
 
 div.campaign {
@@ -383,24 +423,6 @@ label {
   vertical-align: middle;
 }
 
-form {
-  h1 {
-    overflow: hidden;
-    padding: 0 0 20px 0;
-    border-bottom: 1px solid rgba(255,255,255,.25);
-    span { 
-      color: #9CC;
-      float: right;
-      width: $form_sidebar;
-      font-size: 18px;
-      line-height: 1.333;
-    }
-    strong { 
-      float: left; 
-    }
-  }
-}
-
 .text {
   textarea {
     width: 400px;
@@ -509,12 +531,10 @@ div.select {
       text-decoration: underline;
     }
   }
-
   h1 {
     padding: 0;
     border: none;
   }
-  
   fieldset.legislator {
     text-align: center;
   }
@@ -611,6 +631,13 @@ form.campaign {
 
 form {
   @include group;
+  h1 {
+    border-bottom: 1px solid rgba(255,255,255,.25);
+    span { 
+      color: #9CC;
+      width: $form_sidebar;
+    }
+  }
   input#payment_credit_card_verification_value {
     width: 100px;
   }

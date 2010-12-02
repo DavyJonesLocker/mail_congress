@@ -1,5 +1,10 @@
-= link_to 'Create campaign', new_campaign_path
-%ul.campaigns
-  - @advocacy_group.campaigns.each do |campaign|
-    %li= link_to campaign.title, campaign
-
+.dashboard
+  %h1 
+    %strong Campaigns
+    %span= link_to 'Create campaign', new_campaign_path
+  
+  %ul.campaigns
+    - @advocacy_group.campaigns.each do |campaign|
+      %li
+        %h2.title= link_to campaign.title, campaign
+        .summary= campaign.summary
