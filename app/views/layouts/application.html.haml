@@ -25,11 +25,13 @@
 
   %body
 
+    #flash
+      = flash[:notice]
+      = flash[:alert]
+
     = render :partial => 'shared/header'
         
     #content
-      = flash[:notice]
-      = flash[:alert]
       = yield
       
     #footer
