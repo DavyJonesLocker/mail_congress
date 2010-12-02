@@ -27,6 +27,50 @@ $blueprint_grid_width: 40px;
 $form_sidebar: 324px;
 
 /* -----------------------------------------------------------------------------
+    Mixins
+----------------------------------------------------------------------------- */
+
+@mixin group {
+  width: 910px;
+  padding: 20px;
+  color: #F9F9F9;
+  background: #006F7B;
+  margin: 0 auto 40px auto;
+  font-family: Arial, sans-serif;
+  @include border-radius(5px);
+  @include box-shadow(rgba(0,0,0,.1), 0, 0, 20px);
+}
+
+@mixin well {
+  padding: 20px;
+  text-align: center;
+  background: #1A404B;
+  @include border-radius(5px);
+  @include box-shadow(rgba(0,0,0,.25), 0, 0, 10px, inset);
+}
+
+@mixin item {
+  color: #ABB;
+  padding: 10px;
+  margin: 0 20px 0 0;
+  text-align: center;
+  background: #3A606B;
+  vertical-align: top;
+  display: inline-block;
+  @include border-radius(5px);
+  @include box-shadow(rgba(0,0,0,.25), 0, 0, 10px);
+}
+
+@mixin bio_photo {
+  width: 100px;
+  height: 125px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  background-repeat: no-repeat;
+}
+
+/* -----------------------------------------------------------------------------
     Base
 ----------------------------------------------------------------------------- */
 
@@ -118,7 +162,7 @@ h1.tag {
       width: auto;
       input[type="submit"] {
         margin: 0;
-        font-size: inherit; 
+        font-size: 12px; 
       }
     }
   }
@@ -226,6 +270,34 @@ ul.cards {
   }
 }
 
+.recipients {
+  @include group;
+  h2 {
+    text-align: center;
+    margin: 0 0 20px 0;
+  }
+  ul {
+    @include well;
+    li {
+      @include item;
+      color: #FFF;
+      div {
+        @include bio_photo;
+      }
+      span {
+        display: block;
+      }
+      .name {
+        margin: 10px 0;
+      }
+      .phone {
+        font-size: 2em;
+        font-family: "AdelleBasicBold", Georgia, 'Times New Roman', Times, serif;
+      }
+    }
+  }
+}
+
 /* -----------------------------------------------------------------------------
     Forms
 ----------------------------------------------------------------------------- */
@@ -327,15 +399,7 @@ div.select {
 }
 
 #address_search {
-  width:910px;
-  color: #F9F9F9;
-  background: #006F7B;
-  margin: 0 auto 40px auto;
-  padding: 20px;
   text-align: center;
-  font-family: Arial, sans-serif;
-  @include border-radius(5px);
-  @include box-shadow(rgba(0,0,0,.1), 0, 0, 20px);
   label {
     margin: 0;
     width: auto;
@@ -379,7 +443,6 @@ div.select {
   @include border-radius(0);
   @include box-shadow(none);
   ul.legislators {
-    text-align: center;
     .error {
       color: #FEE;
       padding: 10px;
@@ -387,16 +450,8 @@ div.select {
       margin: 20px 0 0 0;
       @include border-radius(3px);
     }
-    li {
-      vertical-align: top;
-      display: inline-block;
-    }
     .bioguide {
-      position: relative;
-      width: 100px;
-      height: 125px;
-      overflow: hidden;
-      background-repeat: no-repeat;
+      @include bio_photo;
       img.mail {
         position: absolute;
         height: 16px;
@@ -410,10 +465,10 @@ div.select {
       }
     }
     .monochrome {
-      background-position: 100px 0px !important;
+      background-position: -100px 0px;
     }
     .color {
-      background-position: 0px 0px !important;
+      background-position: 0px 0px;
     }
     .bioguide:hover {
       cursor: pointer;
@@ -432,19 +487,11 @@ div.select {
     padding: 0;
     border: none;
   }
-  fieldset.legislator {
-    text-align: center;
-  }
+  
   fieldset {
-    width: 910px;
-    color: #F9F9F9;
-    background: #006F7B;
-    margin: 20px auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
     border: none;
-    @include border-radius(5px);
-    @include box-shadow(rgba(0,0,0,.1), 0, 0, 20px);
+    @include group;
+    margin: 20px auto;
     label {
       width: auto;
       display: block;
@@ -452,21 +499,9 @@ div.select {
       margin: 0 0 10px 0;
     }
     .legislators {
-      width: auto;
-      padding: 20px;
-      background: #1A404B;
-      @include border-radius(5px);
-      @include box-shadow(rgba(0,0,0,.25), 0, 0, 10px, inset);
+      @include well;
       li {
-        color: #ABB;
-        padding: 10px;
-        margin: 0 20px 0 0;
-        background: #3A606B;
-        @include border-radius(5px);
-        @include box-shadow(rgba(0,0,0,.25), 0, 0, 10px);
-        .bioguide {
-          margin: 0 auto;
-        }
+        @include item;
         label {
           margin: 10px 0 0 0;
         }
@@ -492,10 +527,12 @@ div.select {
   }
   .cost {
     color: #6E9;
+    width: 360px;
+    display: block;
     font-size: 24px;
-    margin: 20px 0 0 0;
     padding: 10px 20px;
-    display: inline-block;
+    text-align: center;
+    margin: 20px auto 0 auto;
     text-transform: uppercase;
     font-family: "AdelleBasicBold", Arial, sans-serif;
     @include border-radius(25px);
@@ -558,14 +595,7 @@ form.campaign {
 }
 
 form {
-  margin: 0 auto 40px auto;
-  width: 910px;
-  color: #F9F9F9;
-  background: #006F7B;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  @include border-radius(5px);
-  @include box-shadow(rgba(0,0,0,.1), 0, 0, 20px);
+  @include group;
   input#payment_credit_card_verification_value {
     width: 100px;
   }

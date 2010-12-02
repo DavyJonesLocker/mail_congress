@@ -1,7 +1,11 @@
-%ul
-  - @letter.recipients.each do |recipient|
-    %li
-      = image_tag(recipient.legislator.bioguide_image)
-      = recipient.legislator.name
-      = recipient.legislator.phone
+%div.thank_you
+  %h1 Thank you for Mailing Congress.    
 
+%div.recipients
+  %h2 We encourage you to call your legislators as a follow-up to your letter.
+  %ul      
+    - @letter.recipients.each do |recipient|
+      %li
+        %div{:style => "background-image:url('/images/#{recipient.legislator.bioguide_image}')"}
+        %span.name= recipient.legislator.name
+        %span.phone= recipient.legislator.phone
