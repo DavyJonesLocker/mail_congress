@@ -70,6 +70,23 @@ $form_sidebar: 324px;
   background-repeat: no-repeat;
 }
 
+@mixin message {
+  color: #6E9;
+  font-size: 24px;
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+  margin: 20px auto 0 auto;
+  text-transform: uppercase;
+  font-family: "AdelleBasicBold", Arial, sans-serif;
+  @include border-radius(25px);
+  @include box-shadow(rgba(0,0,0,.25), 0, 0, 10px, inset);
+  background-color: #233;
+  background-image: -moz-linear-gradient(top, #223333, #112222); 
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #223333),color-stop(1, #112222)); 
+            filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#223333', EndColorStr='#112222'); 
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#223333', EndColorStr='#112222')"; 
+}
 /* -----------------------------------------------------------------------------
     Base
 ----------------------------------------------------------------------------- */
@@ -272,9 +289,10 @@ ul.cards {
 
 .recipients {
   @include group;
+  text-align: center;
   h2 {
-    text-align: center;
-    margin: 0 0 20px 0;
+    @include message;
+    font-size: 18px;
   }
   ul {
     @include well;
@@ -488,6 +506,9 @@ div.select {
     border: none;
   }
   
+  fieldset.legislator {
+    text-align: center;
+  }
   fieldset {
     border: none;
     @include group;
@@ -526,22 +547,7 @@ div.select {
     }
   }
   .cost {
-    color: #6E9;
-    width: 360px;
-    display: block;
-    font-size: 24px;
-    padding: 10px 20px;
-    text-align: center;
-    margin: 20px auto 0 auto;
-    text-transform: uppercase;
-    font-family: "AdelleBasicBold", Arial, sans-serif;
-    @include border-radius(25px);
-    @include box-shadow(rgba(0,0,0,.25), 0, 0, 10px, inset);
-    background-color: #233;
-    background-image: -moz-linear-gradient(top, #223333, #112222); 
-    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #223333),color-stop(1, #112222)); 
-              filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#223333', EndColorStr='#112222'); 
-          -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#223333', EndColorStr='#112222')"; 
+    @include message;
   }
   div.text {
     float: none;
