@@ -34,7 +34,7 @@ GIT
 
 GIT
   remote: git://github.com/plataformatec/devise.git
-  revision: ed30114bd8700c7e5c44b80ceeed39e4977d13e5
+  revision: b50fd1a72e711049508bf7af4610ad422be34f3b
   specs:
     devise (1.2.rc)
       bcrypt-ruby (~> 2.1.2)
@@ -60,7 +60,7 @@ GEM
   specs:
     Ascii85 (1.0.0)
     SystemTimer (1.2.1)
-    ZenTest (4.4.0)
+    ZenTest (4.4.1)
     abstract (1.0.0)
     actionmailer (3.0.3)
       actionpack (= 3.0.3)
@@ -75,7 +75,7 @@ GEM
       rack-mount (~> 0.6.13)
       rack-test (~> 0.5.6)
       tzinfo (~> 0.3.23)
-    activemerchant (1.9.0)
+    activemerchant (1.9.1)
       activesupport (>= 2.3.2)
       braintree (>= 2.0.0)
       builder (>= 2.0.0)
@@ -92,11 +92,12 @@ GEM
       activemodel (= 3.0.3)
       activesupport (= 3.0.3)
     activesupport (3.0.3)
-    arel (2.0.4)
-    autotest (4.4.5)
-    autotest-fsevent (0.2.3)
+    arel (2.0.6)
+    autotest (4.4.6)
+      ZenTest (>= 4.4.1)
+    autotest-fsevent (0.2.4)
       sys-uname
-    autotest-growl (0.2.6)
+    autotest-growl (0.2.8)
     autotest-rails (4.1.0)
       ZenTest
     bcrypt-ruby (2.1.2)
@@ -155,7 +156,7 @@ GEM
     hoptoad_notifier (2.3.12)
       activesupport
       builder
-    i18n (0.4.2)
+    i18n (0.5.0)
     johnson (2.0.0.pre3)
       stackdeck (~> 0.2)
     json (1.4.6)
@@ -165,9 +166,9 @@ GEM
       configuration (>= 0.0.5)
       rake (>= 0.8.1)
     linecache (0.43)
-    mail (2.2.10)
+    mail (2.2.11)
       activesupport (>= 2.3.6)
-      i18n (~> 0.4.1)
+      i18n (~> 0.5.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
@@ -179,7 +180,7 @@ GEM
     nokogiri (1.4.4)
     pdf-reader (0.9.0)
       Ascii85 (>= 0.9)
-    pg (0.9.0)
+    pg (0.10.0)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -221,20 +222,23 @@ GEM
       redis (>= 2.0.1)
       resque (>= 1.8.0)
       rufus-scheduler
-    resque_spec (0.4.0)
+    resque_spec (0.4.1)
       resque (>= 1.6.0)
       rspec (>= 2.0.0.beta.12)
     rmagick (2.13.1)
-    rspec (2.1.0)
-      rspec-core (~> 2.1.0)
-      rspec-expectations (~> 2.1.0)
-      rspec-mocks (~> 2.1.0)
-    rspec-core (2.1.0)
-    rspec-expectations (2.1.0)
+    rspec (2.2.0)
+      rspec-core (~> 2.2)
+      rspec-expectations (~> 2.2)
+      rspec-mocks (~> 2.2)
+    rspec-core (2.2.1)
+    rspec-expectations (2.2.0)
       diff-lcs (~> 1.1.2)
-    rspec-mocks (2.1.0)
-    rspec-rails (2.1.0)
-      rspec (~> 2.1.0)
+    rspec-mocks (2.2.0)
+    rspec-rails (2.2.1)
+      actionpack (~> 3.0)
+      activesupport (~> 3.0)
+      railties (~> 3.0)
+      rspec (~> 2.2.0)
     ruby-debug (0.10.4)
       columnize (>= 0.1)
       ruby-debug-base (~> 0.10.4.0)
@@ -244,7 +248,7 @@ GEM
     rufus-scheduler (2.0.7)
       tzinfo
     sass (3.1.0.alpha.19)
-    selenium-webdriver (0.1.0)
+    selenium-webdriver (0.1.1)
       childprocess (= 0.1.4)
       ffi (~> 0.6.3)
       json_pure
@@ -263,7 +267,7 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.23)
-    unicorn (3.0.0)
+    unicorn (3.0.1)
       kgio (~> 2.0.0)
       rack
     vegas (0.1.8)
