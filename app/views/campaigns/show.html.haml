@@ -8,8 +8,12 @@
     = @campaign.summary
   .body
     = @campaign.body
+  .more
+    = link_to '← more campaigns', '/dashboard'
   
 .aside  
-  = link_to 'Edit', [:edit, @campaign]
-  = campaign_permalink_url(@campaign, :protocol => 'https')
+  %ul.actions
+    %li= link_to 'View', campaign_permalink_url(@campaign, :protocol => 'https')
+    %li= link_to 'Edit', [:edit, @campaign]
+
   #chart

@@ -133,7 +133,15 @@ a:hover {
   line-height: 1.4;
   margin: 0 40px 40px 0;
   .summary {
-    margin: 0 0 1em 0;
+    margin: 0 0 20px 0;
+  }
+  .body {
+    margin: 0 0 20px 0;
+  }
+  .more {
+    font-size: 14px;
+    padding: 20px 0 0 0;
+    border-top: 1px solid rgba(255,255,255,.25);
   }
 }
   
@@ -142,11 +150,29 @@ a:hover {
   width: 363px;
   line-height: 1.4;
   margin: 0 0 40px 0;
+  ul.actions {
+    margin: 0 0 20px 0;
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,.25);
+    li {
+      margin: 0 0 10px 0;
+      a {
+        display: block;
+        padding: 5px 10px;
+        background: rgba(0,0,0,.25);
+        @include border-radius(5px);
+      }
+      a:hover {
+        text-decoration: none;
+        background: rgba(0,0,0,.5);
+      }
+    }
+  }
 }
 
 #chart {
+  width: 363px;
   height: 204px;
-  margin: 20px 0 0 0;
 }
 
 h1 {
