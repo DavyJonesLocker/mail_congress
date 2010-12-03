@@ -1,5 +1,5 @@
 $(function() {
-  $('#flash').delay(3000).slideUp(500);
+  $('.alert, .notice').delay(3000).slideUp(500);
 
   $('li#sign_in a').click(function() { 
     $(this).hide(); 

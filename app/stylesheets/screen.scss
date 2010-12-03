@@ -127,6 +127,28 @@ a:hover {
     Layout
 ----------------------------------------------------------------------------- */
 
+.article {
+  float: left;
+  width: 547px;
+  line-height: 1.4;
+  margin: 0 40px 40px 0;
+  .summary {
+    margin: 0 0 1em 0;
+  }
+}
+  
+.aside {
+  float: left;
+  width: 363px;
+  line-height: 1.4;
+  margin: 0 0 40px 0;
+}
+
+#chart {
+  height: 204px;
+  margin: 20px 0 0 0;
+}
+
 h1 {
   width: auto;
   font-size: 24px;
@@ -169,7 +191,7 @@ h1.tag {
   background: url(/images/logo.png) 0 0 no-repeat;
 }
 
-#flash {
+.flash {
   padding: 0 14px;
   font-size: 14px;
   overflow: hidden;
@@ -206,6 +228,7 @@ h1.tag {
 }
 
 #footer {
+  clear: both;
   color: #699;
   font-size: 14px;
   text-align: center;
@@ -261,11 +284,6 @@ div.campaign {
   margin: 0 0 40px 0;
   padding: 0 0 40px 0;
   border-bottom: 1px solid rgba(255,255,255,.25);
-}
-
-#chart {
-  width: 900px;
-  height: 400px;
 }
 
 ul.numbers {
