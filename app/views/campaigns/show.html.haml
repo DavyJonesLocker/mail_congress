@@ -1,6 +1,7 @@
 - unless Rails.env == 'test' || Rails.env == 'cucumber'
   - content_for :javascript do
     = javascript_include_tag 'highcharts', 'campaign'
+    = render :partial => 'chart_data'
 
 .article
   %h1= @campaign.title
