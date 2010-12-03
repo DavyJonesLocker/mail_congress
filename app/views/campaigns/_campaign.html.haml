@@ -7,7 +7,7 @@
   %fieldset.limit
     %div.help
       Is this campaign meant for only senators, represenatives or both?
-    = campaign.collection_radio :type, [['senators', 'Senators'], ['representatives', 'Representatives'], ['both','Both']], :first, :last
+    = campaign.collection_radio :type, [['both', 'Both'], ['senators', 'Senators'], ['representatives', 'Representatives']], :first, :last
   %fieldset.summary
     %div.help
       A short paragraph describing this campaign.
