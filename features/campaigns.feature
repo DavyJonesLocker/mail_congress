@@ -23,7 +23,7 @@ Feature: Campaigns
   Scenario: Creating a campaign without providing data
     Given I am signed in
     When  I follow "Create campaign"
-    And   I press "Submit"
+    And   I press "Save Campaign"
     Then  I should see the errors for campaign
 
   Scenario: Creating a campaign that is limited to only senators

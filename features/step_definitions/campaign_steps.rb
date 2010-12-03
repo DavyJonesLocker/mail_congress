@@ -29,7 +29,7 @@ When /^I submit new campaign details$/ do
   When %{I fill in "Title" with "Campaign Title"}
   When %{I fill in "Summary" with "Campaign Summary"}
   When %{I fill in "Body" with "Campaign Body"}
-  When %{I press "Submit"}
+  When %{I press "Save Campaign"}
 end
 
 Then /^I should see the new campaign$/ do
@@ -53,14 +53,14 @@ When /^I update the campaign details$/ do
   When %{I fill in "Title" with "Campaign Title 2"}
   When %{I fill in "Summary" with "Campaign Summary 2"}
   When %{I fill in "Body" with "Campaign Body 2"}
-  When %{I press "Submit"}
+  When %{I press "Save Campaign"}
 end
 
 When /^I update the campaign details with invalid data$/ do
   When %{I fill in "Title" with ""}
   When %{I fill in "Summary" with ""}
   When %{I fill in "Body" with ""}
-  When %{I press "Submit"}
+  When %{I press "Save Campaign"}
 end
 
 Then /^I should see the updated campaign details$/ do

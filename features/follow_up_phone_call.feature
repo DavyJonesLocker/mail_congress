@@ -4,7 +4,6 @@ Feature: Follow up phone call
   Background:
     Given Resque is clear
 
-  @wip
   Scenario: Making a follow up phone call
     Given print jobs have been stubbed out
     And   I have mailed 1 legislator

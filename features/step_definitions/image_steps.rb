@@ -3,5 +3,5 @@ Then /^I should see the letter as an image$/ do
 end
 
 Then /^I should see (.+)'s photo$/ do |name|
-  page.find("div[style=\"background:url(\'/images/bioguides/#{get_li_from_name(name)['id']}.jpg\')\"]").should_not be_nil
+  page.find("div[style=\"background-image:url(\'/images/bioguides/#{get_li_from_name(name)['id']}.jpg\')\"]").should_not be_nil
 end
