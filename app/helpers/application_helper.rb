@@ -20,4 +20,10 @@ module ApplicationHelper
       "You will be charged $#{size} to send #{size} letters."
     end
   end
+
+  def flasher
+    flash.keys.inject("") do |html, key|
+      html << content_tag(:div, flash[key], :class => ['flash', key])
+    end.html_safe
+  end
 end

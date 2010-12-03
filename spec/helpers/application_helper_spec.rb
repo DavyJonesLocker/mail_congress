@@ -27,4 +27,17 @@ describe ApplicationHelper do
       helper.final_cost([1,2]).should == 'You will be charged $2 to send 2 letters.'
     end
   end
+
+  describe '#flasher' do
+    context 'one flash message' do
+      before do
+        flash[:notice] = 'Notice'
+        @result = helper.flasher
+      end
+
+      it 'wraps the flash in a div' do
+        @result.should == '<div class="flash notice">Notice</div>'
+      end
+    end
+  end
 end

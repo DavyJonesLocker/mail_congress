@@ -16,7 +16,6 @@
         _gaq.push(['_setAccount', 'UA-19740623-1']);
         _gaq.push(['_setDomainName', '.mailcongress.org']);
         _gaq.push(['_trackPageview']);
-
         (function() {
           var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
           ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
@@ -24,15 +23,9 @@
         })();
 
   %body
-
-    #flash
-      = flash[:notice]
-      = flash[:alert]
-
+    = flasher
     = render :partial => 'shared/header'
-        
     #content
       = yield
-      
     #footer
       = render :partial => 'shared/footer'
