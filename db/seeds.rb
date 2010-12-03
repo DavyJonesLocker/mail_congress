@@ -33,7 +33,7 @@ campaign = Factory(:campaign,
 bioguide_ids = Legislator.select('bioguide_id').where(:in_office => true).map { |l| l.bioguide_id }
 
 (1..letter_count).each do |i|
-  Timecop.travel i.hour.from_now
+  Timecop.travel rand(4).hours.from_now
   if rand(10) > 8
     campaign_id = nil
   else
