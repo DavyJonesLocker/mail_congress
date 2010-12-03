@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
-gem 'pg'
+gem 'pg', '0.9.0'
 
 gem 'simple_form'
 gem 'geokit'
