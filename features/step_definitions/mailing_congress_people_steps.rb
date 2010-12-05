@@ -3,7 +3,7 @@ Given /^I have mailed (\d+) legislators?$/ do |number|
   And   %{I have found my congress people}
   legislators = all(:css, 'ul.legislators li label')
   (1..number.to_i).each do |i|
-    When %{I click on "#{legislators[i-1].text}"}
+    When %{I check "#{legislators[i-1].text}"}
   end
   When %{I write them a thank-you letter}
   And  %{I press "Send"}
@@ -17,15 +17,15 @@ When /^I write my letter to all of my congress people$/ do
 end
 
 When /^I select my congress people$/ do
-  When %{I click on "Sen. John Kerry"}
-  Then %{I should see "$1 to send this letter"}
-  Then %{Sen. John Kerry should be selected}
-  When %{I click on "Sen. Scott Brown"}
-  Then %{I should see "$2 to send these letters"}
-  Then %{Sen. Scott Brown should be selected}
-  When %{I click on "Rep. Stephen Lynch"}
-  Then %{I should see "$3 to send these letters"}
-  Then %{Rep. Stephen Lynch should be selected}
+  When %{I check "Sen. John Kerry"}
+  # Then %{I should see "$1 to send this letter"}
+  # Then %{Sen. John Kerry should be selected}
+  When %{I check "Sen. Scott Brown"}
+  # Then %{I should see "$2 to send these letters"}
+  # Then %{Sen. Scott Brown should be selected}
+  When %{I check "Rep. Stephen Lynch"}
+  # Then %{I should see "$3 to send these letters"}
+  # Then %{Rep. Stephen Lynch should be selected}
 end
 
 When /^I unselect my congress people$/ do
@@ -51,10 +51,6 @@ When /^I click on "([^"]*)"$/ do |name|
   evaluate_script(<<-JS)
     $('li##{get_li_from_name(name)['id']}').trigger('click');
   JS
-end
-
-When /^I should see the mail icon for (\w+)$/ do |bioguide|
-  find("li##{bioguide} .mail").visible?.should be_true
 end
 
 Then /^My letters should be on their way$/ do

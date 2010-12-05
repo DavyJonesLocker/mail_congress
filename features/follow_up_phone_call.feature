@@ -1,4 +1,4 @@
-@envjs @followup
+@followup
 Feature: Follow up phone call
 
   Background:

@@ -1,4 +1,4 @@
-@envjs @campaigns
+@campaigns
 Feature: Campaigns
 
   Scenario: Adding my name to a campaign

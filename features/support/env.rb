@@ -18,14 +18,13 @@ Spork.prefork do
   require 'cucumber/web/tableish'
   require 'email_spec'
   require 'email_spec/cucumber'
-  require 'timecop'
 
   require 'capybara/rails'
   require 'capybara/cucumber'
   require 'capybara/session'
-  require 'capybara/envjs'
-  require 'capybara_envjs_fixes/cucumber_fixes'
-  Capybara.javascript_driver = :envjs
+  # require 'capybara/envjs'
+  # require 'capybara_envjs_fixes/cucumber_fixes'
+  # Capybara.javascript_driver = :envjs
   # require 'cucumber/rails/capybara_javascript_emulation' # Lets you click links with onclick javascript handlers without using @culerity or @javascript
   
   # Capybara defaults to XPath selectors rather than Webrat's default of CSS3. In

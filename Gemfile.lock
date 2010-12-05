@@ -42,14 +42,6 @@ GIT
       warden (~> 1.0.2)
 
 GIT
-  remote: http://github.com/smparkes/capybara-envjs.git
-  revision: 63adb64c19ee7fcc575b181baf84c0b0b8fa654b
-  specs:
-    capybara-envjs (0.4.0)
-      capybara (~> 0.4.0)
-      envjs (>= 0.3.7)
-
-GIT
   remote: https://github.com/bmabey/email-spec.git
   revision: 16abd6d144cc78f96c783c3308e7a1858b4bbccc
   specs:
@@ -115,8 +107,6 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (>= 0.0.27)
       xpath (~> 0.1.2)
-    capybara-envjs-fixes (0.0.5)
-      capybara-envjs (>= 0.1.6)
     celerity (0.8.4)
     childprocess (0.1.4)
       ffi (~> 0.6.3)
@@ -136,8 +126,6 @@ GEM
     daemons (1.0.10)
     database_cleaner (0.6.0)
     diff-lcs (1.1.2)
-    envjs (0.3.8)
-      johnson (>= 2.0.0.pre3)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     escape_utils (0.1.9)
@@ -157,8 +145,6 @@ GEM
       activesupport
       builder
     i18n (0.5.0)
-    johnson (2.0.0.pre3)
-      stackdeck (~> 0.2)
     json (1.4.6)
     json_pure (1.4.6)
     kgio (2.0.0)
@@ -258,7 +244,6 @@ GEM
       rack (~> 1.1)
       tilt (~> 1.1)
     spork (0.9.0.rc2)
-    stackdeck (0.2.0)
     sys-uname (0.8.4)
     term-ansicolor (1.0.5)
     thor (0.14.6)
@@ -290,8 +275,6 @@ DEPENDENCIES
   bourne
   business_time!
   capybara
-  capybara-envjs!
-  capybara-envjs-fixes
   chronic!
   compass
   cucumber

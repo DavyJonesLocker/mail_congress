@@ -1,4 +1,3 @@
-@envjs
 Feature: Paying for letters
 
   Scenario: Mailing my congress people

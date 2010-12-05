@@ -1,6 +1,6 @@
 When /^I sign in$/ do
   When %{I am on the home page}
-  When %{I click "Sign in"}
+  When %{I follow "Sign in"}
   When %{I fill in "sign_in_email" with "#{@advocacy_group.email}"}
   When %{I fill in "sign_in_password" with "#{@advocacy_group.password}"}
   When %{I press "Sign in"}

@@ -1,4 +1,3 @@
-@envjs
 Feature: Printing
 
   Background:

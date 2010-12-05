@@ -1,0 +1,10 @@
+%h1 Sign in
+
+= form_tag advocacy_group_session_path do
+  %p
+    = label_tag 'advocacy_group[email]', 'Email', :class => 'placeheld'
+    = text_field_tag 'advocacy_group[email]', nil, :id => 'sign_in_email', :placeholder => 'Email'
+  %p
+    = label_tag 'advocacy_group[password]', 'Password', :class => 'placeheld'
+    = password_field_tag 'advocacy_group[password]', nil, :id => 'sign_in_password', :placeholder => 'Password'
+  = submit_tag 'Sign in'

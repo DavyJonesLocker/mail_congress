@@ -18,13 +18,17 @@ Feature: Advocacy groups
     When  I press "Submit"
     Then  I should see the advocacy group validation errors
 
-  @envjs
   Scenario: Signing in
     Given I am an approved advocacy group
     When  I sign in
     Then  I should be on my dashboard
 
-  @envjs
+  Scenario: Signing in with bad credentials
+    Given I am on the home page
+    When  I follow "Sign in"
+    And   I press "Sign in"
+    Then  I should see "Invalid email or password."
+
   Scenario: Signing out
     Given I am signed in
     When  I follow "Sign out"
