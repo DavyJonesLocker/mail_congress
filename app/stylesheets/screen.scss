@@ -460,7 +460,14 @@ textarea {
   font-family: Arial, sans-serif;
 }
 
-input.gray, textarea.gray {
+input.placeholder, textarea.placeholder {
+  color: #AAAAAA !important;
+}
+
+input::-webkit-input-placeholder {
+  color: #AAAAAA !important;
+}
+input:-moz-placeholder {
   color: #AAAAAA !important;
 }
 

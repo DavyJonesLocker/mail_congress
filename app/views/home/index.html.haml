@@ -6,7 +6,7 @@
 = form_tag search_path, :id => 'address_search' do
   %div{:class => "input string required#{@address_error.present? ? ' field_with_errors' : '' }"}
     = label_tag :address, 'Please enter your home address.'
-    = text_field_tag :address, params['address']
+    = text_field_tag :address, params['address'], :placeholder => BogusAddress.rand
     - if @campaign
       = hidden_field_tag :campaign_id, @campaign.id
     - if @address_error.present?

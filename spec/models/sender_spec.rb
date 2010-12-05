@@ -6,8 +6,6 @@ describe Sender do
   it { should validate_presence_of :street, :city, :state, :zip }
   it { should allow_values_for :email, 'john@test.com' }
   it { should_not allow_values_for :email, 'john', 'john@', '.com', nil }
-  it { should_not allow_values_for :first_name, 'First name', :message => "can't be blank" }
-  it { should_not allow_values_for :last_name, 'Last name', :message => "can't be blank" }
   
   describe '#build_payment' do
     before do

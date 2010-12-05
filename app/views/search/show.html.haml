@@ -16,8 +16,8 @@
         %li{:id => recipient.object.legislator.bioguide_id, :class => recipient.object.selected? ? 'active': nil}
           %div{:class => "bioguide #{recipient.object.css_class}", :style => "background-image:url('/images/#{recipient.object.legislator.bioguide_image}')"}
             = image_tag 'icons/mail.png', :class => "mail #{"selected" if recipient.object.selected?}".strip
-          = recipient.label :id, recipient.object.legislator.name
-          = recipient.input :legislator_id, :as => :hidden, :input_html => { :class => 'legislator_id', :disabled => !recipient.object.selected? }
+          = recipient.label :legislator_id, recipient.object.legislator.name
+          = check_box_tag "#{recipient.object_name}[legislator_id]", recipient.object.legislator_id, recipient.object.selected?
       = letter.error :recipients
     
     %h2.cost= cost_to_send_letters(@letter.recipients)
@@ -30,11 +30,14 @@
       .campaign
         = letter.input :campaign_id, :as => :hidden, :input_html => { :class => :preview }
         .body= simple_format(letter.object.campaign.body)
-    = letter.input :body, :as => :text, :label => false, :input_html =>  { :class => :preview }
+      - body_placeholder = 'Please add an optional personal message here.'
+    - else
+      - body_placeholder = 'Please write your letter here.'
+    = letter.input :body, :as => :text, :label => false, :input_html =>  { :class => :preview, :placeholder => body_placeholder }
     %div Your Constituent,
     = letter.simple_fields_for :sender do |sender|
-      = sender.input :first_name, :label => false, :input_html => { :class => :preview }
-      = sender.input :last_name, :label => false, :input_html => { :class => :preview }
+      = sender.input :first_name, :input_html => { :class => :preview, :placeholder => 'First name' }, :label_html => { :class => :placeheld }
+      = sender.input :last_name, :input_html => { :class => :preview, :placeholder => 'Last name' }, :label_html => { :class => :placeheld }
     %div
       = letter.submit 'Send'
       #letter_preview

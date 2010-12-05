@@ -1,22 +1,9 @@
 $(function() {
   $('ul.legislators li').click(function() { toggleLegislator(this); });
+  $('ul.legislators li input[type="checkbox"]').hide();
   $('.preview').keyup(showLetterPreview);
   updateCost();
   showLetterPreview();
-  $('#letter_sender_attributes_first_name').blur(function() { placeHolder($(this), 'First name'); });
-  $('#letter_sender_attributes_first_name').focus(function() { if (this.value == 'First name') {this.value = ''; $(this).removeClass('gray');} });
-  placeHolder($('#letter_sender_attributes_first_name'), 'First name');
-  $('#letter_sender_attributes_last_name').blur(function() { placeHolder($(this), 'Last name'); });
-  $('#letter_sender_attributes_last_name').focus(function() { if (this.value == 'Last name') {this.value = ''; $(this).removeClass('gray');} });
-  placeHolder($('#letter_sender_attributes_last_name'), 'Last name');
-  if ($('.campaign .body').length == 0) {
-    var bodyPlaceHolderText = 'Please write your letter here.'
-  } else {
-    var bodyPlaceHolderText = 'Please add an optional personal message here.'
-  }
-  $('#letter_body').blur(function() { placeHolder($(this), bodyPlaceHolderText); });
-  $('#letter_body').focus(function() { if (this.value == bodyPlaceHolderText) {this.value = ''; $(this).removeClass('gray');} });
-  placeHolder($('#letter_body'), bodyPlaceHolderText);
 });
 
 function showLetterPreview() {
@@ -81,29 +68,29 @@ function toggleLegislator(listItem) {
 function toggleBioguide(listItem) {
   listItem     = $(listItem);
   var bioguide = listItem.find('.bioguide'),
-      id       = listItem.find('.legislator_id'),
+      id       = listItem.find('[type="checkbox"]'),
       mail     = listItem.find('img.mail');
 
-  if (id.attr('disabled')) {
-    bioguide.removeClass('monochrome');
-    listItem.addClass('active');
-    bioguide.addClass('color');
-    id.attr('disabled', null);
-    mail.fadeIn();
-  } else {
+  if (id.attr('checked')) {
     bioguide.removeClass('color');
     listItem.removeClass('active');
     bioguide.addClass('monochrome');
-    id.attr('disabled', 'disabled');
+    id.attr('checked', false);
     mail.fadeOut();
+  } else {
+    bioguide.removeClass('monochrome');
+    listItem.addClass('active');
+    bioguide.addClass('color');
+    id.attr('checked', true);
+    mail.fadeIn();
   }
 }
 
 function updateCost() {
   var total      = 0;
   var costHeader = $('h2.cost');
-  $('ul.legislators .legislator_id').each(function() {
-    if (!this.disabled) {
+  $('ul.legislators input[type="checkbox"]').each(function() {
+    if (this.checked) {
      total += 1;
     }
   });

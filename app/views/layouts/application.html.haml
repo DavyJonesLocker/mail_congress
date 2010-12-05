@@ -7,7 +7,7 @@
     /[if lt IE 8]
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
     = yield :css
-    = javascript_include_tag :defaults
+    = javascript_include_tag 'modernizr', :defaults, 'jquery.placeholder'
     = yield :javascript
     = csrf_meta_tag
     - unless Rails.env == 'test' || Rails.env == 'cucumber'

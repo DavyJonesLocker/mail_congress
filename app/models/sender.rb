@@ -3,8 +3,6 @@ class Sender < ActiveRecord::Base
   validates_presence_of :first_name, :last_name
   validates_presence_of :street, :city, :state, :zip
   validates_format_of :email, :with => /^([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})$/i, :allow_nil => true
-  validates_format_of :first_name, :with => /^(?!First name|Last name).*/, :message => "can't be blank"
-  validates_format_of :last_name, :with => /^(?!First name|Last name).*/, :message => "can't be blank"
 
   attr_accessible :first_name, :last_name, :email, :street, :city, :state, :zip
   
