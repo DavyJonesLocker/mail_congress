@@ -56,6 +56,7 @@ group :test, :cucumber do
   gem 'email_spec', :git => 'https://github.com/bmabey/email-spec.git'
   gem 'timecop'
   gem 'chronic', :git => 'git://github.com/mojombo/chronic.git'
+  gem 'fakeweb'
 end
 
 group :test do
