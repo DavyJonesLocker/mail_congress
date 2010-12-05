@@ -11,7 +11,7 @@
   
 .aside  
   %ul.actions
-    %li= link_to campaign_permalink_url(@campaign, :protocol => 'https'), campaign_permalink_url(@campaign, :protocol => 'https')
+    %li= link_to('Share - ' + campaign_permalink_url(@campaign, :protocol => 'https'), campaign_permalink_url(@campaign, :protocol => 'https'))
     %li= link_to 'Edit', [:edit, @campaign]
   .summary
     %h1 Summary
