@@ -3,18 +3,21 @@
     = javascript_include_tag 'highcharts', 'campaign'
     = render :partial => 'chart_data'
 
+%h1= @campaign.title
+
 .article
-  %h1= @campaign.title
-  .summary
-    = @campaign.summary
   .body
     = @campaign.body
-  .more
-    = link_to '← more campaigns', '/dashboard'
   
 .aside  
   %ul.actions
-    %li= link_to 'View', campaign_permalink_url(@campaign, :protocol => 'https')
+    %li= link_to campaign_permalink_url(@campaign, :protocol => 'https'), campaign_permalink_url(@campaign, :protocol => 'https')
     %li= link_to 'Edit', [:edit, @campaign]
+  .summary
+    %h1 Summary
+    = @campaign.summary
+    
+#chart
 
-  #chart
+.more
+  = link_to '← More campaigns', '/dashboard'

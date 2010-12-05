@@ -132,19 +132,25 @@ a:hover {
   width: 547px;
   line-height: 1.4;
   margin: 0 40px 40px 0;
-  .summary {
-    margin: 0 0 20px 0;
-  }
-  .body {
-    margin: 0 0 20px 0;
-  }
-  .more {
-    font-size: 14px;
-    padding: 20px 0 0 0;
-    border-top: 1px solid rgba(255,255,255,.25);
-  }
 }
   
+.more {
+  clear: both;
+  margin: 40px 0;
+  font-size: 14px;
+  text-align: center;
+  a {
+    padding: 10px;
+    display: inline-block;
+    background: rgba(0,0,0,.25);
+    @include border-radius(5px);
+  }
+  a:hover {
+    text-decoration: none;
+    background: rgba(0,0,0,.5);
+  }
+}
+
 .aside {
   float: left;
   width: 363px;
@@ -171,8 +177,7 @@ a:hover {
 }
 
 #chart {
-  width: 363px;
-  height: 204px;
+  clear: both;
 }
 
 h1 {
