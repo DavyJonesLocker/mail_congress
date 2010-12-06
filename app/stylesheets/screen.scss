@@ -479,6 +479,11 @@ label {
   vertical-align: middle;
 }
 
+label.radio {
+  display: inline;
+  text-align: left;
+}
+
 .text {
   textarea {
     width: 400px;

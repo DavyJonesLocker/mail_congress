@@ -2,8 +2,22 @@ $(function() {
   $('#payment_credit_card_number').keyup(function() { determineCardType(this.value) });
   $('form').submit(function(){$('input[type=submit]', this).attr('disabled', 'disabled');});
   determineCardType($('#payment_credit_card_number').val());
+  $('input[name="letter[payment_type]"]').change(function() { toggleSlider(this); })
+  if ($('input[name="letter[payment_type]"]:checked').val() == 'paypal') {
+    $('.slideToggle').hide();
+    $('#payment_submit').attr('value', 'Pay with Paypal');
+  }
 });
 
+function toggleSlider(input) {
+  if (input.value == 'paypal') {
+    $('.slideToggle').slideUp();
+    $('#payment_submit').attr('value', 'Pay with Paypal');
+  } else {
+    $('.slideToggle').slideDown();
+    $('#payment_submit').attr('value', 'Make secure payment');
+  }
+}
 
 function determineCardType(number) {
   if (number == "") {

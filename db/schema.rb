@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101130031954) do
+ActiveRecord::Schema.define(:version => 20101206152059) do
 
   create_table "advocacy_groups", :force => true do |t|
     t.boolean  "approved",                          :default => false
@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(:version => 20101130031954) do
     t.datetime "updated_at"
     t.boolean  "follow_up_made", :default => false
     t.string   "follow_up_id"
+    t.string   "payment_type",   :default => "credit_card"
   end
 
   create_table "recipients", :force => true do |t|

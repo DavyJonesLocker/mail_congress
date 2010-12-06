@@ -51,6 +51,7 @@ bioguide_ids = Legislator.select('bioguide_id').where(:in_office => true).map { 
     :campaign_id => campaign_id,
     :sender => Factory(:sender),
     :recipients => recipients,
+    :payment_type => rand(1) == 0 ? 'paypal' : 'credit_card',
     :follow_up_made => rand(10) > 6 ? true : false)
 end
 

@@ -15,7 +15,7 @@ class Letter < ActiveRecord::Base
 
   attr_accessor   :font_size
   attr_accessor   :min_font_size
-  attr_accessible :body, :printed, :sender_attributes, :recipients_attributes, :campaign_id, :campaign
+  attr_accessible :body, :printed, :sender_attributes, :recipients_attributes, :campaign_id, :campaign, :payment_type
 
   def self.perform(id, method)
     letter = Letter.find(id)

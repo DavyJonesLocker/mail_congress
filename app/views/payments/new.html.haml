@@ -6,7 +6,7 @@
     %strong Billing Info
     %span= final_cost(@letter.recipients)
     
-  %fieldset.billing
+  %fieldset.billing{:class => 'slideToggle'}
     %legend= payment.error :gateway
     %div.help
       We have filled in the home address you supplied to us. If need be, please modify these fields to reflect your correct billing information.
@@ -30,14 +30,24 @@
     .help
       Your credit card's type will be automatically determined based upon the number.
     = payment.simple_fields_for :credit_card, @payment.credit_card do |credit_card|
-      %ul.cards
-        - %w{visa master american_express discover diners_club}.each do |card|
-          %li{:class => [card, 'card']}
-      = credit_card.input :number, :label => 'Card number'
-      .expiration
-        %span Expires
-        = credit_card.input :month, :as => :select, :collection => 1..12
-        = credit_card.input :year, :as => :select, :collection => 0.years.from_now.year..6.years.from_now.year
+      = simple_fields_for @letter do |letter|
+        %ul.payment_type
+          %li
+            = letter.radio_button :payment_type, :paypal, :class => 'payment_type'
+            %label.radio{:for => 'letter_payment_type_paypal'}
+              = image_tag('icons/paypal.png')
+          %li
+            = letter.radio_button :payment_type, :credit_card, :class => 'payment_type'
+            %label.radio{:for => 'letter_payment_type_credit_card'}
+              %ul.cards
+                - %w{visa master american_express discover diners_club}.each do |card|
+                  %li{:class => [card, 'card']}
+      .slideToggle
+        = credit_card.input :number, :label => 'Card number'
+        .expiration
+          %span Expires
+          = credit_card.input :month, :as => :select, :collection => 1..12
+          = credit_card.input :year, :as => :select, :collection => 0.years.from_now.year..6.years.from_now.year
 
   = simple_fields_for @letter do |letter|
     = letter.input :body, :as => :hidden
