@@ -22,4 +22,14 @@ class SenderMailer < ActionMailer::Base
 
     mail(:to => @letter.sender.email, :subject => subject)
   end
+
+  def feedback(feedback)
+    @feedback = feedback
+
+    mail(
+      :to => 'feedback@mailcongress.org',
+      :from => @feedback.email,
+      :subject => '[MailCongress] - Feedback'
+    )
+  end
 end
