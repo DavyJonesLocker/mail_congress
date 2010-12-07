@@ -240,4 +240,49 @@ describe Letter do
     end
   end
 
+  describe '#to_redis!' do
+    before do
+      letter_attributes = Factory.attributes_for(:letter, :payment_type => 'paypal', :sender_attributes => Factory.attributes_for(:sender), :sender => nil)
+      @letter = Letter.new(letter_attributes)
+      @letter.stubs(:generate_redis_key).returns('redis_key')
+      @letter.stubs(:to_json).returns(letter_attributes.to_json)
+      @redis = mock('Redis')
+      Redis.stubs(:new).returns(@redis)
+      @redis.stubs(:setex)
+      @result = @letter.to_redis!
+    end
+
+    it 'stores the attributes in Redis' do
+      @redis.should have_received(:setex).with('redis_key', 3600, @letter.to_json)
+    end
+
+    it 'returns the unique key' do
+      @result.should == 'redis_key'
+    end
+  end
+
+  describe '.create_from_redis' do
+    before do
+      @redis = mock('Redis')
+      @redis.stubs(:get).with('redis_key').returns(Factory.attributes_for(:letter).to_json)
+      Redis.stubs(:new).returns(@redis)
+      Letter.any_instance.stubs(:generate_follow_up_id!).returns(true)
+      @letter = Letter.create_from_redis('redis_key')
+    end
+
+    it 'creates a valid letter' do
+      @letter.body.should_not be_nil
+    end
+  end
+
+  describe '#cost' do
+    before do
+      @letter = Factory.build(:letter, :recipients => [Recipient.new, Recipient.new])
+    end
+
+    it 'calculates the cost based upon the number of recipients' do
+      @letter.cost.should == 200
+    end
+  end
+
 end

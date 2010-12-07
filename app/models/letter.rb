@@ -22,6 +22,18 @@ class Letter < ActiveRecord::Base
     letter.send(method)
   end
 
+  def self.create_from_redis(key)
+    letter = Letter.new(JSON.parse(Redis.new.get(key)))
+    letter.generate_follow_up_id!
+    letter.save
+    PrintJob.enqueue(letter)
+    letter
+  end
+
+  def cost
+    recipients.size * 100
+  end
+
   def generate_follow_up_id!
     self.follow_up_id = Digest::MD5.hexdigest "#{sender.email}-#{DateTime.now}"
   end
@@ -96,7 +108,23 @@ class Letter < ActiveRecord::Base
     file_name
   end
 
+  def to_redis!
+    redis_key = generate_redis_key
+    Redis.new.setex(redis_key, 1.hour.to_i, to_json)
+    redis_key
+  end
+
+  def to_json
+    { :body => body, :payment_type => payment_type, :campaign_id => campaign_id }.
+      merge(:sender_attributes => sender.to_hash).
+      merge(:recipients_attributes => recipients.map { |recipient| recipient.to_hash }).to_json
+  end
+
   private
+
+  def generate_redis_key
+    Digest::SHA1.hexdigest("#{DateTime.now.to_i}-#{rand(100)}")
+  end
 
   def search_type
     type = 'search'

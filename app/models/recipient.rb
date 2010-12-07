@@ -1,4 +1,4 @@
-class Recipient< ActiveRecord::Base
+class Recipient < ActiveRecord::Base
   belongs_to :letter
   belongs_to :legislator
 
@@ -9,5 +9,9 @@ class Recipient< ActiveRecord::Base
 
   def css_class
     self.selected? ? 'color' : 'monochrome'
+  end
+
+  def to_hash
+    {:legislator_id => legislator_id}
   end
 end

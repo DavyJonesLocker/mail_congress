@@ -11,6 +11,8 @@ MailCongress::Application.routes.draw do
   end
   get  'c/:campaign_id' => 'home#index', :as => 'campaign_permalink'
   post 'search' => 'search#show', :as => 'search'
+  get  'letters/cancel/:redis_key' => 'letters#destroy', :as => 'destroy_letter'
+  get  'letters/:redis_key' => 'letters#create', :as => 'create_letter'
   post 'letters/preview' => 'letters#show', :as => 'preview_letter'
   post 'payments/new' => 'payments#new', :as => 'new_payment'
   post 'payments' => 'payments#create', :as => 'payments'

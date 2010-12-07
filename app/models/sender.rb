@@ -34,4 +34,10 @@ class Sender < ActiveRecord::Base
   def last_name=(last_name)
     super(last_name.nil? ? nil : last_name.capitalize)
   end
+
+  def to_hash
+    %w{email first_name last_name street city state zip}.inject({}) do |hash, key|
+      hash.merge!(key => send(key))
+    end
+  end
 end

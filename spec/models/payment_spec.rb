@@ -47,20 +47,28 @@ describe Payment do
   describe 'Making a payment' do
     before do
       @response = mock('Response')
+      @letter   = mock('Letter')
+      sender    = mock('Sender')
+      sender.stubs(:email).returns('email')
+      @letter.stubs(:sender).returns(sender)
+      @letter.stubs(:cost).returns(100)
+      @letter.stubs(:valid?).returns(true)
+      @letter.stubs(:to_redis!).returns('redistoken')
+      @payment = Factory.build(:payment)
     end
 
-    context 'succesfull' do
+    context 'with a credit card' do
       before do
-        @payment = Factory.build(:payment)
-        @response.stubs(:success?).returns(true)
+        @letter.stubs(:payment_type).returns('credit_card')
         @gateway  = mock('PaypalGateway')
-        @gateway.stubs(:purchase).returns(@response)
-        ActiveMerchant::Billing::PaypalGateway.stubs(:new).returns(@gateway)
       end
 
-      context 'one letter purchased' do
+      context 'succesfull' do
         before do
-          @result = @payment.make(1, {})
+          @response.stubs(:success?).returns(true)
+          @gateway.stubs(:purchase).returns(@response)
+          ActiveMerchant::Billing::PaypalGateway.stubs(:new).returns(@gateway)
+          @result = @payment.make(@letter, {:ip => '127.0.0.1'})
         end
 
         it 'creates a gateway' do
@@ -68,7 +76,7 @@ describe Payment do
         end
 
         it 'makes a purchase' do
-          @gateway.should have_received(:purchase).with(100, @payment.credit_card, @payment.options({}))
+          @gateway.should have_received(:purchase).with(100, @payment.credit_card, @payment.options({:email => 'email', :ip => '127.0.0.1'}))
         end
 
         it 'returns true' do
@@ -76,34 +84,73 @@ describe Payment do
         end
       end
 
-      context '3 letters purchased' do
+      context 'failed' do
         before do
-          @result = @payment.make(3, {})
+          @response.stubs(:success?).returns(false)
+          @gateway.stubs(:purchase).returns(@response)
+          ActiveMerchant::Billing::PaypalGateway.stubs(:new).returns(@gateway)
+          @result = @payment.make(@letter, {})
         end
 
-        it 'makes a purchase' do
-          @gateway.should have_received(:purchase).with(300, @payment.credit_card, @payment.options({}))
+        it 'returns false' do
+          @result.should be_false
         end
 
+        it 'adds a validation error' do
+          @payment.errors['gateway'].should include('payment authorization failed')
+        end
       end
     end
 
-    context 'failed' do
+    context 'paypal' do
       before do
-        @payment = Factory.build(:payment)
-        @response.stubs(:success?).returns(false)
-        @gateway  = mock('PaypalGateway')
-        @gateway.stubs(:purchase).returns(@response)
-        ActiveMerchant::Billing::PaypalGateway.stubs(:new).returns(@gateway)
-        @result = @payment.make(1, {})
+        @letter.stubs(:payment_type).returns('paypal')
+        @response.stubs(:token).returns('123')
+        @gateway = mock('PaypalExpressGateway')
       end
 
-      it 'returns false' do
-        @result.should be_false
+      context 'successful' do
+        before do
+          @response.stubs(:success?).returns(true)
+          @gateway.stubs(:setup_purchase).returns(@response)
+          @gateway.stubs(:redirect_url_for).returns('url')
+          ActiveMerchant::Billing::PaypalExpressGateway.stubs(:new).returns(@gateway)
+          @result = @payment.make(@letter, {:ip => '127.0.0.1', :root_url => 'root_url/'})
+        end
+
+        it 'creates a gateway' do
+          @payment.gateway.should == @gateway
+        end
+
+        it 'makes a purchase' do
+          @gateway.should have_received(:setup_purchase).with(100, @payment.options({:ip => '127.0.0.1', :root_url => 'root_url/'}))
+        end
+
+        it 'stores the letter attributes in Redis' do
+          @letter.should have_received(:to_redis!)
+        end
+
+        it 'returns true' do
+          @result.should be_true
+        end
       end
 
-      it 'adds a validation error' do
-        @payment.errors['gateway'].should include('payment authorization failed')
+      context 'failed' do
+        before do
+          @response.stubs(:success?).returns(false)
+          @gateway.stubs(:setup_purchase).returns(@response)
+          @gateway.stubs(:redirect_url_for).returns('url')
+          ActiveMerchant::Billing::PaypalExpressGateway.stubs(:new).returns(@gateway)
+          @result = @payment.make(@letter, {})
+        end
+
+        it 'returns false' do
+          @result.should be_false
+        end
+
+        it 'adds a validation error' do
+          @payment.errors['gateway'].should include('no response from Paypal')
+        end
       end
     end
 
@@ -128,24 +175,26 @@ describe Payment do
   end
 
   describe '#options' do
-    before do
-      @payment = Factory.build(:payment)
-      @options = @payment.options(:email => 'johndoe@test.com', :ip => '127.0.0.1')
-    end
-    
-    it 'builds an options hash' do
-      @options.should == {
-        :email => 'johndoe@test.com',
-        :billing_address => {
-          :name => 'John Doe',
-          :address_1 => '123 Fake St.',
-          :city => 'Boston',
-          :state => 'MA',
-          :zip => '02127',
-          :country => 'US',
-        },
-        :ip => '127.0.0.1'
-      }
+    before { @payment = Factory.build(:payment) }
+    context 'credit_card' do
+      before do
+        @options = @payment.options(:email => 'johndoe@test.com', :ip => '127.0.0.1')
+      end
+      
+      it 'builds an options hash' do
+        @options.should == {
+          :email => 'johndoe@test.com',
+          :billing_address => {
+            :name => 'John Doe',
+            :address_1 => '123 Fake St.',
+            :city => 'Boston',
+            :state => 'MA',
+            :zip => '02127',
+            :country => 'US',
+          },
+          :ip => '127.0.0.1'
+        }
+      end
     end
   end
 

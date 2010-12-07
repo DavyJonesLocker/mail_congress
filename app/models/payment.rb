@@ -14,9 +14,10 @@ class Payment
   
   attr_accessor :street, :city, :state, :zip
   attr_accessor :gateway, :credit_card
+  attr_accessor :type, :url, :redis_key
 
-  validates_presence_of :street, :city, :state, :zip
-  validates_associated  :credit_card
+  validates_presence_of :street, :city, :state, :zip, :unless => Proc.new { |payment| payment.type == 'paypal' }
+  validates_associated  :credit_card, :unless => Proc.new { |payment| payment.type == 'paypal' }
 
   def initialize(attributes = {})
     attributes.each do |key, value|
@@ -36,14 +37,16 @@ class Payment
     nil
   end
 
-  def make(number, extra_options)
-    self.gateway = ActiveMerchant::Billing::PaypalGateway.new(paypal_credentials)
-    response = gateway.purchase(100 * number, credit_card, options(extra_options))
-    if response.success?
-      true
+  def make(letter, extra_options)
+    self.type = letter.payment_type
+    valid = letter.valid?
+    valid = valid? && valid
+    return false unless valid
+
+    if type == 'paypal'
+      with_paypal(letter, extra_options)
     else
-      self.errors.add(:gateway, 'payment authorization failed')
-      false
+      with_credit_card(letter, extra_options)
     end
   end
 
@@ -53,6 +56,16 @@ class Payment
   end
 
   def options(extras)
+    if type == 'paypal'
+      paypal_options(extras)
+    else
+      credit_card_options(extras)
+    end
+  end
+
+  private
+
+  def credit_card_options(extras)
     {
       :billing_address => {
         :name      => "#{self.credit_card.name}",
@@ -62,7 +75,41 @@ class Payment
         :zip       => self.zip,
         :country   => 'US'
       }
-    }.merge(extras)
+    }.merge(:email => extras[:email], :ip => extras[:ip])
+  end
+
+  def paypal_options(extras)
+    {
+      :ip                => extras[:ip],
+      :return_url        => "#{extras[:root_url]}letters/#{redis_key}",
+      :cancel_return_url => "#{extras[:root_url]}cancel/#{redis_key}"
+    }
+  end
+
+  def with_credit_card(letter, extra_options)
+    extra_options.merge!(:email => letter.sender.email)
+    self.gateway = ActiveMerchant::Billing::PaypalGateway.new(paypal_credentials)
+    response     = gateway.purchase(letter.cost, credit_card, options(extra_options))
+    if response.success?
+      true
+    else
+      self.errors.add(:gateway, 'payment authorization failed')
+      false
+    end
+  end
+
+  def with_paypal(letter, extra_options)
+    self.redis_key  = letter.to_redis!
+    self.gateway = ActiveMerchant::Billing::PaypalExpressGateway.new(paypal_credentials)
+    response     = gateway.setup_purchase(letter.cost, paypal_options(extra_options))
+
+    if response.success?
+      self.url = gateway.redirect_url_for(response.token)
+      true
+    else
+      self.errors.add(:gateway, 'no response from Paypal')
+      false
+    end
   end
 
 end
