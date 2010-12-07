@@ -563,14 +563,15 @@ div.select {
   margin: 0 auto 40px auto;
   @include border-radius(0);
   @include box-shadow(none);
+  .error {
+    color: #FEE;
+    padding: 10px;
+    background: #B21;
+    margin: 20px 0 0 0;
+    @include border-radius(3px);
+    display: block;
+  }
   ul.legislators {
-    .error {
-      color: #FEE;
-      padding: 10px;
-      background: #B21;
-      margin: 20px 0 0 0;
-      @include border-radius(3px);
-    }
     .bioguide {
       @include bio_photo;
       img.mail {

@@ -18,7 +18,8 @@
             = image_tag 'icons/mail.png', :class => "mail #{"selected" if recipient.object.selected?}".strip
           = recipient.label :legislator_id, recipient.object.legislator.name
           = check_box_tag "#{recipient.object_name}[legislator_id]", recipient.object.legislator_id, recipient.object.selected?
-      = letter.error :recipients
+    
+    = letter.error :recipients
     
     %h2.cost= cost_to_send_letters(@letter.recipients)
     

@@ -1312,8 +1312,8 @@ div.select select {
   -o-box-shadow: none;
   box-shadow: none;
 }
-/* line 567, ../../../app/stylesheets/screen.scss */
-#new_letter ul.legislators .error {
+/* line 566, ../../../app/stylesheets/screen.scss */
+#new_letter .error {
   color: #FEE;
   padding: 10px;
   background: #B21;
@@ -1324,8 +1324,9 @@ div.select select {
   -ms-border-radius: 3px;
   -khtml-border-radius: 3px;
   border-radius: 3px;
+  display: block;
 }
-/* line 574, ../../../app/stylesheets/screen.scss */
+/* line 575, ../../../app/stylesheets/screen.scss */
 #new_letter ul.legislators .bioguide {
   width: 100px;
   height: 125px;
@@ -1334,7 +1335,7 @@ div.select select {
   position: relative;
   background-repeat: no-repeat;
 }
-/* line 576, ../../../app/stylesheets/screen.scss */
+/* line 577, ../../../app/stylesheets/screen.scss */
 #new_letter ul.legislators .bioguide img.mail {
   right: 5px;
   bottom: 2px;
@@ -1343,42 +1344,42 @@ div.select select {
   display: none;
   position: absolute;
 }
-/* line 584, ../../../app/stylesheets/screen.scss */
+/* line 585, ../../../app/stylesheets/screen.scss */
 #new_letter ul.legislators .bioguide img.selected {
   display: inline;
 }
-/* line 588, ../../../app/stylesheets/screen.scss */
+/* line 589, ../../../app/stylesheets/screen.scss */
 #new_letter ul.legislators .monochrome {
   background-position: -100px 0px;
 }
-/* line 591, ../../../app/stylesheets/screen.scss */
+/* line 592, ../../../app/stylesheets/screen.scss */
 #new_letter ul.legislators .color {
   background-position: 0px 0px;
 }
-/* line 594, ../../../app/stylesheets/screen.scss */
+/* line 595, ../../../app/stylesheets/screen.scss */
 #new_letter ul.legislators .bioguide:hover {
   cursor: pointer;
 }
-/* line 597, ../../../app/stylesheets/screen.scss */
+/* line 598, ../../../app/stylesheets/screen.scss */
 #new_letter ul.legislators img.monochrome {
   margin-left: -100px;
 }
-/* line 600, ../../../app/stylesheets/screen.scss */
+/* line 601, ../../../app/stylesheets/screen.scss */
 #new_letter ul.legislators label:hover {
   color: blue;
   cursor: pointer;
   text-decoration: underline;
 }
-/* line 606, ../../../app/stylesheets/screen.scss */
+/* line 607, ../../../app/stylesheets/screen.scss */
 #new_letter h1 {
   padding: 0;
   border: none;
 }
-/* line 610, ../../../app/stylesheets/screen.scss */
+/* line 611, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset.legislator {
   text-align: center;
 }
-/* line 613, ../../../app/stylesheets/screen.scss */
+/* line 614, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset {
   border: none;
   width: 910px;
@@ -1399,14 +1400,14 @@ div.select select {
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 20px 0;
   margin: 20px auto;
 }
-/* line 617, ../../../app/stylesheets/screen.scss */
+/* line 618, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset label {
   width: auto;
   display: block;
   text-align: left;
   margin: 0 0 10px 0;
 }
-/* line 623, ../../../app/stylesheets/screen.scss */
+/* line 624, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators {
   padding: 20px;
   text-align: center;
@@ -1422,7 +1423,7 @@ div.select select {
   -o-box-shadow: rgba(0, 0, 0, 0.25) 0 0 10px inset;
   box-shadow: rgba(0, 0, 0, 0.25) 0 0 10px inset;
 }
-/* line 625, ../../../app/stylesheets/screen.scss */
+/* line 626, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li {
   color: #ABB;
   padding: 10px;
@@ -1442,33 +1443,33 @@ div.select select {
   -o-box-shadow: rgba(0, 0, 0, 0.25) 0 0 10px 0;
   box-shadow: rgba(0, 0, 0, 0.25) 0 0 10px 0;
 }
-/* line 627, ../../../app/stylesheets/screen.scss */
+/* line 628, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li label {
   margin: 10px 0 0 0;
 }
-/* line 631, ../../../app/stylesheets/screen.scss */
+/* line 632, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li:last-child {
   margin: 0px;
 }
-/* line 634, ../../../app/stylesheets/screen.scss */
+/* line 635, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li:hover {
   cursor: pointer;
   background: #178;
 }
-/* line 637, ../../../app/stylesheets/screen.scss */
+/* line 638, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li:hover label {
   color: #FFF;
   text-decoration: none;
 }
-/* line 642, ../../../app/stylesheets/screen.scss */
+/* line 643, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li.active {
   background: #009CAE;
 }
-/* line 644, ../../../app/stylesheets/screen.scss */
+/* line 645, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li.active label {
   color: #FFF;
 }
-/* line 650, ../../../app/stylesheets/screen.scss */
+/* line 651, ../../../app/stylesheets/screen.scss */
 #new_letter .cost {
   color: #6E9;
   font-size: 24px;
@@ -1494,29 +1495,29 @@ div.select select {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#223333', EndColorStr='#112222');
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#223333', EndColorStr='#112222')";
 }
-/* line 653, ../../../app/stylesheets/screen.scss */
+/* line 654, ../../../app/stylesheets/screen.scss */
 #new_letter div.text {
   float: none;
   clear: none;
   margin: 0 0 20px 0;
 }
-/* line 658, ../../../app/stylesheets/screen.scss */
+/* line 659, ../../../app/stylesheets/screen.scss */
 #new_letter #letter_body {
   width: 99%;
   height: 300px;
   display: block;
 }
-/* line 665, ../../../app/stylesheets/screen.scss */
+/* line 666, ../../../app/stylesheets/screen.scss */
 #new_letter .text.field_with_errors,
 #new_letter .string.field_with_errors,
 #new_letter .password.field_with_errors {
   padding: 10px;
 }
-/* line 668, ../../../app/stylesheets/screen.scss */
+/* line 669, ../../../app/stylesheets/screen.scss */
 #new_letter .error {
   margin: 0;
 }
-/* line 671, ../../../app/stylesheets/screen.scss */
+/* line 672, ../../../app/stylesheets/screen.scss */
 #new_letter div.string, #new_letter div.password {
   margin: 10px 10px 0 0;
   display: inline-block;
@@ -1524,34 +1525,34 @@ div.select select {
   float: none;
   clear: none;
 }
-/* line 677, ../../../app/stylesheets/screen.scss */
+/* line 678, ../../../app/stylesheets/screen.scss */
 #new_letter div.string input, #new_letter div.password input {
   width: 200px;
   padding: 5px;
   font-size: 16px;
   font-family: Arial, sans-serif;
 }
-/* line 684, ../../../app/stylesheets/screen.scss */
+/* line 685, ../../../app/stylesheets/screen.scss */
 #new_letter #letter_submit {
   margin: 20px 0 0 0;
 }
-/* line 687, ../../../app/stylesheets/screen.scss */
+/* line 688, ../../../app/stylesheets/screen.scss */
 #new_letter #letter_preview {
   margin: 0 0 0 10px;
   display: inline-block;
 }
 
-/* line 694, ../../../app/stylesheets/screen.scss */
+/* line 695, ../../../app/stylesheets/screen.scss */
 form.campaign label.collection_radio {
   width: auto;
   margin-left: 5px;
 }
-/* line 699, ../../../app/stylesheets/screen.scss */
+/* line 700, ../../../app/stylesheets/screen.scss */
 form.campaign #campaign_type_both {
   margin-left: 120px;
 }
 
-/* line 704, ../../../app/stylesheets/screen.scss */
+/* line 705, ../../../app/stylesheets/screen.scss */
 form {
   width: 910px;
   padding: 20px;
@@ -1570,32 +1571,32 @@ form {
   -o-box-shadow: rgba(0, 0, 0, 0.1) 0 0 20px 0;
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 20px 0;
 }
-/* line 706, ../../../app/stylesheets/screen.scss */
+/* line 707, ../../../app/stylesheets/screen.scss */
 form h1 {
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
-/* line 708, ../../../app/stylesheets/screen.scss */
+/* line 709, ../../../app/stylesheets/screen.scss */
 form h1 span {
   color: #9CC;
   width: 324px;
 }
-/* line 713, ../../../app/stylesheets/screen.scss */
+/* line 714, ../../../app/stylesheets/screen.scss */
 form input#payment_credit_card_verification_value {
   width: 100px;
 }
-/* line 718, ../../../app/stylesheets/screen.scss */
+/* line 719, ../../../app/stylesheets/screen.scss */
 form .text.field_with_errors,
 form .string.field_with_errors,
 form .password.field_with_errors {
   padding-left: 0px;
 }
-/* line 721, ../../../app/stylesheets/screen.scss */
+/* line 722, ../../../app/stylesheets/screen.scss */
 form div.expiration {
   float: left;
   clear: left;
   margin: 5px 10px 15px 0;
 }
-/* line 725, ../../../app/stylesheets/screen.scss */
+/* line 726, ../../../app/stylesheets/screen.scss */
 form div.expiration span {
   display: inline-block;
   width: 110px;
@@ -1603,25 +1604,25 @@ form div.expiration span {
   margin: 0 10px 0 0;
   vertical-align: middle;
 }
-/* line 732, ../../../app/stylesheets/screen.scss */
+/* line 733, ../../../app/stylesheets/screen.scss */
 form div.expiration label {
   vertical-align: middle;
 }
-/* line 735, ../../../app/stylesheets/screen.scss */
+/* line 736, ../../../app/stylesheets/screen.scss */
 form div.expiration .error {
   margin: 0;
 }
-/* line 740, ../../../app/stylesheets/screen.scss */
+/* line 741, ../../../app/stylesheets/screen.scss */
 form img {
   vertical-align: middle;
 }
-/* line 743, ../../../app/stylesheets/screen.scss */
+/* line 744, ../../../app/stylesheets/screen.scss */
 form .error {
   padding: 5px 0 0 0;
   margin: 0 0 0 120px;
 }
 
-/* line 749, ../../../app/stylesheets/screen.scss */
+/* line 750, ../../../app/stylesheets/screen.scss */
 .field_with_errors {
   color: #FEE;
   padding: 10px;
@@ -1634,7 +1635,7 @@ form .error {
   border-radius: 3px;
 }
 
-/* line 756, ../../../app/stylesheets/screen.scss */
+/* line 757, ../../../app/stylesheets/screen.scss */
 .error {
   font-weight: bold;
   padding: 10px 0 0 5px;
