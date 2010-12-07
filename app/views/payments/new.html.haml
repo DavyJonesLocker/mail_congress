@@ -30,21 +30,26 @@
   
   %fieldset.credit_card
     .help
-      Your credit card's type will be automatically determined based upon the number.
+      .credit_card
+        Your credit card's type will be automatically determined based upon the number.
+      .paypal
+        You have chosen to pay with Paypal. You will be redirected to Paypal to complete the purchase.
     .fields
       = payment.simple_fields_for :credit_card, @payment.credit_card do |credit_card|
         = simple_fields_for @letter do |letter|
           %ul.payment_type
-            %li
-              = letter.radio_button :payment_type, :paypal, :class => 'payment_type'
-              %label.radio{:for => 'letter_payment_type_paypal'}
-                = image_tag('icons/paypal.png')
             %li
               = letter.radio_button :payment_type, :credit_card, :class => 'payment_type'
               .cards
                 %label.radio{:for => 'letter_payment_type_credit_card'}
                   - %w{visa master american_express discover diners_club}.each do |card|
                     %span{:class => [card, 'card']}
+            %li
+              = letter.radio_button :payment_type, :paypal, :class => 'payment_type'
+              %label.radio{:for => 'letter_payment_type_paypal'}
+              .cards
+                %label.radio{:for => 'letter_payment_type_paypal'}
+                  %span{:class => ['paypal', 'card']}
         .slideToggle
           = credit_card.input :number, :label => 'Card number'
           .expiration

@@ -328,7 +328,7 @@ ul.numbers {
 }
 
 ul.payment_type {
-  margin: 0 0 0 114px;
+  margin: 0 0 10px 115px;
   li {
     display: inline-block;
   }
@@ -345,6 +345,10 @@ ul.payment_type {
     display: inline-block;
     background-position: 0 -4px;
     background-repeat: no-repeat;
+  }
+  .paypal {
+    background-image: url('../../images/icons/paypal.png');
+    margin-left: -8px;
   }
   .visa {
     background-image: url('../../images/icons/visa.png');

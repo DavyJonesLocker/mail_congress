@@ -4,18 +4,35 @@ $(function() {
   determineCardType($('#payment_credit_card_number').val());
   $('input[name="letter[payment_type]"]').change(function() { toggleSlider(this); })
   if ($('input[name="letter[payment_type]"]:checked').val() == 'paypal') {
-    $('.slideToggle').hide();
-    $('#payment_submit').attr('value', 'Pay with Paypal');
+    choosePaypal(true);
+  } else {
+    chooseCreditCard();
   }
 });
 
+function choosePaypal(pageload) {
+  $('div.help div.credit_card').hide();
+  $('div.help div.paypal').show();
+  if (pageload) {
+    $('.slideToggle').hide();
+  } else {
+    $('.slideToggle').slideUp();
+  }
+  $('#payment_submit').attr('value', 'Pay with Paypal');
+}
+
+function chooseCreditCard() {
+  $('div.help div.paypal').hide();
+  $('div.help div.credit_card').show();
+  $('.slideToggle').slideDown();
+  $('#payment_submit').attr('value', 'Make secure payment');
+}
+
 function toggleSlider(input) {
   if (input.value == 'paypal') {
-    $('.slideToggle').slideUp();
-    $('#payment_submit').attr('value', 'Pay with Paypal');
+    choosePaypal(false);
   } else {
-    $('.slideToggle').slideDown();
-    $('#payment_submit').attr('value', 'Make secure payment');
+    chooseCreditCard();
   }
 }
 
