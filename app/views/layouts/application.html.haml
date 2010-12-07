@@ -7,6 +7,7 @@
     /[if lt IE 8]
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
     = yield :css
+    -#%script{:type => "text/javascript", :src => "https://getfirebug.com/firebug-lite.js"}
     = javascript_include_tag 'modernizr', :defaults, 'jquery.placeholder'
     = yield :javascript
     = csrf_meta_tag

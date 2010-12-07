@@ -71,14 +71,27 @@ div.password input {
   width: 200px;
   margin: 10px 0;
   display: inline;
+
+  .paypal {
+    background-image: url('../../images/icons/paypal.png');
+    margin-left: -0px;
+  }
+
+  label {
+    width: 200px;
+  }
+
+  .card {
+    float: none;
+    clear: none;
+    display: inline;
+  }
 }
 
-.payment_type li .cards label {
-  width: 200px;
-}
-
-.payment_type li .cards .card {
-  float: none;
-  clear: none;
-  display: inline;
+.payment_type li.paypal .cards {
+  margin-right: 50px;
+  margin-left: 0px;
+  label {
+    width: 200px;
+  }
 }

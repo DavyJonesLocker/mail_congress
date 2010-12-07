@@ -88,15 +88,28 @@ div.password input {
   margin: 10px 0;
   display: inline;
 }
-
-/* line 76, ../../../app/stylesheets/ie.scss */
+/* line 75, ../../../app/stylesheets/ie.scss */
+.payment_type li .cards .paypal {
+  background-image: url("../../images/icons/paypal.png");
+  margin-left: 0px;
+}
+/* line 80, ../../../app/stylesheets/ie.scss */
 .payment_type li .cards label {
   width: 200px;
 }
-
-/* line 80, ../../../app/stylesheets/ie.scss */
+/* line 84, ../../../app/stylesheets/ie.scss */
 .payment_type li .cards .card {
   float: none;
   clear: none;
   display: inline;
+}
+
+/* line 91, ../../../app/stylesheets/ie.scss */
+.payment_type li.paypal .cards {
+  margin-right: 50px;
+  margin-left: 0px;
+}
+/* line 94, ../../../app/stylesheets/ie.scss */
+.payment_type li.paypal .cards label {
+  width: 200px;
 }
