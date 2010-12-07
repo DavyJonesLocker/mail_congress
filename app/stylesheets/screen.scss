@@ -326,13 +326,15 @@ ul.numbers {
     line-height: 1.25em;
   }
 }
+
 ul.payment_type {
   margin: 0 0 0 114px;
   li {
     display: inline-block;
   }
 }
-ul.cards {
+
+.cards {
   display: inline-block;
   vertical-align: middle;
   height: 24px;
