@@ -1,0 +1,5 @@
+%fieldset.feedback
+  = simple_form_for @feedback, :url => feedback_path do |feedback|
+    = feedback.input :email
+    = feedback.input :body, :as => :text, :label => 'Feedback'
+    = feedback.submit 'Submit'

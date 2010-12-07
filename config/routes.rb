@@ -1,4 +1,6 @@
 MailCongress::Application.routes.draw do
+  post 'feedback' => 'feedback#create', :as => 'feedback'
+  get  'feedback' => 'feedback#new', :as => 'new_feedback'
   get  'follow_ups/:id', :to => 'follow_ups#show', :as => 'follow_up'
   resources :campaigns
   get  'dashboard', :to => 'advocacy_groups#show', :as => 'dashboard'
