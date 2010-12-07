@@ -22,32 +22,40 @@
 
 /* letters#new */
 /* line 19, ../../../app/stylesheets/ie.scss */
-.legislators li,
-.legislators li label {
-  width: auto !important;
+#new_letter .legislators li,
+#new_letter .legislators li label {
+  margin: 0 .75em !important;
   display: inline !important;
+  vertical-align: middle !important;
 }
 
 /* line 24, ../../../app/stylesheets/ie.scss */
-.legislators li div {
+#new_letter .legislators li div {
+  margin: 0 !important;
   width: 100px !important;
 }
 
+/* line 30, ../../../app/stylesheets/ie.scss */
+#new_letter div.string,
+#new_letter #letter_preview {
+  display: inline;
+}
+
 /* payments#new */
-/* line 31, ../../../app/stylesheets/ie.scss */
+/* line 37, ../../../app/stylesheets/ie.scss */
 form h1.group,
 fieldset {
   border-bottom: 1px solid #40939C;
 }
 
-/* line 36, ../../../app/stylesheets/ie.scss */
+/* line 42, ../../../app/stylesheets/ie.scss */
 label,
 div.select {
   display: inline;
   vertical-align: middle;
 }
 
-/* line 43, ../../../app/stylesheets/ie.scss */
+/* line 49, ../../../app/stylesheets/ie.scss */
 div.text,
 div.string,
 div.password {
@@ -55,38 +63,38 @@ div.password {
   clear: none;
 }
 
-/* line 50, ../../../app/stylesheets/ie.scss */
+/* line 56, ../../../app/stylesheets/ie.scss */
 div.text input,
 div.string input,
 div.password input {
   vertical-align: middle;
 }
 
-/* line 54, ../../../app/stylesheets/ie.scss */
+/* line 60, ../../../app/stylesheets/ie.scss */
 .fields {
   float: left;
   width: 536px;
 }
 
-/* line 59, ../../../app/stylesheets/ie.scss */
+/* line 65, ../../../app/stylesheets/ie.scss */
 .payment_type li {
   padding: 0;
   display: inline;
 }
 
-/* line 64, ../../../app/stylesheets/ie.scss */
+/* line 70, ../../../app/stylesheets/ie.scss */
 .payment_type li .cards {
   width: 200px;
   margin: 10px 0;
   display: inline;
 }
 
-/* line 70, ../../../app/stylesheets/ie.scss */
+/* line 76, ../../../app/stylesheets/ie.scss */
 .payment_type li .cards label {
   width: 200px;
 }
 
-/* line 74, ../../../app/stylesheets/ie.scss */
+/* line 80, ../../../app/stylesheets/ie.scss */
 .payment_type li .cards .card {
   float: none;
   clear: none;

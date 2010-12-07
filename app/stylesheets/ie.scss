@@ -15,14 +15,20 @@
 
 /* letters#new */
 
-.legislators li,
-.legislators li label {
-  width: auto !important;
+#new_letter .legislators li,
+#new_letter .legislators li label {
+  margin: 0 .75em !important;
   display: inline !important;
+  vertical-align: middle !important;
+}
+#new_letter .legislators li div {
+  margin: 0 !important;
+  width: 100px !important;
 }
 
-.legislators li div {
-  width: 100px !important;
+#new_letter div.string,
+#new_letter #letter_preview {
+  display: inline;
 }
 
 /* payments#new */
