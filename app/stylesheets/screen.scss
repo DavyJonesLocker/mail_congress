@@ -244,12 +244,13 @@ h1.tag {
   .session {
     float: right;
     form {
-      height: 22px;
-      display: none;
-      background: none;
       margin: 0;
       padding: 0;
       width: auto;
+      float: right;
+      height: 22px;
+      display: none;
+      background: none;
       input[type="submit"] {
         margin: 0;
         font-size: 12px; 
@@ -325,13 +326,20 @@ ul.numbers {
     line-height: 1.25em;
   }
 }
-
+ul.payment_type {
+  margin: 0 0 0 114px;
+  li {
+    display: inline-block;
+  }
+}
 ul.cards {
-  margin-left: 114px;
+  display: inline-block;
+  vertical-align: middle;
+  height: 24px;
   .card {
     width: 32px;
-    height: 24px;
-    margin: 0 0 5px 5px;
+    height: 22px;
+    margin: 0 5px 0 0;
     display: inline-block;
     background-position: 0 -4px;
     background-repeat: no-repeat;
@@ -351,6 +359,7 @@ ul.cards {
   .diners_club {
     background-image: url('../../images/icons/diners_club.png');
   }
+  
   .disabled {
     opacity: 0.3;
   }

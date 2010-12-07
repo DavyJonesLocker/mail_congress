@@ -1,16 +1,59 @@
-@import "blueprint";
+/* group clearfix */
 
-// To generate css equivalent to the blueprint css but with your configuration applied, uncomment:
-// +blueprint-ie
+* html .group { height: 1%; }
+.group { min-height: 1px; }
 
-//Recommended Blueprint configuration with scoping and semantic layout:
-body.bp {
-  @include blueprint-ie(true);
-  // Note: Blueprint centers text to fix IE6 container centering.
-  // This means all your texts will be centered under all version of IE by default.
-  // If your container does not have the .container class, don't forget to restore
-  // the correct behavior to your main container (but not the body tag!)
-  // Example:
-  // .my-container
-  //   text-align: left
+/* payments#new */
+
+form h1.group,
+fieldset {
+  border-bottom: 1px solid #40939C;
+}
+
+label,
+div.select {
+  display: inline;
+  vertical-align: middle;
+}
+
+div.text, 
+div.string, 
+div.password {
+  float: none;
+  clear: none;
+}
+
+div.text input,
+div.string input, 
+div.password input {
+  vertical-align: middle;
+}
+
+.fields {
+  float: left;
+  width: 536px;
+}
+
+.payment_type li {
+  padding: 0;
+  display: inline;
+}
+
+.payment_type li ul.cards{
+  width: 200px;
+  display: inline;
+}
+
+.payment_type li ul.cards li.card {
+  display: inline;
+}
+
+/* menus */
+
+#menus {
+  background: #002f38;
+}
+
+#menus .session form {
+  position: relative;
 }
