@@ -50,9 +50,18 @@ class Payment
     end
   end
 
-  def paypal_credentials
+  def self.complete(cost, attrs = {})
+    gateway = ActiveMerchant::Billing::PaypalExpressGateway.new(paypal_credentials)
+    gateway.purchase(cost, attrs)
+  end
+
+  def self.paypal_credentials
     file = File.open("#{Rails.root}/config/paypal/#{Rails.env}.yml")
     YAML.load(file)
+  end
+
+  def paypal_credentials
+    self.class.paypal_credentials
   end
 
   def options(extras)

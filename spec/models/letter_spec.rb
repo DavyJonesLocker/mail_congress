@@ -266,8 +266,7 @@ describe Letter do
       @redis = mock('Redis')
       @redis.stubs(:get).with('redis_key').returns(Factory.attributes_for(:letter).to_json)
       Redis.stubs(:new).returns(@redis)
-      Letter.any_instance.stubs(:generate_follow_up_id!).returns(true)
-      @letter = Letter.create_from_redis('redis_key')
+      @letter = Letter.get_from_redis('redis_key')
     end
 
     it 'creates a valid letter' do

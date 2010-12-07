@@ -156,6 +156,21 @@ describe Payment do
 
   end
 
+  describe '.complete' do
+    before do
+      @gateway  = mock('PaypalExpressGateway')
+      ActiveMerchant::Billing::PaypalExpressGateway.stubs(:new).returns(@gateway)
+      @response = mock('Response')
+      @gateway.stubs(:purchase).returns(@response)
+      @response.stubs(:success?).returns(true)
+      Payment.complete(100, :ip => 'ip', :payer_id => 'payer_id', :token => 'token')
+    end
+
+    it 'gateway makes the purchase' do
+      @gateway.should have_received(:purchase).with(100, :ip => 'ip', :payer_id => 'payer_id', :token => 'token') 
+    end
+  end
+
   describe '#paypal_credentials' do
     before do
       @file = mock('File')

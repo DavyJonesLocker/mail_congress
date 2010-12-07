@@ -22,12 +22,8 @@ class Letter < ActiveRecord::Base
     letter.send(method)
   end
 
-  def self.create_from_redis(key)
+  def self.get_from_redis(key)
     letter = Letter.new(JSON.parse(Redis.new.get(key)))
-    letter.generate_follow_up_id!
-    letter.save
-    PrintJob.enqueue(letter)
-    letter
   end
 
   def cost
