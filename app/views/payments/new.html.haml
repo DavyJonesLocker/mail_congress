@@ -33,7 +33,7 @@
       .credit_card
         Your credit card's type will be automatically determined based upon the number.
       .paypal
-        You have chosen to pay with Paypal. You will be redirected to Paypal to complete the purchase.
+        You have chosen to pay with Paypal. When you submit this form you will be redirected to Paypal to complete the purchase.
     .fields
       = payment.simple_fields_for :credit_card, @payment.credit_card do |credit_card|
         = simple_fields_for @letter do |letter|
