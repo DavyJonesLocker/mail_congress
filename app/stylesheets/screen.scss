@@ -574,12 +574,12 @@ div.select {
     .bioguide {
       @include bio_photo;
       img.mail {
-        position: absolute;
-        height: 16px;
-        width: 16px;
         right: 5px;
         bottom: 2px;
+        width: 16px;
+        height: 16px;
         display: none;
+        position: absolute;
       }
       img.selected {
         display: inline;

@@ -9,21 +9,45 @@
   min-height: 1px;
 }
 
+/* menus */
+/* line 8, ../../../app/stylesheets/ie.scss */
+#menus {
+  background: #002f38;
+}
+
+/* line 12, ../../../app/stylesheets/ie.scss */
+#menus .session form {
+  position: relative;
+}
+
+/* letters#new */
+/* line 19, ../../../app/stylesheets/ie.scss */
+.legislators li,
+.legislators li label {
+  width: auto !important;
+  display: inline !important;
+}
+
+/* line 24, ../../../app/stylesheets/ie.scss */
+.legislators li div {
+  width: 100px !important;
+}
+
 /* payments#new */
-/* line 9, ../../../app/stylesheets/ie.scss */
+/* line 31, ../../../app/stylesheets/ie.scss */
 form h1.group,
 fieldset {
   border-bottom: 1px solid #40939C;
 }
 
-/* line 14, ../../../app/stylesheets/ie.scss */
+/* line 36, ../../../app/stylesheets/ie.scss */
 label,
 div.select {
   display: inline;
   vertical-align: middle;
 }
 
-/* line 21, ../../../app/stylesheets/ie.scss */
+/* line 43, ../../../app/stylesheets/ie.scss */
 div.text,
 div.string,
 div.password {
@@ -31,43 +55,40 @@ div.password {
   clear: none;
 }
 
-/* line 28, ../../../app/stylesheets/ie.scss */
+/* line 50, ../../../app/stylesheets/ie.scss */
 div.text input,
 div.string input,
 div.password input {
   vertical-align: middle;
 }
 
-/* line 32, ../../../app/stylesheets/ie.scss */
+/* line 54, ../../../app/stylesheets/ie.scss */
 .fields {
   float: left;
   width: 536px;
 }
 
-/* line 37, ../../../app/stylesheets/ie.scss */
+/* line 59, ../../../app/stylesheets/ie.scss */
 .payment_type li {
   padding: 0;
   display: inline;
 }
 
-/* line 42, ../../../app/stylesheets/ie.scss */
-.payment_type li ul.cards {
+/* line 64, ../../../app/stylesheets/ie.scss */
+.payment_type li .cards {
   width: 200px;
+  margin: 10px 0;
   display: inline;
 }
 
-/* line 47, ../../../app/stylesheets/ie.scss */
-.payment_type li ul.cards li.card {
+/* line 70, ../../../app/stylesheets/ie.scss */
+.payment_type li .cards label {
+  width: 200px;
+}
+
+/* line 74, ../../../app/stylesheets/ie.scss */
+.payment_type li .cards .card {
+  float: none;
+  clear: none;
   display: inline;
-}
-
-/* menus */
-/* line 53, ../../../app/stylesheets/ie.scss */
-#menus {
-  background: #002f38;
-}
-
-/* line 57, ../../../app/stylesheets/ie.scss */
-#menus .session form {
-  position: relative;
 }

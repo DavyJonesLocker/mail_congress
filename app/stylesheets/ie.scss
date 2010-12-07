@@ -3,6 +3,28 @@
 * html .group { height: 1%; }
 .group { min-height: 1px; }
 
+/* menus */
+
+#menus {
+  background: #002f38;
+}
+
+#menus .session form {
+  position: relative;
+}
+
+/* letters#new */
+
+.legislators li,
+.legislators li label {
+  width: auto !important;
+  display: inline !important;
+}
+
+.legislators li div {
+  width: 100px !important;
+}
+
 /* payments#new */
 
 form h1.group,
@@ -39,21 +61,18 @@ div.password input {
   display: inline;
 }
 
-.payment_type li ul.cards{
+.payment_type li .cards {
   width: 200px;
+  margin: 10px 0;
   display: inline;
 }
 
-.payment_type li ul.cards li.card {
+.payment_type li .cards label {
+  width: 200px;
+}
+
+.payment_type li .cards .card {
+  float: none;
+  clear: none;
   display: inline;
-}
-
-/* menus */
-
-#menus {
-  background: #002f38;
-}
-
-#menus .session form {
-  position: relative;
 }

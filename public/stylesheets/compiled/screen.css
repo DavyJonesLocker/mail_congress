@@ -1336,12 +1336,12 @@ div.select select {
 }
 /* line 576, ../../../app/stylesheets/screen.scss */
 #new_letter ul.legislators .bioguide img.mail {
-  position: absolute;
-  height: 16px;
-  width: 16px;
   right: 5px;
   bottom: 2px;
+  width: 16px;
+  height: 16px;
   display: none;
+  position: absolute;
 }
 /* line 584, ../../../app/stylesheets/screen.scss */
 #new_letter ul.legislators .bioguide img.selected {
