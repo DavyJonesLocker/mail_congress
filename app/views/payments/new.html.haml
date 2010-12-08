@@ -1,7 +1,7 @@
 - content_for :javascript do
   = javascript_include_tag 'credit_card'
 
-= simple_form_for @payment, :url => payments_path do |payment|
+= simple_form_for @payment, :url => payments_url do |payment|
   %h1.group
     %strong Billing Info
     %span= final_cost(@letter.recipients)
