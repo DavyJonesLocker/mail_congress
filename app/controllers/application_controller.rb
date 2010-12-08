@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   def url_for(options = nil)
     case options
     when Hash
-      if Rails.env == 'production'
+      if Rails.env == 'production' && options[:controller] == 'payments'
         options[:protocol] = 'https'
       end
     end
