@@ -1,5 +1,8 @@
-%fieldset.feedback
-  = simple_form_for @feedback, :url => feedback_path do |feedback|
+= simple_form_for @feedback, :url => feedback_path do |feedback|
+
+  %fieldset
+    .help Thanks for giving feedback on MailCongress. Your comments are greatly appreciated, as they help us make the site better for everyone. 
     = feedback.input :email
     = feedback.input :body, :as => :text, :label => 'Feedback'
-    = feedback.submit 'Submit'
+
+  = feedback.submit 'Submit'
