@@ -1,13 +1,13 @@
 .info
-  %a{ :href => "/" } MailCongress.org
+  = link_to 'MailCongress.org', root_url
   Built by 
   %a{ :href => "mailto:brian@mailcongress.org"} Brian Cardarella 
   Designed by 
   %a{ :href => "http://www.cssboy.com/"} Angelo Simeoni
   – &copy; 2010
 .legal
-  %a{ :href => '/feedback' } Feedback
+  = link_to 'Feedback', new_feedback_url
   ●
-  %a{ :href => '/terms' } Terms of Service
+  = link_to 'Terms of Service', terms_url
   ●
-  %a{ :href => '/privacy' } Privacy Policy
+  = link_to 'Privacy Policy', privacy_url

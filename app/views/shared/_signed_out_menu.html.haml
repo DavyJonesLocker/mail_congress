@@ -1,9 +1,9 @@
 %ul.actions
-  %li= link_to 'Create advocacy group', sign_up_path
+  %li= link_to 'Create advocacy group', sign_up_url
 
 %ul.session
-  %li#sign_in= link_to 'Sign in', new_advocacy_group_session_path
-  = form_tag advocacy_group_session_path do
+  %li#sign_in= link_to 'Sign in', new_advocacy_group_session_url
+  = form_tag advocacy_group_session_url do
     = text_field_tag 'advocacy_group[email]', nil, :id => 'sign_in_email', :placeholder => 'Email'
     = password_field_tag 'advocacy_group[password]', nil, :id => 'sign_in_password', :placeholder => 'Password'
     = submit_tag 'Sign in'

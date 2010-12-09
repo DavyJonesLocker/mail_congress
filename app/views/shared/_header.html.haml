@@ -5,5 +5,4 @@
     = render :partial => 'shared/signed_out_menu'
 
 #header
-  %a{:href => "/", :class => "logo"}
-    MailCongress
+  = link_to 'MailCongress', root_url, :class => 'logo'
