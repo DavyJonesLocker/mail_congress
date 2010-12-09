@@ -25,7 +25,7 @@ MailCongress::Application.routes.draw do
   post 'feedback' => 'feedback#create', :as => 'feedback'
   get  'feedback' => 'feedback#new', :as => 'new_feedback'
   get  'thank-you' => 'thank_you#show', :as => 'thank_you'
-  get  'terms' => 'legal#terms', :as => 'terms'
-  get  'privacy' => 'legal#privacy', :as => 'privacy'
+  get  'terms_of_service' => 'legal#terms_of_service', :as => 'terms_of_service'
+  get  'privacy_policy' => 'legal#privacy_policy', :as => 'privacy_policy'
   root :to => 'home#index'
 end

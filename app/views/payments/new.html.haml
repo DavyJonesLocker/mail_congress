@@ -75,10 +75,6 @@
 
   %div.help
     By submitting payment, you agree to the 
-    %a{:href => '/terms', :target => '_blank'}
-      %abbr{:title => 'Terms of Service'}
-        Terms of Service
+    = link_to 'Terms of Service', terms_of_service_url, :target => '_blank'
     and
-    %a{:href => '/privacy', :target => '_blank'}
-      %abbr{:title => 'Privacy Policy'}
-        Privacy Policy
+    = link_to 'Privacy Policy', privacy_policy_url, :target => '_blank'
