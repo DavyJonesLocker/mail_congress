@@ -80,7 +80,7 @@ class Letter < ActiveRecord::Base
   end
 
   def sender_attributes=(attributes = nil)
-    if sender = Sender.find_by_email(attributes[:email])
+    if sender = Sender.find_by_email(attributes['email'])
       attributes['id'] = sender.id
       self.sender_id   = sender.id
     end
