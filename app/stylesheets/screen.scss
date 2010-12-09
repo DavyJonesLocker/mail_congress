@@ -222,12 +222,20 @@ h1.tag {
   background: url(/images/logo.png) 0 0 no-repeat;
 }
 
+#flash {
+  top: 0;
+  width: 100%;  
+  position: absolute;
+  text-align: center;
+}
+
 .flash {
   padding: 0 14px;
   font-size: 14px;
   overflow: hidden;
   line-height: 44px;
   text-align: center;
+  display: inline-block;
   background: rgba(0,0,0,.4);
 }
 
