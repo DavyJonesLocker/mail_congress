@@ -14,7 +14,6 @@ Feature: Finding Congress People
     When  I press "Find"
     Then  I should see "Valid home address is required"
 
-  @wip
   Scenario: Searching for my congress people from an ambiguous address
     Given I am on the home page
     When  I submit the address form with "14 Upston St #2 Boston, MA"
