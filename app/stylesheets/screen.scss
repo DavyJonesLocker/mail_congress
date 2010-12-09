@@ -343,35 +343,37 @@ ul.payment_type {
 }
 
 .cards {
+  height: 29px;
   display: inline-block;
   vertical-align: middle;
-  height: 24px;
   .card {
-    width: 32px;
-    height: 22px;
-    margin: 0 5px 0 0;
+    width: 48px;
+    height: 29px;
+    margin: 0 10px 0 0;
     display: inline-block;
-    background-position: 0 -4px;
+    background-position: 0 0;
     background-repeat: no-repeat;
   }
   .paypal {
-    background-image: url('../../images/icons/paypal.png');
-    margin-left: -8px;
+    background-image: url('../../images/icons/paypal.gif');
   }
   .visa {
-    background-image: url('../../images/icons/visa.png');
+    background-image: url('../../images/icons/visa.gif');
   }
   .master {
-    background-image: url('../../images/icons/master.png');
+    background-image: url('../../images/icons/mastercard.gif');
   }
   .american_express {
-    background-image: url('../../images/icons/american_express.png');
+    width: 29px;
+    background-image: url('../../images/icons/american_express.gif');
   }
   .discover {
-    background-image: url('../../images/icons/discover.png');
+    width: 45px;
+    background-image: url('../../images/icons/discover.gif');
   }
   .diners_club {
-    background-image: url('../../images/icons/diners_club.png');
+    width: 39px;
+    background-image: url('../../images/icons/diners_club.gif');
   }
   
   .disabled {
