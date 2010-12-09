@@ -1572,7 +1572,56 @@ form.campaign #campaign_type_both {
   margin-left: 120px;
 }
 
-/* line 723, ../../../app/stylesheets/screen.scss */
+/* line 724, ../../../app/stylesheets/screen.scss */
+#address_search ul {
+  padding: 20px;
+  text-align: center;
+  background: #1A404B;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.25) 0 0 10px inset;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0 0 10px inset;
+  -o-box-shadow: rgba(0, 0, 0, 0.25) 0 0 10px inset;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 0 10px inset;
+  text-align: left;
+  line-height: 1.4;
+}
+/* line 728, ../../../app/stylesheets/screen.scss */
+#address_search ul li {
+  color: #ABB;
+  padding: 10px;
+  margin-right: 20px;
+  text-align: center;
+  background: #3A606B;
+  vertical-align: top;
+  display: inline-block;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.25) 0 0 10px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0 0 10px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.25) 0 0 10px 0;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 0 10px 0;
+  display: block;
+  text-align: left;
+  margin: 0 0 20px 0;
+}
+/* line 736, ../../../app/stylesheets/screen.scss */
+#address_search label,
+#address_search input {
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* line 743, ../../../app/stylesheets/screen.scss */
 form {
   width: 910px;
   padding: 20px;
@@ -1591,32 +1640,32 @@ form {
   -o-box-shadow: rgba(0, 0, 0, 0.1) 0 0 20px 0;
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 20px 0;
 }
-/* line 725, ../../../app/stylesheets/screen.scss */
+/* line 745, ../../../app/stylesheets/screen.scss */
 form h1 {
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
-/* line 727, ../../../app/stylesheets/screen.scss */
+/* line 747, ../../../app/stylesheets/screen.scss */
 form h1 span {
   color: #9CC;
   width: 324px;
 }
-/* line 732, ../../../app/stylesheets/screen.scss */
+/* line 752, ../../../app/stylesheets/screen.scss */
 form input#payment_credit_card_verification_value {
   width: 100px;
 }
-/* line 737, ../../../app/stylesheets/screen.scss */
+/* line 757, ../../../app/stylesheets/screen.scss */
 form .text.field_with_errors,
 form .string.field_with_errors,
 form .password.field_with_errors {
   padding-left: 0px;
 }
-/* line 740, ../../../app/stylesheets/screen.scss */
+/* line 760, ../../../app/stylesheets/screen.scss */
 form div.expiration {
   float: left;
   clear: left;
   margin: 5px 10px 15px 0;
 }
-/* line 744, ../../../app/stylesheets/screen.scss */
+/* line 764, ../../../app/stylesheets/screen.scss */
 form div.expiration span {
   display: inline-block;
   width: 110px;
@@ -1624,25 +1673,25 @@ form div.expiration span {
   margin: 0 10px 0 0;
   vertical-align: middle;
 }
-/* line 751, ../../../app/stylesheets/screen.scss */
+/* line 771, ../../../app/stylesheets/screen.scss */
 form div.expiration label {
   vertical-align: middle;
 }
-/* line 754, ../../../app/stylesheets/screen.scss */
+/* line 774, ../../../app/stylesheets/screen.scss */
 form div.expiration .error {
   margin: 0;
 }
-/* line 759, ../../../app/stylesheets/screen.scss */
+/* line 779, ../../../app/stylesheets/screen.scss */
 form img {
   vertical-align: middle;
 }
-/* line 762, ../../../app/stylesheets/screen.scss */
+/* line 782, ../../../app/stylesheets/screen.scss */
 form .error {
   padding: 5px 0 0 0;
   margin: 0 0 0 120px;
 }
 
-/* line 768, ../../../app/stylesheets/screen.scss */
+/* line 788, ../../../app/stylesheets/screen.scss */
 .field_with_errors {
   color: #FEE;
   padding: 10px;
@@ -1655,7 +1704,7 @@ form .error {
   border-radius: 3px;
 }
 
-/* line 775, ../../../app/stylesheets/screen.scss */
+/* line 795, ../../../app/stylesheets/screen.scss */
 .error {
   font-weight: bold;
   padding: 10px 0 0 5px;
