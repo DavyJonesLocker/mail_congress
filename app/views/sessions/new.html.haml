@@ -1,10 +1,6 @@
-
-= form_tag advocacy_group_session_path do
+= simple_form_for @advocacy_group, :url => advocacy_group_session_path do |advocacy_group|
   %h1 Sign in
   %fieldset
-    = label_tag 'advocacy_group[email]', 'Email'
-    = text_field_tag 'advocacy_group[email]', nil, :id => 'sign_in_email'
-    = label_tag 'advocacy_group[password]', 'Password'
-    = password_field_tag 'advocacy_group[password]', nil, :id => 'sign_in_password'
-
-  = submit_tag 'Sign in'
+    = advocacy_group.input :email, :input_html => { :id => 'sign_in_email' }
+    = advocacy_group.input :password, :input_html => { :id => 'sign_in_password' }
+  = advocacy_group.submit 'Sign in'

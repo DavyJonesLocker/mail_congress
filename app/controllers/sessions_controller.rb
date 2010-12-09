@@ -1,5 +1,9 @@
 class SessionsController < Devise::SessionsController
 
+  def new
+    @advocacy_group = AdvocacyGroup.new
+  end
+
   def create
     resource = warden.authenticate!(:scope => resource_name, :recall => 'sessions#new')
     set_flash_message :notice, :signed_in
