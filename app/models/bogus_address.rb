@@ -1,3 +1,5 @@
+# Lifted from: http://wikibin.org/articles/list-of-the-addresses-of-fictional-characters.html
+
 class BogusAddress
   @addresses = [
     '1640 Riverside Drive Hill Valley, CA',
@@ -23,5 +25,13 @@ class BogusAddress
 
   def self.rand
     @addresses[super(@addresses.size)]
+  end
+
+  def self.all
+    @addresses
+  end
+
+  def self.include?(address)
+    all.include?(address)
   end
 end

@@ -1,0 +1,13 @@
+%h1
+  We have found more than one address. Please choose the correct one.
+
+= form_tag search_path, :id => 'address_search', :class => 'multiple' do
+  %div{:class => "input string required#{@address_error.present? ? ' field_with_errors' : '' }"}
+    %ul
+      - @geoloc.all.each_with_index do |geoloc, index|
+        %li
+          = radio_button_tag :address, geoloc.full_address, false, :id => "geoloc_address_#{index}"
+          = label_tag "geoloc_address_#{index}", geoloc.full_address.sub(', USA', '')
+    - if @campaign
+      = hidden_field_tag :campaign_id, @campaign.id || params[:campaign_id]
+  %input{:type => 'submit', :value => 'Find'}

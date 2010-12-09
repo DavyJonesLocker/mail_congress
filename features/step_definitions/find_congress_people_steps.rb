@@ -3,6 +3,12 @@ When /^I submit the address form with my information$/ do
   When %{I press "Find"}
 end
 
+When /^I submit the address form with "([^"]*)"$/ do |address|
+  When %{I fill in "Please enter your home address." with "#{address}"}
+  When %{I press "Find"}
+end
+
+
 Then /^I should see my congress people$/ do
   Then %{I should see "Please choose to whom you wish to write"}
   Then %{I should see "Sen. John Kerry"}

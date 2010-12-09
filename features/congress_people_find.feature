@@ -14,6 +14,17 @@ Feature: Finding Congress People
     When  I press "Find"
     Then  I should see "Valid home address is required"
 
+  @wip
+  Scenario: Searching for my congress people from an ambiguous address
+    Given I am on the home page
+    When  I submit the address form with "14 Upston St #2 Boston, MA"
+    Then  I should see "We have found more than one address. Please choose the correct one."
+    When  I choose "14 Upton St #2, Boston, MA 02118"
+    And   I press "Find"
+    Then  I should see "Sen. John Kerry"
+    And   I should see "Sen. Scott Brown"
+    And   I should see "Rep. Michael Capuano"
+
   #@envjs
   #Scenario: Searching for my congress people with a client side geocode lookup
     #Given I do not expect a server side geocode lookup
