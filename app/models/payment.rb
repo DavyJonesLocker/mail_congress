@@ -90,8 +90,8 @@ class Payment
   def paypal_options(extras)
     {
       :ip                => extras[:ip],
-      :return_url        => "#{extras[:root_url]}payments/complete/#{redis_key}",
-      :cancel_return_url => "#{extras[:root_url]}payments/cancel/#{redis_key}"
+      :return_url        => "#{extras[:payments_url]}complete/#{redis_key}",
+      :cancel_return_url => "#{extras[:payments_url]}cancel/#{redis_key}"
     }
   end
 

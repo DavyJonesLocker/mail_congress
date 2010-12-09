@@ -115,7 +115,7 @@ describe Payment do
           @gateway.stubs(:setup_purchase).returns(@response)
           @gateway.stubs(:redirect_url_for).returns('url')
           ActiveMerchant::Billing::PaypalExpressGateway.stubs(:new).returns(@gateway)
-          @result = @payment.make(@letter, {:ip => '127.0.0.1', :root_url => 'root_url/'})
+          @result = @payment.make(@letter, {:ip => '127.0.0.1', :payments_url => 'payments_url/'})
         end
 
         it 'creates a gateway' do
@@ -123,7 +123,7 @@ describe Payment do
         end
 
         it 'makes a purchase' do
-          @gateway.should have_received(:setup_purchase).with(100, @payment.options({:ip => '127.0.0.1', :root_url => 'root_url/'}))
+          @gateway.should have_received(:setup_purchase).with(100, @payment.options({:ip => '127.0.0.1', :payments_url => 'payments_url/'}))
         end
 
         it 'stores the letter attributes in Redis' do

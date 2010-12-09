@@ -55,7 +55,7 @@ class PaymentsController < ApplicationController
   def payment_options
     {
       :ip => request.headers["REMOTE_ADDR"],
-      :root_url => root_url
+      :payments_url => payments_url
     }
   end
 
