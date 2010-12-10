@@ -8,3 +8,4 @@ paypal/production.yml
 public/images/tmp
 db/mail_congress_template.sql
 *.pid
+.DS_Store
