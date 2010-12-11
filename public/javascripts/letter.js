@@ -1,8 +1,8 @@
 $(function() {
-  $('ul.legislators li').click(function() { toggleLegislator(this); });
+  $(':checked').each(function() { toggleListItem($(this).parent()[0]) });
+  $('ul.legislators li').click(function() { toggleBioguide(this); });
   $('ul.legislators li input[type="checkbox"]').hide();
   $('.preview').keyup(showLetterPreview);
-  updateCost();
   showLetterPreview();
 });
 
@@ -60,29 +60,33 @@ function previewLetter() {
   return false;
 }
 
-function toggleLegislator(listItem) {
-  toggleBioguide(listItem);
+function toggleBioguide(listItem) {
+  var check_box = $(listItem).find('[type="checkbox"]');
+  if (check_box.attr('checked')) {
+    check_box.attr('checked', false);
+  } else {
+    check_box.attr('checked', true);
+  }
+  toggleListItem(listItem);
   updateCost();
 }
 
-function toggleBioguide(listItem) {
-  listItem     = $(listItem);
-  var bioguide = listItem.find('.bioguide'),
-      id       = listItem.find('[type="checkbox"]'),
-      mail     = listItem.find('img.mail');
+function toggleListItem(listItem) {
+  listItem      = $(listItem);
+  var bioguide  = listItem.find('.bioguide'),
+      check_box = listItem.find('[type="checkbox"]'),
+      mail      = listItem.find('img.mail');
 
-  if (id.attr('checked')) {
-    bioguide.removeClass('color');
-    listItem.removeClass('active');
-    bioguide.addClass('monochrome');
-    id.attr('checked', false);
-    mail.fadeOut();
-  } else {
+  if (check_box.attr('checked')) {
     bioguide.removeClass('monochrome');
     listItem.addClass('active');
     bioguide.addClass('color');
-    id.attr('checked', true);
     mail.fadeIn();
+  } else {
+    bioguide.removeClass('color');
+    listItem.removeClass('active');
+    bioguide.addClass('monochrome');
+    mail.fadeOut();
   }
 }
 
