@@ -1,5 +1,6 @@
 $(function() {
   $(':checked').each(function() { toggleListItem($(this).parent()[0]) });
+  updateCost();
   $('ul.legislators li').click(function() { toggleBioguide(this); });
   $('ul.legislators li input[type="checkbox"]').hide();
   $('.preview').keyup(showLetterPreview);
