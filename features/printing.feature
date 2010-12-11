@@ -18,4 +18,4 @@ Feature: Printing
     When  the "high" job is processed
     Then  the letter should be marked as printed
     And   I should receive the print confirmation email
-    And   I should receive a notification email 5 days later
+    And   I should receive a notification email 10 days later

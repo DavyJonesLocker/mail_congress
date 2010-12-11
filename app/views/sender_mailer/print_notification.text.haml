@@ -1,10 +1,10 @@
 - if @letter.recipients.size == 1
   = "You have sent a letter to: #{@letter.recipients.first.legislator.name}\n"
-  = "Your letter should arrive in 5 business days.\n"
+  = "Your letter should arrive in 10 business days.\n"
   = "You will be notified when it arrives.\n"
 - else
   = "You have sent letters to: #{@letter.recipients.map { |recipient| recipient.legislator.name }.join(', ') }\n"
-  = "Your letters should arrive in 5 business days.\n"
+  = "Your letters should arrive in 10 business days.\n"
   = "You will be notified when they arrive.\n"
 
 Thank you for Mailing Congress!
