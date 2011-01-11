@@ -21,6 +21,7 @@ gem 'orm_adapter', :git => 'git://github.com/ianwhite/orm_adapter.git'
 gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
 gem 'business_time', :git => 'git://github.com/dirtywater/business_time.git'
 gem 'daemons'
+gem 'fastercsv'
 
 group :development do
   gem 'mongrel', '1.2.0.pre2'

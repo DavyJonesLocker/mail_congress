@@ -1130,8 +1130,8 @@ ul.payment_type li {
 }
 /* line 429, ../../../app/stylesheets/screen.scss */
 .recipients ul li div {
-  width: 100px;
-  height: 125px;
+  width: 200px;
+  height: 250px;
   margin: 0 auto;
   overflow: hidden;
   position: relative;
@@ -1345,8 +1345,8 @@ div.select select {
 }
 /* line 590, ../../../app/stylesheets/screen.scss */
 #new_letter ul.legislators .bioguide {
-  width: 100px;
-  height: 125px;
+  width: 200px;
+  height: 250px;
   margin: 0 auto;
   overflow: hidden;
   position: relative;
@@ -1356,8 +1356,8 @@ div.select select {
 #new_letter ul.legislators .bioguide img.mail {
   right: 5px;
   bottom: 2px;
-  width: 16px;
-  height: 16px;
+  width: 32px;
+  height: 32px;
   display: none;
   position: absolute;
 }
@@ -1367,7 +1367,7 @@ div.select select {
 }
 /* line 604, ../../../app/stylesheets/screen.scss */
 #new_letter ul.legislators .monochrome {
-  background-position: -100px 0px;
+  background-position: -200px 0px;
 }
 /* line 607, ../../../app/stylesheets/screen.scss */
 #new_letter ul.legislators .color {
@@ -1379,7 +1379,7 @@ div.select select {
 }
 /* line 613, ../../../app/stylesheets/screen.scss */
 #new_letter ul.legislators img.monochrome {
-  margin-left: -100px;
+  margin-left: -200px;
 }
 /* line 616, ../../../app/stylesheets/screen.scss */
 #new_letter ul.legislators label:hover {
@@ -1462,31 +1462,32 @@ div.select select {
 }
 /* line 643, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li label {
+  text-align: center;
   margin: 10px 0 0 0;
 }
-/* line 647, ../../../app/stylesheets/screen.scss */
+/* line 648, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li:last-child {
   margin: 0px;
 }
-/* line 650, ../../../app/stylesheets/screen.scss */
+/* line 651, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li:hover {
   cursor: pointer;
   background: #178;
 }
-/* line 653, ../../../app/stylesheets/screen.scss */
+/* line 654, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li:hover label {
   color: #FFF;
   text-decoration: none;
 }
-/* line 658, ../../../app/stylesheets/screen.scss */
+/* line 659, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li.active {
   background: #009CAE;
 }
-/* line 660, ../../../app/stylesheets/screen.scss */
+/* line 661, ../../../app/stylesheets/screen.scss */
 #new_letter fieldset .legislators li.active label {
   color: #FFF;
 }
-/* line 666, ../../../app/stylesheets/screen.scss */
+/* line 667, ../../../app/stylesheets/screen.scss */
 #new_letter .cost {
   color: #6E9;
   font-size: 24px;
@@ -1512,29 +1513,29 @@ div.select select {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#223333', EndColorStr='#112222');
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#223333', EndColorStr='#112222')";
 }
-/* line 669, ../../../app/stylesheets/screen.scss */
+/* line 670, ../../../app/stylesheets/screen.scss */
 #new_letter div.text {
   float: none;
   clear: none;
   margin: 0 0 20px 0;
 }
-/* line 674, ../../../app/stylesheets/screen.scss */
+/* line 675, ../../../app/stylesheets/screen.scss */
 #new_letter #letter_body {
   width: 99%;
   height: 300px;
   display: block;
 }
-/* line 681, ../../../app/stylesheets/screen.scss */
+/* line 682, ../../../app/stylesheets/screen.scss */
 #new_letter .text.field_with_errors,
 #new_letter .string.field_with_errors,
 #new_letter .password.field_with_errors {
   padding: 10px;
 }
-/* line 684, ../../../app/stylesheets/screen.scss */
+/* line 685, ../../../app/stylesheets/screen.scss */
 #new_letter .error {
   margin: 0;
 }
-/* line 687, ../../../app/stylesheets/screen.scss */
+/* line 688, ../../../app/stylesheets/screen.scss */
 #new_letter div.string, #new_letter div.password {
   margin: 10px 10px 0 0;
   display: inline-block;
@@ -1542,34 +1543,34 @@ div.select select {
   float: none;
   clear: none;
 }
-/* line 693, ../../../app/stylesheets/screen.scss */
+/* line 694, ../../../app/stylesheets/screen.scss */
 #new_letter div.string input, #new_letter div.password input {
   width: 200px;
   padding: 5px;
   font-size: 16px;
   font-family: Arial, sans-serif;
 }
-/* line 700, ../../../app/stylesheets/screen.scss */
+/* line 701, ../../../app/stylesheets/screen.scss */
 #new_letter #letter_submit {
   margin: 20px 0 0 0;
 }
-/* line 703, ../../../app/stylesheets/screen.scss */
+/* line 704, ../../../app/stylesheets/screen.scss */
 #new_letter #letter_preview {
   margin: 0 0 0 10px;
   display: inline-block;
 }
 
-/* line 710, ../../../app/stylesheets/screen.scss */
+/* line 711, ../../../app/stylesheets/screen.scss */
 form.campaign label.collection_radio {
   width: auto;
   margin-left: 5px;
 }
-/* line 715, ../../../app/stylesheets/screen.scss */
+/* line 716, ../../../app/stylesheets/screen.scss */
 form.campaign #campaign_type_both {
   margin-left: 120px;
 }
 
-/* line 721, ../../../app/stylesheets/screen.scss */
+/* line 722, ../../../app/stylesheets/screen.scss */
 #address_search ul {
   padding: 20px;
   text-align: center;
@@ -1587,7 +1588,7 @@ form.campaign #campaign_type_both {
   text-align: left;
   line-height: 1.4;
 }
-/* line 725, ../../../app/stylesheets/screen.scss */
+/* line 726, ../../../app/stylesheets/screen.scss */
 #address_search ul li {
   color: #ABB;
   padding: 10px;
@@ -1610,7 +1611,7 @@ form.campaign #campaign_type_both {
   text-align: left;
   margin: 0 0 20px 0;
 }
-/* line 733, ../../../app/stylesheets/screen.scss */
+/* line 734, ../../../app/stylesheets/screen.scss */
 #address_search label,
 #address_search input {
   width: auto;
@@ -1618,7 +1619,7 @@ form.campaign #campaign_type_both {
   vertical-align: middle;
 }
 
-/* line 740, ../../../app/stylesheets/screen.scss */
+/* line 741, ../../../app/stylesheets/screen.scss */
 form {
   width: 910px;
   padding: 20px;
@@ -1637,32 +1638,32 @@ form {
   -o-box-shadow: rgba(0, 0, 0, 0.1) 0 0 20px 0;
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 20px 0;
 }
-/* line 742, ../../../app/stylesheets/screen.scss */
+/* line 743, ../../../app/stylesheets/screen.scss */
 form h1 {
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
-/* line 744, ../../../app/stylesheets/screen.scss */
+/* line 745, ../../../app/stylesheets/screen.scss */
 form h1 span {
   color: #9CC;
   width: 324px;
 }
-/* line 749, ../../../app/stylesheets/screen.scss */
+/* line 750, ../../../app/stylesheets/screen.scss */
 form input#payment_credit_card_verification_value {
   width: 100px;
 }
-/* line 754, ../../../app/stylesheets/screen.scss */
+/* line 755, ../../../app/stylesheets/screen.scss */
 form .text.field_with_errors,
 form .string.field_with_errors,
 form .password.field_with_errors {
   padding-left: 0px;
 }
-/* line 757, ../../../app/stylesheets/screen.scss */
+/* line 758, ../../../app/stylesheets/screen.scss */
 form div.expiration {
   float: left;
   clear: left;
   margin: 5px 10px 15px 0;
 }
-/* line 761, ../../../app/stylesheets/screen.scss */
+/* line 762, ../../../app/stylesheets/screen.scss */
 form div.expiration span {
   display: inline-block;
   width: 110px;
@@ -1670,25 +1671,25 @@ form div.expiration span {
   margin: 0 10px 0 0;
   vertical-align: middle;
 }
-/* line 768, ../../../app/stylesheets/screen.scss */
+/* line 769, ../../../app/stylesheets/screen.scss */
 form div.expiration label {
   vertical-align: middle;
 }
-/* line 771, ../../../app/stylesheets/screen.scss */
+/* line 772, ../../../app/stylesheets/screen.scss */
 form div.expiration .error {
   margin: 0;
 }
-/* line 776, ../../../app/stylesheets/screen.scss */
+/* line 777, ../../../app/stylesheets/screen.scss */
 form img {
   vertical-align: middle;
 }
-/* line 779, ../../../app/stylesheets/screen.scss */
+/* line 780, ../../../app/stylesheets/screen.scss */
 form .error {
   padding: 5px 0 0 0;
   margin: 0 0 0 120px;
 }
 
-/* line 785, ../../../app/stylesheets/screen.scss */
+/* line 786, ../../../app/stylesheets/screen.scss */
 .field_with_errors {
   color: #FEE;
   padding: 10px;
@@ -1701,7 +1702,7 @@ form .error {
   border-radius: 3px;
 }
 
-/* line 792, ../../../app/stylesheets/screen.scss */
+/* line 793, ../../../app/stylesheets/screen.scss */
 .error {
   font-weight: bold;
   padding: 10px 0 0 5px;

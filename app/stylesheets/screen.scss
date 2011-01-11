@@ -62,8 +62,8 @@ $form_sidebar: 324px;
 }
 
 @mixin bio_photo {
-  width: 100px;
-  height: 125px;
+  width: 200px;
+  height: 250px;
   margin: 0 auto;
   overflow: hidden;
   position: relative;
@@ -592,8 +592,8 @@ div.select {
       img.mail {
         right: 5px;
         bottom: 2px;
-        width: 16px;
-        height: 16px;
+        width: 32px;
+        height: 32px;
         display: none;
         position: absolute;
       }
@@ -602,7 +602,7 @@ div.select {
       }
     }
     .monochrome {
-      background-position: -100px 0px;
+      background-position: -200px 0px;
     }
     .color {
       background-position: 0px 0px;
@@ -611,7 +611,7 @@ div.select {
       cursor: pointer;
     }
     img.monochrome {
-      margin-left: -100px;
+      margin-left: -200px;
     }
     label:hover {
       color: blue;
@@ -641,6 +641,7 @@ div.select {
       li {
         @include item;
         label {
+          text-align: center;
           margin: 10px 0 0 0;
         }
       }
