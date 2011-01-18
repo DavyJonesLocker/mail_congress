@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20101206152059) do
     t.datetime "updated_at"
   end
 
-# Could not dump table "cd99_110" because of following StandardError
+# Could not dump table "federal_rep_districts" because of following StandardError
 #   Unknown type 'geometry' for column 'the_geom'
 
   create_table "geometry_columns", :id => false, :force => true do |t|
@@ -48,10 +48,12 @@ ActiveRecord::Schema.define(:version => 20101206152059) do
     t.string  "type",              :limit => 30,  :null => false
   end
 
-  create_table "legislators", :id => false, :force => true do |t|
+  create_table "legislators", :force => true do |t|
+    t.string  "level"
     t.string  "title"
     t.string  "firstname"
     t.string  "middlename"
+    t.string  "lastname"
     t.string  "name_suffix"
     t.string  "nickname"
     t.string  "party"
@@ -77,10 +79,12 @@ ActiveRecord::Schema.define(:version => 20101206152059) do
     t.string  "official_rss"
     t.string  "senate_class"
     t.date    "birthdate"
-    t.string  "lastname"
   end
 
+  add_index "legislators", ["bioguide_id"], :name => "legislators_federal_bioguide_id"
+  add_index "legislators", ["bioguide_id"], :name => "legislators_state_bioguide_id"
   add_index "legislators", ["district"], :name => "legislators_district"
+  add_index "legislators", ["id"], :name => "legislators_id"
 
   create_table "letters", :force => true do |t|
     t.integer  "sender_id"
@@ -96,7 +100,7 @@ ActiveRecord::Schema.define(:version => 20101206152059) do
 
   create_table "recipients", :force => true do |t|
     t.integer  "letter_id"
-    t.string   "legislator_id"
+    t.integer  "legislator_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -111,14 +115,6 @@ ActiveRecord::Schema.define(:version => 20101206152059) do
     t.string   "zip"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "spatial_ref_sys", :id => false, :force => true do |t|
-    t.integer "srid",                      :null => false
-    t.string  "auth_name", :limit => 256
-    t.integer "auth_srid"
-    t.string  "srtext",    :limit => 2048
-    t.string  "proj4text", :limit => 2048
   end
 
   create_table "states", :id => false, :force => true do |t|

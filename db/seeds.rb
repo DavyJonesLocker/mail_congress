@@ -30,7 +30,7 @@ campaign = Factory(:campaign,
   :summary => summary,
   :title => 'Support our little achievers!')
 
-bioguide_ids = Legislator.select('bioguide_id').where(:in_office => true).map { |l| l.bioguide_id }
+legislator_ids = Legislator.select('bioguide_id').where(:in_office => true).map { |l| l.legislator_id }
 
 (1..letter_count).each do |i|
   Timecop.travel rand(4).hours.from_now
@@ -43,7 +43,7 @@ bioguide_ids = Legislator.select('bioguide_id').where(:in_office => true).map { 
   recipient_number = rand(3) + 1
   recipients = []
   recipient_number.times do
-    recipients << Recipient.new(:legislator => Legislator.find(Legislator.find(bioguide_ids[rand(bioguide_ids.size)])))
+    recipients << Recipient.new(:legislator => Legislator.find(Legislator.find(legislator_ids[rand(legislator_ids.size)])))
   end
 
   Factory(:letter,

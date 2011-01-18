@@ -2,7 +2,7 @@ class CreateRecipients < ActiveRecord::Migration
   def self.up
     create_table :recipients do |t|
       t.integer :letter_id
-      t.string :legislator_id
+      t.integer :legislator_id
 
       t.timestamps
     end

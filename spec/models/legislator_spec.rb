@@ -29,7 +29,7 @@ describe Legislator do
           sql = <<-SQL
 select legislators.*
 from legislators
-where legislators.state = 'AA' and ((legislators.title != 'Sen' and (legislators.district = '0' or cast(legislators.district as integer) = cast((select cd from cd99_110 where ST_CONTAINS(the_geom, PointFromText('POINT(456 123)'))) as integer))) or (legislators.title = 'Sen'))
+where legislators.state = 'AA' and ((legislators.title != 'Sen' and (legislators.district = '0' or cast(legislators.district as integer) = cast((select cd from federal_rep_districts where ST_CONTAINS(the_geom, PointFromText('POINT(456 123)'))) as integer))) or (legislators.title = 'Sen'))
 and legislators.in_office is true
 order by legislators.district DESC
           SQL
@@ -59,7 +59,7 @@ order by legislators.district DESC
           sql = <<-SQL
 select legislators.*
 from legislators
-where legislators.state = 'AA' and ((legislators.title != 'Sen' and (legislators.district = '0' or cast(legislators.district as integer) = cast((select cd from cd99_110 where ST_CONTAINS(the_geom, PointFromText('POINT(456 123)'))) as integer))))
+where legislators.state = 'AA' and ((legislators.title != 'Sen' and (legislators.district = '0' or cast(legislators.district as integer) = cast((select cd from federal_rep_districts where ST_CONTAINS(the_geom, PointFromText('POINT(456 123)'))) as integer))))
 and legislators.in_office is true
 order by legislators.district DESC
           SQL
