@@ -12,7 +12,7 @@ class Legislator < ActiveRecord::Base
       Legislator.find_by_sql(<<-SQL)
 select legislators.*
 from legislators
-where legislators.state = '#{geoloc.state}' and ((legislators.title != 'Sen' and (legislators.district = '0' or cast(legislators.district as integer) = cast((select cd from federal_rep_districts where ST_CONTAINS(the_geom, PointFromText('POINT(#{geoloc.lng} #{geoloc.lat})'))) as integer))) or (legislators.title = 'Sen'))
+where legislators.state = '#{geoloc.state}' and ((legislators.title != 'Sen' and (legislators.district = '0' or cast(legislators.district as integer) = cast((select cd from federal_house_districts where ST_CONTAINS(the_geom, PointFromText('POINT(#{geoloc.lng} #{geoloc.lat})'))) as integer))) or (legislators.title = 'Sen'))
 and legislators.in_office is true
 order by legislators.district DESC
       SQL
@@ -34,7 +34,7 @@ order by legislators.district DESC
       Legislator.find_by_sql(<<-SQL)
 select legislators.*
 from legislators
-where legislators.state = '#{geoloc.state}' and ((legislators.title != 'Sen' and (legislators.district = '0' or cast(legislators.district as integer) = cast((select cd from federal_rep_districts where ST_CONTAINS(the_geom, PointFromText('POINT(#{geoloc.lng} #{geoloc.lat})'))) as integer))))
+where legislators.state = '#{geoloc.state}' and ((legislators.title != 'Sen' and (legislators.district = '0' or cast(legislators.district as integer) = cast((select cd from federal_house_districts where ST_CONTAINS(the_geom, PointFromText('POINT(#{geoloc.lng} #{geoloc.lat})'))) as integer))))
 and legislators.in_office is true
 order by legislators.district DESC
       SQL
