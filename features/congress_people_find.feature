@@ -3,7 +3,8 @@ Feature: Finding Congress People
   Scenario: Viewing the home page
     When  I go to the home page
     Then  I should see "Please enter your home address."
-  
+
+  @brian
   Scenario: Searching for my congress people with a server side geocode lookup
     Given I am on the home page
     When  I submit the address form with my information

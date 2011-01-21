@@ -6,8 +6,12 @@
     = campaign.input :title
   %fieldset.limit
     %div.help
-      Is this campaign meant for only senators, represenatives or both?
-    = campaign.collection_radio :type, [['both', 'Both'], ['senators', 'Senators'], ['representatives', 'Representatives']], :first, :last
+      Is this campaign meant for federal, state or all congress people?
+      %br
+      Is this campaign meant for only senators, representatives or all congress people?
+    = campaign.collection_radio :level, [['all', 'All'], ['federal', 'Federal'], ['state', 'State']], :first, :last
+    %br
+    = campaign.collection_radio :type, [['all', 'All'], ['senate', 'Senators'], ['house', 'Representatives']], :first, :last
   %fieldset.summary
     %div.help
       A short paragraph describing this campaign.

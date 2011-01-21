@@ -11,13 +11,28 @@
     = hidden_field_tag 'geoloc[lat]', @geoloc.lat
     = hidden_field_tag 'geoloc[lng]', @geoloc.lng
 
-    %ul.legislators
-      = letter.simple_fields_for :recipients do |recipient|
-        %li{:id => recipient.object.legislator.bioguide_id, :class => recipient.object.selected? ? 'active': nil}
-          %div{:class => "bioguide #{recipient.object.css_class}", :style => "background-image:url('/images/#{recipient.object.legislator.bioguide_image}')"}
-            = image_tag 'icons/mail.png', :class => "mail #{"selected" if recipient.object.selected?}".strip
-          = recipient.label :legislator_id, recipient.object.legislator.name
-          = check_box_tag "#{recipient.object_name}[legislator_id]", recipient.object.legislator_id, recipient.object.selected?
+    - unless @letter.federal_recipients.empty?
+      %h3.federal
+        Your Federal Congress People
+      %ul.legislators.federal
+        = letter.simple_fields_for :federal_recipients do |recipient|
+          %li{:id => recipient.object.legislator.bioguide_id, :class => recipient.object.selected? ? 'active': nil }
+            %div{:class => "bioguide #{recipient.object.css_class}", :style => "background-image:url('/images/#{recipient.object.legislator.bioguide_image}')"}
+              = image_tag 'icons/mail.png', :class => "mail #{"selected" if recipient.object.selected?}".strip
+            = recipient.label :legislator_id, recipient.object.legislator.name
+            = check_box_tag "#{recipient.object_name}[legislator_id]", recipient.object.legislator_id, recipient.object.selected?
+
+    - unless @letter.state_recipients.empty?
+      %h3.state
+        ="Your #{@geoloc.state} State Congress People"
+      %ul.legislators.state
+        = letter.simple_fields_for :state_recipients do |recipient|
+          %li{:id => recipient.object.legislator.bioguide_id, :class => recipient.object.selected? ? 'active': nil }
+            %div{:class => "bioguide #{recipient.object.css_class}"}
+              = image_tag recipient.object.legislator.bioguide_image
+              -#= image_tag 'icons/mail.png', :class => "mail #{"selected" if recipient.object.selected?}".strip
+            = recipient.label :legislator_id, recipient.object.legislator.name
+            = check_box_tag "#{recipient.object_name}[legislator_id]", recipient.object.legislator_id, recipient.object.selected?
     
     = letter.error :recipients
     

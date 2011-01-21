@@ -1,13 +1,13 @@
 GIT
   remote: git://github.com/bcardarella/cups.git
-  revision: cb095b7c41a459543a5223d1692dbc0c136d86f6
+  revision: cb095b7
   branch: options
   specs:
     cups (0.0.6)
 
 GIT
   remote: git://github.com/bcardarella/prawn.git
-  revision: 15be00b538909259fa85b32053aa00c7cbbd8353
+  revision: 15be00b
   submodules: true
   specs:
     prawn (0.11.1.pre)
@@ -15,44 +15,44 @@ GIT
 
 GIT
   remote: git://github.com/dirtywater/business_time.git
-  revision: 57df4ce8f4bf0153b3f23d5beee9fe2960894c07
+  revision: 57df4ce
   specs:
     business_time (0.3.0)
       activesupport (>= 2.0.0)
 
 GIT
   remote: git://github.com/ianwhite/orm_adapter.git
-  revision: a5b28d2bdede7f5ae865d8bb84acc96043c74811
+  revision: 3e87333
   specs:
-    orm_adapter (0.0.3)
+    orm_adapter (0.0.4)
 
 GIT
   remote: git://github.com/mojombo/chronic.git
-  revision: faad1de3b2e6039bdc9c624e47142e5cc93d22a1
+  revision: faad1de
   specs:
     chronic (0.3.0)
 
 GIT
   remote: git://github.com/plataformatec/devise.git
-  revision: b50fd1a72e711049508bf7af4610ad422be34f3b
+  revision: 68f699b
   specs:
     devise (1.2.rc)
       bcrypt-ruby (~> 2.1.2)
-      orm_adapter (~> 0.0.2)
-      warden (~> 1.0.2)
+      orm_adapter (~> 0.0.3)
+      warden (~> 1.0.3)
 
 GIT
   remote: https://github.com/bmabey/email-spec.git
-  revision: 16abd6d144cc78f96c783c3308e7a1858b4bbccc
+  revision: 37711a2
   specs:
-    email_spec (1.0.0)
+    email_spec (1.1.1)
+      rspec (~> 2.0)
 
 GEM
   remote: http://rubygems.org/
   specs:
     Ascii85 (1.0.0)
-    SystemTimer (1.2.1)
-    ZenTest (4.4.1)
+    ZenTest (4.4.2)
     abstract (1.0.0)
     actionmailer (3.0.3)
       actionpack (= 3.0.3)
@@ -84,21 +84,22 @@ GEM
       activemodel (= 3.0.3)
       activesupport (= 3.0.3)
     activesupport (3.0.3)
-    arel (2.0.6)
+    archive-tar-minitar (0.5.2)
+    arel (2.0.7)
     autotest (4.4.6)
       ZenTest (>= 4.4.1)
     autotest-fsevent (0.2.4)
       sys-uname
-    autotest-growl (0.2.8)
+    autotest-growl (0.2.9)
     autotest-rails (4.1.0)
       ZenTest
-    bcrypt-ruby (2.1.2)
+    bcrypt-ruby (2.1.4)
     bourne (1.0)
       mocha (= 0.9.8)
     braintree (2.6.2)
       builder
     builder (2.1.2)
-    capybara (0.4.0)
+    capybara (0.4.1)
       celerity (>= 0.7.9)
       culerity (>= 0.2.4)
       mime-types (>= 1.16)
@@ -106,23 +107,23 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       selenium-webdriver (>= 0.0.27)
-      xpath (~> 0.1.2)
-    celerity (0.8.4)
-    childprocess (0.1.4)
+      xpath (~> 0.1.3)
+    celerity (0.8.7)
+    childprocess (0.1.6)
       ffi (~> 0.6.3)
     columnize (0.3.2)
     compass (0.10.6)
       haml (>= 3.0.4)
     configuration (1.2.0)
-    cucumber (0.9.4)
-      builder (~> 2.1.2)
+    cucumber (0.10.0)
+      builder (>= 2.1.2)
       diff-lcs (~> 1.1.2)
-      gherkin (~> 2.2.9)
+      gherkin (~> 2.3.2)
       json (~> 1.4.6)
       term-ansicolor (~> 1.0.5)
     cucumber-rails (0.3.2)
       cucumber (>= 0.8.0)
-    culerity (0.2.12)
+    culerity (0.2.15)
     daemons (1.0.10)
     database_cleaner (0.6.0)
     diff-lcs (1.1.2)
@@ -139,10 +140,9 @@ GEM
       rake (>= 0.8.7)
     gem_plugin (0.2.3)
     geokit (1.5.0)
-    gherkin (2.2.9)
+    gherkin (2.3.3)
       json (~> 1.4.6)
-      term-ansicolor (~> 1.0.5)
-    haml (3.1.0.alpha.22)
+    haml (3.1.0.alpha.147)
     hoptoad_notifier (2.3.12)
       activesupport
       builder
@@ -153,12 +153,17 @@ GEM
     launchy (0.3.7)
       configuration (>= 0.0.5)
       rake (>= 0.8.1)
-    linecache (0.43)
+    linecache19 (0.5.11)
+      ruby_core_source (>= 0.1.4)
     mail (2.2.11)
       activesupport (>= 2.3.6)
       i18n (~> 0.5.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta_where (1.0.1)
+      activerecord (~> 3.0.2)
+      activesupport (~> 3.0.2)
+      arel (~> 2.0.2)
     mime-types (1.16)
     mocha (0.9.8)
       rake
@@ -206,11 +211,11 @@ GEM
       redis-namespace (~> 0.8.0)
       sinatra (>= 0.9.2)
       vegas (~> 0.1.2)
-    resque-scheduler (1.9.7)
+    resque-scheduler (1.9.8)
       redis (>= 2.0.1)
       resque (>= 1.8.0)
       rufus-scheduler
-    resque_spec (0.4.1)
+    resque_spec (0.4.2)
       resque (>= 1.6.0)
       rspec (>= 2.0.0.beta.12)
     rmagick (2.13.1)
@@ -227,48 +232,52 @@ GEM
       activesupport (~> 3.0)
       railties (~> 3.0)
       rspec (~> 2.2.0)
-    ruby-debug (0.10.4)
-      columnize (>= 0.1)
-      ruby-debug-base (~> 0.10.4.0)
-    ruby-debug-base (0.10.4)
-      linecache (>= 0.3)
+    ruby-debug-base19 (0.11.24)
+      columnize (>= 0.3.1)
+      linecache19 (>= 0.5.11)
+      ruby_core_source (>= 0.1.4)
+    ruby-debug19 (0.11.6)
+      columnize (>= 0.3.1)
+      linecache19 (>= 0.5.11)
+      ruby-debug-base19 (>= 0.11.19)
+    ruby_core_source (0.1.4)
+      archive-tar-minitar (>= 0.5.2)
     rubyzip (0.9.4)
-    rufus-scheduler (2.0.7)
-      tzinfo
-    sass (3.1.0.alpha.19)
-    selenium-webdriver (0.1.1)
-      childprocess (= 0.1.4)
+    rufus-scheduler (2.0.8)
+      tzinfo (>= 0.3.23)
+    sass (3.1.0.alpha.218)
+    selenium-webdriver (0.1.2)
+      childprocess (~> 0.1.5)
       ffi (~> 0.6.3)
       json_pure
       rubyzip
     simple_form (1.2.2)
-    sinatra (1.1.0)
+    sinatra (1.1.2)
       rack (~> 1.1)
-      tilt (~> 1.1)
+      tilt (~> 1.2)
     spork (0.9.0.rc2)
-    sys-uname (0.8.4)
+    sys-uname (0.8.5)
     term-ansicolor (1.0.5)
     thor (0.14.6)
-    tilt (1.1)
+    tilt (1.2.2)
     timecop (0.3.5)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
-    tzinfo (0.3.23)
+    tzinfo (0.3.24)
     unicorn (3.0.1)
       kgio (~> 2.0.0)
       rack
     vegas (0.1.8)
       rack (>= 1.0.0)
-    warden (1.0.2)
+    warden (1.0.3)
       rack (>= 1.0.0)
-    xpath (0.1.2)
+    xpath (0.1.3)
       nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  SystemTimer
   activemerchant
   autotest
   autotest-fsevent
@@ -282,7 +291,7 @@ DEPENDENCIES
   cucumber
   cucumber-rails
   cups!
-  daemons
+  daemons (= 1.0.10)
   database_cleaner
   devise!
   email_spec!
@@ -292,9 +301,10 @@ DEPENDENCIES
   fakeweb
   fastercsv
   geokit
-  haml (= 3.1.0.alpha.22)
+  haml (= 3.1.0.alpha.147)
   hoptoad_notifier
   launchy
+  meta_where
   mongrel (= 1.2.0.pre2)
   orm_adapter!
   pg (= 0.9.0)
@@ -307,8 +317,8 @@ DEPENDENCIES
   rmagick
   rspec
   rspec-rails
-  ruby-debug
-  sass (= 3.1.0.alpha.19)
+  ruby-debug19
+  sass (= 3.1.0.alpha.218)
   simple_form
   spork (= 0.9.0.rc2)
   timecop

@@ -1,7 +1,7 @@
 require 'fastercsv'
 
-def legislators_import
-  csv    = FasterCSV.parse(File.open('tmp/legislators.csv').read)
+def legislators_import(file_name)
+  csv    = FasterCSV.parse(File.open("tmp/#{file_name}").read)
   header = csv[0]
   stats = {
     :updated => 0,
@@ -14,7 +14,8 @@ def legislators_import
     row.each_with_index do |attr, index|
       attrs[header[index]] = attr
     end
-    if legislator = (Legislator.find(attrs['bioguide_id']) rescue nil)
+    if legislator = (Legislator.where(:bioguide_id => attrs['bioguide_id'], :in_office => true).first rescue nil)
+      yield legislator if block_given?
       unless legislator.update_attributes(attrs)
         puts "Update failed for #{attrs['bioguide_id']}"
         stats[:updated_failed] += 1
@@ -24,6 +25,7 @@ def legislators_import
     else
       legislator = Legislator.new(attrs)
       legislator.bioguide_id = attrs['bioguide_id']
+      yield legislator if block_given?
       unless legislator.save
         stats[:created_failed] += 1
         puts "Creation failed for #{attrs['bioguide_id']}"
@@ -41,9 +43,36 @@ def legislators_import
   puts "Total: #{stats.inject(0) { |total, stat| total += stat[1] }}"
 end
 
+def shared_settings(legislator)
+  legislator.level     = 'state'
+  legislator.in_office = true
+  legislator
+end
+
 namespace :legislators do
-  desc 'Legislators import from tmp/legislators.csv'
-  task :import do
-    legislators_import
+  namespace :import do
+    desc 'Import federal legislators'
+    task :federal do
+      legislators_import('federal_legislators.csv') do |legislator|
+        legislator.level = 'federal'
+      end
+    end
+
+    namespace :state do
+      desc 'Import MA legislators'
+      task :ma do
+        legislators_import('ma-Senate.csv') do |legislator|
+          shared_settings(legislator)
+          legislator.state = 'MA'
+          legislator.title = 'Sen'
+        end
+
+        legislators_import('ma-House.csv') do |legislator|
+          shared_settings(legislator)
+          legislator.state = 'MA'
+          legislator.title = 'Rep'
+        end
+      end
+    end
   end
 end

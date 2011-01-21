@@ -21,8 +21,12 @@
   display: inline !important;
   vertical-align: middle !important;
 }
+
 #new_letter .legislators li div {
   margin: 0 !important;
+}
+
+#new_letter .legislators li.federal div {
   width: 200px !important;
 }
 

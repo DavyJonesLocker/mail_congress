@@ -17,8 +17,11 @@ Then /^I should see my congress people$/ do
   Then %{I should see Sen. Scott Brown's photo}
   Then %{I should see "Rep. Stephen Lynch"}
   Then %{I should see Rep. Stephen Lynch's photo}
+  Then %{I should see "Sen. John Hart"}
+  Then %{I should see Sen. John Hart's photo}
+  Then %{I should see "Rep. Nick Collins"}
+  Then %{I should see Rep. Nick Collins' photo}
 end
-
 
 When /^I submit the address form with bad information$/ do
   When %{I fill in "Address" with "Africa"}

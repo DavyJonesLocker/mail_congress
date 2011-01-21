@@ -1,45 +1,18 @@
 class Legislator < ActiveRecord::Base
+  self.inheritance_column = 'other_type'
 
-  scope :find_senators, lambda { |geoloc|
-    where(:in_office => true).
-    where(:title => 'Sen').
-    where(:state => geoloc.state).
-    order('district DESC')
-  }
-
-  def self.search(geoloc)
+  def self.search(geoloc, options = {})
     if geoloc.success
-      Legislator.find_by_sql(<<-SQL)
-select legislators.*
-from legislators
-where legislators.state = '#{geoloc.state}' and ((legislators.title != 'Sen' and (legislators.district = '0' or cast(legislators.district as integer) = cast((select cd from federal_house_districts where ST_CONTAINS(the_geom, PointFromText('POINT(#{geoloc.lng} #{geoloc.lat})'))) as integer))) or (legislators.title = 'Sen'))
-and legislators.in_office is true
-order by legislators.district DESC
-      SQL
+      select('DISTINCT legislators.*').
+      from("legislators, (SELECT district, level, type FROM districts WHERE ST_CONTAINS(the_geom, PointFromText('POINT(#{geoloc.lng} #{geoloc.lat})'))) AS districts").
+      where(conditions(geoloc, options) &
+        {:districts => [
+           :district => arel_table[:district],
+           :level    => arel_table[:level],
+           :type     => arel_table[:type]]}).
+      order(:level.asc, :type.desc, :senate_class.desc)
     else
-      false
-    end
-  end
-
-  def self.search_senators(geoloc)
-    if geoloc.success
-      self.find_senators(geoloc)
-    else
-      false
-    end
-  end
-
-  def self.search_representatives(geoloc)
-    if geoloc.success
-      Legislator.find_by_sql(<<-SQL)
-select legislators.*
-from legislators
-where legislators.state = '#{geoloc.state}' and ((legislators.title != 'Sen' and (legislators.district = '0' or cast(legislators.district as integer) = cast((select cd from federal_house_districts where ST_CONTAINS(the_geom, PointFromText('POINT(#{geoloc.lng} #{geoloc.lat})'))) as integer))))
-and legislators.in_office is true
-order by legislators.district DESC
-      SQL
-    else
-      false
+      nil
     end
   end
 
@@ -48,7 +21,7 @@ order by legislators.district DESC
   end
 
   def bioguide_image
-    "bioguides/#{bioguide_id}.jpg"
+    "bioguides/#{level}/#{bioguide_id}.jpg"
   end
 
   def envelope_text
@@ -61,6 +34,12 @@ order by legislators.district DESC
     else
       '20515'
     end
+  end
+
+  private
+
+  def self.conditions(geoloc, options)
+    options.merge(:state => geoloc.state, :in_office => true)
   end
 
 end

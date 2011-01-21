@@ -20,8 +20,9 @@ When /^I sign the campaign$/ do
   When %{I press "Send"}
 end
 
-When /^I submit new campaign details for (\w+)$/ do |title|
-  When %{I choose "#{title.capitalize}"}
+When /^I submit new campaign details for (\w+) (\w+)$/ do |level, type|
+  When %{I choose "#{level.capitalize}"}
+  When %{I choose "#{type.capitalize}"}
   When %{I submit new campaign details}
 end
 
@@ -41,7 +42,7 @@ end
 
 Then /^I should see the campaign permalink$/ do
   @campaign ||= Campaign.last
-  Then %{I should see "#{campaign_permalink_url(@campaign, :protocol => 'https')}"}
+  Then %{I should see "#{campaign_permalink_url(@campaign)}"}
 end
 
 Given /^I have a campaign$/ do

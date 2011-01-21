@@ -74,7 +74,7 @@ class Letter < ActiveRecord::Base
     self.recipients.each { |recipient| recipient.selected = true }
     selected_legislator_ids = self.recipients.map { |recipient| recipient.legislator_id }
 
-    self.recipients = Legislator.send(search_type, geoloc).map do |legislator|
+    self.recipients = Legislator.search(*[geoloc, campaign_level_and_type].compact).map do |legislator|
       Recipient.new(:legislator => legislator, :selected => selected_legislator_ids.include?(legislator.id))
     end
   end
@@ -86,6 +86,18 @@ class Letter < ActiveRecord::Base
       self.sender_id   = sender.id
     end
     assign_nested_attributes_for_one_to_one_association(:sender, attributes)
+  end
+
+  %w{federal state}.each do |level|
+    define_method("#{level}_recipients") do
+      recipients.select { |recipient| recipient.legislator.level == level }
+    end
+
+    define_method("#{level}_recipients_attributes=") do |attributes = {}|
+      self.recipients_attributes = attributes
+    end
+
+    attr_accessible "#{level}_recipients_attributes"
   end
 
   def to_png
@@ -119,19 +131,14 @@ class Letter < ActiveRecord::Base
 
   private
 
-  def generate_redis_key
-    Digest::SHA1.hexdigest("#{DateTime.now.to_i}-#{rand(100)}")
+  def campaign_level_and_type
+    if campaign
+      campaign.level_and_type
+    end
   end
 
-  def search_type
-    type = 'search'
-
-    if campaign
-      unless campaign.type.empty? || campaign.type == 'both'
-        type = "#{type}_#{campaign.type.pluralize}"
-      end
-    end
-    type
+  def generate_redis_key
+    Digest::SHA1.hexdigest("#{DateTime.now.to_i}-#{rand(100)}")
   end
 
   def presence_of_recipients

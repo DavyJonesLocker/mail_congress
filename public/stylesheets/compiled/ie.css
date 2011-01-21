@@ -29,33 +29,37 @@
   vertical-align: middle !important;
 }
 
-/* line 24, ../../../app/stylesheets/ie.scss */
+/* line 25, ../../../app/stylesheets/ie.scss */
 #new_letter .legislators li div {
   margin: 0 !important;
+}
+
+/* line 29, ../../../app/stylesheets/ie.scss */
+#new_letter .legislators li.federal div {
   width: 200px !important;
 }
 
-/* line 30, ../../../app/stylesheets/ie.scss */
+/* line 34, ../../../app/stylesheets/ie.scss */
 #new_letter div.string,
 #new_letter #letter_preview {
   display: inline;
 }
 
 /* payments#new */
-/* line 37, ../../../app/stylesheets/ie.scss */
+/* line 41, ../../../app/stylesheets/ie.scss */
 form h1.group,
 fieldset {
   border-bottom: 1px solid #40939C;
 }
 
-/* line 42, ../../../app/stylesheets/ie.scss */
+/* line 46, ../../../app/stylesheets/ie.scss */
 label,
 div.select {
   display: inline;
   vertical-align: middle;
 }
 
-/* line 49, ../../../app/stylesheets/ie.scss */
+/* line 53, ../../../app/stylesheets/ie.scss */
 div.text,
 div.string,
 div.password {
@@ -63,53 +67,53 @@ div.password {
   clear: none;
 }
 
-/* line 56, ../../../app/stylesheets/ie.scss */
+/* line 60, ../../../app/stylesheets/ie.scss */
 div.text input,
 div.string input,
 div.password input {
   vertical-align: middle;
 }
 
-/* line 60, ../../../app/stylesheets/ie.scss */
+/* line 64, ../../../app/stylesheets/ie.scss */
 .fields {
   float: left;
   width: 536px;
 }
 
-/* line 65, ../../../app/stylesheets/ie.scss */
+/* line 69, ../../../app/stylesheets/ie.scss */
 .payment_type li {
   padding: 0;
   display: inline;
 }
 
-/* line 70, ../../../app/stylesheets/ie.scss */
+/* line 74, ../../../app/stylesheets/ie.scss */
 .payment_type li .cards {
   width: 200px;
   margin: 10px 0;
   display: inline;
 }
-/* line 75, ../../../app/stylesheets/ie.scss */
+/* line 79, ../../../app/stylesheets/ie.scss */
 .payment_type li .cards .paypal {
   background-image: url("../../images/icons/paypal.png");
   margin-left: 0px;
 }
-/* line 80, ../../../app/stylesheets/ie.scss */
+/* line 84, ../../../app/stylesheets/ie.scss */
 .payment_type li .cards label {
   width: 200px;
 }
-/* line 84, ../../../app/stylesheets/ie.scss */
+/* line 88, ../../../app/stylesheets/ie.scss */
 .payment_type li .cards .card {
   float: none;
   clear: none;
   display: inline;
 }
 
-/* line 91, ../../../app/stylesheets/ie.scss */
+/* line 95, ../../../app/stylesheets/ie.scss */
 .payment_type li.paypal .cards {
   margin-right: 50px;
   margin-left: 0px;
 }
-/* line 94, ../../../app/stylesheets/ie.scss */
+/* line 98, ../../../app/stylesheets/ie.scss */
 .payment_type li.paypal .cards label {
   width: 200px;
 }

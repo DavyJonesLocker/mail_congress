@@ -8,7 +8,7 @@ describe Legislator do
         :lat => 123,
         :lng => 456,
         :city => 'Some City',
-        :state => 'AA',
+        :state => 'MA',
         :street => '123 Main St.'
       )
     end
@@ -19,73 +19,72 @@ describe Legislator do
         Geokit::Geocoders::GoogleGeocoder.stubs(:geocode).returns(@geoloc)
       end
 
-      context 'default' do
-        before do
-          Legislator.stubs(:find_by_sql)
-          Legislator.search(@geoloc)
-        end
-
-        it 'finds legislators by complex SQL query' do
-          sql = <<-SQL
-select legislators.*
-from legislators
-where legislators.state = 'AA' and ((legislators.title != 'Sen' and (legislators.district = '0' or cast(legislators.district as integer) = cast((select cd from federal_house_districts where ST_CONTAINS(the_geom, PointFromText('POINT(456 123)'))) as integer))) or (legislators.title = 'Sen'))
-and legislators.in_office is true
-order by legislators.district DESC
-          SQL
-
-          Legislator.should have_received(:find_by_sql).with(sql)
+      context 'all' do
+        it 'queries' do
+          sql = %{SELECT DISTINCT legislators.* FROM legislators, (SELECT district, level, type FROM districts WHERE ST_CONTAINS(the_geom, PointFromText('POINT(456 123)'))) AS districts WHERE ("legislators"."state" = 'MA' AND "legislators"."in_office" = 't') AND ("districts"."district" = "legislators"."district" AND "districts"."level" = "legislators"."level" AND "districts"."type" = "legislators"."type") ORDER BY "legislators"."level" ASC, "legislators"."type" DESC, "legislators"."senate_class" DESC}
+          Legislator.search(@geoloc).to_sql.should == sql
         end
       end
 
-      context 'for senators' do
-        before do
-          Legislator.stubs(:find_senators)
-          Legislator.search_senators(@geoloc)
+      context 'federal' do
+        context 'all' do
+          it 'queries' do
+          sql = %{SELECT DISTINCT legislators.* FROM legislators, (SELECT district, level, type FROM districts WHERE ST_CONTAINS(the_geom, PointFromText('POINT(456 123)'))) AS districts WHERE ("legislators"."level" = 'federal' AND "legislators"."state" = 'MA' AND "legislators"."in_office" = 't') AND ("districts"."district" = "legislators"."district" AND "districts"."level" = "legislators"."level" AND "districts"."type" = "legislators"."type") ORDER BY "legislators"."level" ASC, "legislators"."type" DESC, "legislators"."senate_class" DESC}
+            Legislator.search(@geoloc, :level => 'federal').to_sql.should == sql
+          end
         end
 
-        it 'finds senators in the given state' do
-          Legislator.should have_received(:find_senators).with(@geoloc)
+        context 'House' do
+          it 'queries' do
+          sql = %{SELECT DISTINCT legislators.* FROM legislators, (SELECT district, level, type FROM districts WHERE ST_CONTAINS(the_geom, PointFromText('POINT(456 123)'))) AS districts WHERE ("legislators"."level" = 'federal' AND "legislators"."type" = 'house' AND "legislators"."state" = 'MA' AND "legislators"."in_office" = 't') AND ("districts"."district" = "legislators"."district" AND "districts"."level" = "legislators"."level" AND "districts"."type" = "legislators"."type") ORDER BY "legislators"."level" ASC, "legislators"."type" DESC, "legislators"."senate_class" DESC}
+            Legislator.search(@geoloc, :level => 'federal', :type => 'house').to_sql.should == sql
+          end
+        end
+
+        context 'Senate' do
+          it 'queries' do
+          sql = %{SELECT DISTINCT legislators.* FROM legislators, (SELECT district, level, type FROM districts WHERE ST_CONTAINS(the_geom, PointFromText('POINT(456 123)'))) AS districts WHERE ("legislators"."level" = 'federal' AND "legislators"."type" = 'senate' AND "legislators"."state" = 'MA' AND "legislators"."in_office" = 't') AND ("districts"."district" = "legislators"."district" AND "districts"."level" = "legislators"."level" AND "districts"."type" = "legislators"."type") ORDER BY "legislators"."level" ASC, "legislators"."type" DESC, "legislators"."senate_class" DESC}
+            Legislator.search(@geoloc, :level => 'federal', :type => 'senate').to_sql.should == sql
+          end
         end
       end
 
-      context 'for representatives' do
-        before do
-          Legislator.stubs(:find_by_sql)
-          Legislator.search_representatives(@geoloc)
+      context 'state' do
+        context 'all' do
+          it 'queries' do
+          sql = %{SELECT DISTINCT legislators.* FROM legislators, (SELECT district, level, type FROM districts WHERE ST_CONTAINS(the_geom, PointFromText('POINT(456 123)'))) AS districts WHERE ("legislators"."level" = 'state' AND "legislators"."state" = 'MA' AND "legislators"."in_office" = 't') AND ("districts"."district" = "legislators"."district" AND "districts"."level" = "legislators"."level" AND "districts"."type" = "legislators"."type") ORDER BY "legislators"."level" ASC, "legislators"."type" DESC, "legislators"."senate_class" DESC}
+            Legislator.search(@geoloc, :level => 'state').to_sql.should == sql
+          end
         end
 
-        it 'finds representatives in the given state' do
-          sql = <<-SQL
-select legislators.*
-from legislators
-where legislators.state = 'AA' and ((legislators.title != 'Sen' and (legislators.district = '0' or cast(legislators.district as integer) = cast((select cd from federal_house_districts where ST_CONTAINS(the_geom, PointFromText('POINT(456 123)'))) as integer))))
-and legislators.in_office is true
-order by legislators.district DESC
-          SQL
-          Legislator.should have_received(:find_by_sql).with(sql)
+        context 'House' do
+          it 'queries' do
+          sql = %{SELECT DISTINCT legislators.* FROM legislators, (SELECT district, level, type FROM districts WHERE ST_CONTAINS(the_geom, PointFromText('POINT(456 123)'))) AS districts WHERE ("legislators"."level" = 'state' AND "legislators"."type" = 'house' AND "legislators"."state" = 'MA' AND "legislators"."in_office" = 't') AND ("districts"."district" = "legislators"."district" AND "districts"."level" = "legislators"."level" AND "districts"."type" = "legislators"."type") ORDER BY "legislators"."level" ASC, "legislators"."type" DESC, "legislators"."senate_class" DESC}
+            Legislator.search(@geoloc, :level => 'state', :type => 'house').to_sql.should == sql
+          end
         end
+
+        context 'Senate' do
+          it 'queries' do
+          sql = %{SELECT DISTINCT legislators.* FROM legislators, (SELECT district, level, type FROM districts WHERE ST_CONTAINS(the_geom, PointFromText('POINT(456 123)'))) AS districts WHERE ("legislators"."level" = 'state' AND "legislators"."type" = 'senate' AND "legislators"."state" = 'MA' AND "legislators"."in_office" = 't') AND ("districts"."district" = "legislators"."district" AND "districts"."level" = "legislators"."level" AND "districts"."type" = "legislators"."type") ORDER BY "legislators"."level" ASC, "legislators"."type" DESC, "legislators"."senate_class" DESC}
+            Legislator.search(@geoloc, :level => 'state', :type => 'senate').to_sql.should == sql
+          end
+        end
+      end
+
+      context 'unseccessful search' do
+        before do
+          @geoloc.stubs(:success).returns(false)
+          Geokit::Geocoders::GoogleGeocoder.stubs(:geocode).returns(@geoloc)
+        end
+
+        it 'returns false for default' do
+          Legislator.search(@geoloc).should be_nil
+        end
+
       end
     end
 
-    context 'unseccessful search' do
-      before do
-        @geoloc.stubs(:success).returns(false)
-        Geokit::Geocoders::GoogleGeocoder.stubs(:geocode).returns(@geoloc)
-      end
-
-      it 'returns false for default' do
-        Legislator.search(@geoloc).should be_false
-      end
-
-      it 'returns false for senators' do
-        Legislator.search_senators(@geoloc).should be_false
-      end
-
-      it 'returns false for representatives' do
-        Legislator.search_representatives(@geoloc).should be_false
-      end
-    end
   end
 
   describe 'name' do
@@ -104,16 +103,20 @@ order by legislators.district DESC
       @legislator.stubs(:bioguide_id).returns(1234)
     end
 
-    it 'should give a relative path to public/images for the proper bioguide image' do
-      @legislator.bioguide_image.should == 'bioguides/1234.jpg'
+    context 'monkey' do
+      before { @legislator.stubs(:level).returns('monkey') }
+      it 'should give a relative path to public/images for the proper bioguide image' do
+        @legislator.bioguide_image.should == 'bioguides/monkey/1234.jpg'
+      end
     end
+
   end
 
   describe '#evelope_text' do
     before do
       @legislator = Legislator.new(
-        :firstname      => 'John',
-        :lastname       => 'Doe',
+        :firstname       => 'John',
+        :lastname        => 'Doe',
         :congress_office => '2243 Rayburn House Office Building',
         :title           => 'Rep'
       )

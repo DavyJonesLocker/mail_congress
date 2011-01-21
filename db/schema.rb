@@ -29,13 +29,14 @@ ActiveRecord::Schema.define(:version => 20101206152059) do
     t.integer  "advocacy_group_id"
     t.text     "body"
     t.text     "summary"
-    t.string   "type",              :default => "both"
+    t.string   "level",             :default => "all"
+    t.string   "type",              :default => "all"
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-# Could not dump table "federal_house_districts" because of following StandardError
+# Could not dump table "districts" because of following StandardError
 #   Unknown type 'geometry' for column 'the_geom'
 
   create_table "geometry_columns", :id => false, :force => true do |t|
@@ -50,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20101206152059) do
 
   create_table "legislators", :force => true do |t|
     t.string  "level"
+    t.string  "type"
     t.string  "title"
     t.string  "firstname"
     t.string  "middlename"
@@ -97,6 +99,12 @@ ActiveRecord::Schema.define(:version => 20101206152059) do
     t.string   "follow_up_id"
     t.string   "payment_type",   :default => "credit_card"
   end
+
+# Could not dump table "ma_house_districts" because of following StandardError
+#   Unknown type 'geometry' for column 'the_geom'
+
+# Could not dump table "ma_senate_districts" because of following StandardError
+#   Unknown type 'geometry' for column 'the_geom'
 
   create_table "recipients", :force => true do |t|
     t.integer  "letter_id"

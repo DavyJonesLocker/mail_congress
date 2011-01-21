@@ -6,6 +6,8 @@ describe Letter do
   it { should belong_to :sender }
   it { should belong_to :campaign }
   it { should accept_nested_attributes_for :recipients }
+  # it { should accept_nested_attributes_for :federal_recipients }
+  # it { should accept_nested_attributes_for :state_recipients }
   it { should accept_nested_attributes_for :sender }
   it { should validate_presence_of :body }
 
@@ -186,31 +188,19 @@ describe Letter do
       end
     end
 
-    context 'campaign for only senators' do
+    context 'campaign' do
       before do
-        @campaign = Factory.build(:campaign, :type => 'senator')
-        @letter.campaign = @campaign
-        Legislator.stubs(:search_senators).returns([@legislator])
+        @campaign = mock('Campaign')
+        @campaign.stubs(:level_and_type).returns({:level => 'federal', :type => 'senate'})
+        @letter.stubs(:campaign).returns(@campaign)
         @letter.build_recipients(@geoloc)
       end
 
       it 'searches only for senators' do
-        Legislator.should have_received(:search_senators)
+        Legislator.should have_received(:search).with(@geoloc, {:level => 'federal', :type => 'senate'})
       end
     end
     
-    context 'campaign for only representatives' do
-      before do
-        @campaign = Factory.build(:campaign, :type => 'representative')
-        @letter.campaign = @campaign
-        Legislator.stubs(:search_representatives).returns([@legislator])
-        @letter.build_recipients(@geoloc)
-      end
-
-      it 'searches only for representatives' do
-        Legislator.should have_received(:search_representatives)
-      end
-    end
   end
 
   context 'a sender email address already exists' do
@@ -281,6 +271,29 @@ describe Letter do
 
     it 'calculates the cost based upon the number of recipients' do
       @letter.cost.should == 200
+    end
+  end
+
+  describe 'recipients' do
+    before do
+      @letter  = Letter.new
+      @federal = Recipient.new(:legislator => Legislator.new)
+      @state   = Recipient.new(:legislator => Legislator.new)
+      @federal.legislator.level = 'federal'
+      @state.legislator.  level = 'state'
+      @letter.recipients << @federal
+      @letter.recipients << @state
+    end
+    context '#federal_recipients' do
+      it 'returns only [@federal]' do
+        @letter.federal_recipients.should == [@federal]
+      end
+    end
+
+    context '#state_recipients' do
+      it 'returns only [@state]' do
+        @letter.state_recipients.should == [@state]
+      end
     end
   end
 
